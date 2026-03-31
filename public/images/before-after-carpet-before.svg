@@ -1,0 +1,7 @@
+<svg width="800" height="560" viewBox="0 0 800 560" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="560" fill="#d8d3cb"/>
+  <rect x="90" y="110" width="620" height="330" rx="20" fill="#bcae97"/>
+  <circle cx="260" cy="280" r="70" fill="#9a8366"/>
+  <circle cx="500" cy="300" r="95" fill="#8c7458"/>
+  <text x="400" y="520" fill="#5d4a34" text-anchor="middle" font-size="34" font-family="Arial, sans-serif">Before</text>
+</svg>

@@ -1,0 +1,8 @@
+<svg width="800" height="560" viewBox="0 0 800 560" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="560" fill="#d7dce0"/>
+  <rect x="70" y="100" width="660" height="360" rx="26" fill="#b5bcc2"/>
+  <path d="M130 160 L670 160" stroke="#8f979e" stroke-width="10"/>
+  <path d="M130 240 L670 240" stroke="#8f979e" stroke-width="10"/>
+  <path d="M130 320 L670 320" stroke="#8f979e" stroke-width="10"/>
+  <text x="400" y="520" fill="#5e6870" text-anchor="middle" font-size="34" font-family="Arial, sans-serif">Before</text>
+</svg>

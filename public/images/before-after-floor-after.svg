@@ -1,0 +1,15 @@
+<svg width="800" height="560" viewBox="0 0 800 560" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="shine" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f6faf8"/>
+      <stop offset="100%" stop-color="#d9f4ec"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="560" fill="url(#shine)"/>
+  <rect x="70" y="100" width="660" height="360" rx="26" fill="#eef6f3"/>
+  <path d="M130 160 L670 160" stroke="#b6e9da" stroke-width="10"/>
+  <path d="M130 240 L670 240" stroke="#b6e9da" stroke-width="10"/>
+  <path d="M130 320 L670 320" stroke="#b6e9da" stroke-width="10"/>
+  <circle cx="630" cy="175" r="42" fill="#ffffff" opacity="0.8"/>
+  <text x="400" y="520" fill="#21856c" text-anchor="middle" font-size="34" font-family="Arial, sans-serif">After</text>
+</svg>

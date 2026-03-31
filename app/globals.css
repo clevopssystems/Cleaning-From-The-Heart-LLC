@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans, "Inter", ui-sans-serif, system-ui, sans-serif);
+  @apply bg-white text-ink antialiased;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading, "Sora", ui-sans-serif, system-ui, sans-serif);
+  @apply text-ink;
+  letter-spacing: -0.02em;
+}
+
+a {
+  @apply transition-colors duration-200;
+}
+
+/* ─── Layout shells ─── */
+
+.section-shell {
+  @apply py-20 md:py-28;
+}
+
+.section-shell-tight {
+  @apply py-14 md:py-20;
+}
+
+/* ─── Grid texture ─── */
+
+.surface-grid {
+  background-image: theme("backgroundImage.soft-grid");
+  background-size: 24px 24px;
+}
+
+/* ─── Cards — light sections ─── */
+
+.card {
+  @apply rounded-2xl border border-brand-100 bg-white p-7 shadow-card;
+}
+
+.card-hover {
+  @apply rounded-2xl border border-brand-100 bg-white p-7 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover;
+}
+
+/* ─── Cards — dark sections ─── */
+
+.card-dark {
+  @apply rounded-2xl border border-white/10 bg-white/5 p-7;
+}
+
+.card-dark-hover {
+  @apply rounded-2xl border border-white/10 bg-white/5 p-7 transition-all duration-300 hover:border-white/20 hover:bg-white/10;
+}
+
+/* ─── Eyebrow labels ─── */
+
+.eyebrow {
+  @apply mb-4 block text-xs font-semibold uppercase tracking-[0.15em] text-brand-600;
+}
+
+.eyebrow-light {
+  @apply mb-4 block text-xs font-semibold uppercase tracking-[0.15em] text-accent;
+}
+
+/* ─── Buttons ─── */
+
+.cta-primary {
+  @apply inline-flex items-center justify-center rounded-xl bg-brand-600 px-6 py-3.5 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-brand-700 hover:scale-[1.02] hover:shadow-md active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2;
+}
+
+.cta-secondary {
+  @apply inline-flex items-center justify-center rounded-xl border border-ink/20 bg-white px-6 py-3.5 text-sm font-semibold text-ink transition-all duration-200 hover:border-ink/40 hover:bg-surface active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2;
+}
+
+.cta-ghost {
+  @apply inline-flex items-center justify-center rounded-xl border border-white/25 bg-transparent px-6 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:border-white/50 hover:bg-white/10 active:scale-[0.98];
+}
+
+.cta-gold {
+  @apply inline-flex items-center justify-center rounded-xl bg-accent px-6 py-3.5 text-sm font-semibold text-ink shadow-sm transition-all duration-200 hover:bg-accent/90 hover:scale-[1.02] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2;
+}
+
+/* ─── Media cards ─── */
+
+/* Use .card-media for cards that start with a top image/video area.
+   Handles overflow, border-radius, and hover — content area should use p-5 or p-6 internally. */
+.card-media {
+  @apply overflow-hidden rounded-2xl border border-brand-100 bg-white shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover;
+}
+
+/* ─── Media placeholder ─── */
+
+/* Gradient placeholder shown when no real image is set for a service card.
+   Replace by setting service.image to a real file path. */
+.service-img-placeholder {
+  @apply flex aspect-video w-full items-center justify-center bg-gradient-to-br from-brand-600/10 to-brand-500/5;
+}
+
+/* ─── Typography helpers ─── */
+
+.text-balance {
+  text-wrap: balance;
+}
