@@ -18,7 +18,7 @@ export default function GalleryPage() {
       <PageIntro
         eyebrow="Gallery"
         title="Before And After Cleaning Results"
-        description="Use this page to show real project photos from commercial cleaning, carpet cleaning, and strip & wax work in Seattle."
+        description="Use this page to show real project photos from commercial cleaning, carpet cleaning, and strip and wax work in Seattle."
       />
 
       <section className="section-shell bg-white">
