@@ -18,9 +18,10 @@ export function HeroSection() {
         loop
         playsInline
         preload="auto"
+        poster="/images/hero-cleaning-team.jpg"
         className="absolute inset-0 h-full w-full object-cover"
       >
-        <source src="/hero.mp4" type="video/mp4" />
+        <source src="/media/hero/hero-bg.mp4" type="video/mp4" />
       </video>
 
       {/* Dark overlay — keeps text readable over the video */}
