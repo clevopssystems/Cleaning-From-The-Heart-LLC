@@ -13,14 +13,14 @@ export function HeroSection() {
         Recommended: 1920×1080, H.264, no audio, < 8MB
       */}
       <video
-        className="absolute inset-0 h-full w-full object-cover"
         autoPlay
         muted
         loop
         playsInline
-        aria-hidden
+        preload="auto"
+        className="absolute inset-0 h-full w-full object-cover"
       >
-        <source src="/media/hero/hero-bg.mp4" type="video/mp4" />
+        <source src="/hero.mp4" type="video/mp4" />
       </video>
 
       {/* Dark overlay — keeps text readable over the video */}
