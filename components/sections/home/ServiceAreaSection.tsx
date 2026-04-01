@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { MapPin } from "lucide-react";
 import { Container } from "@/components/shared/Container";
-import { serviceAreas } from "@/lib/site";
+import { serviceAreas, siteConfig } from "@/lib/site";
 
 export function ServiceAreaSection() {
   return (

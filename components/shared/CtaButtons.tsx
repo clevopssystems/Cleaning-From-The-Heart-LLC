@@ -8,10 +8,17 @@ interface CtaButtonsProps {
   centered?: boolean;
 }
 
-export function CtaButtons({ primaryHref = "/contact", secondaryHref = siteConfig.phoneHref, centered = false }: CtaButtonsProps) {
+export function CtaButtons({ primaryHref = siteConfig.whatsappHref, secondaryHref = siteConfig.phoneHref, centered = false }: CtaButtonsProps) {
+  const isExternalPrimary = primaryHref.startsWith("http");
+
   return (
     <div className={`flex flex-col gap-3 sm:flex-row ${centered ? "justify-center" : ""}`}>
-      <Link href={primaryHref} className="cta-primary">
+      <Link
+        href={primaryHref}
+        target={isExternalPrimary ? "_blank" : undefined}
+        rel={isExternalPrimary ? "noopener noreferrer" : undefined}
+        className="cta-primary"
+      >
         {siteConfig.primaryCta}
       </Link>
       <Link href={secondaryHref} className="cta-secondary">

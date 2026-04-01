@@ -24,78 +24,25 @@ export default function ContactPage() {
 
       <section className="section-shell bg-white">
         <Container>
-          <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr]">
-            <form className="card" action="mailto:hello@cleaningfromtheheartllc.com" method="post" encType="text/plain">
-              <h2 className="text-2xl font-semibold">Get a Quote</h2>
-              <p className="mt-2 text-sm text-muted">This form is editable. Connect it to your CRM or inbox endpoint for production use.</p>
-
-              <div className="mt-6 grid gap-4 sm:grid-cols-2">
-                <label className="text-sm font-medium text-ink">
-                  Full Name
-                  <input
-                    type="text"
-                    name="name"
-                    required
-                    className="mt-2 w-full rounded-xl border border-brand-200 px-3 py-2 text-sm outline-none ring-brand-400 focus:ring"
-                  />
-                </label>
-                <label className="text-sm font-medium text-ink">
-                  Phone
-                  <input
-                    type="tel"
-                    name="phone"
-                    required
-                    className="mt-2 w-full rounded-xl border border-brand-200 px-3 py-2 text-sm outline-none ring-brand-400 focus:ring"
-                  />
-                </label>
-                <label className="text-sm font-medium text-ink sm:col-span-2">
-                  Email
-                  <input
-                    type="email"
-                    name="email"
-                    required
-                    className="mt-2 w-full rounded-xl border border-brand-200 px-3 py-2 text-sm outline-none ring-brand-400 focus:ring"
-                  />
-                </label>
-                <label className="text-sm font-medium text-ink sm:col-span-2">
-                  Service Needed
-                  <select
-                    name="service"
-                    className="mt-2 w-full rounded-xl border border-brand-200 px-3 py-2 text-sm outline-none ring-brand-400 focus:ring"
-                    defaultValue=""
-                  >
-                    <option value="" disabled>
-                      Select a service
-                    </option>
-                    <option>Commercial Cleaning</option>
-                    <option>Carpet Cleaning</option>
-                    <option>Strip & Wax</option>
-                    <option>Not Sure Yet</option>
-                  </select>
-                </label>
-                <label className="text-sm font-medium text-ink sm:col-span-2">
-                  Property Details
-                  <textarea
-                    name="message"
-                    rows={5}
-                    placeholder="Tell us your square footage, location, schedule, and goals."
-                    className="mt-2 w-full rounded-xl border border-brand-200 px-3 py-2 text-sm outline-none ring-brand-400 focus:ring"
-                  />
-                </label>
-              </div>
-
-              <button type="submit" className="cta-primary mt-6 w-full sm:w-auto">
-                Send Quote Request
-              </button>
-              <p className="mt-3 text-xs text-muted">Need immediate help? Call us now for faster response.</p>
-            </form>
-
+          <div className="mx-auto max-w-3xl">
             <aside className="space-y-4">
               <article className="card">
                 <h3 className="text-lg font-semibold">Call Direct</h3>
                 <Link href={siteConfig.phoneHref} className="mt-3 inline-flex items-center text-sm font-semibold text-brand-700">
                   <PhoneCall className="mr-2 h-4 w-4" />
                   {siteConfig.phoneDisplay}
+                </Link>
+              </article>
+
+              <article className="card">
+                <h3 className="text-lg font-semibold">Email Us</h3>
+                <p className="mt-2 text-sm text-muted">Prefer messaging? Send us an email and we'll get back to you fast.</p>
+                <Link
+                  href={`mailto:${siteConfig.email}`}
+                  className="mt-3 inline-flex items-center gap-2 rounded-xl bg-brand-600 px-4 py-2.5 text-sm font-semibold text-white transition-all duration-200 hover:scale-[1.02] hover:bg-brand-700"
+                >
+                  <Mail className="h-4 w-4" aria-hidden />
+                  Send an Email
                 </Link>
               </article>
 

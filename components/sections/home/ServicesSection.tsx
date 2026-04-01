@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight, Building2, Layers, Sparkles, Home, Zap, HardHat } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { Container } from "@/components/shared/Container";
+import { siteConfig } from "@/lib/site";
 import { Reveal } from "@/components/shared/Reveal";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 import { homeServiceCards } from "@/lib/site";
@@ -23,7 +24,7 @@ export function ServicesSection() {
         <SectionHeading
           eyebrow="Our Services"
           title="Cleaning Solutions for Seattle Offices &amp; Properties"
-          description="From scheduled commercial accounts to one-time deep cleans and post-construction detail work — we cover what your property needs."
+          description="From scheduled commercial accounts to one-time deep cleans and post-construction detail work, we cover what your property needs."
         />
 
         <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
@@ -91,7 +92,7 @@ export function ServicesSection() {
           <Link href="/services" className="cta-secondary">
             View All Services
           </Link>
-          <Link href="/contact" className="cta-primary">
+          <Link href={siteConfig.whatsappHref} target="_blank" rel="noopener noreferrer" className="cta-primary">
             Request a Quote
           </Link>
         </div>

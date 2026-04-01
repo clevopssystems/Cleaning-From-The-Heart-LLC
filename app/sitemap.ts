@@ -1,15 +1,15 @@
 import type { MetadataRoute } from "next";
+import { services } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://cleaningfromtheheartllc.com";
+  const servicePaths = services.map((service) => `/services/${service.slug}`);
 
   return [
     "",
     "/about",
     "/services",
-    "/services/commercial-cleaning",
-    "/services/carpet-cleaning",
-    "/services/strip-and-wax",
+    ...servicePaths,
     "/gallery",
     "/contact"
   ].map((path) => ({

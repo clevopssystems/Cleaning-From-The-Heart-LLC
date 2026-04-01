@@ -27,7 +27,7 @@ export function WhyChooseUsSection() {
             The Difference Between a Cleaning Company and a Cleaning Partner
           </h2>
           <p className="mt-5 text-base leading-relaxed text-white/65 md:text-lg">
-            Built for accountability, consistency, and direct communication — the three things most cleaning
+            Built for accountability, consistency, and direct communication, the three things most cleaning
             companies consistently fail to deliver.
           </p>
         </div>
@@ -52,7 +52,7 @@ export function WhyChooseUsSection() {
         </div>
 
         <div className="mt-10 flex flex-wrap justify-center gap-3">
-          <Link href="/contact" className="cta-gold">
+          <Link href={siteConfig.whatsappHref} target="_blank" rel="noopener noreferrer" className="cta-gold">
             {siteConfig.primaryCta}
           </Link>
           <Link href={siteConfig.phoneHref} className="cta-ghost">

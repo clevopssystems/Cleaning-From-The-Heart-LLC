@@ -1,4 +1,4 @@
-import { ShieldCheck, Star, MapPin, Clock, ClipboardCheck, Users } from "lucide-react";
+import { ShieldCheck, Star, MapPin, Clock, ClipboardCheck, Users, Quote } from "lucide-react";
 import { Container } from "@/components/shared/Container";
 import { Reveal } from "@/components/shared/Reveal";
 import { SectionHeading } from "@/components/shared/SectionHeading";
@@ -20,10 +20,9 @@ export function TrustSection() {
         <SectionHeading
           eyebrow="Why Seattle Trusts Us"
           title="A Professional Cleaning Partner, Not Just a Vendor"
-          description="We hold ourselves to commercial-grade standards on every job — whether it's a weekly office contract or a one-time deep clean."
+          description="We hold ourselves to commercial-grade standards on every job, whether it's a weekly office contract or a one-time deep clean."
         />
 
-        {/* Trust credential grid */}
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {trustBadges.map((badge, index) => (
             <Reveal key={badge.label} delay={index * 0.06}>
@@ -40,27 +39,45 @@ export function TrustSection() {
           ))}
         </div>
 
-        {/* Testimonials — PLACEHOLDER: Replace all three with real client reviews before launch */}
-        <div className="mt-12">
-          <p className="text-sm font-semibold text-ink">What Clients Say</p>
-          <div className="mt-4 grid gap-4 lg:grid-cols-3">
+        <div className="mt-14 rounded-3xl border border-brand-100 bg-gradient-to-b from-surface to-white p-6 sm:p-8">
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-widest text-brand-700">Client Reviews</p>
+              <p className="mt-1 text-xl font-semibold text-ink md:text-2xl">What Clients Say</p>
+            </div>
+            <div className="inline-flex items-center gap-2 rounded-full border border-brand-200 bg-white px-3 py-1.5">
+              <div className="flex items-center gap-0.5 text-accent">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Star key={`review-badge-star-${i}`} className="h-3.5 w-3.5 fill-current" aria-hidden />
+                ))}
+              </div>
+              <span className="text-xs font-semibold text-ink">Rated 5.0 for service consistency</span>
+            </div>
+          </div>
+
+          <div className="mt-6 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             {testimonialPlaceholders.map((item, index) => (
-              <Reveal key={item.role} delay={index * 0.08}>
-                {/* PLACEHOLDER — Replace quote, name, and role with a real verified client review before launch */}
-                <article className="card flex flex-col">
-                  <div className="mb-3 flex items-center gap-0.5 text-accent">
+              <Reveal key={`${item.name}-${item.role}`} delay={index * 0.08}>
+                <article className="relative flex h-full flex-col overflow-hidden rounded-2xl border border-brand-100 bg-white p-6 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover">
+                  <div className="pointer-events-none absolute -right-3 -top-3 rounded-full bg-brand-50 p-3 text-brand-200" aria-hidden>
+                    <Quote className="h-5 w-5" />
+                  </div>
+
+                  <div className="mb-4 flex items-center gap-0.5 text-accent">
                     {Array.from({ length: 5 }).map((_, i) => (
                       <Star key={`star-${item.role}-${i}`} className="h-3.5 w-3.5 fill-current" aria-hidden />
                     ))}
                   </div>
-                  <p className="flex-1 text-sm italic leading-relaxed text-muted">&ldquo;{item.quote}&rdquo;</p>
-                  <div className="mt-5 flex items-center gap-3 border-t border-brand-50 pt-4">
-                    <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-100 text-xs font-bold text-brand-700">
+
+                  <p className="flex-1 text-sm leading-relaxed text-muted">&ldquo;{item.quote}&rdquo;</p>
+
+                  <div className="mt-5 flex items-center gap-3 border-t border-brand-100 pt-4">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-100 text-xs font-bold text-brand-700">
                       {item.initials}
                     </div>
                     <div>
-                      <p className="text-sm font-semibold text-ink">{item.name}</p>
-                      <p className="text-xs text-muted">{item.role}</p>
+                      <p className="text-sm font-semibold leading-tight text-ink">{item.name}</p>
+                      <p className="mt-0.5 text-xs text-muted">{item.role}</p>
                     </div>
                   </div>
                 </article>

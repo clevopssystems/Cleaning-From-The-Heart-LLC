@@ -108,7 +108,7 @@ export function Footer() {
                 </Link>
               </li>
             </ul>
-            <Link href="/contact" className="cta-gold mt-6 inline-flex text-xs">
+            <Link href={siteConfig.whatsappHref} target="_blank" rel="noopener noreferrer" className="cta-gold mt-6 inline-flex text-xs">
               Request a Free Quote
             </Link>
           </div>

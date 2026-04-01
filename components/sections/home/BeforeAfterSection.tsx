@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeftRight } from "lucide-react";
 import { Container } from "@/components/shared/Container";
+import { siteConfig } from "@/lib/site";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 import { Reveal } from "@/components/shared/Reveal";
 import { beforeAfterItems } from "@/lib/site";
@@ -12,7 +13,7 @@ export function BeforeAfterSection() {
       <Container>
         <SectionHeading
           eyebrow="Results"
-          title="The Difference We Make — Visible"
+          title="The Difference We Make, Visible"
           description="Real results from real properties we service in Seattle. Replace placeholder images with actual job photos before launch."
         />
 
@@ -56,7 +57,7 @@ export function BeforeAfterSection() {
                     <div className="relative aspect-[4/3] overflow-hidden">
                       <Image
                         src={item.before}
-                        alt={`${item.title} — before professional cleaning`}
+                        alt={`${item.title}, before professional cleaning`}
                         fill
                         className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                         sizes="(max-width: 768px) 50vw, 200px"
@@ -73,7 +74,7 @@ export function BeforeAfterSection() {
                     <div className="relative aspect-[4/3] overflow-hidden">
                       <Image
                         src={item.after}
-                        alt={`${item.title} — after professional cleaning`}
+                        alt={`${item.title}, after professional cleaning`}
                         fill
                         className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                         sizes="(max-width: 768px) 50vw, 200px"
@@ -101,7 +102,7 @@ export function BeforeAfterSection() {
           <Link href="/gallery" className="cta-secondary">
             View Full Results Gallery
           </Link>
-          <Link href="/contact" className="cta-primary">
+          <Link href={siteConfig.whatsappHref} target="_blank" rel="noopener noreferrer" className="cta-primary">
             Get a Free Quote
           </Link>
         </div>

@@ -13,7 +13,7 @@ export function WorkInActionSection() {
         <SectionHeading
           eyebrow="Real Work"
           title="See Our Work in Action"
-          description="From routine commercial cleaning to detailed floor restoration — every job is approached with the same consistency and care."
+          description="From routine commercial cleaning to detailed floor restoration, every job is approached with the same consistency and care."
           center
         />
 
@@ -29,20 +29,20 @@ export function WorkInActionSection() {
           Format: JPEG or WebP, compressed for web
           ─────────────────────────────────────────────────────────────────────
         */}
-        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 xl:grid-cols-2">
           {workGalleryItems.map((item, index) => (
             <Reveal key={item.title} delay={index * 0.06}>
-              <article className="card-media group">
+              <article className="card-media group h-full">
 
                 {/* Image area with hover zoom */}
                 <div className="relative overflow-hidden">
-                  <div className="relative aspect-[4/3] overflow-hidden">
+                  <div className="relative aspect-[16/10] overflow-hidden">
                     <Image
                       src={item.image}
-                      alt={`${item.service} — ${item.location}`}
+                      alt={`${item.service}, ${item.location}`}
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 50vw"
                     />
                   </div>
 

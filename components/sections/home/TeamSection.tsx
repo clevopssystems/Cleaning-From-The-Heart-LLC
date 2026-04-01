@@ -3,12 +3,12 @@ import Link from "next/link";
 import { CheckCircle2 } from "lucide-react";
 import { Container } from "@/components/shared/Container";
 import { Reveal } from "@/components/shared/Reveal";
-import { teamMediaItems } from "@/lib/site";
+import { teamMediaItems, siteConfig } from "@/lib/site";
 
 const teamHighlights = [
   "Background-checked & fully insured staff",
   "Commercial-grade equipment & professional products",
-  "Consistent crews — same team each visit",
+  "Consistent crews, same team each visit",
   "Accountable to a structured cleaning checklist"
 ];
 
@@ -27,7 +27,7 @@ export function TeamSection() {
                 <span className="text-brand-600">Real Results.</span>
               </h2>
               <p className="mt-5 text-base leading-relaxed text-muted md:text-lg">
-                Every job is performed by our vetted, insured, and trained staff — the same team that shows up
+                Every job is performed by our vetted, insured, and trained staff, the same team that shows up
                 consistently, follows structured checklists, and takes pride in the result.
               </p>
 
@@ -41,7 +41,7 @@ export function TeamSection() {
               </ul>
 
               <div className="mt-8 flex flex-wrap gap-3">
-                <Link href="/contact" className="cta-primary">
+                <Link href={siteConfig.whatsappHref} target="_blank" rel="noopener noreferrer" className="cta-primary">
                   Get a Free Quote
                 </Link>
                 <Link href="/about" className="cta-secondary">

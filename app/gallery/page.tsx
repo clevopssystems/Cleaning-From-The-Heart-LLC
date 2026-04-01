@@ -19,23 +19,23 @@ export default function GalleryPage() {
         eyebrow="Gallery"
         title="Before And After Cleaning Results"
         description="Use this page to show real project photos from commercial cleaning, carpet cleaning, and strip and wax work in Seattle."
+        backgroundImage="/images/gallery-hero.png"
       />
 
       <section className="section-shell bg-white">
         <Container>
-          <div className="grid gap-6 lg:grid-cols-3">
+          <div className="grid gap-8 md:grid-cols-2">
             {beforeAfterItems.map((item) => (
-              <article key={item.title} className="card">
+              <article key={item.title} className="card h-full">
                 <h2 className="text-lg font-semibold">{item.title}</h2>
-                <div className="mt-4 grid gap-3 sm:grid-cols-2">
-                  <figure>
-                    <Image src={item.before} alt={`${item.title} before`} width={500} height={360} className="rounded-xl border border-brand-100" />
-                    <figcaption className="mt-2 text-xs text-muted">Before</figcaption>
-                  </figure>
-                  <figure>
-                    <Image src={item.after} alt={`${item.title} after`} width={500} height={360} className="rounded-xl border border-brand-100" />
-                    <figcaption className="mt-2 text-xs text-muted">After</figcaption>
-                  </figure>
+                <div className="mt-4">
+                  <Image
+                    src={item.service === "Carpet Cleaning" ? item.before : item.after}
+                    alt={item.title}
+                    width={1400}
+                    height={900}
+                    className="w-full rounded-xl border border-brand-100 object-cover"
+                  />
                 </div>
               </article>
             ))}

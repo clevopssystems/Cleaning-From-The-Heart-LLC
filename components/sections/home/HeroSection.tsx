@@ -1,6 +1,6 @@
-import { ShieldCheck, Clock, Star } from "lucide-react";
+import { ShieldCheck, Clock, Star, Phone } from "lucide-react";
+import Link from "next/link";
 import { Container } from "@/components/shared/Container";
-import { CtaButtons } from "@/components/shared/CtaButtons";
 import { siteConfig } from "@/lib/site";
 
 export function HeroSection() {
@@ -44,11 +44,20 @@ export function HeroSection() {
             </h1>
             <p className="mt-6 max-w-xl text-base leading-relaxed text-white/70 md:text-lg">
               Cleaning From The Heart LLC delivers consistent, detail-oriented cleaning for Seattle businesses and
-              property managers — with insured staff, flexible scheduling, and a straightforward process from first
+              property managers, with insured staff, flexible scheduling, and a straightforward process from first
               quote to final walkthrough.
             </p>
-            <div className="mt-8">
-              <CtaButtons />
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <Link href={siteConfig.whatsappHref} target="_blank" rel="noopener noreferrer" className="cta-primary">
+                {siteConfig.primaryCta}
+              </Link>
+              <Link href={siteConfig.phoneHref} className="cta-ghost">
+                <Phone className="mr-2 h-4 w-4" aria-hidden />
+                {siteConfig.secondaryCta}
+              </Link>
+              <Link href="/services" className="cta-primary">
+                View Services
+              </Link>
             </div>
             <div className="mt-7 flex flex-wrap items-center gap-6">
               <div className="flex items-center gap-2 text-sm text-white/70">

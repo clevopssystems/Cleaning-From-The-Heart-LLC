@@ -13,14 +13,14 @@ export function StrongCtaSection() {
           <div className="relative max-w-3xl">
             <p className="eyebrow-light">Ready to Get Started?</p>
             <h2 className="mt-1 text-balance text-4xl font-bold tracking-tight text-white md:text-5xl">
-              Get a Clean, Professional Space — Without the Hassle
+              Get a Clean, Professional Space Without the Hassle
             </h2>
             <p className="mt-5 text-base leading-relaxed text-white/65 md:text-lg">
               Request a free quote today. We&apos;ll review your space, confirm the scope, and build a cleaning plan
               that fits your schedule and your standards. No vague pricing, no runaround.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/contact" className="cta-gold">
+              <Link href={siteConfig.whatsappHref} target="_blank" rel="noopener noreferrer" className="cta-gold">
                 Request a Free Quote
               </Link>
               <Link href={siteConfig.phoneHref} className="cta-ghost">
