@@ -387,7 +387,7 @@ export const homeServiceCards = [
       "Consistent, scheduled cleaning for offices, retail locations, and commercial facilities. Your space stays client-ready without you having to think about it.",
     href: "/services/commercial-cleaning",
     iconName: "Building2",
-    image: "/media/work/work-office-seattle.png"
+    image: "/media/services/commercial-cleaning.jpg"
   },
   {
     title: "Carpet Cleaning",
@@ -395,7 +395,7 @@ export const homeServiceCards = [
       "Deep extraction cleaning that lifts embedded dirt, stains, and odors. Ideal for high-traffic offices, rental units, and move-in/move-out transitions.",
     href: "/services/carpet-cleaning",
     iconName: "Layers",
-    image: null // Set to "/media/services/carpet-cleaning.jpg" when ready
+    image: "/media/services/carpet-cleaning.webp"
   },
   {
     title: "Strip & Wax",
@@ -403,7 +403,7 @@ export const homeServiceCards = [
       "Full floor restoration, strip old buildup, prep the surface, and apply a fresh protective finish. Restores shine and extends the life of commercial floors.",
     href: "/services/strip-and-wax",
     iconName: "Sparkles",
-    image: null // Set to "/media/services/strip-wax.jpg" when ready
+    image: "/media/services/strip-wax.jpg"
   },
   {
     title: "Move-In / Move-Out Cleaning",
@@ -411,7 +411,7 @@ export const homeServiceCards = [
       "Detail-focused cleaning for rental units, condos, and commercial spaces during tenant transitions. Consistently meets property manager standards.",
     href: "/services/move-in-move-out-cleaning",
     iconName: "Home",
-    image: null // Set to "/media/services/move-in-cleaning.jpg" when ready
+    image: "/media/services/move-in-cleaning.png"
   },
   {
     title: "Deep Cleaning",
@@ -419,7 +419,7 @@ export const homeServiceCards = [
       "A comprehensive top-to-bottom cleaning for spaces that need a full reset, ideal post-renovation, seasonal refresh, or for new accounts starting fresh.",
     href: siteConfig.whatsappHref,
     iconName: "Zap",
-    image: null // Set to "/media/services/deep-cleaning.jpg" when ready
+    image: "/media/services/deep-cleaning.png"
   },
   {
     title: "Post-Construction Cleaning",
@@ -427,7 +427,7 @@ export const homeServiceCards = [
       "Dust, debris, and construction residue cleared thoroughly after remodeling or build-out. We handle the detail work so your space is ready for occupancy.",
     href: "/services/post-construction-renovation-cleanup",
     iconName: "HardHat",
-    image: null // Set to "/media/services/post-construction.jpg" when ready
+    image: "/media/services/post-construction.png"
   }
 ];
 
