@@ -395,7 +395,7 @@ export const homeServiceCards = [
       "Deep extraction cleaning that lifts embedded dirt, stains, and odors. Ideal for high-traffic offices, rental units, and move-in/move-out transitions.",
     href: "/services/carpet-cleaning",
     iconName: "Layers",
-    image: "/media/services/carpet-cleaning.webp"
+    image: "/media/services/carpet-cleaning.jpg"
   },
   {
     title: "Strip & Wax",
@@ -411,7 +411,7 @@ export const homeServiceCards = [
       "Detail-focused cleaning for rental units, condos, and commercial spaces during tenant transitions. Consistently meets property manager standards.",
     href: "/services/move-in-move-out-cleaning",
     iconName: "Home",
-    image: "/media/services/move-in-cleaning.png"
+    image: "/media/services/move-in-cleaning.jpg"
   },
   {
     title: "Deep Cleaning",
@@ -419,7 +419,7 @@ export const homeServiceCards = [
       "A comprehensive top-to-bottom cleaning for spaces that need a full reset, ideal post-renovation, seasonal refresh, or for new accounts starting fresh.",
     href: siteConfig.whatsappHref,
     iconName: "Zap",
-    image: "/media/services/deep-cleaning.png"
+    image: "/media/services/deep-cleaning.jpg"
   },
   {
     title: "Post-Construction Cleaning",
@@ -427,7 +427,7 @@ export const homeServiceCards = [
       "Dust, debris, and construction residue cleared thoroughly after remodeling or build-out. We handle the detail work so your space is ready for occupancy.",
     href: "/services/post-construction-renovation-cleanup",
     iconName: "HardHat",
-    image: "/media/services/post-construction.png"
+    image: "/media/services/post-construction.jpg"
   }
 ];
 
