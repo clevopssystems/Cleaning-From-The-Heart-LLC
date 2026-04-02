@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { BeforeAfterSection } from "@/components/sections/home/BeforeAfterSection";
 import { FaqSection } from "@/components/sections/home/FaqSection";
+import { GuaranteeSection } from "@/components/sections/home/GuaranteeSection";
 import { HeroSection } from "@/components/sections/home/HeroSection";
 import { HowItWorksSection } from "@/components/sections/home/HowItWorksSection";
 import { ServiceAreaSection } from "@/components/sections/home/ServiceAreaSection";
@@ -10,6 +11,7 @@ import { TeamSection } from "@/components/sections/home/TeamSection";
 import { TrustSection } from "@/components/sections/home/TrustSection";
 import { VideoSection } from "@/components/sections/home/VideoSection";
 import { WhyChooseUsSection } from "@/components/sections/home/WhyChooseUsSection";
+import { WhoWeWorkWithSection } from "@/components/sections/home/WhoWeWorkWithSection";
 import { WorkInActionSection } from "@/components/sections/home/WorkInActionSection";
 import { faqs } from "@/lib/site";
 
@@ -38,40 +40,46 @@ const faqSchema = {
 export default function HomePage() {
   return (
     <>
-      {/* 1. Hero — entry point, dark brand background, video/image bg ready */}
+      {/* 1. Hero — entry point, stats bar, urgency */}
       <HeroSection />
 
-      {/* 2. Trust — credentials, testimonials */}
+      {/* 2. Trust — credentials, guarantee banner, testimonials */}
       <TrustSection />
 
-      {/* 3. Services — 6-card grid with image slot support */}
+      {/* 3. Who We Work With — offices, retail, property managers, Airbnb */}
+      <WhoWeWorkWithSection />
+
+      {/* 4. Services — 6-card grid */}
       <ServicesSection />
 
-      {/* 4. Work Gallery — "See Our Work in Action" — 4 project photos */}
+      {/* 5. Work Gallery — "See Our Work in Action" */}
       <WorkInActionSection />
 
-      {/* 5. Before / After — visual proof of results, premium redesign */}
+      {/* 6. Before / After — visual proof */}
       <BeforeAfterSection />
 
-      {/* 6. Video — "Watch How We Transform Spaces" — 2 video placeholders */}
+      {/* 7. Video — "Watch How We Transform Spaces" */}
       <VideoSection />
 
-      {/* 7. Team — "Professional Team. Real Results." — 2×2 photo grid */}
+      {/* 8. Guarantee — full-width hero section, 100% satisfaction promise */}
+      <GuaranteeSection />
+
+      {/* 9. Team — "Professional Team. Real Results." */}
       <TeamSection />
 
-      {/* 8. Process — how it works, 3 steps */}
+      {/* 10. Process — how it works, 3 steps */}
       <HowItWorksSection />
 
-      {/* 9. Why Choose Us — dark section, 6 value props */}
+      {/* 11. Why Choose Us — dark section, 6 upgraded value props */}
       <WhyChooseUsSection />
 
-      {/* 10. CTA — conversion block */}
+      {/* 12. CTA — conversion block with urgency */}
       <StrongCtaSection />
 
-      {/* 11. FAQ — accordion */}
+      {/* 13. FAQ — accordion */}
       <FaqSection />
 
-      {/* 12. Service Areas */}
+      {/* 14. Service Areas */}
       <ServiceAreaSection />
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />

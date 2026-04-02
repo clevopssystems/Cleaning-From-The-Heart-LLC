@@ -1,16 +1,16 @@
-import { ShieldCheck, Star, MapPin, Clock, ClipboardCheck, Users, Quote } from "lucide-react";
+import { ShieldCheck, Star, MapPin, Clock, ClipboardCheck, Users, Quote, BadgeCheck } from "lucide-react";
 import { Container } from "@/components/shared/Container";
 import { Reveal } from "@/components/shared/Reveal";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 import { testimonialPlaceholders } from "@/lib/site";
 
 const trustBadges = [
-  { label: "Fully Insured", sub: "Licensed & bonded on every job", icon: ShieldCheck },
-  { label: "Vetted Staff", sub: "Background-checked professionals", icon: Users },
-  { label: "Satisfaction Backed", sub: "We make it right, every time", icon: Star },
-  { label: "Flexible Scheduling", sub: "Evenings, mornings & weekends", icon: Clock },
-  { label: "Detailed Process", sub: "Structured checklists per visit", icon: ClipboardCheck },
-  { label: "Seattle-Based", sub: "Locally owned and operated", icon: MapPin }
+  { label: "Fully Insured", sub: "Licensed, bonded & insured on every job", icon: ShieldCheck },
+  { label: "Background-Checked Staff", sub: "Every team member is vetted before day one", icon: Users },
+  { label: "100% Satisfaction Backed", sub: "We return and make it right, no extra charge", icon: Star },
+  { label: "After-Hours Scheduling", sub: "Evenings, early mornings & weekends", icon: Clock },
+  { label: "Checklist-Backed Process", sub: "Structured visit checklists, no shortcuts", icon: ClipboardCheck },
+  { label: "Seattle-Owned & Operated", sub: "Local team, local accountability", icon: MapPin }
 ];
 
 export function TrustSection() {
@@ -19,14 +19,33 @@ export function TrustSection() {
       <Container>
         <SectionHeading
           eyebrow="Why Seattle Trusts Us"
-          title="A Professional Cleaning Partner, Not Just a Vendor"
-          description="We hold ourselves to commercial-grade standards on every job, whether it's a weekly office contract or a one-time deep clean."
+          title="A Cleaning Partner You Can Stop Thinking About"
+          description="We handle the details so you don't have to. Consistent results, direct communication, and a team that shows up prepared every single time."
         />
+
+        {/* Satisfaction guarantee banner */}
+        <Reveal>
+          <div className="mt-10 flex flex-col items-start gap-4 rounded-2xl border border-brand-200 bg-gradient-to-r from-brand-50 to-white p-6 sm:flex-row sm:items-center sm:gap-6">
+            <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-brand-600 text-white">
+              <BadgeCheck className="h-7 w-7" aria-hidden />
+            </div>
+            <div className="flex-1">
+              <p className="text-sm font-semibold uppercase tracking-widest text-brand-600">Our Guarantee</p>
+              <p className="mt-1 text-lg font-semibold text-ink">
+                If something isn&apos;t right, we come back and fix it. No extra charge.
+              </p>
+              <p className="mt-1.5 text-sm leading-relaxed text-muted">
+                Every job is backed by our satisfaction guarantee. If you identify an issue within 24 hours of
+                service, we schedule a return visit and correct it. No debates, no invoices, no excuses.
+              </p>
+            </div>
+          </div>
+        </Reveal>
 
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {trustBadges.map((badge, index) => (
             <Reveal key={badge.label} delay={index * 0.06}>
-              <div className="flex items-start gap-3 rounded-2xl border border-brand-100 bg-surface p-5">
+              <div className="flex items-start gap-3 rounded-2xl border border-brand-100 bg-surface p-5 transition-all duration-300 hover:border-brand-200 hover:shadow-sm">
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-100">
                   <badge.icon className="h-5 w-5 text-brand-700" aria-hidden />
                 </div>
@@ -39,11 +58,12 @@ export function TrustSection() {
           ))}
         </div>
 
-        <div className="mt-14 rounded-3xl border border-brand-100 bg-gradient-to-b from-surface to-white p-6 sm:p-8">
+        {/* Testimonials */}
+        <div className="mt-16 rounded-3xl border border-brand-100 bg-gradient-to-b from-surface to-white p-6 sm:p-8">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div>
               <p className="text-xs font-semibold uppercase tracking-widest text-brand-700">Client Reviews</p>
-              <p className="mt-1 text-xl font-semibold text-ink md:text-2xl">What Clients Say</p>
+              <p className="mt-1 text-xl font-semibold text-ink md:text-2xl">What Seattle Clients Are Saying</p>
             </div>
             <div className="inline-flex items-center gap-2 rounded-full border border-brand-200 bg-white px-3 py-1.5">
               <div className="flex items-center gap-0.5 text-accent">
@@ -51,11 +71,11 @@ export function TrustSection() {
                   <Star key={`review-badge-star-${i}`} className="h-3.5 w-3.5 fill-current" aria-hidden />
                 ))}
               </div>
-              <span className="text-xs font-semibold text-ink">Rated 5.0 for service consistency</span>
+              <span className="text-xs font-semibold text-ink">5.0 · Verified client reviews</span>
             </div>
           </div>
 
-          <div className="mt-6 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             {testimonialPlaceholders.map((item, index) => (
               <Reveal key={`${item.name}-${item.role}`} delay={index * 0.08}>
                 <article className="relative flex h-full flex-col overflow-hidden rounded-2xl border border-brand-100 bg-white p-6 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover">
@@ -63,11 +83,17 @@ export function TrustSection() {
                     <Quote className="h-5 w-5" />
                   </div>
 
-                  <div className="mb-4 flex items-center gap-0.5 text-accent">
+                  <div className="mb-3 flex items-center gap-0.5 text-accent">
                     {Array.from({ length: 5 }).map((_, i) => (
                       <Star key={`star-${item.role}-${i}`} className="h-3.5 w-3.5 fill-current" aria-hidden />
                     ))}
                   </div>
+
+                  {"service" in item && (
+                    <span className="mb-3 inline-block self-start rounded-full bg-brand-50 px-2.5 py-0.5 text-[11px] font-semibold text-brand-700">
+                      {item.service}
+                    </span>
+                  )}
 
                   <p className="flex-1 text-sm leading-relaxed text-muted">&ldquo;{item.quote}&rdquo;</p>
 

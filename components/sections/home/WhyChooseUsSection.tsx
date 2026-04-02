@@ -22,13 +22,13 @@ export function WhyChooseUsSection() {
       <div className="absolute inset-0 opacity-10 surface-grid pointer-events-none" aria-hidden />
       <Container className="relative">
         <div className="mx-auto max-w-3xl text-center">
-          <span className="eyebrow-light">Why Choose Us</span>
+          <span className="eyebrow-light">Why Clients Stay With Us</span>
           <h2 className="text-4xl font-bold leading-tight tracking-tight text-white md:text-5xl">
-            The Difference Between a Cleaning Company and a Cleaning Partner
+            We&apos;re Built Around the Three Things Other Companies Get Wrong
           </h2>
           <p className="mt-5 text-base leading-relaxed text-white/65 md:text-lg">
-            Built for accountability, consistency, and direct communication, the three things most cleaning
-            companies consistently fail to deliver.
+            Consistency. Communication. Accountability. Most cleaning vendors fail on at least one of these.
+            We&apos;ve built our entire operation around making sure we don&apos;t.
           </p>
         </div>
 

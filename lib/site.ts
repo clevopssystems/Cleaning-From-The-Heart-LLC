@@ -433,39 +433,39 @@ export const homeServiceCards = [
 
 export const whyChooseUs = [
   {
-    title: "Consistent, Accountable Teams",
+    title: "Same Crew, Every Visit",
     description:
-      "You get the same professional crew each visit, trained to your facility's standards and fully accountable for the result on every job.",
+      "You get the same professional team each time. No rotating roster of strangers. Your crew learns your facility, your standards, and your preferences, so quality stays consistent without you having to repeat yourself.",
     iconName: "Users"
   },
   {
-    title: "Commercial-Grade Standards",
+    title: "Checklist-Backed Quality Control",
     description:
-      "We apply the same thoroughness to a single office as we do to a full facility. Structured checklists, professional products, and a consistent process every time.",
+      "Every job follows a structured cleaning checklist specific to your space. Nothing gets skipped because someone forgot. You get a predictable, verifiable result after every single visit.",
     iconName: "ClipboardCheck"
   },
   {
-    title: "Flexible Scheduling",
+    title: "Zero-Disruption Scheduling",
     description:
-      "Early mornings, evenings, weekends, we work around your operations, not the other way around. One-time or recurring, we fit your schedule.",
+      "We work before you open, after you close, or whenever suits your operations. Early mornings, late evenings, weekends. We schedule around your business, not ours.",
     iconName: "CalendarCheck"
   },
   {
-    title: "Responsive Communication",
+    title: "You Get a Real Response",
     description:
-      "Questions get answered promptly. If something needs attention, we address it fast. You won't spend time chasing us down for a reply.",
+      "No voicemail loops, no waiting three days for a reply. When you reach out, you hear back the same day. If something needs to be fixed, we address it immediately, not eventually.",
     iconName: "MessageCircle"
   },
   {
-    title: "Locally Based in Seattle",
+    title: "Seattle-Rooted, Not a Franchise",
     description:
-      "We're not a franchise. We're a locally rooted team that knows Seattle properties, neighborhoods, and the standards local businesses expect.",
+      "We're a locally owned business, not a national chain with a local phone number. We know Seattle properties, we serve Seattle clients, and we're accountable to this community in a way a franchise never can be.",
     iconName: "MapPin"
   },
   {
-    title: "Insured & Vetted Staff",
+    title: "Fully Insured, Vetted Staff",
     description:
-      "Our team is insured, vetted, and trained before they set foot in your property. Your space and your people are in professional, trustworthy hands.",
+      "Every team member is background-checked, trained before their first job, and covered under our insurance. You're not just getting clean results. You're getting peace of mind when you hand over access to your property.",
     iconName: "ShieldCheck"
   }
 ];
@@ -530,50 +530,56 @@ export const serviceAreas = [
   "Kirkland"
 ];
 
-// PLACEHOLDER: Replace all three testimonials with real client reviews before launch.
+// PLACEHOLDER: Replace all testimonials with real client reviews before launch.
 // Recommended sources: Google Business Profile, direct client feedback, or verified review platforms.
 export const testimonialPlaceholders = [
   {
     quote:
-      "We switched from another vendor three months ago and the difference was immediate. The team is on time, consistent, and our office finally feels professionally maintained every week.",
+      "We manage six commercial properties across Bellevue and Renton and tried three different cleaning vendors before finding Cleaning From The Heart. Night and day difference. Same crew every week, no chasing for updates, and our tenants have actually noticed and mentioned it. That never happened with our previous vendor.",
     name: "Melissa Turner",
-    role: "Property Manager, Seattle",
-    initials: "MT"
+    role: "Property Manager · 6 Properties, Bellevue & Renton",
+    initials: "MT",
+    service: "Commercial Cleaning"
   },
   {
     quote:
-      "Our lobby carpet looked worn out before their deep cleaning service. They removed heavy traffic stains and the space now looks fresh again. Communication and scheduling were smooth.",
+      "Our South Lake Union office had carpet that hadn't been deep cleaned in over a year. There were embedded stains near the entrance we'd written off as permanent. They pre-treated everything, ran extraction, and came back for a follow-up pass on two problem spots at no extra charge. The carpet looked brand new.",
     name: "Daniel Brooks",
-    role: "Office Manager, South Lake Union",
-    initials: "DB"
+    role: "Office Manager · Tech Company, South Lake Union",
+    initials: "DB",
+    service: "Carpet Cleaning"
   },
   {
     quote:
-      "We used them for a move-out clean on a commercial suite and the detail level was excellent. The handoff inspection went smoothly and we avoided last-minute stress.",
+      "I needed a commercial suite cleaned out for handoff on a tight deadline. Five days notice. They confirmed scope within a few hours, sent two people, and finished ahead of schedule. The leasing agent walked through and had zero issues. I'll use them for every turnover going forward.",
     name: "Alicia Reed",
-    role: "Commercial Tenant, Bellevue",
-    initials: "AR"
+    role: "Commercial Property Owner · Bellevue, WA",
+    initials: "AR",
+    service: "Move-In / Move-Out Cleaning"
   },
   {
     quote:
-      "Our school facility needed reliable evening cleaning and they have been very dependable. Classrooms and common areas are consistently clean by the next morning.",
+      "We run four Airbnb units near Capitol Hill and the turnaround standard is brutal. I needed someone I could actually trust to show up and meet guest-ready standards without me having to babysit. They've handled 30+ turnovers for us. Consistent, professional, and easy to coordinate through text.",
+    name: "Jordan Kim",
+    role: "Short-Term Rental Host · Capitol Hill, Seattle",
+    initials: "JK",
+    service: "Turnover Cleaning"
+  },
+  {
+    quote:
+      "Our K-8 school contracted them for evening facility cleaning after our previous service kept sending different people with no consistency. Within the first month, results were obvious. Classrooms were properly sanitized, restrooms checked every night, and the team was already learning the layout. Parents have commented on how clean the building feels.",
     name: "Kevin Marshall",
-    role: "School Administrator, Renton",
-    initials: "KM"
+    role: "School Administrator · Renton School District",
+    initials: "KM",
+    service: "School & Facility Cleaning"
   },
   {
     quote:
-      "We booked strip and wax for a high-traffic floor and the finish came out great. The team explained the process clearly and completed everything on schedule.",
+      "The strip and wax job they did on our 4,000 sq ft retail floor was exceptional. I've used other vendors who left swirl marks and uneven coats. These guys stripped it down completely, applied three finish coats, and the floor looked like it was just installed. Finished on a Sunday so we had zero downtime.",
     name: "Rita Coleman",
-    role: "Operations Coordinator, Kent",
-    initials: "RC"
-  },
-  {
-    quote:
-      "Their responsiveness stands out. Whenever we need an adjustment in scope or timing, they handle it quickly and professionally. Strong service partner overall.",
-    name: "James Nolan",
-    role: "Facilities Lead, Bellevue",
-    initials: "JN"
+    role: "Retail Operations Manager · Kent, WA",
+    initials: "RC",
+    service: "Strip & Wax"
   }
 ];
 
