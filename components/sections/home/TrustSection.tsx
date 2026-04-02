@@ -5,12 +5,36 @@ import { SectionHeading } from "@/components/shared/SectionHeading";
 import { testimonialPlaceholders } from "@/lib/site";
 
 const trustBadges = [
-  { label: "Fully Insured", sub: "Licensed, bonded & insured on every job", icon: ShieldCheck },
-  { label: "Background-Checked Staff", sub: "Every team member is vetted before day one", icon: Users },
-  { label: "100% Satisfaction Backed", sub: "We return and make it right, no extra charge", icon: Star },
-  { label: "After-Hours Scheduling", sub: "Evenings, early mornings & weekends", icon: Clock },
-  { label: "Checklist-Backed Process", sub: "Structured visit checklists, no shortcuts", icon: ClipboardCheck },
-  { label: "Seattle-Owned & Operated", sub: "Local team, local accountability", icon: MapPin }
+  {
+    label: "Fully Insured",
+    sub: "Licensed, bonded and insured on every job. You are protected from day one.",
+    icon: ShieldCheck
+  },
+  {
+    label: "Background-Checked Staff",
+    sub: "Every team member passes a full background check before setting foot in your property.",
+    icon: Users
+  },
+  {
+    label: "100% Satisfaction Backed",
+    sub: "If something is not right, we return and fix it. No extra charge, no debate.",
+    icon: Star
+  },
+  {
+    label: "After-Hours Scheduling",
+    sub: "We work evenings, early mornings and weekends so your operation is never disrupted.",
+    icon: Clock
+  },
+  {
+    label: "Checklist-Backed Process",
+    sub: "Every visit follows a written, property-specific checklist. No shortcuts, nothing skipped.",
+    icon: ClipboardCheck
+  },
+  {
+    label: "Seattle-Owned & Operated",
+    sub: "A local team with local accountability. Not a franchise. Not a call center.",
+    icon: MapPin
+  }
 ];
 
 export function TrustSection() {
@@ -42,20 +66,33 @@ export function TrustSection() {
           </div>
         </Reveal>
 
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {trustBadges.map((badge, index) => (
-            <Reveal key={badge.label} delay={index * 0.06}>
-              <div className="flex items-start gap-3 rounded-2xl border border-brand-100 bg-surface p-5 transition-all duration-300 hover:border-brand-200 hover:shadow-sm">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-100">
-                  <badge.icon className="h-5 w-5 text-brand-700" aria-hidden />
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-ink">{badge.label}</p>
-                  <p className="mt-0.5 text-xs text-muted">{badge.sub}</p>
-                </div>
-              </div>
-            </Reveal>
-          ))}
+        {/* Trust badge grid — 1 col mobile / 2 col tablet / 3 col desktop */}
+        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {trustBadges.map((badge, index) => {
+            const Icon = badge.icon;
+            return (
+              <Reveal key={badge.label} delay={index * 0.07}>
+                <article className="group flex h-full flex-col gap-5 rounded-2xl border border-brand-100 bg-gradient-to-br from-brand-50/60 to-white p-7 shadow-card transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-200 hover:shadow-card-hover">
+
+                  {/* Circular icon */}
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-brand-100 transition-colors duration-300 group-hover:bg-brand-200">
+                    <Icon className="h-5 w-5 text-brand-700" aria-hidden />
+                  </div>
+
+                  {/* Text */}
+                  <div className="flex flex-col gap-2">
+                    <h3 className="text-base font-bold leading-snug text-ink">
+                      {badge.label}
+                    </h3>
+                    <p className="text-sm leading-relaxed text-muted">
+                      {badge.sub}
+                    </p>
+                  </div>
+
+                </article>
+              </Reveal>
+            );
+          })}
         </div>
 
         {/* Testimonials */}

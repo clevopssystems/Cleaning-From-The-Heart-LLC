@@ -1,12 +1,15 @@
 import type { Metadata } from "next";
 import { BeforeAfterSection } from "@/components/sections/home/BeforeAfterSection";
+import { BrandStatementSection } from "@/components/sections/home/BrandStatementSection";
 import { FaqSection } from "@/components/sections/home/FaqSection";
 import { GuaranteeSection } from "@/components/sections/home/GuaranteeSection";
 import { HeroSection } from "@/components/sections/home/HeroSection";
+import { SocialProofStrip } from "@/components/sections/home/SocialProofStrip";
 import { HowItWorksSection } from "@/components/sections/home/HowItWorksSection";
 import { ServiceAreaSection } from "@/components/sections/home/ServiceAreaSection";
 import { ServicesSection } from "@/components/sections/home/ServicesSection";
 import { StrongCtaSection } from "@/components/sections/home/StrongCtaSection";
+import { SystemAdvantageSection } from "@/components/sections/home/SystemAdvantageSection";
 import { TeamSection } from "@/components/sections/home/TeamSection";
 import { TrustSection } from "@/components/sections/home/TrustSection";
 import { VideoSection } from "@/components/sections/home/VideoSection";
@@ -43,16 +46,25 @@ export default function HomePage() {
       {/* 1. Hero — entry point, stats bar, urgency */}
       <HeroSection />
 
-      {/* 2. Trust — credentials, guarantee banner, testimonials */}
+      {/* 2. Social proof strip — outcomes bar, tight dark band */}
+      <SocialProofStrip />
+
+      {/* 3. Trust — credentials, guarantee banner, testimonials */}
       <TrustSection />
 
-      {/* 3. Who We Work With — offices, retail, property managers, Airbnb */}
+      {/* 4. Who We Work With — offices, retail, property managers, Airbnb */}
       <WhoWeWorkWithSection />
 
       {/* 4. Services — 6-card grid */}
       <ServicesSection />
 
-      {/* 5. Work Gallery — "See Our Work in Action" */}
+      {/* 5. Brand statement — full-bleed WOW section, breaks visual rhythm */}
+      <BrandStatementSection />
+
+      {/* 6. System Advantage — editorial breakout, 3 operational pillars */}
+      <SystemAdvantageSection />
+
+      {/* 6. Work Gallery — "See Our Work in Action" */}
       <WorkInActionSection />
 
       {/* 6. Before / After — visual proof */}

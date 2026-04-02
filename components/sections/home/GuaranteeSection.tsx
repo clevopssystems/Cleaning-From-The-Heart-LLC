@@ -7,51 +7,79 @@ import { siteConfig } from "@/lib/site";
 const guaranteePoints = [
   {
     icon: BadgeCheck,
-    title: "Issue Identified Within 24 Hours?",
+    title: "Issue found within 24 hours?",
     description:
-      "Contact us within 24 hours of your service and we will schedule a return visit to correct any missed area or quality concern, at no additional charge."
+      "Tell us within 24 hours of your service. We schedule a return visit and correct it — no extra charge, no debate."
   },
   {
     icon: RefreshCw,
-    title: "We Return and Make It Right",
+    title: "We come back and fix it.",
     description:
-      "No back-and-forth, no extra invoices. We come back, we fix it, and we follow up. Your satisfaction isn't a bonus. It's the baseline we hold ourselves to."
+      "No back-and-forth. We return, we fix it, we follow up. Your satisfaction is the baseline — not a bonus."
   },
   {
     icon: MessageCircle,
-    title: "Direct Line to Our Team",
+    title: "Reach us directly. Same day.",
     description:
-      "You won't be routed to a call center or ticketing system. You reach us directly, get a real response, and we act on it the same day."
+      "No call center, no ticketing system. You contact us directly and hear back the same day, every time."
   }
 ];
 
 export function GuaranteeSection() {
   return (
     <section className="relative overflow-hidden bg-ink py-24 text-white md:py-32">
+
       {/* Background texture */}
-      <div className="absolute inset-0 opacity-10 surface-grid" aria-hidden />
+      <div className="absolute inset-0 opacity-[0.07] surface-grid" aria-hidden />
 
       {/* Decorative glows */}
-      <div className="absolute -left-32 top-1/2 h-96 w-96 -translate-y-1/2 rounded-full bg-brand-600/25 blur-3xl" aria-hidden />
-      <div className="absolute -right-32 top-1/4 h-80 w-80 rounded-full bg-accent/10 blur-3xl" aria-hidden />
+      <div className="absolute -left-40 top-1/2 h-[30rem] w-[30rem] -translate-y-1/2 rounded-full bg-brand-600/20 blur-3xl" aria-hidden />
+      <div className="absolute -right-24 bottom-0 h-64 w-64 rounded-full bg-accent/8 blur-3xl" aria-hidden />
+
+      {/* Large watermark — purely decorative, sets the tone */}
+      <div
+        className="pointer-events-none absolute inset-0 flex select-none items-center justify-end pr-6 md:pr-16"
+        aria-hidden
+      >
+        <span className="font-heading text-[14rem] font-bold leading-none tracking-tight text-white/[0.025] md:text-[20rem] lg:text-[26rem]">
+          100%
+        </span>
+      </div>
 
       <Container className="relative">
-        <div className="grid items-center gap-14 lg:grid-cols-[1fr_1.1fr]">
-          {/* Left — headline */}
+        <div className="grid items-start gap-16 lg:grid-cols-[1fr_1.15fr] lg:gap-20">
+
+          {/* Left — large number + statement */}
           <Reveal>
             <div>
               <span className="eyebrow-light">Our Promise to You</span>
-              <h2 className="text-4xl font-bold leading-tight tracking-tight text-white md:text-5xl">
-                100% Satisfaction Guarantee on Every Visit
-              </h2>
-              <p className="mt-5 text-base leading-relaxed text-white/65 md:text-lg">
-                We stand behind our work completely. If a visit doesn&apos;t meet the standard we agreed on,
-                we don&apos;t argue about it. We come back and fix it. That&apos;s the deal, every time, no fine print.
+
+              {/* Display number */}
+              <p className="font-heading text-7xl font-bold leading-none tracking-tight text-white md:text-8xl lg:text-9xl">
+                100%
               </p>
-              <div className="mt-8 flex flex-wrap gap-3">
-                <Link href={siteConfig.whatsappHref} target="_blank" rel="noopener noreferrer" className="cta-gold">
-                  Get a Free Quote
-                </Link>
+
+              <h2 className="mt-5 text-2xl font-bold leading-snug text-white md:text-3xl">
+                Satisfaction guaranteed on every visit. No fine print.
+              </h2>
+
+              <p className="mt-5 text-base leading-relaxed text-white/55">
+                We stand behind our work completely. If a visit doesn&apos;t meet the standard we agreed on,
+                we don&apos;t argue about it. We come back and fix it. That&apos;s the deal, every time.
+              </p>
+
+              <div className="mt-8 flex flex-col items-start gap-3 sm:flex-row sm:items-start">
+                <div className="flex flex-col items-start gap-1">
+                  <Link
+                    href={siteConfig.whatsappHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="cta-gold"
+                  >
+                    Get a Free Quote
+                  </Link>
+                  <span className="pl-1 text-[11px] text-white/30">Takes 60 seconds · No obligation</span>
+                </div>
                 <Link href={siteConfig.phoneHref} className="cta-ghost">
                   <Phone className="mr-2 h-4 w-4" aria-hidden />
                   {siteConfig.phoneDisplay}
@@ -60,22 +88,23 @@ export function GuaranteeSection() {
             </div>
           </Reveal>
 
-          {/* Right — guarantee points */}
-          <div className="flex flex-col gap-5">
+          {/* Right — editorial divided list, no cards */}
+          <div className="divide-y divide-white/10">
             {guaranteePoints.map((point, index) => (
-              <Reveal key={point.title} delay={index * 0.1}>
-                <div className="flex gap-5 rounded-2xl border border-white/10 bg-white/5 p-6 transition-all duration-300 hover:border-white/20 hover:bg-white/10">
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand-600/40">
-                    <point.icon className="h-5 w-5 text-white" aria-hidden />
+              <Reveal key={point.title} delay={index * 0.09}>
+                <div className="flex gap-5 py-8 first:pt-0 last:pb-0">
+                  <div className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-600/30">
+                    <point.icon className="h-5 w-5 text-accent" aria-hidden />
                   </div>
                   <div>
                     <h3 className="text-base font-semibold text-white">{point.title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-white/60">{point.description}</p>
+                    <p className="mt-2 text-sm leading-relaxed text-white/55">{point.description}</p>
                   </div>
                 </div>
               </Reveal>
             ))}
           </div>
+
         </div>
       </Container>
     </section>

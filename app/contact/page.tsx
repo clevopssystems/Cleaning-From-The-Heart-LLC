@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Clock3, Mail, MapPin, PhoneCall } from "lucide-react";
+import { Clock3, Instagram, Mail, MapPin, PhoneCall } from "lucide-react";
 import { PageIntro } from "@/components/sections/PageIntro";
 import { Container } from "@/components/shared/Container";
 import { siteConfig } from "@/lib/site";
@@ -61,6 +61,17 @@ export default function ContactPage() {
                     <Mail className="mt-0.5 h-4 w-4 text-brand-600" />
                     <Link href={`mailto:${siteConfig.email}`} className="hover:text-brand-700">
                       {siteConfig.email}
+                    </Link>
+                  </li>
+                  <li className="flex gap-2">
+                    <Instagram className="mt-0.5 h-4 w-4 text-brand-600" />
+                    <Link
+                      href={siteConfig.instagramHref}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-brand-700"
+                    >
+                      {siteConfig.instagramHandle}
                     </Link>
                   </li>
                 </ul>

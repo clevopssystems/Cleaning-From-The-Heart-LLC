@@ -52,12 +52,12 @@ export function HeroSection() {
             </div>
 
             <p className="eyebrow-light">Seattle Commercial Cleaning Services</p>
-            <h1 className="text-balance text-5xl font-bold leading-[1.1] tracking-tight text-white md:text-6xl lg:text-[4rem]">
-              Seattle&apos;s Most Trusted Cleaning Partner for Offices &amp; Properties
+            <h1 className="text-balance text-5xl font-bold leading-[1.08] tracking-tight text-white md:text-6xl lg:text-[4.25rem]">
+              Stop Managing Your Cleaning Vendor. Start Running Your Business.
             </h1>
             <p className="mt-6 max-w-xl text-base leading-relaxed text-white/70 md:text-lg">
-              Cleaning From The Heart LLC serves Seattle businesses and property managers with insured, vetted
-              staff, consistent crew assignments, and a process that runs without you having to chase anyone.
+              Cleaning From The Heart LLC handles Seattle offices, properties, and commercial spaces with the
+              same vetted team every visit, a written checklist every job, and a process that never needs chasing.
             </p>
 
             {/* Proof points */}
@@ -80,7 +80,7 @@ export function HeroSection() {
                 <Link href={siteConfig.whatsappHref} target="_blank" rel="noopener noreferrer" className="cta-gold w-full sm:w-auto">
                   {siteConfig.primaryCta}
                 </Link>
-                <span className="pl-1 text-[11px] text-white/45">Free · No commitment · Reply within 2 hours</span>
+                <span className="pl-1 text-[11px] text-white/45">Takes 60 seconds · No obligation</span>
               </div>
               <div className="flex flex-col items-start gap-1">
                 <Link href={siteConfig.phoneHref} className="cta-ghost w-full sm:w-auto">

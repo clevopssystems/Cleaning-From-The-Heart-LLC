@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Instagram } from "lucide-react";
 import { Container } from "@/components/shared/Container";
 import { services, siteConfig } from "@/lib/site";
 
@@ -107,6 +107,17 @@ export function Footer() {
                   {siteConfig.email}
                 </Link>
               </li>
+              <li>
+                <Link
+                  href={siteConfig.instagramHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-sm text-white/55 transition-colors hover:text-white"
+                >
+                  <Instagram className="h-3.5 w-3.5 shrink-0 text-accent" aria-hidden />
+                  {siteConfig.instagramHandle}
+                </Link>
+              </li>
             </ul>
             <Link href={siteConfig.whatsappHref} target="_blank" rel="noopener noreferrer" className="cta-gold mt-6 inline-flex text-xs">
               Request a Free Quote
@@ -116,7 +127,18 @@ export function Footer() {
 
         <div className="mt-10 flex flex-col items-start justify-between gap-3 border-t border-white/10 pt-6 text-xs text-white/30 sm:flex-row sm:items-center">
           <p>© {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</p>
-          <p>Seattle Commercial Cleaning · Carpet Cleaning · Strip &amp; Wax</p>
+          <div className="flex items-center gap-4">
+            <p>Seattle Commercial Cleaning · Carpet Cleaning · Strip &amp; Wax</p>
+            <Link
+              href={siteConfig.instagramHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="text-white/30 transition-colors hover:text-white/70"
+            >
+              <Instagram className="h-4 w-4" aria-hidden />
+            </Link>
+          </div>
         </div>
       </Container>
     </footer>

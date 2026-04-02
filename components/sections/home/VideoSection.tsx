@@ -1,92 +1,178 @@
 import Image from "next/image";
-import { Play } from "lucide-react";
+import { Play, ArrowRight } from "lucide-react";
+import Link from "next/link";
 import { Container } from "@/components/shared/Container";
-import { SectionHeading } from "@/components/shared/SectionHeading";
 import { Reveal } from "@/components/shared/Reveal";
-import { videoFeatures } from "@/lib/site";
+import { videoFeatures, siteConfig } from "@/lib/site";
 
 export function VideoSection() {
+  const [primary, secondary] = videoFeatures;
+
   return (
-    <section className="relative section-shell overflow-hidden bg-ink text-white">
+    <section className="relative overflow-hidden bg-ink text-white">
 
-      {/* Subtle grid overlay */}
-      <div className="absolute inset-0 opacity-[0.07] surface-grid" aria-hidden />
+      {/* Subtle texture */}
+      <div className="absolute inset-0 opacity-[0.05] surface-grid" aria-hidden />
+      <div className="absolute -right-40 top-0 h-[500px] w-[500px] rounded-full bg-brand-600/10 blur-3xl" aria-hidden />
 
-      {/* Decorative glow — top-right */}
-      <div className="absolute -right-24 -top-24 h-80 w-80 rounded-full bg-brand-600/15 blur-3xl" aria-hidden />
+      {/* Section heading — inside Container */}
+      <div className="relative pt-20 md:pt-28">
+        <Container>
+          <Reveal>
+            <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+              <div>
+                <span className="eyebrow-light">In Action</span>
+                <h2 className="text-4xl font-bold leading-tight tracking-tight text-white md:text-5xl">
+                  Watch How We Work
+                </h2>
+              </div>
+              <Link
+                href={siteConfig.whatsappHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group hidden items-center gap-2 text-sm font-semibold text-accent transition-colors hover:text-accent/80 sm:flex"
+              >
+                Get a Quote
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden />
+              </Link>
+            </div>
+          </Reveal>
+        </Container>
+      </div>
 
-      {/* Decorative glow — bottom-left */}
-      <div className="absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-brand-500/10 blur-3xl" aria-hidden />
+      {/*
+        PRIMARY VIDEO — truly full-bleed, no Container.
+        This video spans edge-to-edge of the viewport.
+        ──────────────────────────────────────────────────────────────
+        To activate:
+        1. Upload thumbnail:  /public/media/videos/video-thumb-1.jpg (1280×720px)
+        2. Upload video file: /public/media/videos/office-transformation.mp4
+        3. Update videoFeatures[0].thumbnail and .videoSrc in lib/site.ts
+        ──────────────────────────────────────────────────────────────
+      */}
+      {primary && (
+        <Reveal delay={0.05}>
+          <div className="group relative mt-8 w-full cursor-pointer overflow-hidden">
+            <div className="relative aspect-video w-full max-h-[85vh]">
+              <Image
+                src={primary.thumbnail}
+                alt={`${primary.title} — cleaning process video`}
+                fill
+                priority
+                className="object-cover transition-transform duration-700 group-hover:scale-[1.015]"
+                sizes="100vw"
+              />
 
-      <Container className="relative">
-        <SectionHeading
-          eyebrow="In Action"
-          title="Watch How We Transform Spaces"
-          description="See the difference our team makes, from walk-in to walk-out. Real jobs, real results."
-          center
-          light
-        />
+              {/* Bottom gradient for text legibility */}
+              <div
+                className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/25 to-transparent"
+                aria-hidden
+              />
+              {/* Hover-lightening overlay */}
+              <div
+                className="absolute inset-0 bg-ink/25 transition-opacity duration-500 group-hover:bg-ink/10"
+                aria-hidden
+              />
 
-        {/*
-          VIDEO PLACEHOLDERS
-          ─────────────────────────────────────────────────────────────────────
-          To activate real videos:
-          STEP 1 — Upload a thumbnail image (still frame):
-                   /public/media/videos/video-thumb-1.jpg  (1280×720px)
-          STEP 2 — Upload your video file:
-                   /public/media/videos/office-transformation.mp4 (< 30MB)
-          STEP 3 — In lib/site.ts → videoFeatures, update thumbnail and videoSrc.
-          STEP 4 — Optionally replace the <Image> with a <video> element below.
-
-          For embedded YouTube/Vimeo: replace the Image + play button overlay
-          with an <iframe> pointing to your video embed URL.
-          ─────────────────────────────────────────────────────────────────────
-        */}
-        <div className="mt-10 grid gap-6 md:grid-cols-2">
-          {videoFeatures.map((video, index) => (
-            <Reveal key={video.title} delay={index * 0.1}>
-              <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 transition-all duration-300 hover:border-white/20 hover:bg-white/8">
-
-                {/* Thumbnail area */}
-                <div className="relative aspect-video overflow-hidden">
-
-                  {/* Thumbnail image — replace src with real video still */}
-                  <Image
-                    src={video.thumbnail}
-                    alt={`${video.title}, cleaning process video`}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                    sizes="(max-width: 768px) 100vw, 50vw"
+              {/* Centered play button */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="flex h-20 w-20 items-center justify-center rounded-full border-2 border-white/25 bg-brand-600 shadow-2xl backdrop-blur-sm transition-all duration-300 group-hover:scale-110 group-hover:border-white/50 group-hover:bg-brand-500 md:h-28 md:w-28">
+                  <Play
+                    className="ml-1 h-8 w-8 text-white md:h-11 md:w-11"
+                    fill="currentColor"
+                    aria-hidden
                   />
+                </div>
+              </div>
 
-                  {/* Dark scrim — lightens on hover to suggest interactivity */}
-                  <div className="absolute inset-0 bg-ink/45 transition-opacity duration-300 group-hover:bg-ink/25" aria-hidden />
+              {/* Bottom-left: duration badge + title + description */}
+              <div className="absolute bottom-0 left-0 right-0 px-6 pb-8 md:px-10 md:pb-10 lg:px-16">
+                <span className="inline-block rounded bg-brand-600/70 px-2.5 py-0.5 text-xs font-semibold text-white backdrop-blur-sm">
+                  {primary.duration}
+                </span>
+                <h3 className="mt-2 text-2xl font-bold text-white md:text-3xl lg:text-4xl">
+                  {primary.title}
+                </h3>
+                <p className="mt-2 max-w-2xl text-sm text-white/65 md:text-base">
+                  {primary.description}
+                </p>
+              </div>
+            </div>
+          </div>
+        </Reveal>
+      )}
 
-                  {/* Play button */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="flex h-16 w-16 items-center justify-center rounded-full bg-brand-600 shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:bg-brand-500">
-                      <Play className="ml-0.5 h-6 w-6 text-white" fill="currentColor" aria-hidden />
+      {/*
+        SECONDARY VIDEO — split layout inside Container
+        ──────────────────────────────────────────────────────────────
+        Upload thumbnail: /public/media/videos/video-thumb-2.jpg
+        ──────────────────────────────────────────────────────────────
+      */}
+      {secondary && (
+        <div className="relative pb-20 pt-4 md:pb-28">
+          <Container>
+            <Reveal delay={0.1}>
+              <div className="grid gap-6 md:grid-cols-[1.3fr_1fr] md:gap-10 lg:gap-14">
+
+                {/* Secondary video card */}
+                <div className="group relative cursor-pointer overflow-hidden rounded-2xl border border-white/10">
+                  <div className="relative aspect-video overflow-hidden">
+                    <Image
+                      src={secondary.thumbnail}
+                      alt={`${secondary.title} — cleaning process video`}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                      sizes="(max-width: 768px) 100vw, 55vw"
+                    />
+                    <div
+                      className="absolute inset-0 bg-ink/45 transition-opacity duration-300 group-hover:bg-ink/25"
+                      aria-hidden
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="flex h-14 w-14 items-center justify-center rounded-full border border-white/25 bg-brand-600 transition-all duration-300 group-hover:scale-110 group-hover:bg-brand-500">
+                        <Play
+                          className="ml-0.5 h-5 w-5 text-white"
+                          fill="currentColor"
+                          aria-hidden
+                        />
+                      </div>
+                    </div>
+                    <div className="absolute bottom-3 left-3">
+                      <span className="rounded bg-black/60 px-2 py-0.5 text-xs font-medium text-white backdrop-blur-sm">
+                        {secondary.duration}
+                      </span>
                     </div>
                   </div>
+                </div>
 
-                  {/* Duration badge — bottom-right */}
-                  <div className="absolute bottom-3 right-3">
-                    <span className="rounded bg-black/60 px-2 py-0.5 text-xs font-medium text-white backdrop-blur-sm">
-                      {video.duration}
+                {/* Text — vertically centered */}
+                <div className="flex flex-col justify-center">
+                  <span className="eyebrow-light">Process Walkthrough</span>
+                  <h3 className="text-2xl font-bold text-white md:text-3xl">{secondary.title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-white/55 md:text-base">
+                    {secondary.description}
+                  </p>
+                  <div className="mt-7 flex flex-col items-start gap-1.5">
+                    <Link
+                      href={siteConfig.whatsappHref}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="cta-gold"
+                    >
+                      Get a Free Quote
+                    </Link>
+                    <span className="pl-1 text-[11px] text-white/35">
+                      Takes 60 seconds · No obligation
                     </span>
                   </div>
                 </div>
 
-                {/* Video info */}
-                <div className="p-6">
-                  <h3 className="text-base font-semibold text-white">{video.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-white/60">{video.description}</p>
-                </div>
               </div>
             </Reveal>
-          ))}
+          </Container>
         </div>
-      </Container>
+      )}
+
     </section>
   );
 }

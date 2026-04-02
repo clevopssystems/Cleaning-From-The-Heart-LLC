@@ -58,7 +58,7 @@ export function StrongCtaSection() {
                   >
                     Request a Free Quote
                   </Link>
-                  <span className="pl-1 text-[11px] text-white/40">Free · No commitment</span>
+                  <span className="pl-1 text-[11px] text-white/40">Takes 60 seconds · No obligation</span>
                 </div>
                 <div className="flex flex-col items-start gap-1">
                   <Link href={siteConfig.phoneHref} className="cta-ghost w-full justify-center">
