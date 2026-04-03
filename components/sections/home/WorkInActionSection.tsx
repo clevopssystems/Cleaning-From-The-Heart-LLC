@@ -46,7 +46,6 @@ export function WorkInActionSection() {
                     src={featured.image}
                     alt={`${featured.service}, ${featured.location}`}
                     fill
-                    priority
                     className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
                     sizes="(max-width: 768px) 100vw, 55vw"
                   />

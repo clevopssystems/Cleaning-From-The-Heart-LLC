@@ -115,3 +115,38 @@ a {
 .text-balance {
   text-wrap: balance;
 }
+
+/* ─── Reduced motion ─── */
+
+/*
+  Hide the autoplay hero video and stop it playing for users who have
+  requested reduced motion. The dark overlay + poster image remain visible
+  so the hero section still looks full and styled.
+*/
+@media (prefers-reduced-motion: reduce) {
+  .hero-video {
+    display: none;
+  }
+
+  /* Collapse all CSS transitions/animations site-wide to instant */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ─── Paint / layout containment ─── */
+
+/*
+  Apply layout containment to long-scroll sections so the browser can
+  skip layout calculations for off-screen sections. Improves scroll
+  performance on long pages like the home page.
+*/
+.section-shell,
+.section-shell-tight {
+  contain: layout style;
+}

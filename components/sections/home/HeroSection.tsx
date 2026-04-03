@@ -16,17 +16,27 @@ export function HeroSection() {
 
       {/*
         BACKGROUND VIDEO
-        Upload your video to: /public/media/hero/hero-bg.mp4
-        Recommended: 1920×1080, H.264, no audio, < 8MB
+        Files needed in /public/media/hero/:
+          hero-bg.mp4      — H.264, 1920×1080, no audio, target < 2 MB (compress with HandBrake/ffmpeg)
+          hero-bg.webm     — VP9/AV1 encode of the same clip (~40% smaller than MP4)
+          hero-bg-poster.jpg — first frame of video, ~30 KB JPEG (add with: ffmpeg -ss 0 -i hero-bg.mp4 -frames:v 1 hero-bg-poster.jpg)
+
+        preload="metadata" — browser only fetches the first few KB to read duration/dimensions.
+        The video still autoplays once the page is interactive; we just don't block LCP for 4.8 MB.
+        CSS in globals.css hides the video and stops autoplay for prefers-reduced-motion users.
       */}
       <video
         autoPlay
         muted
         loop
         playsInline
-        preload="auto"
-        className="absolute inset-0 h-full w-full object-cover"
+        preload="metadata"
+        poster="/media/hero/hero-bg-poster.jpg"
+        className="hero-video absolute inset-0 h-full w-full object-cover"
+        aria-hidden
       >
+        {/* WebM first — Chrome/Firefox serve this; ~40% smaller than MP4 */}
+        <source src="/media/hero/hero-bg.webm" type="video/webm" />
         <source src="/media/hero/hero-bg.mp4" type="video/mp4" />
       </video>
 

@@ -58,7 +58,6 @@ export function VideoSection() {
                 src={primary.thumbnail}
                 alt={`${primary.title} — cleaning process video`}
                 fill
-                priority
                 className="object-cover transition-transform duration-700 group-hover:scale-[1.015]"
                 sizes="100vw"
               />

@@ -28,13 +28,13 @@ export default function GalleryPage() {
             {beforeAfterItems.map((item) => (
               <article key={item.title} className="card h-full">
                 <h2 className="text-lg font-semibold">{item.title}</h2>
-                <div className="mt-4">
+                <div className="relative mt-4 aspect-[16/10] overflow-hidden rounded-xl border border-brand-100">
                   <Image
                     src={item.service === "Carpet Cleaning" ? item.before : item.after}
                     alt={item.title}
-                    width={1400}
-                    height={900}
-                    className="w-full rounded-xl border border-brand-100 object-cover"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 640px"
                   />
                 </div>
               </article>
