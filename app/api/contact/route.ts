@@ -59,6 +59,7 @@ const ALLOWED_ORIGINS: ReadonlySet<string> =
     ? new Set([
         "https://cleaningfromtheheartllc.com",
         "https://www.cleaningfromtheheartllc.com",
+        "https://cleaningfromtheheartllc.vercel.app",
       ])
     : new Set(["http://localhost:3000", "http://localhost:3001"]);
 
