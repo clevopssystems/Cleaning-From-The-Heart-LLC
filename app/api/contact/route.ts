@@ -262,40 +262,42 @@ export async function POST(req: NextRequest) {
       from: "Website Lead <onboarding@resend.dev>",
       to: ["clevops.systems@gmail.com"],
       replyTo: safeEmail,
-      subject: "New Lead Test",
+      subject: "New Quote Request - Cleaning From The Heart",
       html: `
-        <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;background:#f8fafc;padding:24px;border-radius:12px;">
-          <h2 style="margin:0 0 20px;color:#1e40af;font-size:22px;border-bottom:2px solid #1e40af;padding-bottom:12px;">
-            New Quote Request
-          </h2>
-          <table style="width:100%;border-collapse:collapse;background:white;border-radius:8px;overflow:hidden;">
+        <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;background:#f8fafc;padding:32px;border-radius:12px;">
+          <div style="margin-bottom:24px;">
+            <h1 style="margin:0 0 4px;color:#1e40af;font-size:22px;">New Quote Request</h1>
+            <p style="margin:0;color:#6b7280;font-size:14px;">Cleaning From The Heart LLC — Website Contact Form</p>
+          </div>
+
+          <table style="width:100%;border-collapse:collapse;border-radius:8px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.08);">
             <tr style="background:#eff6ff;">
-              <td style="padding:10px 16px;font-weight:700;color:#374151;width:130px;">Name</td>
-              <td style="padding:10px 16px;color:#111827;">${safeName}</td>
+              <td style="padding:12px 16px;font-weight:700;color:#374151;width:140px;font-size:14px;">Full Name</td>
+              <td style="padding:12px 16px;color:#111827;font-size:14px;">${safeName}</td>
             </tr>
-            <tr>
-              <td style="padding:10px 16px;font-weight:700;color:#374151;">Email</td>
-              <td style="padding:10px 16px;color:#111827;">
-                <a href="mailto:${safeEmail}" style="color:#1e40af;">${safeEmail}</a>
+            <tr style="background:#ffffff;">
+              <td style="padding:12px 16px;font-weight:700;color:#374151;font-size:14px;">Email</td>
+              <td style="padding:12px 16px;font-size:14px;">
+                <a href="mailto:${safeEmail}" style="color:#1e40af;text-decoration:none;">${safeEmail}</a>
               </td>
             </tr>
-            ${safePhone ? `
             <tr style="background:#eff6ff;">
-              <td style="padding:10px 16px;font-weight:700;color:#374151;">Phone</td>
-              <td style="padding:10px 16px;color:#111827;">${safePhone}</td>
-            </tr>` : ""}
-            ${safeService ? `
-            <tr ${!safePhone ? 'style="background:#eff6ff;"' : ""}>
-              <td style="padding:10px 16px;font-weight:700;color:#374151;">Service</td>
-              <td style="padding:10px 16px;color:#111827;">${safeService}</td>
-            </tr>` : ""}
+              <td style="padding:12px 16px;font-weight:700;color:#374151;font-size:14px;">Phone</td>
+              <td style="padding:12px 16px;color:#111827;font-size:14px;">${safePhone || "Not provided"}</td>
+            </tr>
+            <tr style="background:#ffffff;">
+              <td style="padding:12px 16px;font-weight:700;color:#374151;font-size:14px;">Service</td>
+              <td style="padding:12px 16px;color:#111827;font-size:14px;">${safeService || "Not provided"}</td>
+            </tr>
           </table>
-          <div style="margin-top:20px;background:white;border-radius:8px;padding:16px;border-left:4px solid #1e40af;">
-            <p style="margin:0 0 10px;font-weight:700;color:#374151;">Message</p>
-            <p style="margin:0;color:#374151;line-height:1.6;">${safeMessage}</p>
+
+          <div style="margin-top:20px;background:#ffffff;border-radius:8px;padding:16px 20px;border-left:4px solid #1e40af;box-shadow:0 1px 3px rgba(0,0,0,0.08);">
+            <p style="margin:0 0 8px;font-weight:700;color:#374151;font-size:14px;">Message</p>
+            <p style="margin:0;color:#374151;line-height:1.7;font-size:14px;">${safeMessage || "Not provided"}</p>
           </div>
-          <p style="margin-top:20px;color:#9ca3af;font-size:12px;">
-            Submitted via cleaningfromtheheartllc.com on ${submittedAt} (Pacific Time)
+
+          <p style="margin-top:24px;color:#9ca3af;font-size:12px;border-top:1px solid #e5e7eb;padding-top:16px;">
+            Submitted on ${submittedAt} (Pacific Time) &mdash; cleaningfromtheheartllc.com
           </p>
         </div>
       `,
