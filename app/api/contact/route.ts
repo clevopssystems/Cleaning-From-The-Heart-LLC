@@ -223,6 +223,7 @@ export async function POST(req: NextRequest) {
   }
 
   // ── 9. CAPTCHA verification ───────────────────────────────────────────────
+  console.log("HCAPTCHA_SECRET_KEY exists:", !!process.env.HCAPTCHA_SECRET_KEY);
   console.log("[contact] Captcha token received:", captchaToken ? `${captchaToken.substring(0, 20)}…` : "(empty)");
   if (!captchaToken) {
     return NextResponse.json(
