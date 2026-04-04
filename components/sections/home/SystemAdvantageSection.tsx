@@ -97,7 +97,7 @@ export function SystemAdvantageSection() {
           <div className="mt-8 flex flex-wrap items-center gap-4 border-t border-brand-100 pt-8">
             <div className="flex flex-col items-start gap-1">
               <Link
-                href="/contact"
+                href="/contact#quote-form"
                 className="cta-primary"
               >
                 Get a Free Quote

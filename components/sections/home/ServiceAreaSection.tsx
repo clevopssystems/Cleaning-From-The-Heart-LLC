@@ -18,7 +18,7 @@ export function ServiceAreaSection() {
               surrounding communities. Whether you&apos;re in downtown or the suburbs, we can help. Not sure if we
               cover your area? Reach out and we will confirm.
             </p>
-            <Link href="/contact" className="cta-primary mt-5 inline-flex">
+            <Link href="/contact#quote-form" className="cta-primary mt-5 inline-flex">
               Check Availability
             </Link>
           </div>

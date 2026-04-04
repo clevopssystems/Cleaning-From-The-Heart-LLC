@@ -71,7 +71,7 @@ export function GuaranteeSection() {
               <div className="mt-8 flex flex-col items-start gap-3 sm:flex-row sm:items-start">
                 <div className="flex flex-col items-start gap-1">
                   <Link
-                    href="/contact"
+                    href="/contact#quote-form"
                     className="cta-gold"
                   >
                     Get a Free Quote

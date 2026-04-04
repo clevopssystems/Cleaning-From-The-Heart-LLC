@@ -51,7 +51,7 @@ export function StrongCtaSection() {
               <div className="flex flex-col gap-3 lg:min-w-[220px]">
                 <div className="flex flex-col items-start gap-1">
                   <Link
-                    href="/contact"
+                    href="/contact#quote-form"
                     className="cta-gold w-full justify-center"
                   >
                     Request a Free Quote

@@ -23,7 +23,7 @@ export function FaqSection() {
                 Call us directly or use the quote form and we will answer anything specific to your property or situation.
               </p>
               <div className="mt-4 flex flex-wrap gap-2">
-                <Link href="/contact" className="cta-primary text-xs px-4 py-2">
+                <Link href="/contact#quote-form" className="cta-primary text-xs px-4 py-2">
                   Ask a Question
                 </Link>
                 <Link href={siteConfig.phoneHref} className="cta-secondary text-xs px-4 py-2">

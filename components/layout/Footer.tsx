@@ -41,12 +41,12 @@ export function Footer() {
                 </li>
               ))}
               <li>
-                <Link href="/contact" className="text-sm text-white/55 transition-colors hover:text-white">
+                <Link href="/contact#quote-form" className="text-sm text-white/55 transition-colors hover:text-white">
                   Move-In / Move-Out Cleaning
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-sm text-white/55 transition-colors hover:text-white">
+                <Link href="/contact#quote-form" className="text-sm text-white/55 transition-colors hover:text-white">
                   Post-Construction Cleaning
                 </Link>
               </li>
@@ -78,7 +78,7 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-sm text-white/55 transition-colors hover:text-white">
+                <Link href="/contact#quote-form" className="text-sm text-white/55 transition-colors hover:text-white">
                   Get a Quote
                 </Link>
               </li>
@@ -119,7 +119,7 @@ export function Footer() {
                 </Link>
               </li>
             </ul>
-            <Link href="/contact" className="cta-gold mt-6 inline-flex text-xs">
+            <Link href="/contact#quote-form" className="cta-gold mt-6 inline-flex text-xs">
               Request a Free Quote
             </Link>
           </div>

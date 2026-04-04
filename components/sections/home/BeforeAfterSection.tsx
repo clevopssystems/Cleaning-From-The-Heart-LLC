@@ -103,7 +103,7 @@ export function BeforeAfterSection() {
           <Link href="/gallery" className="cta-secondary">
             View Full Results Gallery
           </Link>
-          <Link href="/contact" className="cta-primary">
+          <Link href="/contact#quote-form" className="cta-primary">
             Get a Free Quote
           </Link>
         </div>

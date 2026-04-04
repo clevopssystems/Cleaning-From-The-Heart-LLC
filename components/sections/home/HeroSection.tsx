@@ -87,7 +87,7 @@ export function HeroSection() {
             {/* CTAs */}
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <div className="flex flex-col items-start gap-1">
-                <Link href="/contact" className="cta-gold w-full sm:w-auto">
+                <Link href="/contact#quote-form" className="cta-gold w-full sm:w-auto">
                   {siteConfig.primaryCta}
                 </Link>
                 <span className="pl-1 text-[11px] text-white/45">Takes 60 seconds · No obligation</span>

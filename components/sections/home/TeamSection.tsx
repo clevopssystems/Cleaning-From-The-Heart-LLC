@@ -41,7 +41,7 @@ export function TeamSection() {
               </ul>
 
               <div className="mt-8 flex flex-wrap gap-3">
-                <Link href="/contact" className="cta-primary">
+                <Link href="/contact#quote-form" className="cta-primary">
                   Get a Free Quote
                 </Link>
                 <Link href="/about" className="cta-secondary">

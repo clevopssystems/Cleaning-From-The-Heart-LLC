@@ -78,7 +78,7 @@ export function WhoWeWorkWithSection() {
         </div>
 
         <div className="mt-10 flex flex-wrap justify-center gap-3">
-          <Link href="/contact" className="cta-primary">
+          <Link href="/contact#quote-form" className="cta-primary">
             Get a Free Quote
           </Link>
           <Link href="/services" className="cta-secondary">

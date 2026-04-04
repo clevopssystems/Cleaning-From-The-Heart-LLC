@@ -84,7 +84,7 @@ export function Header() {
             {siteConfig.phoneDisplay}
           </Link>
           <Link
-            href="/contact"
+            href="/contact#quote-form"
             className="cta-primary px-4 py-2 text-xs"
           >
             {siteConfig.primaryCta}
@@ -124,7 +124,7 @@ export function Header() {
               </Link>
             ))}
             <div className="mt-2 grid grid-cols-2 gap-2">
-              <Link href="/contact" className="cta-primary text-xs" onClick={() => setOpen(false)}>
+              <Link href="/contact#quote-form" className="cta-primary text-xs" onClick={() => setOpen(false)}>
                 Get a Quote
               </Link>
               <Link href={siteConfig.phoneHref} className="cta-secondary text-xs" onClick={() => setOpen(false)}>

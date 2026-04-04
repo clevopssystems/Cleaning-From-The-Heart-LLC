@@ -91,7 +91,7 @@ export function ServicesSection() {
           <Link href="/services" className="cta-secondary">
             View All Services
           </Link>
-          <Link href="/contact" className="cta-primary">
+          <Link href="/contact#quote-form" className="cta-primary">
             Request a Quote
           </Link>
         </div>

@@ -61,7 +61,7 @@ export function BrandStatementSection() {
             </p>
             <div className="flex flex-col items-start gap-1.5">
               <Link
-                href="/contact"
+                href="/contact#quote-form"
                 className="cta-gold inline-flex items-center"
               >
                 Get a Free Quote

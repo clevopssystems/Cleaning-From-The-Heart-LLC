@@ -27,7 +27,7 @@ export function VideoSection() {
                 </h2>
               </div>
               <Link
-                href="/contact"
+                href="/contact#quote-form"
                 className="group hidden items-center gap-2 text-sm font-semibold text-accent transition-colors hover:text-accent/80 sm:flex"
               >
                 Get a Quote
@@ -151,7 +151,7 @@ export function VideoSection() {
                   </p>
                   <div className="mt-7 flex flex-col items-start gap-1.5">
                     <Link
-                      href="/contact"
+                      href="/contact#quote-form"
                       className="cta-gold"
                     >
                       Get a Free Quote

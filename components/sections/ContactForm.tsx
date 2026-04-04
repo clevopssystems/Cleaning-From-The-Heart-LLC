@@ -137,7 +137,7 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} noValidate className="card space-y-5">
+    <form id="quote-form" onSubmit={handleSubmit} noValidate className="card space-y-5">
       <h2 className="text-xl font-semibold text-ink">Request a Free Quote</h2>
 
       {/* Name + Email */}
