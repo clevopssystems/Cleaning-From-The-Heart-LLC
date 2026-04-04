@@ -254,12 +254,15 @@ export async function POST(req: NextRequest) {
     timeStyle: "short",
   });
 
+  console.log("RESEND_API_KEY exists:", !!process.env.RESEND_API_KEY);
+  console.log("Sending email via Resend...");
+
   try {
-    await resend.emails.send({
-      from: "Website Form <noreply@cleaningfromtheheartllc.com>",
-      to: [process.env.CONTACT_EMAIL ?? "Cleanfromtheheartllc@gmail.com"],
+    const { data, error } = await resend.emails.send({
+      from: "Website Lead <onboarding@resend.dev>",
+      to: ["clevops.systems@gmail.com"],
       replyTo: safeEmail,
-      subject: `New Quote Request — ${safeName}`,
+      subject: "New Lead Test",
       html: `
         <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;background:#f8fafc;padding:24px;border-radius:12px;">
           <h2 style="margin:0 0 20px;color:#1e40af;font-size:22px;border-bottom:2px solid #1e40af;padding-bottom:12px;">
@@ -297,6 +300,13 @@ export async function POST(req: NextRequest) {
         </div>
       `,
     });
+
+    console.log("Resend response:", data);
+    console.log("Resend error:", error);
+
+    if (error) {
+      return NextResponse.json({ error: error.message }, { status: 500 });
+    }
 
     return NextResponse.json({ success: true }, { status: 200 });
   } catch (err) {
