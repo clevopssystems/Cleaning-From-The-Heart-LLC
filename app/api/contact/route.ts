@@ -260,7 +260,7 @@ export async function POST(req: NextRequest) {
   try {
     const { data, error } = await resend.emails.send({
       from: "Website Lead <onboarding@resend.dev>",
-      to: ["clevops.systems@gmail.com"],
+      to: ["clevops.systems@gmail.com", "Cleanfromtheheartllc@gmail.com"],
       replyTo: safeEmail,
       subject: "New Quote Request - Cleaning From The Heart",
       html: `
