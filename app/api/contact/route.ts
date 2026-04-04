@@ -53,10 +53,13 @@ const ALLOWED_SERVICES = new Set([
 // 16 KB is more than enough for a contact form.
 const MAX_BODY_BYTES = 16 * 1024;
 
-// Allowed origins: production domain + localhost for dev.
+// Allowed origins: production domain (with and without www) + localhost for dev.
 const ALLOWED_ORIGINS: ReadonlySet<string> =
   process.env.NODE_ENV === "production"
-    ? new Set(["https://cleaningfromtheheartllc.com"])
+    ? new Set([
+        "https://cleaningfromtheheartllc.com",
+        "https://www.cleaningfromtheheartllc.com",
+      ])
     : new Set(["http://localhost:3000", "http://localhost:3001"]);
 
 // ---------------------------------------------------------------------------
@@ -81,7 +84,8 @@ async function verifyHCaptcha(token: string): Promise<boolean> {
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: `response=${encodeURIComponent(token)}&secret=${encodeURIComponent(secret)}`,
   });
-  const data = (await res.json()) as { success: boolean };
+  const data = (await res.json()) as { success: boolean; "error-codes"?: string[] };
+  console.log("[contact] hCaptcha verify result:", JSON.stringify(data));
   return data.success === true;
 }
 
@@ -112,7 +116,9 @@ export async function POST(req: NextRequest) {
   // that legitimate integrations aren't blocked; the combination of CAPTCHA +
   // rate limiting handles those cases.
   const origin = req.headers.get("origin");
+  console.log("[contact] Request origin:", origin);
   if (origin !== null && !ALLOWED_ORIGINS.has(origin)) {
+    console.error("[contact] Blocked origin:", origin);
     return NextResponse.json({ error: "Forbidden." }, { status: 403 });
   }
 
@@ -217,6 +223,7 @@ export async function POST(req: NextRequest) {
   }
 
   // ── 9. CAPTCHA verification ───────────────────────────────────────────────
+  console.log("[contact] Captcha token received:", captchaToken ? `${captchaToken.substring(0, 20)}…` : "(empty)");
   if (!captchaToken) {
     return NextResponse.json(
       { error: "Please complete the CAPTCHA verification." },
