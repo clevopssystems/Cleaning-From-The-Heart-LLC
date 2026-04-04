@@ -32,7 +32,7 @@ export function WorkInActionSection() {
           ASYMMETRIC GALLERY GRID
           ─────────────────────────────────────────────────────────────────────
           Featured image (left, tall) + 3 smaller images stacked on the right.
-          Upload photos to /public/media/work/ and update lib/site.ts.
+          Upload photos to /public/home/work/ and update lib/site.ts.
           ─────────────────────────────────────────────────────────────────────
         */}
         <div className="mt-10 grid gap-4 md:grid-cols-[1.4fr_1fr] md:grid-rows-[auto] lg:gap-5">

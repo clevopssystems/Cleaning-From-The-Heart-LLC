@@ -3,7 +3,7 @@ import { Play, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { Container } from "@/components/shared/Container";
 import { Reveal } from "@/components/shared/Reveal";
-import { videoFeatures, siteConfig } from "@/lib/site";
+import { videoFeatures } from "@/lib/site";
 
 export function VideoSection() {
   const [primary, secondary] = videoFeatures;
@@ -27,9 +27,7 @@ export function VideoSection() {
                 </h2>
               </div>
               <Link
-                href={siteConfig.whatsappHref}
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/contact"
                 className="group hidden items-center gap-2 text-sm font-semibold text-accent transition-colors hover:text-accent/80 sm:flex"
               >
                 Get a Quote
@@ -45,8 +43,8 @@ export function VideoSection() {
         This video spans edge-to-edge of the viewport.
         ──────────────────────────────────────────────────────────────
         To activate:
-        1. Upload thumbnail:  /public/media/videos/video-thumb-1.jpg (1280×720px)
-        2. Upload video file: /public/media/videos/office-transformation.mp4
+                          1. Upload thumbnail:  /public/home/videos/video-thumb-1.jpg (1280×720px)
+                          2. Upload video file: /public/home/videos/office-transformation.mp4
         3. Update videoFeatures[0].thumbnail and .videoSrc in lib/site.ts
         ──────────────────────────────────────────────────────────────
       */}
@@ -104,7 +102,7 @@ export function VideoSection() {
       {/*
         SECONDARY VIDEO — split layout inside Container
         ──────────────────────────────────────────────────────────────
-        Upload thumbnail: /public/media/videos/video-thumb-2.jpg
+                          Upload thumbnail: /public/home/videos/video-thumb-2.jpg
         ──────────────────────────────────────────────────────────────
       */}
       {secondary && (
@@ -153,9 +151,7 @@ export function VideoSection() {
                   </p>
                   <div className="mt-7 flex flex-col items-start gap-1.5">
                     <Link
-                      href={siteConfig.whatsappHref}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      href="/contact"
                       className="cta-gold"
                     >
                       Get a Free Quote

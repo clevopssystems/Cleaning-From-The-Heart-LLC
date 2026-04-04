@@ -27,7 +27,6 @@ export const siteConfig = {
   name: "Cleaning From The Heart LLC",
   phoneDisplay: "206-850-8484",
   phoneHref: "tel:+12068508484",
-  whatsappHref: "https://wa.me/12068508484?text=Hi%2C%20I%20want%20to%20get%20a%20quote%20for%20your%20service.",
   email: "Cleanfromtheheartllc@gmail.com",
   instagramHref: "https://www.instagram.com/cleaningfromtheheartllc?igsh=cW53ZjdhaTl0Z2x4",
   instagramHandle: "@cleaningfromtheheartllc",
@@ -380,8 +379,8 @@ export const services: Service[] = [
 ];
 
 // Home page service showcase — 6 cards including extended services
-// To add a photo to any card: set image to "/media/services/{name}.jpg"
-// Upload photos to /public/media/services/ — recommended size: 800×450px (16:9)
+// To add a photo to any card: set image to "/home/services/{name}.jpg"
+// Upload photos to /public/home/services/ — recommended size: 800×450px (16:9)
 export const homeServiceCards = [
   {
     title: "Commercial Cleaning",
@@ -389,7 +388,7 @@ export const homeServiceCards = [
       "Consistent, scheduled cleaning for offices, retail locations, and commercial facilities. Your space stays client-ready without you having to think about it.",
     href: "/services/commercial-cleaning",
     iconName: "Building2",
-    image: "/media/services/commercial-cleaning.jpg"
+    image: "/home/services/commercial-cleaning.jpg"
   },
   {
     title: "Carpet Cleaning",
@@ -397,7 +396,7 @@ export const homeServiceCards = [
       "Deep extraction cleaning that lifts embedded dirt, stains, and odors. Ideal for high-traffic offices, rental units, and move-in/move-out transitions.",
     href: "/services/carpet-cleaning",
     iconName: "Layers",
-    image: "/media/services/carpet-cleaning.jpg"
+    image: "/home/services/carpet-cleaning.png"
   },
   {
     title: "Strip & Wax",
@@ -405,7 +404,7 @@ export const homeServiceCards = [
       "Full floor restoration, strip old buildup, prep the surface, and apply a fresh protective finish. Restores shine and extends the life of commercial floors.",
     href: "/services/strip-and-wax",
     iconName: "Sparkles",
-    image: "/media/services/strip-wax.jpg"
+    image: "/home/services/strip-wax.jpg"
   },
   {
     title: "Move-In / Move-Out Cleaning",
@@ -413,15 +412,15 @@ export const homeServiceCards = [
       "Detail-focused cleaning for rental units, condos, and commercial spaces during tenant transitions. Consistently meets property manager standards.",
     href: "/services/move-in-move-out-cleaning",
     iconName: "Home",
-    image: "/media/services/move-in-cleaning.jpg"
+    image: "/home/services/move-in-cleaning.jpg"
   },
   {
     title: "Deep Cleaning",
     description:
       "A comprehensive top-to-bottom cleaning for spaces that need a full reset, ideal post-renovation, seasonal refresh, or for new accounts starting fresh.",
-    href: siteConfig.whatsappHref,
+    href: "/contact",
     iconName: "Zap",
-    image: "/media/services/deep-cleaning.jpg"
+    image: "/home/services/deep-cleaning.jpg"
   },
   {
     title: "Post-Construction Cleaning",
@@ -429,7 +428,7 @@ export const homeServiceCards = [
       "Dust, debris, and construction residue cleared thoroughly after remodeling or build-out. We handle the detail work so your space is ready for occupancy.",
     href: "/services/post-construction-renovation-cleanup",
     iconName: "HardHat",
-    image: "/media/services/post-construction.jpg"
+    image: "/home/services/post-construction.jpg"
   }
 ];
 
@@ -590,22 +589,22 @@ export const beforeAfterItems = [
     title: "Office Common Area",
     description: "High-traffic workspace refreshed with thorough surface cleaning and floor maintenance.",
     service: "Commercial Cleaning",
-    before: "/images/before-after-office-before.svg",
-    after: "/media/work/work-office-seattle.png"
+    before: "/home/before-after/before-after-office-before.svg",
+    after: "/home/work/work-office-seattle.png"
   },
   {
     title: "Commercial Carpet",
     description: "Heavily used office carpet restored with professional deep extraction cleaning.",
     service: "Carpet Cleaning",
-    before: "/images/before-after-carpet-before.png",
-    after: "/images/before-after-carpet-after.svg"
+    before: "/home/before-after/before-after-carpet-before.png",
+    after: "/home/before-after/before-after-carpet-after.svg"
   },
   {
     title: "Hard Floor Restoration",
     description: "Vinyl commercial flooring stripped, prepped, and finished to a clean, protective shine.",
     service: "Strip & Wax",
-    before: "/images/before-after-floor-before.svg",
-    after: "/media/work/work-floor-renton.jpg"
+    before: "/home/before-after/before-after-floor-before.svg",
+    after: "/home/work/work-floor-renton.jpg"
   }
 ];
 
@@ -614,34 +613,34 @@ export const beforeAfterItems = [
 // Replace each image path with a real project photo before launch.
 // Recommended image size: 800×600px (4:3 ratio)
 // Naming convention: work-{service}-{city}.jpg
-// Upload location: /public/media/work/
+// Upload location: /public/home/work/
 export const workGalleryItems = [
   {
     title: "Office Deep Clean",
     location: "Seattle, WA",
     service: "Commercial Cleaning",
-    // Replace with: /public/media/work/work-office-seattle.jpg
-    image: "/media/work/work-office-seattle.png"
+    // Replace with: /public/home/work/work-office-seattle.jpg
+    image: "/home/work/work-office-seattle.png"
   },
   {
     title: "Carpet Restoration",
     location: "Bellevue, WA",
     service: "Carpet Cleaning",
-    image: "/images/before-after-carpet-before.png"
+    image: "/home/before-after/before-after-carpet-before.png"
   },
   {
     title: "Floor Strip & Wax",
     location: "Renton, WA",
     service: "Strip & Wax",
-    // Replace with: /public/media/work/work-floor-renton.jpg
-    image: "/media/work/work-floor-renton.jpg"
+    // Replace with: /public/home/work/work-floor-renton.jpg
+    image: "/home/work/work-floor-renton.jpg"
   },
   {
     title: "Move-In Detail Clean",
     location: "Kirkland, WA",
     service: "Move-In / Move-Out",
-    // Replace with: /public/media/work/work-movein-kirkland.jpg
-    image: "/media/work/work-movein-kirkland.svg"
+    // Replace with: /public/home/work/work-movein-kirkland.jpg
+    image: "/home/work/work-movein-kirkland.svg"
   }
 ];
 
@@ -649,29 +648,29 @@ export const workGalleryItems = [
 // Shown in the "Professional Team. Real Results." section.
 // Replace each image with a real team, equipment, or work-in-progress photo.
 // Recommended image size: 600×600px (square crop)
-// Upload location: /public/media/team/
+// Upload location: /public/home/team/
 export const teamMediaItems = [
   {
-    // Replace with: /public/media/team/team-1.jpg — team member on the job
-    image: "/media/team/team-1.svg",
+    // Replace with: /public/home/team/team-1.jpg — team member on the job
+    image: "/home/team/team-1.svg",
     alt: "Professional cleaning team member preparing for a commercial job",
     caption: "Vetted & Insured Staff"
   },
   {
-    // Replace with: /public/media/team/team-2.jpg — professional equipment/supplies
-    image: "/media/team/team-2.svg",
+    // Replace with: /public/home/team/team-2.jpg — professional equipment/supplies
+    image: "/home/team/team-2.svg",
     alt: "Commercial-grade cleaning equipment and professional supplies",
     caption: "Professional-Grade Equipment"
   },
   {
-    // Replace with: /public/media/team/team-3.jpg — team at work in a commercial space
-    image: "/media/team/team-3.svg",
+    // Replace with: /public/home/team/team-3.jpg — team at work in a commercial space
+    image: "/home/team/team-3.svg",
     alt: "Team performing detailed office cleaning with structured checklist process",
     caption: "Detail-Oriented Process"
   },
   {
-    // Replace with: /public/media/team/team-4.jpg — completed, spotless result
-    image: "/media/team/team-4.svg",
+    // Replace with: /public/home/team/team-4.jpg — completed, spotless result
+    image: "/home/team/team-4.svg",
     alt: "Completed commercial cleaning result, spotless and client-ready",
     caption: "Consistent Results"
   }
@@ -682,26 +681,26 @@ export const teamMediaItems = [
 // Replace thumbnail images with real stills, and video paths with uploaded footage.
 // Thumbnail recommended size: 1280×720px (16:9)
 // Video recommended format: MP4 (H.264), 1080p, < 30MB
-// Upload location: /public/media/videos/
+// Upload location: /public/home/videos/
 export const videoFeatures = [
   {
     title: "Office Transformation",
     description:
       "Watch our team restore a commercial office space from cluttered and dusty to spotless and client-ready in a single session.",
-    // Replace thumbnail with: /public/media/videos/video-thumb-1.jpg
-    thumbnail: "/media/videos/video-thumb-1.svg",
-    // Replace video with: /public/media/videos/office-transformation.mp4
-    videoSrc: "/media/videos/office-transformation.mp4",
+    // Replace thumbnail with: /public/home/videos/video-thumb-1.jpg
+    thumbnail: "/home/videos/video-thumb-1.svg",
+    // Replace video with: /public/home/videos/office-transformation.mp4
+    videoSrc: "/home/videos/office-transformation.mp4",
     duration: "2:30"
   },
   {
     title: "Floor Strip & Wax Process",
     description:
       "See the full commercial floor restoration process, from stripping old wax buildup to applying a fresh, durable protective finish.",
-    // Replace thumbnail with: /public/media/videos/video-thumb-2.jpg
-    thumbnail: "/media/videos/video-thumb-2.svg",
-    // Replace video with: /public/media/videos/floor-strip-wax.mp4
-    videoSrc: "/media/videos/floor-strip-wax.mp4",
+    // Replace thumbnail with: /public/home/videos/video-thumb-2.jpg
+    thumbnail: "/home/videos/video-thumb-2.svg",
+    // Replace video with: /public/home/videos/floor-strip-wax.mp4
+    videoSrc: "/home/videos/floor-strip-wax.mp4",
     duration: "3:15"
   }
 ];

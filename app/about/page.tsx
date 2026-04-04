@@ -119,7 +119,7 @@ export default function AboutPage() {
                 {/*
                   OWNER / TEAM PHOTO
                   ──────────────────────────────────────────────────────
-                  Upload: /public/media/about/owner.jpg
+                  Upload: /public/about/owner/owner.jpg
                   Recommended size: 640×800px (4:5 portrait)
                   ──────────────────────────────────────────────────────
                 */}
@@ -129,7 +129,7 @@ export default function AboutPage() {
                       <HeartHandshake className="h-8 w-8 text-brand-600" aria-hidden />
                     </div>
                     <p className="mt-4 text-sm font-medium text-muted">Owner photo</p>
-                    <p className="mt-1 text-xs text-muted/70">Upload: /media/about/owner.jpg</p>
+                    <p className="mt-1 text-xs text-muted/70">Upload: /about/owner/owner.jpg</p>
                   </div>
                 </div>
                 <div className="border-t border-brand-100 px-5 py-4">
@@ -242,9 +242,7 @@ export default function AboutPage() {
               <div className="flex flex-col gap-3 lg:min-w-[200px]">
                 <div className="flex flex-col items-start gap-1">
                   <Link
-                    href={siteConfig.whatsappHref}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="/contact"
                     className="cta-primary w-full justify-center"
                   >
                     Get a Free Quote

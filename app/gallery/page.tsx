@@ -19,7 +19,7 @@ export default function GalleryPage() {
         eyebrow="Gallery"
         title="Before And After Cleaning Results"
         description="Use this page to show real project photos from commercial cleaning, carpet cleaning, and strip and wax work in Seattle."
-        backgroundImage="/images/gallery-hero.png"
+        backgroundImage="/gallery/hero/gallery-hero.png"
       />
 
       <section className="section-shell bg-white">

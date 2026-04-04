@@ -72,7 +72,7 @@ export function WhyChooseUsSection() {
         <Reveal delay={0.35}>
           <div className="mt-10 flex flex-wrap gap-3 border-t border-white/10 pt-10">
             <div className="flex flex-col items-start gap-1">
-              <Link href={siteConfig.whatsappHref} target="_blank" rel="noopener noreferrer" className="cta-gold">
+              <Link href="/contact" className="cta-gold">
                 {siteConfig.primaryCta}
               </Link>
               <span className="pl-1 text-[11px] text-white/35">Takes 60 seconds · No obligation</span>

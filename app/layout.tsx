@@ -45,7 +45,23 @@ export const metadata: Metadata = {
     url: "https://cleaningfromtheheartllc.com",
     siteName: "Cleaning From The Heart LLC",
     locale: "en_US",
-    type: "website"
+    type: "website",
+    // Place a 1200×630 image at /public/og-image.jpg to enable rich link previews.
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Cleaning From The Heart LLC — Seattle Commercial Cleaning",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Cleaning From The Heart LLC | Seattle Commercial Cleaning",
+    description:
+      "Professional commercial cleaning, carpet cleaning, and floor care throughout Seattle. Insured, vetted staff.",
+    images: ["/og-image.jpg"],
   },
   robots: {
     index: true,
@@ -58,7 +74,7 @@ const localBusinessSchema = {
   "@type": "LocalBusiness",
   "@id": "https://cleaningfromtheheartllc.com/#business",
   name: siteConfig.name,
-  image: "https://cleaningfromtheheartllc.com/images/hero-cleaning-team.svg",
+  image: "https://cleaningfromtheheartllc.com/services/hero/hero-cleaning-team.png",
   telephone: siteConfig.phoneDisplay,
   email: siteConfig.email,
   address: {

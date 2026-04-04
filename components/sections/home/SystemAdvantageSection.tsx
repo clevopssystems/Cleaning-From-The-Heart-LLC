@@ -2,7 +2,6 @@ import Link from "next/link";
 import { ArrowRight, Users, ClipboardList, MessageCircle } from "lucide-react";
 import { Container } from "@/components/shared/Container";
 import { Reveal } from "@/components/shared/Reveal";
-import { siteConfig } from "@/lib/site";
 
 const pillars = [
   {
@@ -98,9 +97,7 @@ export function SystemAdvantageSection() {
           <div className="mt-8 flex flex-wrap items-center gap-4 border-t border-brand-100 pt-8">
             <div className="flex flex-col items-start gap-1">
               <Link
-                href={siteConfig.whatsappHref}
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/contact"
                 className="cta-primary"
               >
                 Get a Free Quote

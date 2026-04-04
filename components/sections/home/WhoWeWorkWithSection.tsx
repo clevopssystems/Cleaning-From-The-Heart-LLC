@@ -2,7 +2,6 @@ import Link from "next/link";
 import { Building2, ShoppingBag, KeyRound, Home, ArrowRight } from "lucide-react";
 import { Container } from "@/components/shared/Container";
 import { Reveal } from "@/components/shared/Reveal";
-import { siteConfig } from "@/lib/site";
 
 const clientTypes = [
   {
@@ -79,7 +78,7 @@ export function WhoWeWorkWithSection() {
         </div>
 
         <div className="mt-10 flex flex-wrap justify-center gap-3">
-          <Link href={siteConfig.whatsappHref} target="_blank" rel="noopener noreferrer" className="cta-primary">
+          <Link href="/contact" className="cta-primary">
             Get a Free Quote
           </Link>
           <Link href="/services" className="cta-secondary">

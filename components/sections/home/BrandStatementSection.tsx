@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/shared/Reveal";
-import { siteConfig } from "@/lib/site";
 
 export function BrandStatementSection() {
   return (
@@ -62,9 +61,7 @@ export function BrandStatementSection() {
             </p>
             <div className="flex flex-col items-start gap-1.5">
               <Link
-                href={siteConfig.whatsappHref}
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/contact"
                 className="cta-gold inline-flex items-center"
               >
                 Get a Free Quote

@@ -20,7 +20,7 @@ export default function ServicesPage() {
         eyebrow="Services"
         title="Seattle Cleaning Services That Keep Your Property Looking Its Best"
         description="Choose the service you need and request a quote in minutes. Every page is designed to help you make a fast, informed decision."
-        backgroundImage="/images/hero-cleaning-team.png"
+        backgroundImage="/services/hero/hero-cleaning-team.png"
       />
 
       <section className="section-shell bg-white">

@@ -3,7 +3,6 @@ import Link from "next/link";
 import { ArrowRight, Building2, Layers, Sparkles, Home, Zap, HardHat } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { Container } from "@/components/shared/Container";
-import { siteConfig } from "@/lib/site";
 import { Reveal } from "@/components/shared/Reveal";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 import { homeServiceCards } from "@/lib/site";
@@ -38,8 +37,8 @@ export function ServicesSection() {
                     SERVICE CARD IMAGE
                     ───────────────────────────────────────────────────────────
                     To add a real image for this service:
-                    1. Upload a photo to /public/media/services/{service-slug}.jpg
-                    2. Set service.image in lib/site.ts to "/media/services/{name}.jpg"
+                    1. Upload a photo to /public/home/services/{service-slug}.jpg
+                    2. Set service.image in lib/site.ts to "/home/services/{name}.jpg"
                     3. The styled placeholder below will be replaced automatically.
 
                     Recommended image size: 800×450px (16:9 ratio)
@@ -92,7 +91,7 @@ export function ServicesSection() {
           <Link href="/services" className="cta-secondary">
             View All Services
           </Link>
-          <Link href={siteConfig.whatsappHref} target="_blank" rel="noopener noreferrer" className="cta-primary">
+          <Link href="/contact" className="cta-primary">
             Request a Quote
           </Link>
         </div>

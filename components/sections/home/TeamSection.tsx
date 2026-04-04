@@ -3,7 +3,7 @@ import Link from "next/link";
 import { CheckCircle2 } from "lucide-react";
 import { Container } from "@/components/shared/Container";
 import { Reveal } from "@/components/shared/Reveal";
-import { teamMediaItems, siteConfig } from "@/lib/site";
+import { teamMediaItems } from "@/lib/site";
 
 const teamHighlights = [
   "Background-checked & fully insured staff",
@@ -41,7 +41,7 @@ export function TeamSection() {
               </ul>
 
               <div className="mt-8 flex flex-wrap gap-3">
-                <Link href={siteConfig.whatsappHref} target="_blank" rel="noopener noreferrer" className="cta-primary">
+                <Link href="/contact" className="cta-primary">
                   Get a Free Quote
                 </Link>
                 <Link href="/about" className="cta-secondary">
@@ -55,7 +55,7 @@ export function TeamSection() {
             TEAM PHOTO GRID (2×2)
             ─────────────────────────────────────────────────────────────────
             To replace placeholder images:
-            1. Upload square-cropped photos to /public/media/team/
+                    1. Upload square-cropped photos to /public/home/team/
             2. Update image paths in lib/site.ts → teamMediaItems
             3. Recommended: team-1.jpg through team-4.jpg, 600×600px each
 

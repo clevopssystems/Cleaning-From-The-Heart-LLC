@@ -16,7 +16,7 @@ export function HeroSection() {
 
       {/*
         BACKGROUND VIDEO
-        Files needed in /public/media/hero/:
+        Files needed in /public/home/hero/:
           hero-bg.mp4      — H.264, 1920×1080, no audio, target < 2 MB (compress with HandBrake/ffmpeg)
           hero-bg.webm     — VP9/AV1 encode of the same clip (~40% smaller than MP4)
           hero-bg-poster.jpg — first frame of video, ~30 KB JPEG (add with: ffmpeg -ss 0 -i hero-bg.mp4 -frames:v 1 hero-bg-poster.jpg)
@@ -31,13 +31,13 @@ export function HeroSection() {
         loop
         playsInline
         preload="metadata"
-        poster="/media/hero/hero-bg-poster.jpg"
+        poster="/home/hero/hero-bg-poster.jpg"
         className="hero-video absolute inset-0 h-full w-full object-cover"
         aria-hidden
       >
         {/* WebM first — Chrome/Firefox serve this; ~40% smaller than MP4 */}
-        <source src="/media/hero/hero-bg.webm" type="video/webm" />
-        <source src="/media/hero/hero-bg.mp4" type="video/mp4" />
+        <source src="/home/hero/hero-bg.webm" type="video/webm" />
+        <source src="/home/hero/hero-bg.mp4" type="video/mp4" />
       </video>
 
       {/* Dark overlay — keeps text readable over the video */}
@@ -87,7 +87,7 @@ export function HeroSection() {
             {/* CTAs */}
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <div className="flex flex-col items-start gap-1">
-                <Link href={siteConfig.whatsappHref} target="_blank" rel="noopener noreferrer" className="cta-gold w-full sm:w-auto">
+                <Link href="/contact" className="cta-gold w-full sm:w-auto">
                   {siteConfig.primaryCta}
                 </Link>
                 <span className="pl-1 text-[11px] text-white/45">Takes 60 seconds · No obligation</span>

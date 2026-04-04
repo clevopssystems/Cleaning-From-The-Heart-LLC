@@ -84,9 +84,7 @@ export function Header() {
             {siteConfig.phoneDisplay}
           </Link>
           <Link
-            href={siteConfig.whatsappHref}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/contact"
             className="cta-primary px-4 py-2 text-xs"
           >
             {siteConfig.primaryCta}
@@ -126,7 +124,7 @@ export function Header() {
               </Link>
             ))}
             <div className="mt-2 grid grid-cols-2 gap-2">
-              <Link href={siteConfig.whatsappHref} target="_blank" rel="noopener noreferrer" className="cta-primary text-xs" onClick={() => setOpen(false)}>
+              <Link href="/contact" className="cta-primary text-xs" onClick={() => setOpen(false)}>
                 Get a Quote
               </Link>
               <Link href={siteConfig.phoneHref} className="cta-secondary text-xs" onClick={() => setOpen(false)}>

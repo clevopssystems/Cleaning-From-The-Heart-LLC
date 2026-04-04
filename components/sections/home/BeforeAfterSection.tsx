@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Container } from "@/components/shared/Container";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 import { Reveal } from "@/components/shared/Reveal";
-import { siteConfig, beforeAfterItems } from "@/lib/site";
+import { beforeAfterItems } from "@/lib/site";
 
 export function BeforeAfterSection() {
   return (
@@ -25,7 +25,7 @@ export function BeforeAfterSection() {
               {/*
                 BEFORE / AFTER IMAGES
                 ─────────────────────────────────────────────────────────
-                Upload real photos to: /public/media/before-after/
+              Upload real photos to: /public/home/before-after/
                 Recommended size per image: 1000×620px (approx 16:10)
                 Naming: before-office.jpg / after-office.jpg  etc.
                 ─────────────────────────────────────────────────────────
@@ -103,7 +103,7 @@ export function BeforeAfterSection() {
           <Link href="/gallery" className="cta-secondary">
             View Full Results Gallery
           </Link>
-          <Link href={siteConfig.whatsappHref} target="_blank" rel="noopener noreferrer" className="cta-primary">
+          <Link href="/contact" className="cta-primary">
             Get a Free Quote
           </Link>
         </div>
