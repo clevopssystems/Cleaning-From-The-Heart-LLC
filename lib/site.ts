@@ -468,6 +468,12 @@ export const whyChooseUs = [
     description:
       "Every team member is background-checked, trained before their first job, and covered under our insurance. You're not just getting clean results. You're getting peace of mind when you hand over access to your property.",
     iconName: "ShieldCheck"
+  },
+  {
+    title: "Custom Service Agreements",
+    description:
+      "For clients who need structured, long-term service, we offer custom cleaning contracts tailored to your facility, frequency, and scope. A formal agreement means consistent standards, clear expectations, and a partner you can count on.",
+    iconName: "ClipboardCheck"
   }
 ];
 

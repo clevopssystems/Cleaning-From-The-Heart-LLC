@@ -247,7 +247,7 @@ export default function AboutPage() {
                   >
                     Get a Free Quote
                   </Link>
-                  <span className="pl-1 text-[11px] text-muted">Free. No commitment.</span>
+                  <span className="pl-1 text-[11px] text-muted">Free quote · No obligation.</span>
                 </div>
                 <div className="flex flex-col items-start gap-1">
                   <Link href={siteConfig.phoneHref} className="cta-secondary w-full justify-center">

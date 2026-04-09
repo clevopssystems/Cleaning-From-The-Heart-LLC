@@ -6,7 +6,7 @@ import { siteConfig } from "@/lib/site";
 const stats = [
   { value: "200+", label: "Properties Served" },
   { value: "5.0★", label: "Average Rating" },
-  { value: "6 yrs", label: "Serving Seattle" },
+  { value: "30+ years", label: "Serving Seattle" },
   { value: "100%", label: "Satisfaction Backed" }
 ];
 
@@ -74,7 +74,7 @@ export function HeroSection() {
             <ul className="mt-6 flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:gap-x-6 sm:gap-y-2">
               {[
                 "Same crew, every visit",
-                "No contracts required",
+                "Custom cleaning contracts available",
                 "Response within 2 hours"
               ].map((point) => (
                 <li key={point} className="flex items-center gap-2 text-sm text-white/75">

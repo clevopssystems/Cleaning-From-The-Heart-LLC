@@ -23,7 +23,7 @@ export function ServicesSection() {
         <SectionHeading
           eyebrow="Our Services"
           title="Cleaning Solutions for Seattle Offices &amp; Properties"
-          description="From scheduled commercial accounts to one-time deep cleans and post-construction detail work, we cover what your property needs."
+          description="We offer one-time, recurring, and contract-based commercial cleaning plans tailored to your facility. From scheduled accounts to post-construction detail work, we cover what your property needs."
         />
 
         <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">

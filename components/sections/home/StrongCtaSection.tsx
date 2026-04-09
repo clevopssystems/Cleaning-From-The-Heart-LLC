@@ -36,7 +36,7 @@ export function StrongCtaSection() {
                 <ul className="mt-6 flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:gap-x-6">
                   {[
                     "Written quote within 24 hours",
-                    "No long-term contract required",
+                    "Flexible service options, including custom contracts",
                     "Satisfaction guaranteed on every visit"
                   ].map((item) => (
                     <li key={item} className="flex items-center gap-2 text-sm text-white/70">
@@ -45,6 +45,10 @@ export function StrongCtaSection() {
                     </li>
                   ))}
                 </ul>
+
+                <p className="mt-5 text-sm text-white/50">
+                  Need ongoing service? Ask about a custom cleaning contract for your property.
+                </p>
               </div>
 
               {/* CTA block */}
