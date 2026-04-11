@@ -258,11 +258,12 @@ export async function POST(req: NextRequest) {
   console.log("Sending email via Resend...");
 
   try {
+    // This sends each new quote request to both the business owner and internal admin inbox.
     const { data, error } = await resend.emails.send({
-      from: "Website Lead <onboarding@resend.dev>",
-      to: ["clevops.systems@gmail.com"],
+      from: "Quotes <quotes@clevops.co>",
+      to: ["Cleanfromtheheartllc@gmail.com", "clevops.systems@gmail.com"],
       replyTo: safeEmail,
-      subject: "New Quote Request - Cleaning From The Heart",
+      subject: "New Quote Request - Cleaning From The Heart LLC",
       html: `
         <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;background:#f8fafc;padding:32px;border-radius:12px;">
           <div style="margin-bottom:24px;">
