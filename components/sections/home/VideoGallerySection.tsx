@@ -12,9 +12,7 @@ const videos = [
   { id: "tO1d5ylix4Y", title: "Real job footage – cleaning service video 4" },
   { id: "h677iUp39kQ", title: "Real job footage – cleaning service video 5" },
   { id: "Ys1lYH41MUY", title: "Real job footage – cleaning service video 6" },
-  { id: "D8dRkeuDv1Y", title: "Real job footage – cleaning service video 7" },
   { id: "_eMnExib0l8", title: "Real job footage – cleaning service video 8" },
-  { id: "PGRAmhxB-Bs", title: "Real job footage – cleaning service video 9" },
   { id: "fkrH_lIfxIM", title: "Real job footage – cleaning service video 10" },
 ];
 
