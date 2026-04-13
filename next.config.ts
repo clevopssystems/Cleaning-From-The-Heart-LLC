@@ -46,7 +46,7 @@ const securityHeaders = [
       "img-src 'self' blob: data: https:",
       "media-src 'self'",
       "connect-src 'self' https://hcaptcha.com https://*.hcaptcha.com",
-      "frame-src https://hcaptcha.com https://*.hcaptcha.com",
+      "frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com https://hcaptcha.com https://*.hcaptcha.com",
       "object-src 'none'",
       "base-uri 'self'",
       "form-action 'self'",
