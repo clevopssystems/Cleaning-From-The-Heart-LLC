@@ -6,99 +6,89 @@ import { Reveal } from "@/components/shared/Reveal";
 import { beforeAfterItems } from "@/lib/site";
 
 export function BeforeAfterSection() {
+  if (beforeAfterItems.length === 0) return null;
+
   return (
-    <section className="section-shell bg-surface">
+    <section className="section-shell bg-white">
       <Container>
         <SectionHeading
-          eyebrow="Results"
+          eyebrow="Before & After"
           title="The Difference Is Visible"
           description="Real properties we service across Seattle. Every job follows the same standard — consistent, thorough, and verifiable."
         />
       </Container>
 
-      {/* Full-bleed immersive cards — outside the inner container for maximum width */}
-      <div className="mt-12 space-y-5">
+      <Container>
+        <div className="mt-10 space-y-6">
         {beforeAfterItems.map((item, index) => (
-          <Reveal key={item.title} delay={index * 0.06}>
-            <article className="group relative mx-auto max-w-6xl overflow-hidden rounded-2xl shadow-card-lg">
+          <Reveal key={item.before} delay={index * 0.06}>
+            <article className="group relative mx-auto max-w-4xl overflow-hidden rounded-2xl shadow-[0_6px_32px_rgba(0,0,0,0.09)] ring-1 ring-black/5">
 
-              {/*
-                BEFORE / AFTER IMAGES
-                ─────────────────────────────────────────────────────────
-              Upload real photos to: /public/home/before-after/
-                Recommended size per image: 1000×620px (approx 16:10)
-                Naming: before-office.jpg / after-office.jpg  etc.
-                ─────────────────────────────────────────────────────────
-              */}
               <div className="grid grid-cols-2">
 
                 {/* BEFORE */}
-                <figure className="relative overflow-hidden border-r-2 border-white/20">
-                  <div className="relative aspect-[16/10] overflow-hidden">
+                <figure className="relative overflow-hidden">
+                  <div
+                    className={`relative overflow-hidden bg-stone-100 ${
+                      item.portrait ? "aspect-[4/5]" : "aspect-[3/2]"
+                    }`}
+                  >
                     <Image
                       src={item.before}
-                      alt={`${item.title} before professional cleaning`}
+                      alt="Before professional cleaning"
                       fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
-                      sizes="(max-width: 768px) 50vw, 800px"
+                      className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                      sizes="(max-width: 768px) 50vw, 480px"
                     />
-                    {/* Dark amber-tinted overlay for "before" feel */}
-                    <div className="absolute inset-0 bg-amber-950/30" aria-hidden />
+                    {/* Bottom scrim for badge legibility */}
+                    <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" aria-hidden />
                   </div>
-                  <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-amber-950/80 via-amber-950/30 to-transparent px-5 pb-5 pt-16">
-                    <span className="inline-block rounded-sm bg-amber-800/60 px-2.5 py-0.5 text-xs font-bold uppercase tracking-widest text-amber-100 backdrop-blur-sm">
+                  <div className="absolute left-3 bottom-3 z-10">
+                    <span className="inline-flex items-center gap-1.5 rounded-full bg-black/50 px-3 py-1 text-[10px] font-semibold uppercase tracking-widest text-white backdrop-blur-md">
+                      <span className="h-1.5 w-1.5 rounded-full bg-white/70" aria-hidden />
                       Before
                     </span>
-                  </figcaption>
+                  </div>
                 </figure>
 
                 {/* AFTER */}
-                <figure className="relative overflow-hidden">
-                  <div className="relative aspect-[16/10] overflow-hidden">
+                <figure className="relative overflow-hidden border-l-2 border-white/50">
+                  <div
+                    className={`relative overflow-hidden bg-stone-100 ${
+                      item.portrait ? "aspect-[4/5]" : "aspect-[3/2]"
+                    }`}
+                  >
                     <Image
                       src={item.after}
-                      alt={`${item.title} after professional cleaning`}
+                      alt="After professional cleaning"
                       fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
-                      sizes="(max-width: 768px) 50vw, 800px"
+                      className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                      sizes="(max-width: 768px) 50vw, 480px"
                     />
-                    {/* Subtle green-tinted overlay for "after" feel */}
-                    <div className="absolute inset-0 bg-brand-900/15" aria-hidden />
+                    <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/30 to-transparent pointer-events-none" aria-hidden />
                   </div>
-                  <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-brand-950/85 via-brand-950/30 to-transparent px-5 pb-5 pt-16">
-                    <span className="inline-block rounded-sm bg-brand-700/60 px-2.5 py-0.5 text-xs font-bold uppercase tracking-widest text-brand-100 backdrop-blur-sm">
+                  <div className="absolute left-3 bottom-3 z-10">
+                    <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-700/80 px-3 py-1 text-[10px] font-semibold uppercase tracking-widest text-white backdrop-blur-md">
+                      <span className="h-1.5 w-1.5 rounded-full bg-brand-200" aria-hidden />
                       After
                     </span>
-                  </figcaption>
+                  </div>
                 </figure>
 
               </div>
 
-              {/* Metadata bar */}
-              <div className="flex items-center justify-between gap-4 border-t border-brand-100 bg-white px-6 py-4">
-                <div className="flex items-center gap-3">
-                  <span className="rounded-full bg-brand-100 px-2.5 py-0.5 text-xs font-semibold text-brand-700">
-                    {item.service}
-                  </span>
-                  <span className="text-sm font-semibold text-ink">{item.title}</span>
-                  <span className="hidden text-xs text-muted sm:block">{item.description}</span>
-                </div>
-                <div className="shrink-0 text-xs font-medium text-brand-600">Seattle, WA</div>
-              </div>
-
-              {/* Center divider badge */}
-              <div className="absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-[calc(50%+1.25rem)]">
-                <div className="flex h-9 w-9 items-center justify-center rounded-full border-2 border-white bg-brand-600 shadow-card-hover">
-                  <span className="text-[10px] font-bold text-white">VS</span>
+              {/* VS divider */}
+              <div className="absolute left-1/2 top-1/2 z-20 -translate-x-1/2 -translate-y-1/2">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-white/90 bg-white/20 shadow-xl backdrop-blur-lg">
+                  <span className="text-[11px] font-black tracking-tight text-white drop-shadow-md">VS</span>
                 </div>
               </div>
 
             </article>
           </Reveal>
         ))}
-      </div>
+        </div>
 
-      <Container>
         <div className="mt-10 flex flex-wrap gap-3">
           <Link href="/gallery" className="cta-secondary">
             View Full Results Gallery

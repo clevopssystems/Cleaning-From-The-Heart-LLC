@@ -590,64 +590,105 @@ export const testimonialPlaceholders = [
   }
 ];
 
-export const beforeAfterItems = [
+// ─── BEFORE & AFTER ──────────────────────────────────────────────────────────
+// Shown in the "Before & After" section on the homepage.
+//
+// BEFORE images → place files in: /public/images/results/before/
+// AFTER  images → place files in: /public/images/results/after/
+//
+// Recommended naming:
+//   /public/images/results/before/before-1.jpg
+//   /public/images/results/after/after-1.jpg
+//
+// To add a new pair:
+//   1. Place before-X.jpg in /public/images/results/before/
+//   2. Place after-X.jpg  in /public/images/results/after/
+//   3. Uncomment (or copy) one of the entries below and fill in the details.
+//
+// The section renders nothing if this array is empty — safe to leave until
+// you have real before/after photos ready.
+export const beforeAfterItems: {
+  before: string;
+  after: string;
+  /** true when the before/after images are portrait orientation — renders taller containers */
+  portrait?: boolean;
+}[] = [
   {
-    title: "Office Common Area",
-    description: "High-traffic workspace refreshed with thorough surface cleaning and floor maintenance.",
-    service: "Commercial Cleaning",
-    before: "/home/before-after/before-after-office-before.svg",
-    after: "/home/work/work-office-seattle.png"
+    before: "/images/results/before/before-1.jpg",
+    after: "/images/results/after/after-1.jpg",
   },
   {
-    title: "Commercial Carpet",
-    description: "Heavily used office carpet restored with professional deep extraction cleaning.",
-    service: "Carpet Cleaning",
-    before: "/home/before-after/before-after-carpet-before.png",
-    after: "/home/before-after/before-after-carpet-after.svg"
+    before: "/images/results/before/before-2.jpg",
+    after: "/images/results/after/after-2.jpg",
   },
   {
-    title: "Hard Floor Restoration",
-    description: "Vinyl commercial flooring stripped, prepped, and finished to a clean, protective shine.",
-    service: "Strip & Wax",
-    before: "/home/before-after/before-after-floor-before.svg",
-    after: "/home/work/work-floor-renton.jpg"
-  }
+    before: "/images/results/before/before-3.jpg",
+    after: "/images/results/after/after-3.jpg",
+    portrait: true,
+  },
 ];
 
 // ─── WORK GALLERY ────────────────────────────────────────────────────────────
-// Shown in "See Our Work in Action" section on the homepage.
-// Replace each image path with a real project photo before launch.
-// Recommended image size: 800×600px (4:3 ratio)
-// Naming convention: work-{service}-{city}.jpg
-// Upload location: /public/home/work/
-export const workGalleryItems = [
-  {
-    title: "Office Deep Clean",
-    location: "Seattle, WA",
-    service: "Commercial Cleaning",
-    // Replace with: /public/home/work/work-office-seattle.jpg
-    image: "/home/work/work-office-seattle.png"
-  },
-  {
-    title: "Carpet Restoration",
-    location: "Bellevue, WA",
-    service: "Carpet Cleaning",
-    image: "/home/before-after/before-after-carpet-before.png"
-  },
-  {
-    title: "Floor Strip & Wax",
-    location: "Renton, WA",
-    service: "Strip & Wax",
-    // Replace with: /public/home/work/work-floor-renton.jpg
-    image: "/home/work/work-floor-renton.jpg"
-  },
-  {
-    title: "Move-In Detail Clean",
-    location: "Kirkland, WA",
-    service: "Move-In / Move-Out",
-    // Replace with: /public/home/work/work-movein-kirkland.jpg
-    image: "/home/work/work-movein-kirkland.svg"
-  }
+// Shown in "Real Cleaning Results" (Our Work) section on the homepage.
+//
+// Image folder: /public/images/results/our-work/
+//
+// Recommended naming:
+//   /public/images/results/our-work/work-1.jpg
+//   /public/images/results/our-work/work-2.jpg
+//   ...
+//
+// Layout positions based on array index:
+//   [0]   = hero (large featured image, left column)
+//   [1]   = tall image (right column, top)
+//   [2–4] = 3-column mini grid (right column, bottom)
+//   [5–7] = secondary row of 3 (below main grid)
+//
+// To add an image:
+//   1. Place the file in /public/images/results/our-work/
+//   2. Uncomment (or copy) one of the entries below and fill in the details.
+//
+// The section renders nothing if this array is empty — safe to leave until
+// you have real photos ready.
+export const workGalleryItems: {
+  image: string;
+}[] = [
+  { image: "/images/results/our-work/work-1.jpeg" },
+  { image: "/images/results/our-work/work-2.jpeg" },
+  { image: "/images/results/our-work/work-3.jpeg" },
+  { image: "/images/results/our-work/work-4.jpeg" },
+  { image: "/images/results/our-work/work-5.jpeg" },
+  { image: "/images/results/our-work/work-6.jpeg" },
+];
+
+// ─── FULL GALLERY ─────────────────────────────────────────────────────────────
+// All images shown on the /gallery (Results) page.
+// Source: /public/images/gallery/
+// Note: this is a separate pool from the homepage sections above.
+//   Homepage "Before & After" → /public/images/results/before/ and /after/
+//   Homepage "Our Work"        → /public/images/results/our-work/
+//   Full Results gallery below → /public/images/gallery/
+export const galleryImages: { src: string }[] = [
+  { src: "/images/gallery/gallery-01.jpeg" },
+  { src: "/images/gallery/gallery-02.jpeg" },
+  { src: "/images/gallery/gallery-03.jpeg" },
+  { src: "/images/gallery/gallery-04.jpeg" },
+  { src: "/images/gallery/gallery-05.jpeg" },
+  { src: "/images/gallery/gallery-06.jpeg" },
+  { src: "/images/gallery/gallery-07.jpeg" },
+  { src: "/images/gallery/gallery-08.jpeg" },
+  { src: "/images/gallery/gallery-09.jpeg" },
+  { src: "/images/gallery/gallery-10.jpeg" },
+  { src: "/images/gallery/gallery-11.jpeg" },
+  { src: "/images/gallery/gallery-12.jpeg" },
+  { src: "/images/gallery/gallery-13.jpeg" },
+  { src: "/images/gallery/gallery-14.jpg" },
+  { src: "/images/gallery/gallery-15.jpg" },
+  { src: "/images/gallery/gallery-16.jpg" },
+  { src: "/images/gallery/gallery-17.jpg" },
+  { src: "/images/gallery/gallery-18.jpg" },
+  { src: "/images/gallery/gallery-19.jpg" },
+  { src: "/images/gallery/gallery-20.jpg" },
 ];
 
 // ─── TEAM MEDIA ───────────────────────────────────────────────────────────────
