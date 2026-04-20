@@ -123,15 +123,11 @@ export default function AboutPage() {
                   Recommended size: 640×800px (4:5 portrait)
                   ──────────────────────────────────────────────────────
                 */}
-                <div className="flex aspect-[4/5] items-center justify-center bg-gradient-to-br from-brand-600/10 to-brand-500/5">
-                  <div className="text-center">
-                    <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-brand-100">
-                      <HeartHandshake className="h-8 w-8 text-brand-600" aria-hidden />
-                    </div>
-                    <p className="mt-4 text-sm font-medium text-muted">Owner photo</p>
-                    <p className="mt-1 text-xs text-muted/70">Upload: /about/owner/owner.jpg</p>
-                  </div>
-                </div>
+                <img
+                  src="/about/owner/owner.jpg"
+                  alt="Joshua Alexander, owner of Cleaning From The Heart LLC"
+                  className="aspect-[4/5] w-full object-cover"
+                />
                 <div className="border-t border-brand-100 px-5 py-4">
                   <p className="text-sm font-semibold text-ink">Joshua Alexander</p>
                   <p className="mt-0.5 text-xs text-muted">Owner, Cleaning From The Heart LLC</p>
