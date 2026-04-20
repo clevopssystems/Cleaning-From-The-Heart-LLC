@@ -3,7 +3,6 @@ import Link from "next/link";
 import { CheckCircle2 } from "lucide-react";
 import { Container } from "@/components/shared/Container";
 import { Reveal } from "@/components/shared/Reveal";
-import { teamMediaItems } from "@/lib/site";
 
 const teamHighlights = [
   "Background-checked & fully insured staff",
@@ -51,43 +50,22 @@ export function TeamSection() {
             </div>
           </Reveal>
 
-          {/*
-            TEAM PHOTO GRID (2×2)
-            ─────────────────────────────────────────────────────────────────
-            To replace placeholder images:
-                    1. Upload square-cropped photos to /public/home/team/
-            2. Update image paths in lib/site.ts → teamMediaItems
-            3. Recommended: team-1.jpg through team-4.jpg, 600×600px each
-
-            Photo suggestions:
-              team-1.jpg — staff member in uniform, on-site
-              team-2.jpg — professional equipment / supplies close-up
-              team-3.jpg — team working in a commercial space
-              team-4.jpg — completed, spotless finished result
-            ─────────────────────────────────────────────────────────────────
-          */}
-          <div className="grid grid-cols-2 gap-3">
-            {teamMediaItems.map((item, index) => (
-              <Reveal key={index} delay={index * 0.07}>
-                <figure className="group relative overflow-hidden rounded-2xl">
-                  <div className="relative aspect-square overflow-hidden bg-surface">
-                    <Image
-                      src={item.image}
-                      alt={item.alt}
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
-                      sizes="(max-width: 768px) 50vw, 25vw"
-                    />
-
-                    {/* Caption overlay — slides up on hover */}
-                    <figcaption className="absolute bottom-0 left-0 right-0 translate-y-full bg-gradient-to-t from-ink/85 to-transparent px-3 pb-3 pt-8 transition-transform duration-300 group-hover:translate-y-0">
-                      <span className="text-xs font-semibold text-white">{item.caption}</span>
-                    </figcaption>
-                  </div>
-                </figure>
-              </Reveal>
-            ))}
-          </div>
+          <Reveal delay={0.1}>
+            <div className="flex justify-center">
+              <figure className="relative w-full max-w-sm overflow-hidden rounded-2xl shadow-xl">
+                <div className="relative aspect-[3/4] w-full overflow-hidden bg-surface">
+                  <Image
+                    src="/about/owner/owner.jpg"
+                    alt="Business owner portrait"
+                    fill
+                    className="object-cover object-top"
+                    sizes="(max-width: 768px) 90vw, 40vw"
+                    priority
+                  />
+                </div>
+              </figure>
+            </div>
+          </Reveal>
         </div>
       </Container>
     </section>
