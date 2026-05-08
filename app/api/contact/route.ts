@@ -74,22 +74,6 @@ function getClientIp(req: NextRequest): string {
   );
 }
 
-async function verifyHCaptcha(token: string): Promise<boolean> {
-  const secret = process.env.HCAPTCHA_SECRET_KEY;
-  if (!secret) {
-    console.error("[contact] HCAPTCHA_SECRET_KEY is not set.");
-    return false;
-  }
-  const res = await fetch("https://hcaptcha.com/siteverify", {
-    method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: `response=${encodeURIComponent(token)}&secret=${encodeURIComponent(secret)}`,
-  });
-  const data = (await res.json()) as { success: boolean; "error-codes"?: string[] };
-  console.log("[contact] hCaptcha verify result:", JSON.stringify(data));
-  return data.success === true;
-}
-
 // Strip < and > to prevent HTML injection in the email body.
 function sanitize(str: string): string {
   return str.replace(/</g, "&lt;").replace(/>/g, "&gt;").trim();
@@ -185,7 +169,6 @@ export async function POST(req: NextRequest) {
   const phone = typeof body.phone === "string" ? body.phone : "";
   const service = typeof body.service === "string" ? body.service : "";
   const message = typeof body.message === "string" ? body.message : "";
-  const captchaToken = typeof body.captchaToken === "string" ? body.captchaToken : "";
 
   // ── 8. Input validation ───────────────────────────────────────────────────
   if (!name.trim() || name.trim().length < 2 || name.trim().length > 100) {
@@ -223,24 +206,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Invalid service selection." }, { status: 400 });
   }
 
-  // ── 9. CAPTCHA verification ───────────────────────────────────────────────
-  console.log("HCAPTCHA_SECRET_KEY exists:", !!process.env.HCAPTCHA_SECRET_KEY);
-  console.log("[contact] Captcha token received:", captchaToken ? `${captchaToken.substring(0, 20)}…` : "(empty)");
-  if (!captchaToken) {
-    return NextResponse.json(
-      { error: "Please complete the CAPTCHA verification." },
-      { status: 400 }
-    );
-  }
-  const captchaOk = await verifyHCaptcha(captchaToken);
-  if (!captchaOk) {
-    return NextResponse.json(
-      { error: "CAPTCHA verification failed. Please try again." },
-      { status: 400 }
-    );
-  }
-
-  // ── 10. Send email ────────────────────────────────────────────────────────
+  // ── 9. Send email ─────────────────────────────────────────────────────────
   const resend = new Resend(process.env.RESEND_API_KEY);
 
   const safeName = sanitize(name);

@@ -1,24 +1,7 @@
 "use client";
 
-import { useRef, useState } from "react";
-import HCaptcha from "@hcaptcha/react-hcaptcha";
-import { CheckCircle, Loader2, Send, AlertTriangle } from "lucide-react";
-
-// ---------------------------------------------------------------------------
-// Read the site key once at module level.
-// NEXT_PUBLIC_* vars are inlined at build time — if this is undefined the var
-// was never set.  We log a warning so it's easy to spot in the console.
-// ---------------------------------------------------------------------------
-const HCAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY ?? "";
-
-if (!HCAPTCHA_SITE_KEY) {
-  console.warn(
-    "[ContactForm] NEXT_PUBLIC_HCAPTCHA_SITE_KEY is not set.\n" +
-      "  • Development : add it to .env.local\n" +
-      "  • Production  : add it in Vercel → Settings → Environment Variables\n" +
-      "  hCaptcha widget will be hidden and captcha validation will be skipped."
-  );
-}
+import { useState } from "react";
+import { CheckCircle, Loader2, Send } from "lucide-react";
 
 const SERVICE_OPTIONS = [
   "Commercial Cleaning",
@@ -66,10 +49,8 @@ const HONEYPOT_STYLE: React.CSSProperties = {
 export function ContactForm() {
   const [form, setForm] = useState<FormState>(INITIAL_STATE);
   const [honeypot, setHoneypot] = useState<string>("");
-  const [captchaToken, setCaptchaToken] = useState<string>("");
   const [status, setStatus] = useState<FormStatus>("idle");
   const [errorMessage, setErrorMessage] = useState<string>("");
-  const captchaRef = useRef<HCaptcha>(null);
 
   function handleChange(
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -81,19 +62,13 @@ export function ContactForm() {
     e.preventDefault();
     setErrorMessage("");
 
-    // Only enforce captcha when the widget is actually rendered
-    if (HCAPTCHA_SITE_KEY && !captchaToken) {
-      setErrorMessage("Please complete the CAPTCHA verification before submitting.");
-      return;
-    }
-
     setStatus("submitting");
 
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, captchaToken, website: honeypot }),
+        body: JSON.stringify({ ...form, website: honeypot }),
       });
 
       const data = (await res.json()) as { success?: boolean; error?: string };
@@ -105,15 +80,11 @@ export function ContactForm() {
       setStatus("success");
       setForm(INITIAL_STATE);
       setHoneypot("");
-      setCaptchaToken("");
-      captchaRef.current?.resetCaptcha();
     } catch (err) {
       setStatus("error");
       setErrorMessage(
         err instanceof Error ? err.message : "Something went wrong. Please try again."
       );
-      captchaRef.current?.resetCaptcha();
-      setCaptchaToken("");
     }
   }
 
@@ -250,48 +221,11 @@ export function ContactForm() {
         />
       </div>
 
-      {/* hCaptcha — only renders when the site key is available */}
-      {HCAPTCHA_SITE_KEY ? (
-        <div>
-          <HCaptcha
-            sitekey={HCAPTCHA_SITE_KEY}
-            onVerify={(token) => {
-              setCaptchaToken(token);
-              setErrorMessage("");
-            }}
-            onExpire={() => setCaptchaToken("")}
-            ref={captchaRef}
-          />
-        </div>
-      ) : process.env.NODE_ENV === "development" ? (
-        <div
-          role="alert"
-          className="flex items-start gap-2 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-800"
-        >
-          <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0" />
-          <span>
-            <strong>Dev only:</strong> hCaptcha is disabled.{" "}
-            Add <code className="rounded bg-amber-100 px-1">NEXT_PUBLIC_HCAPTCHA_SITE_KEY</code>{" "}
-            to <code className="rounded bg-amber-100 px-1">.env.local</code> to enable it.
-          </span>
-        </div>
-      ) : null}
-
       {/* Error message */}
       {status === "error" && errorMessage && (
         <div
           role="alert"
           className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700"
-        >
-          {errorMessage}
-        </div>
-      )}
-
-      {/* Client-side captcha prompt (shown before submit, not after server error) */}
-      {status === "idle" && errorMessage && (
-        <div
-          role="alert"
-          className="rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-700"
         >
           {errorMessage}
         </div>
@@ -315,6 +249,9 @@ export function ContactForm() {
         )}
       </button>
 
+      <p className="text-center text-xs text-muted">
+        Protected from spam. Your information stays private.
+      </p>
       <p className="text-center text-xs text-muted">
         We respond within 2 business hours · Mon–Sat 7 AM–7 PM
       </p>
