@@ -47,7 +47,7 @@ export function BrandStatementSection() {
           </Reveal>
           <Reveal delay={0.12}>
             <p className="font-heading text-[4.5rem] font-bold leading-[0.92] tracking-tight text-white/18 sm:text-[6.5rem] md:text-[8rem] lg:text-[10rem] xl:text-[12rem]">
-              Guaranteed.
+              Detailed.
             </p>
           </Reveal>
         </div>

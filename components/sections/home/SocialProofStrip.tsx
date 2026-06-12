@@ -17,9 +17,9 @@ const outcomes = [
     detail: "Every request answered the same business day"
   },
   {
-    value: "100%",
-    label: "Satisfaction Backed",
-    detail: "We return and correct any issue at no charge"
+    value: "Free",
+    label: "Quote & Estimate",
+    detail: "Written proposal within 24 hours, no obligation"
   }
 ];
 

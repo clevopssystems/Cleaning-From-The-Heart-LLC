@@ -25,7 +25,7 @@ const credibility = [
   { value: "30+", label: "Years in Business" },
   { value: "200+", label: "Properties Served" },
   { value: "14", label: "Seattle Service Areas" },
-  { value: "100%", label: "Satisfaction Backed" }
+  { value: "Free", label: "Quote & Estimate" }
 ];
 
 const values = [
@@ -137,12 +137,12 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              {/* Insurance badge */}
+              {/* Experience badge */}
               <div className="flex items-center gap-3 rounded-xl border border-brand-100 bg-surface px-4 py-3">
                 <ShieldCheck className="h-5 w-5 shrink-0 text-brand-600" aria-hidden />
                 <div>
-                  <p className="text-xs font-semibold text-ink">Fully Insured Business</p>
-                  <p className="text-xs text-muted">Proof of insurance available on request</p>
+                  <p className="text-xs font-semibold text-ink">Seattle-Based Local Business</p>
+                  <p className="text-xs text-muted">Owner-operated, serving the Seattle area</p>
                 </div>
               </div>
             </aside>

@@ -8,7 +8,10 @@ export type ServiceSlug =
   | "junk-removal"
   | "parking-lot-exterior-maintenance"
   | "post-construction-renovation-cleanup"
-  | "move-in-move-out-cleaning";
+  | "move-in-move-out-cleaning"
+  | "residential-cleaning"
+  | "deep-cleaning"
+  | "solar-panel-cleaning";
 
 export interface Service {
   slug: ServiceSlug;
@@ -33,7 +36,7 @@ export const siteConfig = {
   address: "PO BOX 135, Renton, WA 98057",
   primaryCta: "Get a Free Quote",
   secondaryCta: "Call Now",
-  serviceAreaSummary: "Serving Seattle, Bellevue, Renton & Surrounding Areas",
+  serviceAreaSummary: "Serving Seattle, Renton, Bellevue, Kent, Everett & Surrounding Areas",
   businessHours: "Mon-Sat: 7 AM - 7 PM"
 };
 
@@ -70,7 +73,7 @@ export const services: Service[] = [
     ],
     seoTitle: "Commercial Cleaning Services in Seattle, WA",
     seoDescription:
-      "Professional commercial cleaning in Seattle for offices, retail, and facilities. Dependable scheduling, vetted staff, satisfaction backed. Get a quote from Cleaning From The Heart LLC.",
+      "Professional commercial cleaning in Seattle for offices, retail, and facilities. Dependable scheduling, experienced crew, 30+ years of Seattle experience. Get a quote from Cleaning From The Heart LLC.",
     keywords: [
       "Seattle commercial cleaning",
       "office cleaning Seattle",
@@ -375,60 +378,165 @@ export const services: Service[] = [
       "property transition cleaning Seattle WA",
       "commercial move out cleaning Seattle"
     ]
+  },
+  {
+    slug: "residential-cleaning",
+    title: "Residential Cleaning",
+    shortDescription:
+      "Professional home cleaning for Seattle-area homeowners, renters, and property managers. Full home cleaning, deep cleaning, move-in/move-out, and more.",
+    problem:
+      "Keeping a home consistently clean takes time most households simply don't have — and routine cleaning doesn't address built-up grime or overlooked areas.",
+    solution:
+      "We provide thorough residential cleaning for homes, apartments, and rental properties across the Seattle area, done with care and a written checklist every visit.",
+    benefits: [
+      "Full home cleaning from top to bottom",
+      "Detailed kitchen and bathroom cleaning",
+      "Floor care, vacuuming, and mopping throughout",
+      "Baseboard, surface, and fixture cleaning",
+      "Move-in and move-out cleaning for rentals and condos",
+      "Flexible scheduling to fit busy households",
+      "Written cleaning checklist reviewed on every visit",
+      "Service for homeowners, renters, and property managers"
+    ],
+    process: [
+      "Share your home size, location, and cleaning priorities so we can confirm scope",
+      "We confirm scheduling and pricing with no obligation",
+      "Your home is cleaned thoroughly on the agreed date"
+    ],
+    seoTitle: "Residential Cleaning Seattle | Home Cleaning Services | Cleaning From The Heart LLC",
+    seoDescription:
+      "Professional residential cleaning in Seattle for homes, apartments, and rental properties. Full home cleaning, deep cleaning, move-in/move-out, and floor care across the Seattle area.",
+    keywords: [
+      "residential cleaning Seattle",
+      "home cleaning Seattle",
+      "house cleaning Seattle WA",
+      "apartment cleaning Seattle",
+      "move in out cleaning Seattle"
+    ]
+  },
+  {
+    slug: "deep-cleaning",
+    title: "Deep Cleaning",
+    shortDescription:
+      "A comprehensive top-to-bottom cleaning for homes and spaces that need more than routine maintenance — ideal for move-ins, seasonal resets, rentals, and neglected areas.",
+    problem:
+      "Routine cleaning maintains a space, but doesn't address built-up grime, overlooked corners, or surfaces that need detailed work to get back to a clean baseline.",
+    solution:
+      "Our deep cleaning service covers kitchens, bathrooms, floors, baseboards, high-touch surfaces, and every area that standard cleaning typically skips.",
+    benefits: [
+      "Thorough kitchen cleaning including appliances and cabinet exteriors",
+      "Detailed bathroom scrubbing including grout, fixtures, and tile",
+      "Baseboard, vent, and corner cleaning throughout",
+      "Deep floor cleaning, scrubbing, and mopping",
+      "High-touch surface, light switch, and door handle cleaning",
+      "Inside oven and refrigerator cleaning available",
+      "Ideal for move-ins, move-outs, and seasonal resets",
+      "Available for homes, apartments, and rental properties"
+    ],
+    process: [
+      "Tell us your space size, current condition, and specific priorities",
+      "We confirm scope and schedule a date that works for you",
+      "Deep cleaning is completed from top to bottom with a written checklist"
+    ],
+    seoTitle: "Deep Cleaning Seattle | Detailed Home & Property Cleaning | Cleaning From The Heart LLC",
+    seoDescription:
+      "Professional deep cleaning in Seattle for homes, apartments, and rental properties. Top-to-bottom detailed cleaning for move-ins, move-outs, seasonal resets, and neglected spaces.",
+    keywords: [
+      "deep cleaning Seattle",
+      "deep house cleaning Seattle",
+      "move out cleaning Seattle WA",
+      "detailed home cleaning Seattle",
+      "thorough cleaning service Seattle"
+    ]
+  },
+  {
+    slug: "solar-panel-cleaning",
+    title: "Solar Panel Cleaning",
+    shortDescription:
+      "Exterior solar panel cleaning for homeowners and property owners in the Seattle area — removing accumulated dust, pollen, debris, and outdoor buildup from panel surfaces.",
+    problem:
+      "Solar panels and other exterior surfaces accumulate dust, pollen, leaves, and bird droppings over time, leaving surfaces visibly dirty and in need of routine maintenance.",
+    solution:
+      "We provide careful exterior cleaning for solar panels, helping Seattle-area homeowners keep panel surfaces clean and properly maintained.",
+    benefits: [
+      "Removes dust, pollen, leaves, and outdoor debris from panel surfaces",
+      "Careful cleaning to protect glass and frame surfaces",
+      "Available for residential and commercial properties",
+      "Service pairs naturally with window and pressure washing",
+      "Available for rooftop and ground-mounted panel arrays",
+      "Serving Seattle, Renton, Bellevue, Kent, and surrounding areas",
+      "Free quote available for your property and panel count",
+      "One-time and recurring maintenance scheduling available"
+    ],
+    process: [
+      "Contact us with your panel count, location, and access details",
+      "We confirm scope, safety considerations, and scheduling",
+      "Panels are cleaned carefully on the agreed date"
+    ],
+    seoTitle: "Solar Panel Cleaning Seattle | Cleaning From The Heart LLC",
+    seoDescription:
+      "Solar panel cleaning in Seattle and surrounding Washington areas. Keep solar panel surfaces clean and maintained with professional exterior cleaning service.",
+    keywords: [
+      "solar panel cleaning Seattle",
+      "solar panel cleaning Washington",
+      "residential solar panel cleaning Seattle",
+      "solar panel maintenance Seattle",
+      "exterior cleaning Seattle WA"
+    ]
   }
 ];
 
-// Home page service showcase — 6 cards including extended services
+// Home page service showcase — 6 featured cards
 // To add a photo to any card: set image to "/home/services/{name}.jpg"
 // Upload photos to /public/home/services/ — recommended size: 800×450px (16:9)
 export const homeServiceCards = [
   {
     title: "Commercial Cleaning",
     description:
-      "Consistent, scheduled cleaning for offices, retail locations, and commercial facilities. Your space stays client-ready without you having to think about it.",
+      "Reliable, scheduled cleaning for offices, retail spaces, and commercial facilities. Consistent crew, written checklists, and direct communication every visit.",
     href: "/services/commercial-cleaning",
     iconName: "Building2",
     image: "/home/services/commercial-cleaning.jpg"
   },
   {
-    title: "Carpet Cleaning",
+    title: "Full Home Cleaning",
     description:
-      "Deep extraction cleaning that lifts embedded dirt, stains, and odors. Ideal for high-traffic offices, rental units, and move-in/move-out transitions.",
-    href: "/services/carpet-cleaning",
-    iconName: "Layers",
-    image: "/home/services/carpet-cleaning.png"
-  },
-  {
-    title: "Strip & Wax",
-    description:
-      "Full floor restoration, strip old buildup, prep the surface, and apply a fresh protective finish. Restores shine and extends the life of commercial floors.",
-    href: "/services/strip-and-wax",
-    iconName: "Sparkles",
-    image: "/home/services/strip-wax.jpg"
-  },
-  {
-    title: "Move-In / Move-Out Cleaning",
-    description:
-      "Detail-focused cleaning for rental units, condos, and commercial spaces during tenant transitions. Consistently meets property manager standards.",
-    href: "/services/move-in-move-out-cleaning",
+      "Thorough residential cleaning for homes across the Seattle area. From regular maintenance cleans to full deep cleans — done with care and attention to detail.",
+    href: "/services/residential-cleaning",
     iconName: "Home",
-    image: "/home/services/move-in-cleaning.jpg"
+    image: "/home/services/deep-cleaning.jpg"
   },
   {
     title: "Deep Cleaning",
     description:
-      "A comprehensive top-to-bottom cleaning for spaces that need a full reset, ideal post-renovation, seasonal refresh, or for new accounts starting fresh.",
-    href: "/contact",
+      "A comprehensive top-to-bottom clean for homes and spaces that need a full reset. Ideal for move-ins, seasonal refreshes, or starting a new cleaning routine.",
+    href: "/services/deep-cleaning",
     iconName: "Zap",
-    image: "/home/services/deep-cleaning.jpg"
+    image: "/home/services/carpet-cleaning.png"
   },
   {
-    title: "Post-Construction Cleaning",
+    title: "Window Cleaning",
     description:
-      "Dust, debris, and construction residue cleared thoroughly after remodeling or build-out. We handle the detail work so your space is ready for occupancy.",
-    href: "/services/post-construction-renovation-cleanup",
-    iconName: "HardHat",
+      "Professional window and glass cleaning for homes and commercial properties. Streak-free results, improved curb appeal, and a brighter, cleaner space.",
+    href: "/services/window-glass-cleaning",
+    iconName: "Sparkles",
+    image: "/home/work/work-office-seattle.png"
+  },
+  {
+    title: "Pressure Washing",
+    description:
+      "Commercial and residential pressure washing for driveways, sidewalks, siding, and exterior surfaces. Removes grime, algae, and buildup to restore curb appeal.",
+    href: "/services/pressure-washing",
+    iconName: "Layers",
     image: "/home/services/post-construction.jpg"
+  },
+  {
+    title: "Move-In / Move-Out Cleaning",
+    description:
+      "Detail-focused turnover cleaning for rental units, condos, and commercial spaces. Reliable service that meets property manager and tenant expectations.",
+    href: "/services/move-in-move-out-cleaning",
+    iconName: "HardHat",
+    image: "/home/services/move-in-cleaning.jpg"
   }
 ];
 
@@ -464,9 +572,9 @@ export const whyChooseUs = [
     iconName: "MapPin"
   },
   {
-    title: "Fully Insured, Vetted Staff",
+    title: "30+ Years of Seattle Experience",
     description:
-      "Every team member is background-checked, trained before their first job, and covered under our insurance. You're not just getting clean results. You're getting peace of mind when you hand over access to your property.",
+      "Decades of hands-on cleaning experience in Seattle commercial and residential properties. Every job is handled by a trained, professional crew that understands your space and your standards.",
     iconName: "ShieldCheck"
   },
   {
@@ -514,27 +622,27 @@ export const faqs = [
       "Pricing depends on the size and type of your space, the services required, and the cleaning frequency. We provide free, no-obligation estimates. Contact us and we will give you a straightforward quote based on your specific situation."
   },
   {
-    question: "Are you insured?",
+    question: "What sets your cleaning team apart?",
     answer:
-      "Yes. We carry appropriate insurance coverage for all services. Proof of insurance is available upon request as part of the quoting process."
+      "30+ years of hands-on experience, a consistent crew, and direct communication with the owner. We serve Seattle commercial and residential clients with structured checklists, reliable schedules, and a straightforward process — no voicemail loops, no chasing updates."
   }
 ];
 
 export const serviceAreas = [
-  "Downtown Seattle",
-  "Capitol Hill",
-  "South Lake Union",
-  "Queen Anne",
-  "Ballard",
-  "West Seattle",
-  "Beacon Hill",
-  "Fremont",
-  "Bellevue",
+  "Seattle",
   "Renton",
+  "Bellevue",
   "Kent",
+  "Everett",
   "Tukwila",
+  "Shoreline",
+  "Federal Way",
+  "Rainier",
+  "North Lynnwood",
+  "Mill Creek",
+  "Kirkland",
   "Tacoma",
-  "Kirkland"
+  "Bothell"
 ];
 
 // PLACEHOLDER: Replace all testimonials with real client reviews before launch.
@@ -701,7 +809,7 @@ export const teamMediaItems = [
     // Replace with: /public/home/team/team-1.jpg — team member on the job
     image: "/home/team/team-1.svg",
     alt: "Professional cleaning team member preparing for a commercial job",
-    caption: "Vetted & Insured Staff"
+    caption: "Professional & Experienced"
   },
   {
     // Replace with: /public/home/team/team-2.jpg — professional equipment/supplies
@@ -755,8 +863,8 @@ export const videoFeatures = [
 // homeStats is retained for backward compatibility — not currently rendered as numbers.
 // Update with real data before using on the site.
 export const homeStats = [
-  { value: "Fully Insured", label: "Licensed, bonded & insured for every job" },
-  { value: "Satisfaction Backed", label: "We make it right every time" },
+  { value: "30+ Years", label: "Decades of professional cleaning experience" },
+  { value: "Seattle Local", label: "Owner-operated, locally rooted" },
   { value: "Commercial-Grade", label: "Professional equipment & structured process" },
   { value: "Seattle Local", label: "Rooted in Seattle, focused on the greater metro" }
 ];

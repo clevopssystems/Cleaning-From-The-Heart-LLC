@@ -1,36 +1,36 @@
 import Link from "next/link";
-import { Building2, ShoppingBag, KeyRound, Home, ArrowRight } from "lucide-react";
+import { Building2, KeyRound, Home, GraduationCap, ArrowRight } from "lucide-react";
 import { Container } from "@/components/shared/Container";
 import { Reveal } from "@/components/shared/Reveal";
 
 const clientTypes = [
   {
-    icon: Building2,
-    title: "Offices & Corporate Spaces",
-    description:
-      "From single-suite offices to multi-floor corporate facilities, we provide scheduled cleaning that keeps your workspace client-ready and your team focused. Consistent crew, after-hours scheduling, and zero disruption to your workday.",
-    tags: ["Recurring Weekly Contracts", "After-Hours Available", "Checklist-Backed"]
-  },
-  {
-    icon: ShoppingBag,
-    title: "Retail & Storefronts",
-    description:
-      "First impressions close sales. We keep your retail floor, windows, restrooms, and entry areas spotless on a schedule that works around your store hours and customer traffic patterns.",
-    tags: ["Early Morning Service", "Floor Maintenance", "Window Cleaning"]
-  },
-  {
     icon: KeyRound,
     title: "Property Managers",
     description:
-      "We're the vendor property managers keep. Reliable turnover cleans, recurring common-area maintenance, and move-in/move-out service across single or multiple properties. One point of contact, consistent standards across every unit.",
-    tags: ["Multi-Property Support", "Turnover Cleaning", "Flexible Scheduling"]
+      "Reliable move-out, common area, floor care, and turnover cleaning for rental and managed properties. One point of contact, consistent results across every unit, and flexible scheduling built around your turnover timelines.",
+    tags: ["Move-Out Cleaning", "Turnover Cleaning", "Multi-Property Support"]
+  },
+  {
+    icon: Building2,
+    title: "Offices & Commercial Spaces",
+    description:
+      "Recurring cleaning for offices, storefronts, and commercial facilities throughout Seattle. Same crew every visit, after-hours scheduling, and a structured checklist process that keeps your workspace client-ready.",
+    tags: ["Recurring Contracts", "After-Hours Available", "Checklist-Backed"]
   },
   {
     icon: Home,
-    title: "Short-Term Rental Hosts",
+    title: "Homeowners",
     description:
-      "Airbnb and vacation rental hosts need a cleaning partner who understands turnaround pressure. We deliver guest-ready results between bookings, on time, every time, so you never have to scramble before a check-in.",
-    tags: ["Same-Day Turnovers", "Guest-Ready Standard", "Reliable Availability"]
+      "Professional home cleaning for Seattle-area homeowners who want a clean, well-maintained home without the hassle. Regular maintenance cleans, deep cleans, move-in/move-out service, and window cleaning available.",
+    tags: ["Regular Maintenance", "Deep Cleaning", "Window Cleaning"]
+  },
+  {
+    icon: GraduationCap,
+    title: "Schools & Facilities",
+    description:
+      "Structured cleaning plans for K-12 schools, educational campuses, and large facilities. Classroom sanitation, restroom service, hallways, offices, and common areas — scheduled around school hours.",
+    tags: ["Classroom Cleaning", "Restroom Sanitation", "Flexible Scheduling"]
   }
 ];
 
@@ -39,13 +39,13 @@ export function WhoWeWorkWithSection() {
     <section className="section-shell bg-surface">
       <Container>
         <div className="mx-auto max-w-2xl text-center">
-          <span className="eyebrow">Who We Work With</span>
+          <span className="eyebrow">Who We Help</span>
           <h2 className="text-4xl font-bold leading-tight tracking-tight text-ink md:text-5xl">
-            Cleaning Built for Seattle Businesses &amp; Property Owners
+            Cleaning for Homes, Offices, Schools &amp; Properties
           </h2>
           <p className="mt-5 text-base leading-relaxed text-muted md:text-lg">
-            Whether you manage one office or dozens of rental properties, we provide the level of consistency
-            and communication that makes us easy to rely on.
+            Whether you manage a single home or a portfolio of commercial properties, Cleaning From The Heart LLC
+            delivers the consistency, communication, and results you can count on.
           </p>
         </div>
 

@@ -42,7 +42,7 @@ export function GuaranteeSection() {
         aria-hidden
       >
         <span className="font-heading text-[14rem] font-bold leading-none tracking-tight text-white/[0.025] md:text-[20rem] lg:text-[26rem]">
-          100%
+          30+
         </span>
       </div>
 
@@ -54,18 +54,18 @@ export function GuaranteeSection() {
             <div>
               <span className="eyebrow-light">Our Promise to You</span>
 
-              {/* Display number */}
+              {/* Display stat */}
               <p className="font-heading text-7xl font-bold leading-none tracking-tight text-white md:text-8xl lg:text-9xl">
-                100%
+                30+
               </p>
 
               <h2 className="mt-5 text-2xl font-bold leading-snug text-white md:text-3xl">
-                Satisfaction guaranteed on every visit. No fine print.
+                Years of experience. We come back and fix it. Every time.
               </h2>
 
               <p className="mt-5 text-base leading-relaxed text-white/55">
-                We stand behind our work completely. If a visit doesn&apos;t meet the standard we agreed on,
-                we don&apos;t argue about it. We come back and fix it. That&apos;s the deal, every time.
+                If a visit doesn&apos;t meet the standard we agreed on, we don&apos;t argue about it.
+                We schedule a return visit, we fix it, and we follow up. That&apos;s how we operate, every time.
               </p>
 
               <div className="mt-8 flex flex-col items-start gap-3 sm:flex-row sm:items-start">

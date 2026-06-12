@@ -28,7 +28,7 @@ import { siteConfig } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Commercial Cleaning Seattle, WA | Cleaning From The Heart LLC",
   description:
-    "Professional commercial cleaning in Seattle, WA for offices, schools, and commercial facilities. Consistent staffing, dependable janitorial services, and satisfaction guaranteed. Get a free quote from Cleaning From The Heart LLC.",
+    "Professional commercial cleaning in Seattle, WA for offices, schools, and commercial facilities. Consistent staffing, dependable janitorial services, 30+ years of experience. Get a free quote from Cleaning From The Heart LLC.",
   alternates: {
     canonical: "/services/commercial-cleaning"
   }
@@ -60,14 +60,14 @@ const serviceSchema = {
     { "@type": "City", name: "Tacoma" }
   ],
   description:
-    "Professional commercial cleaning services in Seattle for offices, schools, and commercial facilities. Reliable scheduling, consistent staffing, and satisfaction guaranteed."
+    "Professional commercial cleaning services in Seattle for offices, schools, and commercial facilities. Reliable scheduling, consistent staffing, and 30+ years of Seattle experience."
 };
 
 const heroStats = [
   { value: "30+", label: "Years in Seattle" },
   { value: "200+", label: "Properties Served" },
   { value: "5.0★", label: "Average Rating" },
-  { value: "100%", label: "Satisfaction Backed" }
+  { value: "Free", label: "Quote & Estimate" }
 ];
 
 const trustByTypes = [
@@ -180,9 +180,9 @@ const whyChooseItems = [
   },
   {
     Icon: ShieldCheck,
-    title: "Fully Insured & Vetted Staff",
+    title: "30+ Years of Seattle Experience",
     description:
-      "All team members are background-checked and covered under our insurance. You can hand over access to your facility with complete peace of mind."
+      "Decades of hands-on commercial cleaning experience across Seattle offices, schools, and facilities. A consistent crew that knows your standards and delivers results you don't need to follow up on."
   },
   {
     Icon: MessageCircle,
@@ -210,7 +210,7 @@ const resultsBenefits = [
 const authorityStats = [
   { value: "30+", label: "Years in Business", detail: "Family-owned, Seattle-rooted" },
   { value: "200+", label: "Properties Served", detail: "Offices, schools & facilities" },
-  { value: "100%", label: "Satisfaction Backed", detail: "We make it right, every time" },
+  { value: "Free", label: "Quotes & Estimates", detail: "No obligation, written proposal" },
   { value: "5.0★", label: "Client Rating", detail: "Consistent 5-star performance" }
 ];
 
@@ -242,9 +242,9 @@ const faqItems = [
       "We serve Seattle and the greater metro area, including Bellevue, Tacoma, Renton, Kent, Tukwila, and Kirkland. We cover locations throughout King and Pierce counties. If you're unsure whether we serve your area, reach out and we'll confirm availability promptly."
   },
   {
-    question: "Are your staff trained, vetted, and insured?",
+    question: "What can I expect from your cleaning crew?",
     answer:
-      "Yes. Every team member is background-checked before their first job and trained on our cleaning standards and protocols. We carry full liability insurance for all services, and proof of insurance is available on request during the quoting process. You can hand over access to your facility with confidence."
+      "You can expect the same professional crew each visit, trained on your specific space and cleaning standards. Every job follows a written checklist, and if anything falls short, we return and correct it at no charge. We bring 30+ years of Seattle commercial cleaning experience to every facility we serve."
   },
   {
     question: "Can you work around our business hours?",
@@ -299,7 +299,7 @@ export default function CommercialCleaningLandingPage() {
                   "Same crew, every visit",
                   "Written scope on every job",
                   "Response within 2 hours",
-                  "Satisfaction guaranteed"
+                  "Free quote, no obligation"
                 ].map((point) => (
                   <li key={point} className="flex items-center gap-2 text-sm text-white/75">
                     <CheckCircle2 className="h-4 w-4 shrink-0 text-accent" aria-hidden />
@@ -328,11 +328,11 @@ export default function CommercialCleaningLandingPage() {
               <div className="mt-7 flex flex-wrap items-center gap-6">
                 <div className="flex items-center gap-2 text-sm text-white/70">
                   <ShieldCheck className="h-4 w-4 shrink-0 text-accent" aria-hidden />
-                  <span>Fully Insured</span>
+                  <span>Seattle-Owned Local Business</span>
                 </div>
                 <div className="flex items-center gap-2 text-sm text-white/70">
                   <Clock className="h-4 w-4 shrink-0 text-accent" aria-hidden />
-                  <span>Background-Checked Staff</span>
+                  <span>Professional Trained Crew</span>
                 </div>
                 <div className="flex items-center gap-2 text-sm text-white/70">
                   <Star className="h-4 w-4 shrink-0 text-accent" aria-hidden />
@@ -708,10 +708,10 @@ export default function CommercialCleaningLandingPage() {
                   </div>
                 </div>
                 <div className="col-span-2 rounded-2xl border border-brand-100 bg-surface px-6 py-5">
-                  <p className="text-sm font-semibold text-ink">Our 100% Satisfaction Guarantee</p>
+                  <p className="text-sm font-semibold text-ink">Our Service Promise</p>
                   <p className="mt-1.5 text-sm leading-relaxed text-muted">
                     If any area doesn&apos;t meet the agreed standard, we return and correct it at no charge.
-                    Every single time, no questions asked.
+                    Every single time, no back-and-forth.
                   </p>
                 </div>
               </div>
@@ -865,7 +865,7 @@ export default function CommercialCleaningLandingPage() {
                   {[
                     "Written quote within 24 hours",
                     "Flexible one-time or recurring service",
-                    "Satisfaction guaranteed on every visit"
+                    "30+ Years of Seattle cleaning experience"
                   ].map((item) => (
                     <li key={item} className="flex items-center gap-2 text-sm text-white/70">
                       <CalendarCheck className="h-4 w-4 shrink-0 text-accent" aria-hidden />

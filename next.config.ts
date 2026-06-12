@@ -72,6 +72,16 @@ const nextConfig: NextConfig = {
   // Compress responses (enabled by default in Next.js but explicit here for documentation)
   compress: true,
 
+  async redirects() {
+    return [
+      {
+        source: "/services/window-cleaning",
+        destination: "/services/window-glass-cleaning",
+        permanent: true,
+      },
+    ];
+  },
+
   async headers() {
     return [
       {
