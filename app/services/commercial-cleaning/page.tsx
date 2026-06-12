@@ -26,7 +26,7 @@ import { SectionHeading } from "@/components/shared/SectionHeading";
 import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Commercial Cleaning Seattle, WA | Cleaning From The Heart LLC",
+  title: "Commercial Cleaning Seattle",
   description:
     "Professional commercial cleaning in Seattle, WA for offices, schools, and commercial facilities. Consistent staffing, dependable janitorial services, 30+ years of experience. Get a free quote from Cleaning From The Heart LLC.",
   alternates: {

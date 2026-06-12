@@ -17,9 +17,13 @@ import { ServiceAreaSection } from "@/components/sections/home/ServiceAreaSectio
 import { faqs } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Seattle Cleaning Services | Commercial & Residential Cleaning | Cleaning From The Heart LLC",
+  // `absolute` bypasses the root layout's title template so the brand isn't
+  // appended twice (which previously made this title too long for Bing).
+  title: {
+    absolute: "Seattle Cleaning Services | Cleaning From The Heart LLC"
+  },
   description:
-    "Cleaning From The Heart LLC provides commercial cleaning, janitorial services, home cleaning, window cleaning, pressure washing, carpet cleaning, floor care, and move-in/move-out cleaning in Seattle, Renton, Bellevue, Kent, Everett, and surrounding Washington areas. 30+ years of experience.",
+    "Cleaning From The Heart LLC provides commercial cleaning, residential cleaning, janitorial services, window cleaning, pressure washing, carpet cleaning, floor care, and move-out cleaning in Seattle, WA.",
   keywords: [
     "Seattle cleaning services",
     "commercial cleaning Seattle",
@@ -34,6 +38,28 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: "/"
+  },
+  openGraph: {
+    title: "Seattle Cleaning Services | Cleaning From The Heart LLC",
+    description:
+      "Commercial, residential, janitorial, window, pressure washing, carpet, floor care, and move-out cleaning services in Seattle, WA.",
+    url: "https://cleaningfromtheheartllc.com/",
+    siteName: "Cleaning From The Heart LLC",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "/services/hero/hero-cleaning-team.png",
+        alt: "Cleaning From The Heart LLC — Seattle commercial and residential cleaning"
+      }
+    ]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Seattle Cleaning Services | Cleaning From The Heart LLC",
+    description:
+      "Professional commercial and residential cleaning services in Seattle, WA.",
+    images: ["/services/hero/hero-cleaning-team.png"]
   }
 };
 

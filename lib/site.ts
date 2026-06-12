@@ -28,7 +28,7 @@ export interface Service {
 
 export const siteConfig = {
   name: "Cleaning From The Heart LLC",
-  phoneDisplay: "206-850-8484",
+  phoneDisplay: "(206) 850-8484",
   phoneHref: "tel:+12068508484",
   email: "Cleanfromtheheartllc@gmail.com",
   instagramHref: "https://www.instagram.com/cleaningfromtheheartllc?igsh=cW53ZjdhaTl0Z2x4",
@@ -71,7 +71,7 @@ export const services: Service[] = [
       "Written quote with agreed service frequency, scope, and pricing",
       "Recurring service begins, with check-ins to maintain quality and adjust as needed"
     ],
-    seoTitle: "Commercial Cleaning Services in Seattle, WA",
+    seoTitle: "Commercial Cleaning Seattle",
     seoDescription:
       "Professional commercial cleaning in Seattle for offices, retail, and facilities. Dependable scheduling, experienced crew, 30+ years of Seattle experience. Get a quote from Cleaning From The Heart LLC.",
     keywords: [
@@ -203,7 +203,7 @@ export const services: Service[] = [
       "Interior and exterior glass cleaning with detail pass on frames and edges",
       "Final quality check for streak-free results and customer approval"
     ],
-    seoTitle: "Commercial Window & Glass Cleaning in Seattle, WA",
+    seoTitle: "Window Cleaning Seattle",
     seoDescription:
       "Commercial window and glass cleaning in Seattle for offices and storefronts. Streak-free results, reliable service, and flexible scheduling.",
     keywords: [
@@ -236,7 +236,7 @@ export const services: Service[] = [
       "Pre-treatment and pressure washing of approved exterior surfaces",
       "Final rinse and visual review of cleaned areas"
     ],
-    seoTitle: "Commercial Pressure Washing in Seattle, WA",
+    seoTitle: "Pressure Washing Seattle",
     seoDescription:
       "Commercial pressure washing in Seattle for sidewalks, entries, and exterior surfaces. Remove buildup and improve curb appeal with reliable service.",
     keywords: [
@@ -368,7 +368,7 @@ export const services: Service[] = [
       "Detailed move-in or move-out cleaning across agreed areas",
       "Final inspection pass to confirm readiness"
     ],
-    seoTitle: "Move-In / Move-Out Cleaning in Seattle, WA",
+    seoTitle: "Move-In / Move-Out Cleaning Seattle",
     seoDescription:
       "Move-in and move-out cleaning in Seattle for commercial and rental spaces. Detail-focused turnover cleaning with flexible scheduling.",
     keywords: [
@@ -403,7 +403,7 @@ export const services: Service[] = [
       "We confirm scheduling and pricing with no obligation",
       "Your home is cleaned thoroughly on the agreed date"
     ],
-    seoTitle: "Residential Cleaning Seattle | Home Cleaning Services | Cleaning From The Heart LLC",
+    seoTitle: "Residential Cleaning Seattle",
     seoDescription:
       "Professional residential cleaning in Seattle for homes, apartments, and rental properties. Full home cleaning, deep cleaning, move-in/move-out, and floor care across the Seattle area.",
     keywords: [
@@ -438,7 +438,7 @@ export const services: Service[] = [
       "We confirm scope and schedule a date that works for you",
       "Deep cleaning is completed from top to bottom with a written checklist"
     ],
-    seoTitle: "Deep Cleaning Seattle | Detailed Home & Property Cleaning | Cleaning From The Heart LLC",
+    seoTitle: "Deep Cleaning Seattle",
     seoDescription:
       "Professional deep cleaning in Seattle for homes, apartments, and rental properties. Top-to-bottom detailed cleaning for move-ins, move-outs, seasonal resets, and neglected spaces.",
     keywords: [
@@ -473,7 +473,7 @@ export const services: Service[] = [
       "We confirm scope, safety considerations, and scheduling",
       "Panels are cleaned carefully on the agreed date"
     ],
-    seoTitle: "Solar Panel Cleaning Seattle | Cleaning From The Heart LLC",
+    seoTitle: "Solar Panel Cleaning Seattle",
     seoDescription:
       "Solar panel cleaning in Seattle and surrounding Washington areas. Keep solar panel surfaces clean and maintained with professional exterior cleaning service.",
     keywords: [

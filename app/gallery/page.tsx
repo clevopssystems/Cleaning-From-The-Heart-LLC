@@ -162,7 +162,7 @@ export default function GalleryPage() {
                 href="tel:+12068508484"
                 className="rounded-xl border border-white/30 bg-white/10 px-7 py-3.5 text-sm font-bold text-white backdrop-blur-sm transition-all hover:bg-white/20"
               >
-                Call 206-850-8484
+                Call (206) 850-8484
               </Link>
             </div>
           </div>

@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     template: "%s | Cleaning From The Heart LLC"
   },
   description:
-    "Cleaning From The Heart LLC provides commercial cleaning, janitorial services, residential cleaning, window cleaning, pressure washing, carpet cleaning, floor care, and move-in/move-out cleaning throughout Seattle and the greater Washington area. 30+ years of experience. Free quotes.",
+    "Commercial and residential cleaning in Seattle, WA — janitorial, window cleaning, pressure washing, carpet cleaning, floor care, and move-out cleaning. 30+ years of experience.",
   keywords: [
     "Seattle cleaning services",
     "commercial cleaning Seattle",
@@ -51,9 +51,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
+        url: "/services/hero/hero-cleaning-team.png",
         alt: "Cleaning From The Heart LLC — Seattle Commercial & Residential Cleaning"
       }
     ]
@@ -63,7 +61,7 @@ export const metadata: Metadata = {
     title: "Cleaning From The Heart LLC | Seattle Cleaning Services",
     description:
       "Commercial and residential cleaning, window cleaning, pressure washing, carpet cleaning, and floor care throughout Seattle. 30+ years of experience.",
-    images: ["/og-image.jpg"]
+    images: ["/services/hero/hero-cleaning-team.png"]
   },
   robots: {
     index: true,

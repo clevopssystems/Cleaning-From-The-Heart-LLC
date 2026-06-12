@@ -15,7 +15,7 @@ import { Reveal } from "@/components/shared/Reveal";
 import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "About | Cleaning From The Heart LLC",
+  title: "About Our Seattle Cleaning Company",
   description:
     "Family-owned and Seattle-rooted since 1993. Learn the story behind Cleaning From The Heart LLC, founded by Oscar Alexander and continued by his son Joshua.",
   alternates: { canonical: "/about" }

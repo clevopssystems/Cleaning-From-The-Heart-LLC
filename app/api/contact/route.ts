@@ -283,7 +283,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json(
       {
         error:
-          "Failed to send your message. Please call us directly at 206-850-8484 or try again later.",
+          "Failed to send your message. Please call us directly at (206) 850-8484 or try again later.",
       },
       { status: 500 }
     );
