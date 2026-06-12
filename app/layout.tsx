@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     template: "%s | Cleaning From The Heart LLC"
   },
   description:
-    "Commercial and residential cleaning in Seattle, WA — janitorial, window cleaning, pressure washing, carpet cleaning, floor care, and move-out cleaning. 30+ years of experience.",
+    "Commercial and residential cleaning in Seattle — janitorial, window, pressure washing, carpet, floor care, and move-out cleaning. 30+ years of experience.",
   keywords: [
     "Seattle cleaning services",
     "commercial cleaning Seattle",
@@ -102,6 +102,7 @@ const localBusinessSchema = {
     { "@type": "City", name: "Bothell" }
   ],
   url: "https://cleaningfromtheheartllc.com",
+  sameAs: [siteConfig.instagramHref],
   openingHours: "Mo-Sa 07:00-19:00",
   priceRange: "$$",
   description:

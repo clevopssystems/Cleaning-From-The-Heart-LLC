@@ -14,7 +14,27 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/services/solar-panel-cleaning"
   },
-  keywords: service.keywords
+  keywords: service.keywords,
+  openGraph: {
+    title: `${service.seoTitle} | Cleaning From The Heart LLC`,
+    description: service.seoDescription,
+    url: "https://cleaningfromtheheartllc.com/services/solar-panel-cleaning",
+    siteName: "Cleaning From The Heart LLC",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "/services/hero/hero-cleaning-team.png",
+        alt: "Solar panel cleaning in Seattle — Cleaning From The Heart LLC"
+      }
+    ]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${service.seoTitle} | Cleaning From The Heart LLC`,
+    description: service.seoDescription,
+    images: ["/services/hero/hero-cleaning-team.png"]
+  }
 };
 
 export default function SolarPanelCleaningPage() {

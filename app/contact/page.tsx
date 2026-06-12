@@ -9,7 +9,7 @@ import { siteConfig } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Contact & Get Quote",
   description:
-    "Request a cleaning quote in Seattle for commercial cleaning, carpet cleaning, or strip and wax services.",
+    "Contact Cleaning From The Heart LLC for commercial, residential, window, carpet, floor care, and move-out cleaning in Seattle, WA.",
   alternates: {
     canonical: "/contact",
   },

@@ -28,9 +28,31 @@ import { siteConfig } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Commercial Cleaning Seattle",
   description:
-    "Professional commercial cleaning in Seattle, WA for offices, schools, and commercial facilities. Consistent staffing, dependable janitorial services, 30+ years of experience. Get a free quote from Cleaning From The Heart LLC.",
+    "Commercial cleaning in Seattle for offices, schools, properties, carpets, floors, windows, and janitorial cleaning needs.",
   alternates: {
     canonical: "/services/commercial-cleaning"
+  },
+  openGraph: {
+    title: "Commercial Cleaning Seattle | Cleaning From The Heart LLC",
+    description:
+      "Commercial cleaning in Seattle for offices, schools, properties, carpets, floors, windows, and janitorial cleaning needs.",
+    url: "https://cleaningfromtheheartllc.com/services/commercial-cleaning",
+    siteName: "Cleaning From The Heart LLC",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "/services/hero/hero-cleaning-team.png",
+        alt: "Commercial cleaning in Seattle — Cleaning From The Heart LLC"
+      }
+    ]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Commercial Cleaning Seattle | Cleaning From The Heart LLC",
+    description:
+      "Commercial cleaning in Seattle for offices, schools, properties, carpets, floors, windows, and janitorial cleaning needs.",
+    images: ["/services/hero/hero-cleaning-team.png"]
   }
 };
 

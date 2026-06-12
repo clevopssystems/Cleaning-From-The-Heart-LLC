@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     absolute: "Seattle Cleaning Services | Cleaning From The Heart LLC"
   },
   description:
-    "Cleaning From The Heart LLC provides commercial cleaning, residential cleaning, janitorial services, window cleaning, pressure washing, carpet cleaning, floor care, and move-out cleaning in Seattle, WA.",
+    "Cleaning From The Heart LLC provides commercial, residential, window, pressure washing, carpet, floor care, and move-out cleaning in Seattle, WA.",
   keywords: [
     "Seattle cleaning services",
     "commercial cleaning Seattle",

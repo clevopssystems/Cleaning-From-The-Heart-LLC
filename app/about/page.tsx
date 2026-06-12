@@ -17,7 +17,7 @@ import { siteConfig } from "@/lib/site";
 export const metadata: Metadata = {
   title: "About Our Seattle Cleaning Company",
   description:
-    "Family-owned and Seattle-rooted since 1993. Learn the story behind Cleaning From The Heart LLC, founded by Oscar Alexander and continued by his son Joshua.",
+    "Learn about Cleaning From The Heart LLC, a Seattle cleaning company with 30+ years of commercial and residential cleaning experience.",
   alternates: { canonical: "/about" }
 };
 

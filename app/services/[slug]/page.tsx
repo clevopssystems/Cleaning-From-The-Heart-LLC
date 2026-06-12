@@ -17,13 +17,35 @@ export async function generateMetadata({ params }: ServiceDetailPageProps): Prom
     };
   }
 
+  const canonical = `/services/${service.slug}`;
+
   return {
     title: service.seoTitle,
     description: service.seoDescription,
     alternates: {
-      canonical: `/services/${service.slug}`
+      canonical
     },
-    keywords: service.keywords
+    keywords: service.keywords,
+    openGraph: {
+      title: `${service.seoTitle} | Cleaning From The Heart LLC`,
+      description: service.seoDescription,
+      url: `https://cleaningfromtheheartllc.com${canonical}`,
+      siteName: "Cleaning From The Heart LLC",
+      locale: "en_US",
+      type: "website",
+      images: [
+        {
+          url: "/services/hero/hero-cleaning-team.png",
+          alt: `${service.title} in Seattle — Cleaning From The Heart LLC`
+        }
+      ]
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${service.seoTitle} | Cleaning From The Heart LLC`,
+      description: service.seoDescription,
+      images: ["/services/hero/hero-cleaning-team.png"]
+    }
   };
 }
 

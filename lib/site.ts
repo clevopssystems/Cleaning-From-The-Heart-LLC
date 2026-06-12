@@ -205,7 +205,7 @@ export const services: Service[] = [
     ],
     seoTitle: "Window Cleaning Seattle",
     seoDescription:
-      "Commercial window and glass cleaning in Seattle for offices and storefronts. Streak-free results, reliable service, and flexible scheduling.",
+      "Window cleaning in Seattle for homes, offices, storefronts, and commercial properties. Exterior glass cleaning with professional care.",
     keywords: [
       "window cleaning Seattle",
       "commercial glass cleaning Seattle",
@@ -238,7 +238,7 @@ export const services: Service[] = [
     ],
     seoTitle: "Pressure Washing Seattle",
     seoDescription:
-      "Commercial pressure washing in Seattle for sidewalks, entries, and exterior surfaces. Remove buildup and improve curb appeal with reliable service.",
+      "Pressure washing in Seattle for homes, walkways, exterior surfaces, properties, and commercial spaces. Request a free quote today.",
     keywords: [
       "pressure washing Seattle",
       "commercial pressure washing Seattle",
@@ -370,7 +370,7 @@ export const services: Service[] = [
     ],
     seoTitle: "Move-In / Move-Out Cleaning Seattle",
     seoDescription:
-      "Move-in and move-out cleaning in Seattle for commercial and rental spaces. Detail-focused turnover cleaning with flexible scheduling.",
+      "Move-in and move-out cleaning in Seattle for renters, homeowners, landlords, and property managers preparing spaces for the next step.",
     keywords: [
       "move in move out cleaning Seattle",
       "turnover cleaning Seattle",
@@ -405,7 +405,7 @@ export const services: Service[] = [
     ],
     seoTitle: "Residential Cleaning Seattle",
     seoDescription:
-      "Professional residential cleaning in Seattle for homes, apartments, and rental properties. Full home cleaning, deep cleaning, move-in/move-out, and floor care across the Seattle area.",
+      "Residential cleaning in Seattle for homes, apartments, rentals, and move-outs. Full home, deep, carpet, window, and floor care services.",
     keywords: [
       "residential cleaning Seattle",
       "home cleaning Seattle",
@@ -440,7 +440,7 @@ export const services: Service[] = [
     ],
     seoTitle: "Deep Cleaning Seattle",
     seoDescription:
-      "Professional deep cleaning in Seattle for homes, apartments, and rental properties. Top-to-bottom detailed cleaning for move-ins, move-outs, seasonal resets, and neglected spaces.",
+      "Deep cleaning in Seattle for homes, apartments, offices, move-ins, move-outs, kitchens, bathrooms, floors, and detailed cleaning needs.",
     keywords: [
       "deep cleaning Seattle",
       "deep house cleaning Seattle",
@@ -475,7 +475,7 @@ export const services: Service[] = [
     ],
     seoTitle: "Solar Panel Cleaning Seattle",
     seoDescription:
-      "Solar panel cleaning in Seattle and surrounding Washington areas. Keep solar panel surfaces clean and maintained with professional exterior cleaning service.",
+      "Solar panel cleaning in Seattle and nearby areas. Careful exterior cleaning for dirt, pollen, leaves, and outdoor buildup.",
     keywords: [
       "solar panel cleaning Seattle",
       "solar panel cleaning Washington",
