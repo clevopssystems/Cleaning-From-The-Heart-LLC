@@ -29,27 +29,17 @@ export function Footer() {
           {/* Services */}
           <div>
             <p className="text-xs font-semibold uppercase tracking-widest text-accent">Services</p>
-            <ul className="mt-4 space-y-2.5">
+            <ul className="mt-4 space-y-1.5">
               {services.map((service) => (
                 <li key={service.slug}>
                   <Link
                     href={`/services/${service.slug}`}
-                    className="text-sm text-white/55 transition-colors hover:text-white"
+                    className="block py-1 text-sm text-white/55 transition-colors hover:text-white sm:py-0.5"
                   >
                     {service.title}
                   </Link>
                 </li>
               ))}
-              <li>
-                <Link href="/contact#quote-form" className="text-sm text-white/55 transition-colors hover:text-white">
-                  Move-In / Move-Out Cleaning
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact#quote-form" className="text-sm text-white/55 transition-colors hover:text-white">
-                  Post-Construction Cleaning
-                </Link>
-              </li>
             </ul>
           </div>
 

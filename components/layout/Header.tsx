@@ -91,19 +91,31 @@ export function Header() {
           </Link>
         </div>
 
-        {/* Mobile menu button */}
-        <button
-          type="button"
-          className={cn(
-            "inline-flex items-center justify-center rounded-md p-2 transition-colors hover:bg-brand-50 md:hidden",
-            transparent ? "text-white hover:bg-white/10" : "text-ink"
-          )}
-          onClick={() => setOpen((prev) => !prev)}
-          aria-label={open ? "Close menu" : "Open menu"}
-          aria-expanded={open}
-        >
-          {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-        </button>
+        {/* Mobile actions — one-tap call + menu */}
+        <div className="flex items-center gap-1 md:hidden">
+          <Link
+            href={siteConfig.phoneHref}
+            aria-label={`Call ${siteConfig.phoneDisplay}`}
+            className={cn(
+              "inline-flex items-center justify-center rounded-md p-2 transition-colors",
+              transparent ? "text-white hover:bg-white/10" : "text-brand-700 hover:bg-brand-50"
+            )}
+          >
+            <Phone className="h-5 w-5" aria-hidden />
+          </Link>
+          <button
+            type="button"
+            className={cn(
+              "inline-flex items-center justify-center rounded-md p-2 transition-colors hover:bg-brand-50",
+              transparent ? "text-white hover:bg-white/10" : "text-ink"
+            )}
+            onClick={() => setOpen((prev) => !prev)}
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+          >
+            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
+        </div>
       </Container>
 
       {/* Mobile dropdown — always solid */}

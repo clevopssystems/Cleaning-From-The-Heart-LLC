@@ -3,7 +3,7 @@ import { Container } from "@/components/shared/Container";
 import { CtaButtons } from "@/components/shared/CtaButtons";
 
 interface PageIntroProps {
-  title: string;
+  title: React.ReactNode;
   description: string;
   eyebrow?: string;
   backgroundImage?: string;
@@ -29,7 +29,7 @@ export function PageIntro({ title, description, eyebrow, backgroundImage }: Page
       <Container className="relative section-shell">
         <div className="max-w-3xl">
           {eyebrow ? <span className="eyebrow-light">{eyebrow}</span> : null}
-          <h1 className="text-balance text-5xl font-bold leading-[1.1] tracking-tight text-white md:text-6xl">{title}</h1>
+          <h1 className="text-balance text-4xl font-bold leading-[1.15] tracking-tight text-white sm:text-5xl sm:leading-[1.1] md:text-6xl">{title}</h1>
           <p className="mt-6 text-base leading-relaxed text-white/70 md:text-lg">{description}</p>
           <div className="mt-8">
             <CtaButtons />

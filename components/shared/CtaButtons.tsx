@@ -5,10 +5,10 @@ import { siteConfig } from "@/lib/site";
 export function CtaButtons({ centered = false }: { centered?: boolean }) {
   return (
     <div className={`flex flex-col gap-3 sm:flex-row ${centered ? "justify-center" : ""}`}>
-      <Link href="/contact#quote-form" className="cta-primary">
+      <Link href="/contact#quote-form" className="cta-primary w-full sm:w-auto">
         {siteConfig.primaryCta}
       </Link>
-      <Link href={siteConfig.phoneHref} className="cta-secondary">
+      <Link href={siteConfig.phoneHref} className="cta-secondary w-full sm:w-auto">
         <Phone className="mr-2 h-4 w-4" />
         {siteConfig.secondaryCta}
       </Link>
