@@ -621,7 +621,7 @@ export default function ServicesPage() {
                     alt={img.alt}
                     width={400}
                     height={400}
-                    className="aspect-square w-full object-cover transition-transform duration-300 hover:scale-105"
+                    className="aspect-square w-full object-cover transition-transform duration-300 hover:scale-105 lg:aspect-[4/5]"
                     sizes="(max-width: 1024px) 50vw, 25vw"
                   />
                 </div>
