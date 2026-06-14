@@ -211,9 +211,11 @@ export default function ContactPage() {
                       href={siteConfig.instagramHref}
                       target="_blank"
                       rel="noopener noreferrer"
+                      aria-label={`Instagram: ${siteConfig.instagramHandle}`}
                       className="hover:text-brand-700"
                     >
-                      {siteConfig.instagramHandle}
+                      <span className="font-medium text-ink">Instagram</span>{" "}
+                      <span className="text-muted">{siteConfig.instagramHandle}</span>
                     </Link>
                   </li>
                   <li className="flex gap-2">
@@ -222,9 +224,11 @@ export default function ContactPage() {
                       href={siteConfig.facebookHref}
                       target="_blank"
                       rel="noopener noreferrer"
+                      aria-label={`Facebook: ${siteConfig.facebookHandle}`}
                       className="hover:text-brand-700"
                     >
-                      {siteConfig.facebookHandle}
+                      <span className="font-medium text-ink">Facebook</span>{" "}
+                      <span className="text-muted">{siteConfig.facebookHandle}</span>
                     </Link>
                   </li>
                   <li className="flex gap-2">
@@ -233,9 +237,11 @@ export default function ContactPage() {
                       href={siteConfig.tiktokHref}
                       target="_blank"
                       rel="noopener noreferrer"
+                      aria-label={`TikTok: ${siteConfig.tiktokHandle}`}
                       className="hover:text-brand-700"
                     >
-                      {siteConfig.tiktokHandle}
+                      <span className="font-medium text-ink">TikTok</span>{" "}
+                      <span className="text-muted">{siteConfig.tiktokHandle}</span>
                     </Link>
                   </li>
                 </ul>

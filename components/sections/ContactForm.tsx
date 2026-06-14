@@ -256,7 +256,7 @@ export function ContactForm() {
                     contactMethod: prev.contactMethod === method ? "" : method
                   }))
                 }
-                className={`rounded-xl border px-4 py-2 text-sm font-medium transition ${
+                className={`rounded-xl border px-5 py-2.5 text-sm font-medium transition ${
                   selected
                     ? "border-brand-400 bg-brand-50 text-brand-700"
                     : "border-surface bg-white text-muted hover:border-brand-200 hover:text-ink"
