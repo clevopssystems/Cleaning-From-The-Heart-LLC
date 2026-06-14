@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import {
   ArrowRight,
   Phone,
@@ -11,7 +12,15 @@ import {
   HardHat,
   Droplets,
   Sparkles,
-  CalendarCheck
+  CalendarCheck,
+  Layers,
+  Brush,
+  Zap,
+  Truck,
+  Sun,
+  Car,
+  Trash2,
+  type LucideIcon
 } from "lucide-react";
 import { PageIntro } from "@/components/sections/PageIntro";
 import { Container } from "@/components/shared/Container";
@@ -34,36 +43,41 @@ export const metadata: Metadata = {
 
 // ─── Service card copy (short, specific blurbs per service) ──────────────────
 // Titles and links are kept in sync with lib/site.ts via slug.
-type ServiceCard = { slug: string; title: string; blurb: string };
+type ServiceCard = { slug: string; title: string; blurb: string; icon: LucideIcon };
 
 const commercialGroup: ServiceCard[] = [
   {
     slug: "commercial-cleaning",
     title: "Commercial Cleaning",
+    icon: Building2,
     blurb:
       "Reliable recurring and one-time cleaning for offices, retail spaces, and commercial properties across Seattle."
   },
   {
     slug: "school-facility-cleaning",
     title: "School & Educational Facility Cleaning",
+    icon: GraduationCap,
     blurb:
       "Cleaning support for schools, classrooms, offices, restrooms, and shared spaces where safety and consistency matter."
   },
   {
     slug: "strip-and-wax",
     title: "Strip & Wax",
+    icon: Layers,
     blurb:
       "Floor stripping and waxing that restores a clean, protected, professional shine to commercial hard floors."
   },
   {
     slug: "carpet-cleaning",
     title: "Carpet Cleaning",
+    icon: Brush,
     blurb:
       "Deep extraction cleaning that lifts embedded dirt, stains, and odor from office and commercial carpet."
   },
   {
     slug: "window-glass-cleaning",
     title: "Window & Glass Cleaning",
+    icon: Sparkles,
     blurb:
       "Streak-free interior and exterior glass cleaning for storefronts, offices, and commercial buildings."
   }
@@ -73,18 +87,21 @@ const residentialGroup: ServiceCard[] = [
   {
     slug: "residential-cleaning",
     title: "Residential Cleaning",
+    icon: Home,
     blurb:
       "Professional home cleaning for Seattle-area homeowners, renters, and property managers, from routine upkeep to detailed cleanups."
   },
   {
     slug: "deep-cleaning",
     title: "Deep Cleaning",
+    icon: Zap,
     blurb:
       "A thorough top-to-bottom reset for kitchens, bathrooms, floors, and the areas routine cleaning usually skips."
   },
   {
     slug: "move-in-move-out-cleaning",
     title: "Move-In / Move-Out Cleaning",
+    icon: Truck,
     blurb:
       "Detailed turnover cleaning that prepares homes and rentals for new occupants and final inspections."
   }
@@ -94,30 +111,35 @@ const exteriorGroup: ServiceCard[] = [
   {
     slug: "pressure-washing",
     title: "Pressure Washing",
+    icon: Droplets,
     blurb:
       "Exterior pressure washing that lifts dirt, algae, and buildup from concrete, walkways, and building surfaces."
   },
   {
     slug: "solar-panel-cleaning",
     title: "Solar Panel Cleaning",
+    icon: Sun,
     blurb:
       "Careful exterior cleaning that removes dust, pollen, and debris from residential and commercial panels."
   },
   {
     slug: "parking-lot-exterior-maintenance",
     title: "Parking Lot & Exterior Maintenance",
+    icon: Car,
     blurb:
       "Routine upkeep for parking lots, entryways, and perimeter areas that keeps your property presentable."
   },
   {
     slug: "junk-removal",
     title: "Junk Removal",
+    icon: Trash2,
     blurb:
       "Fast removal of non-hazardous junk and unwanted items so your space is clear and ready to use."
   },
   {
     slug: "post-construction-renovation-cleanup",
     title: "Post-Construction & Renovation Cleanup",
+    icon: HardHat,
     blurb:
       "Detailed cleanup that clears dust, debris, and residue so finished spaces are ready for handoff."
   }
@@ -243,9 +265,15 @@ const servicesSchema = {
 // Whole-card-clickable service card. The "Learn More" link is stretched across
 // the card via an ::after overlay; "Request Quote" sits above it with z-10.
 function ServiceCardItem({ card }: { card: ServiceCard }) {
+  const Icon = card.icon;
   return (
     <article className="card-hover relative flex h-full flex-col">
-      <h3 className="text-lg font-semibold text-ink">{card.title}</h3>
+      <div className="flex items-start gap-3">
+        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-100">
+          <Icon className="h-5 w-5 text-brand-700" aria-hidden />
+        </div>
+        <h3 className="mt-1 text-lg font-semibold text-ink">{card.title}</h3>
+      </div>
       <p className="mt-3 text-sm leading-relaxed text-muted">{card.blurb}</p>
       <div className="mt-auto flex items-center justify-between gap-4 border-t border-brand-100 pt-4 sm:border-0 sm:pt-6">
         <Link
@@ -290,7 +318,10 @@ function ServiceGroup({
   title,
   intro,
   cards,
-  conversionCard
+  conversionCard,
+  image,
+  imageAlt,
+  reverse = false
 }: {
   id?: string;
   eyebrow: string;
@@ -298,13 +329,30 @@ function ServiceGroup({
   intro: string;
   cards: ServiceCard[];
   conversionCard?: ConversionCard;
+  image: string;
+  imageAlt: string;
+  reverse?: boolean;
 }) {
   return (
     <div id={id} className="scroll-mt-24">
-      <div className="max-w-3xl">
-        <span className="eyebrow">{eyebrow}</span>
-        <h2 className="text-3xl font-bold leading-tight tracking-tight md:text-4xl">{title}</h2>
-        <p className="mt-4 text-base leading-relaxed text-muted">{intro}</p>
+      <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
+        <div className={reverse ? "lg:order-2" : undefined}>
+          <span className="eyebrow">{eyebrow}</span>
+          <h2 className="text-3xl font-bold leading-tight tracking-tight md:text-4xl">{title}</h2>
+          <p className="mt-4 text-base leading-relaxed text-muted">{intro}</p>
+        </div>
+        <div className={reverse ? "lg:order-1" : undefined}>
+          <div className="relative overflow-hidden rounded-2xl border border-brand-100 shadow-card">
+            <Image
+              src={image}
+              alt={imageAlt}
+              width={720}
+              height={480}
+              className="aspect-[3/2] w-full object-cover"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
+          </div>
+        </div>
       </div>
       <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
         {cards.map((card, index) => (
@@ -342,33 +390,69 @@ export default function ServicesPage() {
       {/* ─── Intro ─────────────────────────────────────────────── */}
       <section className="section-shell bg-white">
         <Container>
-          <div className="mx-auto max-w-3xl text-center">
-            <span className="eyebrow">Full-Service Cleaning</span>
-            <h2 className="text-4xl font-bold leading-tight tracking-tight md:text-5xl">
-              Professional Cleaning Services Across Seattle and Surrounding Areas
-            </h2>
-            <p className="mt-5 text-base leading-relaxed text-muted">
-              Cleaning From The Heart LLC provides commercial, residential, exterior, and specialty cleaning
-              services for Seattle-area properties. Whether you manage an office, school, rental property,
-              commercial space, or home, our team helps you choose the right cleaning plan and keeps the process
-              simple.
-            </p>
-          </div>
+          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+            {/* Text + trust points */}
+            <div>
+              <span className="eyebrow">Full-Service Cleaning</span>
+              <h2 className="text-4xl font-bold leading-tight tracking-tight md:text-5xl">
+                Professional Cleaning Services Across Seattle and Surrounding Areas
+              </h2>
+              <p className="mt-5 text-base leading-relaxed text-muted">
+                Cleaning From The Heart LLC provides commercial, residential, exterior, and specialty cleaning
+                services for Seattle-area properties. Whether you manage an office, school, rental property,
+                commercial space, or home, our team helps you choose the right cleaning plan and keeps the
+                process simple.
+              </p>
 
-          <div className="mx-auto mt-10 grid max-w-3xl gap-4 sm:grid-cols-3">
-            {[
-              "30+ years of cleaning experience",
-              "Locally owned and family-operated",
-              "Free quotes for Seattle-area properties"
-            ].map((point) => (
-              <div
-                key={point}
-                className="flex items-center gap-3 rounded-xl border border-brand-100 bg-surface px-4 py-3"
-              >
-                <CheckCircle2 className="h-5 w-5 shrink-0 text-brand-600" aria-hidden />
-                <span className="text-sm font-medium text-ink">{point}</span>
+              <div className="mt-8 grid gap-3">
+                {[
+                  "30+ years of cleaning experience",
+                  "Locally owned and family-operated",
+                  "Free quotes for Seattle-area properties"
+                ].map((point) => (
+                  <div
+                    key={point}
+                    className="flex items-center gap-3 rounded-xl border border-brand-100 bg-surface px-4 py-3"
+                  >
+                    <CheckCircle2 className="h-5 w-5 shrink-0 text-brand-600" aria-hidden />
+                    <span className="text-sm font-medium text-ink">{point}</span>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+
+            {/* Image card */}
+            {/*
+              INTRO IMAGE
+              ──────────────────────────────────────────────────────────
+              Paste your PNG here: /public/services/intro/intro-image.png
+              Recommended size: 760 x 620px (or any 4:3 / 5:6 image).
+              Update the `alt` text below to describe the new photo.
+              ──────────────────────────────────────────────────────────
+            */}
+            <div className="relative">
+              <div className="overflow-hidden rounded-3xl border border-brand-100 shadow-card">
+                <Image
+                  src="/services/intro/intro-image.png"
+                  alt="Professional cleaning service for a Seattle-area property"
+                  width={760}
+                  height={620}
+                  className="aspect-[4/3] w-full object-cover lg:aspect-[5/6]"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  priority
+                />
+              </div>
+              {/* Trust badge */}
+              <div className="absolute -bottom-4 -left-4 hidden items-center gap-3 rounded-2xl border border-brand-100 bg-white px-4 py-3 shadow-card sm:flex">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-100">
+                  <Sparkles className="h-5 w-5 text-brand-700" aria-hidden />
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-ink">30+ Years of Experience</p>
+                  <p className="text-xs text-muted">Locally owned and family-operated</p>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Mobile-only quick jump to service categories */}
@@ -407,6 +491,8 @@ export default function ServicesPage() {
               intro="Reliable cleaning for offices, schools, retail spaces, managed properties, and commercial facilities that need consistent care."
               cards={commercialGroup}
               conversionCard={recurringCard}
+              image="/home/services/commercial-cleaning.jpg"
+              imageAlt="Commercial and office cleaning service in Seattle"
             />
             <ServiceGroup
               id="residential"
@@ -414,6 +500,9 @@ export default function ServicesPage() {
               title="Home, Deep, and Move-In / Move-Out Cleaning"
               intro="Detailed home cleaning for Seattle-area homeowners, renters, landlords, and property managers preparing spaces for daily living, move-in, or move-out."
               cards={residentialGroup}
+              image="/home/services/full-home-cleaning.jpg"
+              imageAlt="Residential home cleaning service in Seattle"
+              reverse
             />
             <ServiceGroup
               id="exterior"
@@ -422,6 +511,8 @@ export default function ServicesPage() {
               intro="Exterior and project-based cleaning services that help properties look clean, safe, and ready for clients, tenants, guests, or handoff."
               cards={exteriorGroup}
               conversionCard={notSureCard}
+              image="/home/services/pressure-wash.jpg"
+              imageAlt="Exterior pressure washing service in Seattle"
             />
           </div>
         </Container>
@@ -497,8 +588,59 @@ export default function ServicesPage() {
         </Container>
       </section>
 
+      {/* ─── Work Proof Strip ──────────────────────────────────── */}
+      {/*
+        Images below are real work photos from /public/images/results/our-work/.
+        To swap in newer photos later, replace the files in that folder or update
+        the `src` paths here. Keep alt text descriptive and Seattle-focused.
+      */}
+      <section className="section-shell bg-white">
+        <Container>
+          <div className="mx-auto max-w-2xl text-center">
+            <span className="eyebrow">Our Work</span>
+            <h2 className="text-4xl font-bold leading-tight tracking-tight md:text-5xl">
+              See the Work Before You Call
+            </h2>
+            <p className="mt-5 text-base leading-relaxed text-muted">
+              A quick look at the kind of cleaning work we help with across Seattle-area homes, offices, schools,
+              and commercial properties.
+            </p>
+          </div>
+
+          <div className="mt-12 grid grid-cols-2 gap-4 lg:grid-cols-4">
+            {[
+              { src: "/images/results/our-work/work-1.jpeg", alt: "Seattle commercial cleaning work" },
+              { src: "/images/results/our-work/work-2.jpeg", alt: "Office cleaning service in Seattle" },
+              { src: "/images/results/our-work/work-3.jpeg", alt: "Window and glass cleaning in Seattle" },
+              { src: "/images/results/our-work/work-4.jpeg", alt: "Floor care and cleaning service" }
+            ].map((img, index) => (
+              <Reveal key={img.src} delay={index * 0.06}>
+                <div className="overflow-hidden rounded-2xl border border-brand-100 shadow-card">
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    width={400}
+                    height={400}
+                    className="aspect-square w-full object-cover transition-transform duration-300 hover:scale-105"
+                    sizes="(max-width: 1024px) 50vw, 25vw"
+                  />
+                </div>
+              </Reveal>
+            ))}
+          </div>
+
+          <p className="mt-6 text-center text-xs text-muted">
+            Want to see more?{" "}
+            <Link href="/gallery" className="font-semibold text-brand-700 hover:text-brand-600">
+              View our full results gallery
+            </Link>
+            .
+          </p>
+        </Container>
+      </section>
+
       {/* ─── FAQ ───────────────────────────────────────────────── */}
-      <section id="faq" className="section-shell bg-white scroll-mt-24">
+      <section id="faq" className="section-shell bg-surface scroll-mt-24">
         <Container>
           <div className="mx-auto max-w-2xl text-center">
             <span className="eyebrow">Common Questions</span>
@@ -522,7 +664,7 @@ export default function ServicesPage() {
             ))}
           </div>
 
-          <div className="mx-auto mt-10 flex max-w-3xl flex-col items-center gap-3 rounded-2xl border border-brand-100 bg-surface px-6 py-8 text-center">
+          <div className="mx-auto mt-10 flex max-w-3xl flex-col items-center gap-3 rounded-2xl border border-brand-100 bg-white px-6 py-8 text-center">
             <CalendarCheck className="h-6 w-6 text-brand-600" aria-hidden />
             <p className="text-base font-semibold text-ink">Ready to get a clear quote for your property?</p>
             <div className="mt-2 flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
