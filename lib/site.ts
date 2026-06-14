@@ -496,7 +496,7 @@ export const homeServiceCards = [
       "Reliable, scheduled cleaning for offices, retail spaces, and commercial facilities. Consistent crew, written checklists, and direct communication every visit.",
     href: "/services/commercial-cleaning",
     iconName: "Building2",
-    image: "/home/services/commercial-cleaning.jpg"
+    image: "/home/services/comercial-cleaning.jpg"
   },
   {
     title: "Full Home Cleaning",
@@ -504,7 +504,7 @@ export const homeServiceCards = [
       "Thorough residential cleaning for homes across the Seattle area. From regular maintenance cleans to full deep cleans — done with care and attention to detail.",
     href: "/services/residential-cleaning",
     iconName: "Home",
-    image: "/home/services/deep-cleaning.jpg"
+    image: "/home/services/full-home-cleaning.jpg"
   },
   {
     title: "Deep Cleaning",
@@ -512,7 +512,7 @@ export const homeServiceCards = [
       "A comprehensive top-to-bottom clean for homes and spaces that need a full reset. Ideal for move-ins, seasonal refreshes, or starting a new cleaning routine.",
     href: "/services/deep-cleaning",
     iconName: "Zap",
-    image: "/home/services/carpet-cleaning.png"
+    image: "/home/services/deep-cleaning-service.jpg"
   },
   {
     title: "Window Cleaning",
@@ -520,7 +520,7 @@ export const homeServiceCards = [
       "Professional window and glass cleaning for homes and commercial properties. Streak-free results, improved curb appeal, and a brighter, cleaner space.",
     href: "/services/window-glass-cleaning",
     iconName: "Sparkles",
-    image: "/home/work/work-office-seattle.png"
+    image: "/home/services/window-cleaning.jpg"
   },
   {
     title: "Pressure Washing",
@@ -528,7 +528,7 @@ export const homeServiceCards = [
       "Commercial and residential pressure washing for driveways, sidewalks, siding, and exterior surfaces. Removes grime, algae, and buildup to restore curb appeal.",
     href: "/services/pressure-washing",
     iconName: "Layers",
-    image: "/home/services/post-construction.jpg"
+    image: "/home/services/pressure-wash.jpg"
   },
   {
     title: "Move-In / Move-Out Cleaning",
