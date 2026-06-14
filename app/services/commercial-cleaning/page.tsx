@@ -136,7 +136,7 @@ const serviceCards = [
     Icon: Zap,
     title: "Deep Cleaning",
     description:
-      "A full top-to-bottom reset for spaces that need intensive attention — ideal for new accounts, post-event recovery, or facilities that haven't had professional cleaning in some time.",
+      "A full top-to-bottom reset for spaces that need intensive attention. Ideal for new accounts, post-event recovery, or facilities that haven't had professional cleaning in some time.",
     href: "/contact#quote-form",
     ctaLabel: "Request a Quote"
   },
@@ -162,7 +162,7 @@ const processSteps = [
     number: "02",
     title: "Custom Cleaning Plan",
     description:
-      "Based on your facility type, size, and traffic patterns, we develop a written cleaning scope tailored to your property — with clear, itemized pricing and no vague estimates.",
+      "Based on your facility type, size, and traffic patterns, we develop a written cleaning scope tailored to your property, with clear, itemized pricing and no vague estimates.",
     detail: "Written scope & transparent pricing"
   },
   {
@@ -176,7 +176,7 @@ const processSteps = [
     number: "04",
     title: "Ongoing Quality Control",
     description:
-      "We check in regularly, adjust scope as your needs evolve, and address any issues immediately — so quality never drifts and you never have to chase us down.",
+      "We check in regularly, adjust scope as your needs evolve, and address any issues immediately so quality never drifts and you never have to chase us down.",
     detail: "Accountable · Same-day response"
   }
 ];
@@ -198,7 +198,7 @@ const whyChooseItems = [
     Icon: ClipboardCheck,
     title: "High Accountability",
     description:
-      "Every job follows a written checklist specific to your space. If anything falls short, we return and correct it at no charge — no questions asked, no delay."
+      "Every job follows a written checklist specific to your space. If anything falls short, we return and correct it at no charge. No questions, no delay."
   },
   {
     Icon: ShieldCheck,
@@ -216,7 +216,7 @@ const whyChooseItems = [
     Icon: MapPin,
     title: "Seattle-Local, Not a Franchise",
     description:
-      "We're locally owned and accountable to this community. We know Seattle properties and serve Seattle clients — with the consistency a national chain simply can't deliver."
+      "We're locally owned and accountable to this community. We know Seattle properties and serve Seattle clients with the consistency a national chain simply can't deliver."
   }
 ];
 
@@ -226,7 +226,7 @@ const resultsBenefits = [
   "Lower long-term maintenance costs from proper floor and surface care",
   "Higher staff productivity and morale in a clean, organized environment",
   "Compliance-ready cleanliness for schools, medical offices, and regulated facilities",
-  "Peace of mind — knowing it's handled, every week, without follow-up"
+  "Peace of mind: knowing it's handled, every week, without follow-up"
 ];
 
 const authorityStats = [
@@ -246,7 +246,7 @@ const faqItems = [
   {
     question: "How much does commercial cleaning in Seattle cost?",
     answer:
-      "Commercial cleaning costs in Seattle vary based on facility size, service scope, and cleaning frequency. A recurring office cleaning plan for a small-to-medium space typically starts in the range of a few hundred dollars per month. Larger facilities, schools, and specialized services such as floor care or deep cleaning are priced individually after a facility walkthrough. We provide free, no-obligation estimates with clear, itemized pricing — no vague ranges, no surprise charges. Contact us and we'll give you a straightforward number based on your specific situation."
+      "Commercial cleaning costs in Seattle vary based on facility size, service scope, and cleaning frequency. A recurring office cleaning plan for a small-to-medium space typically starts in the range of a few hundred dollars per month. Larger facilities, schools, and specialized services such as floor care or deep cleaning are priced individually after a facility walkthrough. We provide free, no-obligation estimates with clear, itemized pricing. No vague ranges, no surprise charges. Contact us and we'll give you a straightforward number based on your specific situation."
   },
   {
     question: "How often should commercial cleaning be done?",
@@ -271,7 +271,7 @@ const faqItems = [
   {
     question: "Can you work around our business hours?",
     answer:
-      "Absolutely. We regularly schedule commercial cleaning during off-hours — evenings, early mornings, and weekends — to eliminate disruption to your team, tenants, or customers. We schedule around your business, not ours. Just let us know your preferred window and we'll build around it."
+      "Absolutely. We regularly schedule commercial cleaning during off-hours (evenings, early mornings, and weekends) to eliminate disruption to your team, tenants, or customers. We schedule around your business, not ours. Just let us know your preferred window and we'll build around it."
   },
   {
     question: "Do you offer cleaning contracts for commercial facilities?",
@@ -313,7 +313,7 @@ export default function CommercialCleaningLandingPage() {
               <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/70 md:text-lg">
                 Cleaning From The Heart LLC delivers professional commercial cleaning in Seattle for offices,
                 schools, and commercial facilities across the greater metro area. Same crew every visit.
-                Written checklists on every job. A reliable schedule you can count on — without follow-up.
+                Written checklists on every job. A reliable schedule you can count on, without follow-up.
               </p>
 
               <ul className="mt-6 flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:gap-x-6">
@@ -414,7 +414,7 @@ export default function CommercialCleaningLandingPage() {
               Seattle businesses, schools, and commercial facilities share a common challenge: finding a
               cleaning company that maintains the same standard month after month, without constant
               follow-up. Cleaning From The Heart LLC provides commercial cleaning in Seattle built around
-              consistent staffing, structured checklists, and direct communication — so reliability is
+              consistent staffing, structured checklists, and direct communication, so reliability is
               built into the service, not something you have to manage yourself.
             </p>
             <p className="mt-4 text-base leading-relaxed text-muted">
@@ -535,7 +535,7 @@ export default function CommercialCleaningLandingPage() {
                   straightforward: reliability is the only standard that matters in professional cleaning.
                 </p>
                 <p className="mt-4 text-base leading-relaxed text-muted">
-                  Many of our clients have been with us for years — not because switching is difficult,
+                  Many of our clients have been with us for years, not because switching is difficult,
                   but because they never needed to. We staff accounts consistently, show up on schedule,
                   and solve problems without waiting to be asked twice. That&apos;s the foundation this
                   company was built on.
@@ -576,7 +576,7 @@ export default function CommercialCleaningLandingPage() {
         <Container>
           <SectionHeading
             eyebrow="How It Works"
-            title="From First Inquiry to a Reliably Clean Seattle Facility — Four Steps"
+            title="From First Inquiry to a Reliably Clean Seattle Facility: Four Steps"
             description="No complicated onboarding, no vague timelines. A clear four-step process that takes you from initial inquiry to consistent, professional cleaning results."
           />
 
@@ -634,7 +634,7 @@ export default function CommercialCleaningLandingPage() {
               </div>
               <p className="text-base leading-relaxed text-white/55 lg:text-right">
                 Consistency, accountability, and communication. Most cleaning vendors fail on at least one.
-                We&apos;ve made all three non-negotiable — because Seattle businesses deserve better.
+                We&apos;ve made all three non-negotiable, because Seattle businesses deserve better.
               </p>
             </div>
           </Reveal>
@@ -686,7 +686,7 @@ export default function CommercialCleaningLandingPage() {
                   What Professional Cleaning in Seattle Actually Changes for Your Facility
                 </h2>
                 <p className="mt-5 text-base leading-relaxed text-muted">
-                  A professionally maintained facility isn&apos;t just cleaner — it performs better. Staff operate
+                  A professionally maintained facility isn&apos;t just cleaner. It performs better. Staff operate
                   in a healthier environment, clients form stronger first impressions, and facilities hold
                   their condition significantly longer with proper professional care.
                 </p>
@@ -755,7 +755,7 @@ export default function CommercialCleaningLandingPage() {
             </h2>
             <p className="mt-5 text-base leading-relaxed text-muted">
               Cleaning From The Heart LLC provides commercial cleaning in Seattle and throughout the greater
-              metro — including Bellevue, Tacoma, Renton, Kent, Tukwila, and Kirkland. Whether you manage a
+              metro, including Bellevue, Tacoma, Renton, Kent, Tukwila, and Kirkland. Whether you manage a
               single office in South Lake Union, a school in Bellevue, or a portfolio of commercial properties
               across King and Pierce counties, our team delivers the same reliable, consistent standard at
               every location.
@@ -818,7 +818,7 @@ export default function CommercialCleaningLandingPage() {
                 <p className="text-sm font-semibold text-ink">Have a specific question?</p>
                 <p className="mt-1 text-sm text-muted">
                   Call or message us and we&apos;ll answer anything specific to your property, facility,
-                  or schedule — same day.
+                  or schedule, same day.
                 </p>
                 <div className="mt-4 flex flex-wrap gap-2">
                   <Link href="/contact#quote-form" className="cta-primary px-4 py-2 text-xs">

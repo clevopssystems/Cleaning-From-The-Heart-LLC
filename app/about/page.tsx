@@ -33,7 +33,7 @@ const values = [
     icon: HeartHandshake,
     title: "People Come First",
     description:
-      "Every client relationship is treated with respect and every property with care. We work hard to earn your trust and harder to keep it. That's not a policy — it's how we were raised to do business."
+      "Every client relationship is treated with respect and every property with care. We work hard to earn your trust and harder to keep it. That's not a policy. It's how we were raised to do business."
   },
   {
     icon: ClipboardCheck,
@@ -45,7 +45,7 @@ const values = [
     icon: MapPin,
     title: "Locally Owned and Accountable",
     description:
-      "We are not a franchise and not a call center. We are a Seattle family business — and that means when something needs attention, you reach us directly. Local ownership means local accountability."
+      "We are not a franchise and not a call center. We are a Seattle family business. When something needs attention, you reach us directly. Local ownership means local accountability."
   }
 ];
 
@@ -71,7 +71,7 @@ export default function AboutPage() {
               </h2>
 
               <p className="mt-6 text-base leading-relaxed text-muted">
-                Oscar Alexander founded Cleaning From The Heart more than 30 years ago — not from a business plan,
+                Oscar Alexander founded Cleaning From The Heart more than 30 years ago, not from a business plan,
                 but from necessity. During a difficult period in his life, cleaning gave him purpose and structure.
                 He started with local Seattle businesses, showing up reliably and doing the work right. One client
                 led to another. Reputation built slowly, the right way.
@@ -79,7 +79,7 @@ export default function AboutPage() {
 
               <p className="mt-4 text-base leading-relaxed text-muted">
                 Over three decades, Oscar became the vendor his clients could actually count on. He was not just
-                maintaining spaces — he was building relationships. The businesses he served knew they could hand
+                maintaining spaces. He was building relationships. The businesses he served knew they could hand
                 him the keys, trust the result, and move on with their day.
               </p>
 
@@ -87,21 +87,21 @@ export default function AboutPage() {
               <blockquote className="my-8 flex gap-4 rounded-2xl border-l-4 border-brand-500 bg-surface p-6">
                 <Quote className="h-5 w-5 shrink-0 text-brand-400 mt-0.5" aria-hidden />
                 <p className="text-base font-medium leading-relaxed text-ink">
-                  "Cleaning started as a way to cope and stay active. It became something I was proud of — and
+                  "Cleaning started as a way to cope and stay active. It became something I was proud of, and
                   something clients depended on. That responsibility never felt like a burden. It felt right."
                 </p>
               </blockquote>
 
               <p className="text-base leading-relaxed text-muted">
                 Today his son, Joshua Alexander, carries the work forward. The team has grown and the services
-                have expanded across Seattle and the greater metro area — but the foundation is unchanged. Same
+                have expanded across Seattle and the greater metro area, but the foundation is unchanged. Same
                 values. Same work ethic. Same commitment to every client.
               </p>
 
               <ul className="mt-6 space-y-3">
                 {[
                   "Family-owned and operated since founding",
-                  "Same crew assignments every visit — no strangers",
+                  "Same crew assignments every visit, no strangers",
                   "Direct line to the people doing the work",
                   "Serving Seattle offices, schools, and properties for 30+ years"
                 ].map((point) => (
@@ -132,7 +132,7 @@ export default function AboutPage() {
                   <p className="text-sm font-semibold text-ink">Joshua Alexander</p>
                   <p className="mt-0.5 text-xs text-muted">Owner, Cleaning From The Heart LLC</p>
                   <p className="mt-2 text-xs leading-relaxed text-muted">
-                    Second generation — carrying forward the work his father started over 30 years ago in Seattle.
+                    Second generation, carrying forward the work his father started over 30 years ago in Seattle.
                   </p>
                 </div>
               </div>
@@ -177,7 +177,7 @@ export default function AboutPage() {
               The Principles Behind Every Job We Take
             </h2>
             <p className="mt-5 text-base leading-relaxed text-muted">
-              These are not aspirational statements. They describe how we actually operate — on every job,
+              These are not aspirational statements. They describe how we actually operate: on every job,
               with every client, across every service we provide.
             </p>
           </div>
@@ -208,7 +208,7 @@ export default function AboutPage() {
           <Reveal>
             <Quote className="mx-auto mb-6 h-8 w-8 text-white/30" aria-hidden />
             <p className="mx-auto max-w-3xl font-heading text-3xl font-bold leading-snug tracking-tight text-white md:text-4xl">
-              We don&apos;t just clean spaces. We take care of them — the way you take care of your business.
+              We don&apos;t just clean spaces. We take care of them the way you take care of your business.
             </p>
             <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-white/65">
               Our mission is to build long-term relationships by delivering dependable cleaning services with

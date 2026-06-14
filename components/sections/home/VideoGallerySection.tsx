@@ -61,7 +61,7 @@ export function VideoGallerySection() {
               Need a reliable cleaning team for your office or facility?
             </h2>
             <p className="mx-auto mt-3 max-w-lg text-sm leading-relaxed text-muted md:text-base">
-              We serve commercial properties across the Seattle area — offices, warehouses, medical facilities, and more.
+              We serve commercial properties across the Seattle area: offices, warehouses, medical facilities, and more.
             </p>
             <div className="mt-7">
               <Link

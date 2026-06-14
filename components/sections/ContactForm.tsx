@@ -94,7 +94,7 @@ export function ContactForm() {
         <CheckCircle className="h-12 w-12 text-green-500" />
         <h3 className="text-xl font-semibold text-ink">Message Sent!</h3>
         <p className="max-w-sm text-sm text-muted">
-          Thank you! We&apos;ll review your request and get back to you as soon as possible —
+          Thank you! We&apos;ll review your request and get back to you as soon as possible,
           usually within 2 business hours during Mon–Sat 7 AM–7 PM.
         </p>
         <button

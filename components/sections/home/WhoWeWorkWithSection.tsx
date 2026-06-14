@@ -15,7 +15,7 @@ const clientTypes = [
     icon: Building2,
     title: "Offices & Commercial Spaces",
     description:
-      "Workspaces, common areas, floors, and windows — on a schedule that fits your hours.",
+      "Workspaces, common areas, floors, and windows, on a schedule that fits your hours.",
     tags: ["Workspaces", "Common Areas", "Recurring"]
   },
   {

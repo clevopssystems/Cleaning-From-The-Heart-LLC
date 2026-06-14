@@ -4,10 +4,10 @@ import { Container } from "@/components/shared/Container";
 import { Reveal } from "@/components/shared/Reveal";
 
 const highlights = [
-  "30+ years of hands-on cleaning experience",
-  "You deal with the owner directly — no call center",
+  "Commercial and residential cleaning experience",
+  "Direct communication, not a call center",
   "Homes, offices, schools, and commercial spaces",
-  "Same care and checklist on every visit"
+  "Careful cleaning across every visit"
 ];
 
 export function TeamSection() {
@@ -21,12 +21,12 @@ export function TeamSection() {
             <div>
               <p className="eyebrow">The People Behind the Work</p>
               <h2 className="text-balance text-4xl font-bold leading-[1.12] tracking-tight text-ink md:text-5xl">
-                A small, <span className="text-brand-600">owner-run</span> cleaning team
+                A trusted Seattle cleaning team with <span className="text-brand-600">30+ years</span> of experience
               </h2>
               <p className="mt-5 text-base leading-relaxed text-muted md:text-lg">
-                Cleaning From The Heart LLC is owner-run and based in the Seattle area. The same people who
-                answer your call do the work — homes, offices, schools, and managed properties, cleaned with
-                care and without the runaround.
+                Cleaning From The Heart LLC is an experienced Seattle-area cleaning company with 30+ years of
+                hands-on work across homes, offices, schools, and managed properties. The team focuses on clear
+                communication, careful cleaning, and reliable service without making the process complicated.
               </p>
 
               <ul className="mt-7 space-y-2.5 text-sm leading-relaxed text-muted">

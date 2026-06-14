@@ -385,7 +385,7 @@ export const services: Service[] = [
     shortDescription:
       "Professional home cleaning for Seattle-area homeowners, renters, and property managers. Full home cleaning, deep cleaning, move-in/move-out, and more.",
     problem:
-      "Keeping a home consistently clean takes time most households simply don't have — and routine cleaning doesn't address built-up grime or overlooked areas.",
+      "Keeping a home consistently clean takes time most households simply don't have. Routine cleaning also doesn't address built-up grime or overlooked areas.",
     solution:
       "We provide thorough residential cleaning for homes, apartments, and rental properties across the Seattle area, done with care and a written checklist every visit.",
     benefits: [
@@ -418,7 +418,7 @@ export const services: Service[] = [
     slug: "deep-cleaning",
     title: "Deep Cleaning",
     shortDescription:
-      "A comprehensive top-to-bottom cleaning for homes and spaces that need more than routine maintenance — ideal for move-ins, seasonal resets, rentals, and neglected areas.",
+      "A comprehensive top-to-bottom cleaning for homes and spaces that need more than routine maintenance. Ideal for move-ins, seasonal resets, rentals, and neglected areas.",
     problem:
       "Routine cleaning maintains a space, but doesn't address built-up grime, overlooked corners, or surfaces that need detailed work to get back to a clean baseline.",
     solution:
@@ -453,7 +453,7 @@ export const services: Service[] = [
     slug: "solar-panel-cleaning",
     title: "Solar Panel Cleaning",
     shortDescription:
-      "Exterior solar panel cleaning for homeowners and property owners in the Seattle area — removing accumulated dust, pollen, debris, and outdoor buildup from panel surfaces.",
+      "Exterior solar panel cleaning for homeowners and property owners in the Seattle area, removing accumulated dust, pollen, debris, and outdoor buildup from panel surfaces.",
     problem:
       "Solar panels and other exterior surfaces accumulate dust, pollen, leaves, and bird droppings over time, leaving surfaces visibly dirty and in need of routine maintenance.",
     solution:
@@ -501,7 +501,7 @@ export const homeServiceCards = [
   {
     title: "Full Home Cleaning",
     description:
-      "Thorough residential cleaning for homes across the Seattle area. From regular maintenance cleans to full deep cleans — done with care and attention to detail.",
+      "Thorough residential cleaning for homes across the Seattle area. From regular maintenance cleans to full deep cleans, done with care and attention to detail.",
     href: "/services/residential-cleaning",
     iconName: "Home",
     image: "/home/services/full-home-cleaning.jpg"
@@ -624,7 +624,7 @@ export const faqs = [
   {
     question: "What sets your cleaning team apart?",
     answer:
-      "30+ years of hands-on experience, a consistent crew, and direct communication with the owner. We serve Seattle commercial and residential clients with structured checklists, reliable schedules, and a straightforward process — no voicemail loops, no chasing updates."
+      "30+ years of hands-on experience, a consistent crew, and direct communication with the owner. We serve Seattle commercial and residential clients with structured checklists, reliable schedules, and a straightforward process. No voicemail loops, no chasing updates."
   }
 ];
 

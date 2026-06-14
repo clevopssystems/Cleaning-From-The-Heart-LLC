@@ -29,7 +29,7 @@ export default function VideosPage() {
             </h1>
             <p className="mt-5 text-base leading-relaxed text-white/65 md:text-lg">
               Unedited, on-site footage from real commercial cleaning jobs across Seattle.
-              No staging, no filters — just the quality of our work.
+              No staging, no filters. Just the quality of our work.
             </p>
           </div>
         </Container>

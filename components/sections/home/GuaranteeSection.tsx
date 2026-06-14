@@ -9,13 +9,13 @@ const guaranteePoints = [
     icon: BadgeCheck,
     title: "Issue found within 24 hours?",
     description:
-      "Tell us within 24 hours of your service. We schedule a return visit and correct it — no extra charge, no debate."
+      "Tell us within 24 hours of your service. We schedule a return visit and correct it. No extra charge, no debate."
   },
   {
     icon: RefreshCw,
     title: "We come back and fix it.",
     description:
-      "No back-and-forth. We return, we fix it, we follow up. Your satisfaction is the baseline — not a bonus."
+      "No back-and-forth. We return, we fix it, we follow up. Your satisfaction is the baseline, not a bonus."
   },
   {
     icon: MessageCircle,
