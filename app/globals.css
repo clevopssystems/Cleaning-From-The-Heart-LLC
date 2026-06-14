@@ -32,7 +32,7 @@ a {
 /* ─── Layout shells ─── */
 
 .section-shell {
-  @apply py-20 md:py-28;
+  @apply py-16 md:py-28;
 }
 
 .section-shell-tight {

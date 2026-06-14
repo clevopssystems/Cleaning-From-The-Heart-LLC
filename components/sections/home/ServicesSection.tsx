@@ -33,8 +33,8 @@ export function ServicesSection() {
       <Container>
         <SectionHeading
           eyebrow="Our Services"
-          title="Cleaning Solutions for Seattle Homes, Offices &amp; Properties"
-          description="We provide commercial and residential cleaning, floor care, window cleaning, pressure washing, and more throughout Seattle and surrounding areas. One-time, recurring, or contract-based."
+          title="Cleaning Services Available in Seattle & Surrounding Areas"
+          description="Commercial and office cleaning, home cleaning, windows, pressure washing, carpets, floor care, and move-out cleaning. Here's what Seattle-area clients ask us for most."
         />
 
         <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">

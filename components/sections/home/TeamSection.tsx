@@ -1,14 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-import { CheckCircle2 } from "lucide-react";
 import { Container } from "@/components/shared/Container";
 import { Reveal } from "@/components/shared/Reveal";
 
 const highlights = [
   "30+ years of hands-on cleaning experience",
-  "Dependable communication, direct contact always",
-  "Commercial and residential cleaning across the Seattle area",
-  "Care and attention to detail on every job"
+  "You deal with the owner directly — no call center",
+  "Homes, offices, schools, and commercial spaces",
+  "Same care and checklist on every visit"
 ];
 
 export function TeamSection() {
@@ -20,24 +19,19 @@ export function TeamSection() {
           {/* Left: text */}
           <Reveal>
             <div>
-              <p className="eyebrow">Real Cleaning. Real People.</p>
+              <p className="eyebrow">The People Behind the Work</p>
               <h2 className="text-balance text-4xl font-bold leading-[1.12] tracking-tight text-ink md:text-5xl">
-                Real Cleaning.{" "}
-                <span className="text-brand-600">Real People.</span>{" "}
-                Real Results.
+                A small, <span className="text-brand-600">owner-run</span> cleaning team
               </h2>
               <p className="mt-5 text-base leading-relaxed text-muted md:text-lg">
-                Cleaning From The Heart LLC is built on hands-on service, dependable communication, and decades
-                of cleaning experience. From offices and commercial properties to homes, schools, windows,
-                carpets, and floor care, the work is done with care and attention to detail.
+                Cleaning From The Heart LLC is owner-run and based in the Seattle area. The same people who
+                answer your call do the work — homes, offices, schools, and managed properties, cleaned with
+                care and without the runaround.
               </p>
 
-              <ul className="mt-7 space-y-3">
+              <ul className="mt-7 space-y-2.5 text-sm leading-relaxed text-muted">
                 {highlights.map((item) => (
-                  <li key={item} className="flex items-start gap-2.5 text-sm text-muted">
-                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-brand-600" aria-hidden />
-                    {item}
-                  </li>
+                  <li key={item}>{item}</li>
                 ))}
               </ul>
 

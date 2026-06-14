@@ -1,36 +1,36 @@
 import Link from "next/link";
-import { Building2, KeyRound, Home, GraduationCap, ArrowRight } from "lucide-react";
+import { Building2, KeyRound, Home, GraduationCap } from "lucide-react";
 import { Container } from "@/components/shared/Container";
 import { Reveal } from "@/components/shared/Reveal";
 
 const clientTypes = [
   {
-    icon: KeyRound,
-    title: "Property Managers",
+    icon: Home,
+    title: "Homeowners",
     description:
-      "Reliable move-out, common area, floor care, and turnover cleaning for rental and managed properties. One point of contact, consistent results across every unit, and flexible scheduling built around your turnover timelines.",
-    tags: ["Move-Out Cleaning", "Turnover Cleaning", "Multi-Property Support"]
+      "Homes, apartments, move-ins and move-outs, and deeper one-time cleans.",
+    tags: ["Homes & Apartments", "Move-In / Move-Out", "Recurring"]
   },
   {
     icon: Building2,
     title: "Offices & Commercial Spaces",
     description:
-      "Recurring cleaning for offices, storefronts, and commercial facilities throughout Seattle. Same crew every visit, after-hours scheduling, and a structured checklist process that keeps your workspace client-ready.",
-    tags: ["Recurring Contracts", "After-Hours Available", "Checklist-Backed"]
+      "Workspaces, common areas, floors, and windows — on a schedule that fits your hours.",
+    tags: ["Workspaces", "Common Areas", "Recurring"]
   },
   {
-    icon: Home,
-    title: "Homeowners",
+    icon: KeyRound,
+    title: "Property Managers",
     description:
-      "Professional home cleaning for Seattle-area homeowners who want a clean, well-maintained home without the hassle. Regular maintenance cleans, deep cleans, move-in/move-out service, and window cleaning available.",
-    tags: ["Regular Maintenance", "Deep Cleaning", "Window Cleaning"]
+      "Turnovers, move-outs, common areas, and floor care across managed properties.",
+    tags: ["Turnover", "Common Areas", "Multi-Property"]
   },
   {
     icon: GraduationCap,
     title: "Schools & Facilities",
     description:
-      "Structured cleaning plans for K-12 schools, educational campuses, and large facilities. Classroom sanitation, restroom service, hallways, offices, and common areas — scheduled around school hours.",
-    tags: ["Classroom Cleaning", "Restroom Sanitation", "Flexible Scheduling"]
+      "Classrooms, offices, and high-use spaces cleaned around your schedule.",
+    tags: ["Classrooms", "Offices", "High-Use Spaces"]
   }
 ];
 
@@ -41,11 +41,10 @@ export function WhoWeWorkWithSection() {
         <div className="mx-auto max-w-2xl text-center">
           <span className="eyebrow">Who We Help</span>
           <h2 className="text-4xl font-bold leading-tight tracking-tight text-ink md:text-5xl">
-            Cleaning for Homes, Offices, Schools &amp; Properties
+            Cleaning for homes, offices, schools &amp; managed properties around Seattle
           </h2>
           <p className="mt-5 text-base leading-relaxed text-muted md:text-lg">
-            Whether you manage a single home or a portfolio of commercial properties, Cleaning From The Heart LLC
-            delivers the consistency, communication, and results you can count on.
+            Tell us what you need cleaned and we&apos;ll help you choose the right service.
           </p>
         </div>
 
@@ -80,10 +79,6 @@ export function WhoWeWorkWithSection() {
         <div className="mt-10 flex flex-wrap justify-center gap-3">
           <Link href="/contact#quote-form" className="cta-primary">
             Get a Free Quote
-          </Link>
-          <Link href="/services" className="cta-secondary">
-            View All Services
-            <ArrowRight className="ml-2 h-4 w-4" aria-hidden />
           </Link>
         </div>
       </Container>

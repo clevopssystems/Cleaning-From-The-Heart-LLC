@@ -33,8 +33,8 @@ export function HowItWorksSection() {
       <Container>
         <SectionHeading
           eyebrow="How It Works"
-          title="From First Inquiry to Clean Space, Simple"
-          description="No complicated contracts, no vague timelines. A clear three-step process designed to get your property clean and keep it that way."
+          title="Getting started is simple"
+          description="No long contracts or vague timelines. Tell us what you need, get a clear quote, and we handle the rest."
         />
 
         <div className="mt-12 grid gap-6 md:grid-cols-3">

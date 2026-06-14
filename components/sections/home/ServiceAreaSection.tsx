@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { MapPin } from "lucide-react";
 import { Container } from "@/components/shared/Container";
 import { serviceAreas, siteConfig } from "@/lib/site";
 
@@ -49,9 +48,8 @@ export function ServiceAreaSection() {
             {serviceAreas.map((area) => (
               <li
                 key={area}
-                className="flex items-center gap-2.5 rounded-xl border border-brand-100 bg-white px-4 py-3 text-sm font-medium text-ink"
+                className="rounded-xl border border-brand-100 bg-white px-4 py-3 text-sm font-medium text-ink"
               >
-                <MapPin className="h-3.5 w-3.5 shrink-0 text-brand-600" aria-hidden />
                 {area}
               </li>
             ))}

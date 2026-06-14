@@ -1,14 +1,7 @@
-import { ShieldCheck, Clock, Star, CheckCircle2, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { Container } from "@/components/shared/Container";
 import { siteConfig } from "@/lib/site";
-
-const stats = [
-  { value: "30+", label: "Years Experience" },
-  { value: "5.0★", label: "Google Rating" },
-  { value: "200+", label: "Properties Served" },
-  { value: "Free", label: "Quote Available" }
-];
 
 export function HeroSection() {
   return (
@@ -26,8 +19,7 @@ export function HeroSection() {
         muted
         loop
         playsInline
-        preload="metadata"
-        poster="/services/hero/hero-cleaning-team.png"
+        preload="auto"
         className="hero-video absolute inset-0 h-full w-full object-cover"
         aria-hidden
       >
@@ -47,11 +39,10 @@ export function HeroSection() {
       <div className="absolute -left-32 -top-32 h-96 w-96 rounded-full bg-brand-600/20 blur-3xl" aria-hidden />
 
       <Container className="relative section-shell">
-        <div className="grid items-center gap-12 lg:grid-cols-[1fr_auto]">
+        <div className="max-w-3xl">
           <div>
             {/* Credibility badge */}
             <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-3.5 py-1.5">
-              <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-accent" aria-hidden />
               <span className="text-xs font-semibold text-accent">Serving Seattle &amp; surrounding areas</span>
             </div>
 
@@ -64,19 +55,10 @@ export function HeroSection() {
               for homes, offices, schools, property managers, and commercial spaces across the Seattle area.
             </p>
 
-            {/* Proof points */}
-            <ul className="mt-6 flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:gap-x-6 sm:gap-y-2">
-              {[
-                "30+ years of cleaning experience",
-                "Commercial & residential cleaning",
-                "Seattle-area service"
-              ].map((point) => (
-                <li key={point} className="flex items-center gap-2 text-sm text-white/75">
-                  <CheckCircle2 className="h-4 w-4 shrink-0 text-accent" aria-hidden />
-                  {point}
-                </li>
-              ))}
-            </ul>
+            {/* Proof points — plain, no bullet markers */}
+            <p className="mt-6 text-sm text-white/70">
+              30+ years of cleaning experience · Commercial &amp; residential · Seattle-area service
+            </p>
 
             {/* CTAs */}
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
@@ -95,48 +77,7 @@ export function HeroSection() {
               </div>
             </div>
 
-            {/* Trust badges */}
-            <div className="mt-7 flex flex-wrap items-center gap-6">
-              <div className="flex items-center gap-2 text-sm text-white/70">
-                <Star className="h-4 w-4 shrink-0 text-accent" aria-hidden />
-                <span>30+ Years Experience</span>
-              </div>
-              <div className="flex items-center gap-2 text-sm text-white/70">
-                <ShieldCheck className="h-4 w-4 shrink-0 text-accent" aria-hidden />
-                <span>Seattle-Owned Business</span>
-              </div>
-              <div className="flex items-center gap-2 text-sm text-white/70">
-                <Clock className="h-4 w-4 shrink-0 text-accent" aria-hidden />
-                <span>Commercial &amp; Residential</span>
-              </div>
-            </div>
           </div>
-
-          {/* Stats column — large screens */}
-          <div className="hidden lg:flex lg:flex-col lg:gap-3">
-            {stats.map((stat) => (
-              <div
-                key={stat.label}
-                className="flex min-w-[140px] flex-col items-center rounded-2xl border border-white/10 bg-white/5 px-6 py-5 text-center backdrop-blur-sm"
-              >
-                <span className="text-2xl font-bold text-white">{stat.value}</span>
-                <span className="mt-1 text-xs text-white/55">{stat.label}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Mobile stats row */}
-        <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-4 lg:hidden">
-          {stats.map((stat) => (
-            <div
-              key={`mobile-${stat.label}`}
-              className="flex flex-col items-center rounded-xl border border-white/10 bg-white/5 px-4 py-4 text-center"
-            >
-              <span className="text-xl font-bold text-white">{stat.value}</span>
-              <span className="mt-0.5 text-[11px] text-white/55">{stat.label}</span>
-            </div>
-          ))}
         </div>
       </Container>
 

@@ -3,15 +3,10 @@ import { HeroSection } from "@/components/sections/home/HeroSection";
 import { SocialProofStrip } from "@/components/sections/home/SocialProofStrip";
 import { TeamSection } from "@/components/sections/home/TeamSection";
 import { WorkInActionSection } from "@/components/sections/home/WorkInActionSection";
-import { TrustSection } from "@/components/sections/home/TrustSection";
 import { WhoWeWorkWithSection } from "@/components/sections/home/WhoWeWorkWithSection";
 import { ServicesSection } from "@/components/sections/home/ServicesSection";
-import { BrandStatementSection } from "@/components/sections/home/BrandStatementSection";
-import { BeforeAfterSection } from "@/components/sections/home/BeforeAfterSection";
 import { HowItWorksSection } from "@/components/sections/home/HowItWorksSection";
 import { GuaranteeSection } from "@/components/sections/home/GuaranteeSection";
-import { StrongCtaSection } from "@/components/sections/home/StrongCtaSection";
-import { VideoSection } from "@/components/sections/home/VideoSection";
 import { FaqSection } from "@/components/sections/home/FaqSection";
 import { ServiceAreaSection } from "@/components/sections/home/ServiceAreaSection";
 import { faqs } from "@/lib/site";
@@ -85,43 +80,28 @@ export default function HomePage() {
       {/* 2. Social proof strip — tight dark metrics bar */}
       <SocialProofStrip />
 
-      {/* 3. Real People — owner photo, warm copy, human connection near top */}
+      {/* 3. Real people — owner-run team, warm human copy near the top */}
       <TeamSection />
 
-      {/* 4. Gallery — real work proof moved high for trust-building */}
+      {/* 4. Gallery — real work photos, the core proof section */}
       <WorkInActionSection />
 
-      {/* 5. Trust — credentials, guarantee, verified client reviews */}
-      <TrustSection />
-
-      {/* 6. Who We Help — property managers, offices, homeowners, schools */}
+      {/* 5. Who We Help — homeowners, offices, schools, property managers */}
       <WhoWeWorkWithSection />
 
-      {/* 7. Services — 6 image-based cards + compact more-services list */}
+      {/* 6. Services — image-based cards + compact more-services list */}
       <ServicesSection />
 
-      {/* 8. Brand statement — full-bleed visual break */}
-      <BrandStatementSection />
-
-      {/* 9. Before / After — visual cleaning proof */}
-      <BeforeAfterSection />
-
-      {/* 10. How It Works — simple 3-step process */}
+      {/* 7. How It Works — simple 3-step process */}
       <HowItWorksSection />
 
-      {/* 11. Service promise — we return and fix any issues */}
+      {/* 8. 30+ years / service promise — final trust CTA */}
       <GuaranteeSection />
 
-      {/* 12. Final CTA — strong conversion block */}
-      <StrongCtaSection />
-
-      {/* 13. Videos — real footage from jobs */}
-      <VideoSection />
-
-      {/* 14. FAQ — common questions */}
+      {/* 9. FAQ — common questions */}
       <FaqSection />
 
-      {/* 15. Service Areas — SEO + cities + services copy */}
+      {/* 10. Service Areas — local SEO copy + cities */}
       <ServiceAreaSection />
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
