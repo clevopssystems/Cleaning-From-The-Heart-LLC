@@ -2,6 +2,12 @@ import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 import { Ratelimit } from "@upstash/ratelimit";
 import { Redis } from "@upstash/redis";
+import {
+  quoteServiceOptions,
+  propertyTypeOptions,
+  cleaningFrequencyOptions,
+  contactMethodOptions
+} from "@/lib/site";
 
 // ---------------------------------------------------------------------------
 // Rate limiter — Upstash Redis (shared across every Vercel serverless instance).
@@ -32,23 +38,15 @@ function createRatelimiter(): Ratelimit | null {
 const ratelimiter = createRatelimiter();
 
 // ---------------------------------------------------------------------------
-// Allowed service values — anything outside this set is rejected.
-// Keep in sync with SERVICE_OPTIONS in ContactForm.tsx.
+// Allowed select-field values — anything outside these sets is rejected.
+// These are built from the SAME shared arrays the contact form renders
+// (lib/site.ts), so the frontend options and backend whitelist can never drift.
+// "" is always allowed because these fields are optional.
 // ---------------------------------------------------------------------------
-const ALLOWED_SERVICES = new Set([
-  "",
-  "Commercial Cleaning",
-  "Carpet Cleaning",
-  "Strip and Wax",
-  "Move-In / Move-Out Cleaning",
-  "Post-Construction Cleanup",
-  "School / Facility Cleaning",
-  "Window & Glass Cleaning",
-  "Pressure Washing",
-  "Junk Removal",
-  "Parking Lot & Exterior Maintenance",
-  "Other / Not Sure",
-]);
+const ALLOWED_SERVICES = new Set<string>(["", ...quoteServiceOptions]);
+const ALLOWED_PROPERTY_TYPES = new Set<string>(["", ...propertyTypeOptions]);
+const ALLOWED_FREQUENCIES = new Set<string>(["", ...cleaningFrequencyOptions]);
+const ALLOWED_CONTACT_METHODS = new Set<string>(["", ...contactMethodOptions]);
 
 // 16 KB is more than enough for a contact form.
 const MAX_BODY_BYTES = 16 * 1024;
@@ -168,6 +166,9 @@ export async function POST(req: NextRequest) {
   const email = typeof body.email === "string" ? body.email : "";
   const phone = typeof body.phone === "string" ? body.phone : "";
   const service = typeof body.service === "string" ? body.service : "";
+  const propertyType = typeof body.propertyType === "string" ? body.propertyType : "";
+  const frequency = typeof body.frequency === "string" ? body.frequency : "";
+  const contactMethod = typeof body.contactMethod === "string" ? body.contactMethod : "";
   const message = typeof body.message === "string" ? body.message : "";
 
   // ── 8. Input validation ───────────────────────────────────────────────────
@@ -200,10 +201,23 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  // Reject service values not in the known list — prevents arbitrary strings
-  // from being injected into the email even after sanitization.
+  // Reject select-field values not in the known lists — prevents arbitrary
+  // strings from being injected into the email even after sanitization.
+  // These fields are optional, so an empty string is always accepted.
   if (!ALLOWED_SERVICES.has(service)) {
     return NextResponse.json({ error: "Invalid service selection." }, { status: 400 });
+  }
+
+  if (!ALLOWED_PROPERTY_TYPES.has(propertyType)) {
+    return NextResponse.json({ error: "Invalid property type selection." }, { status: 400 });
+  }
+
+  if (!ALLOWED_FREQUENCIES.has(frequency)) {
+    return NextResponse.json({ error: "Invalid cleaning frequency selection." }, { status: 400 });
+  }
+
+  if (!ALLOWED_CONTACT_METHODS.has(contactMethod)) {
+    return NextResponse.json({ error: "Invalid contact method selection." }, { status: 400 });
   }
 
   // ── 9. Send email ─────────────────────────────────────────────────────────
@@ -213,6 +227,9 @@ export async function POST(req: NextRequest) {
   const safeEmail = sanitize(email);
   const safePhone = sanitize(phone);
   const safeService = sanitize(service);
+  const safePropertyType = sanitize(propertyType);
+  const safeFrequency = sanitize(frequency);
+  const safeContactMethod = sanitize(contactMethod);
   const safeMessage = sanitize(message).replace(/\n/g, "<br>");
   const submittedAt = new Date().toLocaleString("en-US", {
     timeZone: "America/Los_Angeles",
@@ -229,32 +246,50 @@ export async function POST(req: NextRequest) {
       from: "Quotes <quotes@clevops.co>",
       to: ["Cleanfromtheheartllc@gmail.com"],
       replyTo: safeEmail,
-      subject: "New Quote Request - Cleaning From The Heart LLC",
+      subject: safeName
+        ? `New Cleaning Quote Request from ${safeName}`
+        : "New Cleaning Quote Request",
       html: `
         <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;background:#f8fafc;padding:32px;border-radius:12px;">
           <div style="margin-bottom:24px;">
             <h1 style="margin:0 0 4px;color:#1e40af;font-size:22px;">New Quote Request</h1>
-            <p style="margin:0;color:#6b7280;font-size:14px;">Cleaning From The Heart LLC — Website Contact Form</p>
+            <p style="margin:0;color:#6b7280;font-size:14px;">Cleaning From The Heart LLC · Website quote form</p>
           </div>
 
           <table style="width:100%;border-collapse:collapse;border-radius:8px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.08);">
             <tr style="background:#eff6ff;">
-              <td style="padding:12px 16px;font-weight:700;color:#374151;width:140px;font-size:14px;">Full Name</td>
-              <td style="padding:12px 16px;color:#111827;font-size:14px;">${safeName}</td>
+              <td style="padding:12px 16px;font-weight:700;color:#374151;width:170px;font-size:14px;">Lead Source</td>
+              <td style="padding:12px 16px;color:#111827;font-size:14px;">Website quote form</td>
             </tr>
             <tr style="background:#ffffff;">
+              <td style="padding:12px 16px;font-weight:700;color:#374151;font-size:14px;">Full Name</td>
+              <td style="padding:12px 16px;color:#111827;font-size:14px;">${safeName}</td>
+            </tr>
+            <tr style="background:#eff6ff;">
               <td style="padding:12px 16px;font-weight:700;color:#374151;font-size:14px;">Email</td>
               <td style="padding:12px 16px;font-size:14px;">
                 <a href="mailto:${safeEmail}" style="color:#1e40af;text-decoration:none;">${safeEmail}</a>
               </td>
             </tr>
-            <tr style="background:#eff6ff;">
+            <tr style="background:#ffffff;">
               <td style="padding:12px 16px;font-weight:700;color:#374151;font-size:14px;">Phone</td>
               <td style="padding:12px 16px;color:#111827;font-size:14px;">${safePhone || "Not provided"}</td>
             </tr>
-            <tr style="background:#ffffff;">
-              <td style="padding:12px 16px;font-weight:700;color:#374151;font-size:14px;">Service</td>
+            <tr style="background:#eff6ff;">
+              <td style="padding:12px 16px;font-weight:700;color:#374151;font-size:14px;">Service Needed</td>
               <td style="padding:12px 16px;color:#111827;font-size:14px;">${safeService || "Not provided"}</td>
+            </tr>
+            <tr style="background:#ffffff;">
+              <td style="padding:12px 16px;font-weight:700;color:#374151;font-size:14px;">Property Type</td>
+              <td style="padding:12px 16px;color:#111827;font-size:14px;">${safePropertyType || "Not provided"}</td>
+            </tr>
+            <tr style="background:#eff6ff;">
+              <td style="padding:12px 16px;font-weight:700;color:#374151;font-size:14px;">Cleaning Frequency</td>
+              <td style="padding:12px 16px;color:#111827;font-size:14px;">${safeFrequency || "Not provided"}</td>
+            </tr>
+            <tr style="background:#ffffff;">
+              <td style="padding:12px 16px;font-weight:700;color:#374151;font-size:14px;">Preferred Contact Method</td>
+              <td style="padding:12px 16px;color:#111827;font-size:14px;">${safeContactMethod || "Not provided"}</td>
             </tr>
           </table>
 
@@ -264,7 +299,7 @@ export async function POST(req: NextRequest) {
           </div>
 
           <p style="margin-top:24px;color:#9ca3af;font-size:12px;border-top:1px solid #e5e7eb;padding-top:16px;">
-            Submitted on ${submittedAt} (Pacific Time) &mdash; cleaningfromtheheartllc.com
+            Submitted on ${submittedAt} (Pacific Time) · cleaningfromtheheartllc.com
           </p>
         </div>
       `,

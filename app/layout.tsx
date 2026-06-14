@@ -102,7 +102,7 @@ const localBusinessSchema = {
     { "@type": "City", name: "Bothell" }
   ],
   url: "https://cleaningfromtheheartllc.com",
-  sameAs: [siteConfig.instagramHref],
+  sameAs: [siteConfig.instagramHref, siteConfig.facebookHref, siteConfig.tiktokHref],
   openingHours: "Mo-Sa 07:00-19:00",
   priceRange: "$$",
   description:

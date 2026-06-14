@@ -33,6 +33,10 @@ export const siteConfig = {
   email: "Cleanfromtheheartllc@gmail.com",
   instagramHref: "https://www.instagram.com/cleaningfromtheheartllc?igsh=cW53ZjdhaTl0Z2x4",
   instagramHandle: "@cleaningfromtheheartllc",
+  facebookHref: "https://www.facebook.com/cleaningfromtheheart/",
+  facebookHandle: "Cleaning From The Heart",
+  tiktokHref: "https://www.tiktok.com/@cleaningfromtheheartllc",
+  tiktokHandle: "@cleaningfromtheheartllc",
   address: "PO BOX 135, Renton, WA 98057",
   primaryCta: "Get a Free Quote",
   secondaryCta: "Call Now",
@@ -485,6 +489,39 @@ export const services: Service[] = [
     ]
   }
 ];
+
+// ─── QUOTE FORM OPTIONS ───────────────────────────────────────────────────────
+// Single source of truth for the Get a Quote form. These same arrays are imported
+// by BOTH the contact form (frontend) and the contact API route (backend
+// validation), so the values a visitor can submit and the values the server
+// accepts can never drift apart. If you add or rename an option, do it here only.
+//
+// Service options are derived directly from the real `services` list above, with
+// a "Not Sure Yet" catch-all appended for visitors who are still deciding.
+export const quoteServiceOptions: readonly string[] = [
+  ...services.map((service) => service.title),
+  "Not Sure Yet"
+];
+
+export const propertyTypeOptions = [
+  "Home",
+  "Office",
+  "School or Educational Facility",
+  "Commercial Property",
+  "Rental or Managed Property",
+  "Post-Construction Project",
+  "Other"
+] as const;
+
+export const cleaningFrequencyOptions = [
+  "One-time Cleaning",
+  "Weekly",
+  "Bi-weekly",
+  "Monthly",
+  "Not Sure Yet"
+] as const;
+
+export const contactMethodOptions = ["Phone", "Email", "Text"] as const;
 
 // Home page service showcase — 6 featured cards
 // To add a photo to any card: set image to "/home/services/{name}.jpg"

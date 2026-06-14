@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { Phone, Mail, MapPin, Clock, Instagram } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Instagram, Facebook } from "lucide-react";
 import { Container } from "@/components/shared/Container";
+import { TikTokIcon } from "@/components/shared/TikTokIcon";
 import { services, siteConfig } from "@/lib/site";
 
 export function Footer() {
@@ -108,6 +109,28 @@ export function Footer() {
                   {siteConfig.instagramHandle}
                 </Link>
               </li>
+              <li>
+                <Link
+                  href={siteConfig.facebookHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-sm text-white/55 transition-colors hover:text-white"
+                >
+                  <Facebook className="h-3.5 w-3.5 shrink-0 text-accent" aria-hidden />
+                  {siteConfig.facebookHandle}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={siteConfig.tiktokHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-sm text-white/55 transition-colors hover:text-white"
+                >
+                  <TikTokIcon className="h-3.5 w-3.5 shrink-0 text-accent" />
+                  {siteConfig.tiktokHandle}
+                </Link>
+              </li>
             </ul>
             <Link href="/contact#quote-form" className="cta-gold mt-6 inline-flex text-xs">
               Request a Free Quote
@@ -119,15 +142,35 @@ export function Footer() {
           <p>© {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</p>
           <div className="flex items-center gap-4">
             <p>Seattle Commercial Cleaning · Carpet Cleaning · Strip &amp; Wax</p>
-            <Link
-              href={siteConfig.instagramHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-              className="text-white/30 transition-colors hover:text-white/70"
-            >
-              <Instagram className="h-4 w-4" aria-hidden />
-            </Link>
+            <div className="flex items-center gap-3">
+              <Link
+                href={siteConfig.instagramHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="text-white/30 transition-colors hover:text-white/70"
+              >
+                <Instagram className="h-4 w-4" aria-hidden />
+              </Link>
+              <Link
+                href={siteConfig.facebookHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                className="text-white/30 transition-colors hover:text-white/70"
+              >
+                <Facebook className="h-4 w-4" aria-hidden />
+              </Link>
+              <Link
+                href={siteConfig.tiktokHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="TikTok"
+                className="text-white/30 transition-colors hover:text-white/70"
+              >
+                <TikTokIcon className="h-4 w-4" />
+              </Link>
+            </div>
           </div>
         </div>
       </Container>
