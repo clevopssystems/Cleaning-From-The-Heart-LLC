@@ -776,27 +776,200 @@ export const workGalleryItems: {
 //   Homepage "Before & After" → /public/images/results/before/ and /after/
 //   Homepage "Our Work"        → /public/images/results/our-work/
 //   Full Results gallery below → /public/images/gallery/
-export const galleryImages: { src: string }[] = [
-  { src: "/images/gallery/gallery-01.jpeg" },
-  { src: "/images/gallery/gallery-02.jpeg" },
-  { src: "/images/gallery/gallery-03.jpeg" },
-  { src: "/images/gallery/gallery-04.jpeg" },
-  { src: "/images/gallery/gallery-05.jpeg" },
-  { src: "/images/gallery/gallery-06.jpeg" },
-  { src: "/images/gallery/gallery-07.jpeg" },
-  { src: "/images/gallery/gallery-08.jpeg" },
-  { src: "/images/gallery/gallery-09.jpeg" },
-  { src: "/images/gallery/gallery-10.jpeg" },
-  { src: "/images/gallery/gallery-11.jpeg" },
-  { src: "/images/gallery/gallery-12.jpeg" },
-  { src: "/images/gallery/gallery-13.jpeg" },
-  { src: "/images/gallery/gallery-14.jpg" },
-  { src: "/images/gallery/gallery-15.jpg" },
-  { src: "/images/gallery/gallery-16.jpg" },
-  { src: "/images/gallery/gallery-17.jpg" },
-  { src: "/images/gallery/gallery-18.jpg" },
-  { src: "/images/gallery/gallery-19.jpg" },
-  { src: "/images/gallery/gallery-20.jpg" },
+//
+// Each item carries the data the Results page uses to label, filter, and caption
+// real project photos. Categories below match the filter tabs in galleryCategories.
+//   tag        → short label shown on the photo card
+//   caption    → one-line description shown under the photo / in the lightbox
+//   alt        → accessibility + SEO alt text (kept meaningful, never stuffed)
+//   categories → which filter tabs the photo appears under (a photo can match more
+//                than one, e.g. a school gym floor is both Floor Care and Commercial)
+//   orientation→ controls the card aspect ratio (portrait / landscape / square)
+export type GalleryCategory =
+  | "floor-care"
+  | "window-cleaning"
+  | "exterior-cleaning"
+  | "commercial-cleaning"
+  | "residential-cleaning";
+
+export const galleryCategories: { id: GalleryCategory; label: string }[] = [
+  { id: "floor-care", label: "Floor Care" },
+  { id: "window-cleaning", label: "Window Cleaning" },
+  { id: "exterior-cleaning", label: "Exterior Cleaning" },
+  { id: "commercial-cleaning", label: "Commercial Cleaning" },
+  { id: "residential-cleaning", label: "Residential Cleaning" }
+];
+
+export interface GalleryItem {
+  src: string;
+  orientation: "portrait" | "landscape" | "square";
+  tag: string;
+  caption: string;
+  alt: string;
+  categories: GalleryCategory[];
+}
+
+export const galleryItems: GalleryItem[] = [
+  {
+    src: "/images/gallery/gallery-01.jpeg",
+    orientation: "portrait",
+    tag: "Floor Care",
+    caption: "Classroom floor care with professional equipment",
+    alt: "School classroom floor care and polishing in the Seattle area",
+    categories: ["floor-care", "commercial-cleaning"]
+  },
+  {
+    src: "/images/gallery/gallery-02.jpeg",
+    orientation: "portrait",
+    tag: "Floor Care",
+    caption: "Strip and wax floor work in a school classroom",
+    alt: "Strip and wax floor service in a Seattle-area school classroom",
+    categories: ["floor-care", "commercial-cleaning"]
+  },
+  {
+    src: "/images/gallery/gallery-03.jpeg",
+    orientation: "portrait",
+    tag: "Window Cleaning",
+    caption: "Exterior window cleaning at a Seattle-area home",
+    alt: "Exterior window cleaning service for a Seattle-area home",
+    categories: ["window-cleaning", "residential-cleaning"]
+  },
+  {
+    src: "/images/gallery/gallery-04.jpeg",
+    orientation: "portrait",
+    tag: "Residential Cleaning",
+    caption: "Detailed cleaning in a residential theater room",
+    alt: "Residential home theater room cleaning in the Seattle area",
+    categories: ["residential-cleaning"]
+  },
+  {
+    src: "/images/gallery/gallery-05.jpeg",
+    orientation: "portrait",
+    tag: "Floor Care",
+    caption: "Hardwood floor cleaning for a Seattle-area home",
+    alt: "Hardwood floor cleaning result for a Seattle-area home",
+    categories: ["floor-care", "residential-cleaning"]
+  },
+  {
+    src: "/images/gallery/gallery-06.jpeg",
+    orientation: "portrait",
+    tag: "Window Cleaning",
+    caption: "Commercial glass cleaning with a water-fed pole",
+    alt: "Commercial glass cleaning with a water-fed pole in Seattle",
+    categories: ["window-cleaning", "commercial-cleaning"]
+  },
+  {
+    src: "/images/gallery/gallery-07.jpeg",
+    orientation: "portrait",
+    tag: "Window Cleaning",
+    caption: "Exterior window cleaning at a residential property",
+    alt: "Exterior window cleaning at a Seattle-area residential property",
+    categories: ["window-cleaning", "residential-cleaning"]
+  },
+  {
+    src: "/images/gallery/gallery-08.jpeg",
+    orientation: "landscape",
+    tag: "Window Cleaning",
+    caption: "Glass railing and window cleaning at a waterfront property",
+    alt: "Glass railing and window cleaning at a Seattle-area waterfront home",
+    categories: ["window-cleaning", "residential-cleaning"]
+  },
+  {
+    src: "/images/gallery/gallery-09.jpeg",
+    orientation: "portrait",
+    tag: "Window Cleaning",
+    caption: "Exterior window cleaning on a large Seattle-area home",
+    alt: "Exterior window cleaning on a large Seattle-area home",
+    categories: ["window-cleaning", "residential-cleaning"]
+  },
+  {
+    src: "/images/gallery/gallery-10.jpeg",
+    orientation: "portrait",
+    tag: "Window Cleaning",
+    caption: "Professional window cleaning equipment on site",
+    alt: "Professional window cleaning equipment on a Seattle-area job",
+    categories: ["window-cleaning"]
+  },
+  {
+    src: "/images/gallery/gallery-11.jpeg",
+    orientation: "portrait",
+    tag: "Floor Care",
+    caption: "Floor scrubbing in a school hallway",
+    alt: "Floor scrubbing service in a Seattle-area school hallway",
+    categories: ["floor-care", "commercial-cleaning"]
+  },
+  {
+    src: "/images/gallery/gallery-12.jpeg",
+    orientation: "square",
+    tag: "Floor Care",
+    caption: "Strip and wax results on commercial tile flooring",
+    alt: "Strip and wax floor result on commercial tile in Seattle",
+    categories: ["floor-care", "commercial-cleaning"]
+  },
+  {
+    src: "/images/gallery/gallery-13.jpeg",
+    orientation: "square",
+    tag: "Floor Care",
+    caption: "Polished floor finish in a commercial space",
+    alt: "Polished commercial floor care result in the Seattle area",
+    categories: ["floor-care", "commercial-cleaning"]
+  },
+  {
+    src: "/images/gallery/gallery-14.jpg",
+    orientation: "square",
+    tag: "Floor Care",
+    caption: "Gymnasium floor refinishing for a school facility",
+    alt: "School gymnasium floor refinishing in the Seattle area",
+    categories: ["floor-care", "commercial-cleaning"]
+  },
+  {
+    src: "/images/gallery/gallery-15.jpg",
+    orientation: "square",
+    tag: "Floor Care",
+    caption: "School gym floor care with a restored finish",
+    alt: "School gym floor care and restored finish in Seattle",
+    categories: ["floor-care", "commercial-cleaning"]
+  },
+  {
+    src: "/images/gallery/gallery-16.jpg",
+    orientation: "square",
+    tag: "Exterior Cleaning",
+    caption: "Pressure washing on a waterfront patio",
+    alt: "Pressure washing result on a Seattle-area waterfront patio",
+    categories: ["exterior-cleaning", "residential-cleaning"]
+  },
+  {
+    src: "/images/gallery/gallery-17.jpg",
+    orientation: "square",
+    tag: "Exterior Cleaning",
+    caption: "Exterior surface cleaning with pressure washing equipment",
+    alt: "Exterior pressure washing of a patio surface in the Seattle area",
+    categories: ["exterior-cleaning"]
+  },
+  {
+    src: "/images/gallery/gallery-18.jpg",
+    orientation: "square",
+    tag: "Exterior Cleaning",
+    caption: "Paver patio cleaning and surface care",
+    alt: "Paver patio pressure washing result in the Seattle area",
+    categories: ["exterior-cleaning", "residential-cleaning"]
+  },
+  {
+    src: "/images/gallery/gallery-19.jpg",
+    orientation: "square",
+    tag: "Exterior Cleaning",
+    caption: "Driveway pressure washing for a Seattle-area property",
+    alt: "Driveway pressure washing for a Seattle-area property",
+    categories: ["exterior-cleaning", "residential-cleaning"]
+  },
+  {
+    src: "/images/gallery/gallery-20.jpg",
+    orientation: "square",
+    tag: "Commercial Cleaning",
+    caption: "Commercial floor care for an office space",
+    alt: "Commercial office floor care result in the Seattle area",
+    categories: ["commercial-cleaning", "floor-care"]
+  }
 ];
 
 // ─── TEAM MEDIA ───────────────────────────────────────────────────────────────
