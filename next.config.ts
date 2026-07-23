@@ -79,6 +79,11 @@ const nextConfig: NextConfig = {
         destination: "/services/window-glass-cleaning",
         permanent: true,
       },
+      {
+        source: "/industries",
+        destination: "/industries-we-serve",
+        permanent: true,
+      },
     ];
   },
 

@@ -110,6 +110,19 @@ a {
   @apply flex aspect-video w-full items-center justify-center bg-gradient-to-br from-brand-600/10 to-brand-500/5;
 }
 
+/* ─── Scroll containers ─── */
+
+/* Hides the scrollbar on horizontally-scrolling carousels while keeping
+   native touch/keyboard scrolling fully functional. */
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 /* ─── Typography helpers ─── */
 
 .text-balance {
@@ -137,6 +150,27 @@ a {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* ─── Marquee ─── */
+
+/*
+  Track renders two identical copies of its items back to back (width: max-content).
+  Translating exactly -50% moves it by the width of one copy, so the loop restarts
+  on a frame that's pixel-identical to the start — no jump, no gap.
+*/
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  animation: marquee-scroll 42s linear infinite;
+  will-change: transform;
 }
 
 /* ─── Paint / layout containment ─── */

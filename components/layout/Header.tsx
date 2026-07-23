@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, Phone, X } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Container } from "@/components/shared/Container";
 import { cn } from "@/lib/utils";
 import { navLinks, siteConfig } from "@/lib/site";
@@ -20,13 +20,19 @@ export function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
+
   const hasDarkHero =
     pathname === "/" ||
     pathname === "/about" ||
     pathname === "/services" ||
     pathname.startsWith("/services/") ||
     pathname === "/gallery" ||
-    pathname === "/contact";
+    pathname === "/contact" ||
+    pathname === "/industries-we-serve" ||
+    pathname.startsWith("/industries/");
   const transparent = hasDarkHero && !scrolled && !open;
 
   return (
@@ -50,7 +56,7 @@ export function Header() {
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden items-center gap-5 md:flex" aria-label="Main navigation">
+        <nav className="hidden items-center gap-6 md:flex" aria-label="Main navigation">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -135,9 +141,10 @@ export function Header() {
                 {link.label}
               </Link>
             ))}
+
             <div className="mt-2 grid grid-cols-2 gap-2">
               <Link href="/contact#quote-form" className="cta-primary text-xs" onClick={() => setOpen(false)}>
-                Get a Quote
+                {siteConfig.primaryCta}
               </Link>
               <Link href={siteConfig.phoneHref} className="cta-secondary text-xs" onClick={() => setOpen(false)}>
                 <Phone className="mr-1 h-3.5 w-3.5" aria-hidden />

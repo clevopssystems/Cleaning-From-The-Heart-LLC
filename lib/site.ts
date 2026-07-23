@@ -11,7 +11,8 @@ export type ServiceSlug =
   | "move-in-move-out-cleaning"
   | "residential-cleaning"
   | "deep-cleaning"
-  | "solar-panel-cleaning";
+  | "solar-panel-cleaning"
+  | "restaurant-kitchen-cleaning";
 
 export interface Service {
   slug: ServiceSlug;
@@ -48,8 +49,8 @@ export const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
-  { href: "/gallery", label: "Results" },
-  { href: "/contact", label: "Get a Quote" }
+  { href: "/industries-we-serve", label: "Industries We Serve" },
+  { href: "/gallery", label: "Results" }
 ];
 
 export const services: Service[] = [
@@ -486,6 +487,39 @@ export const services: Service[] = [
       "residential solar panel cleaning Seattle",
       "solar panel maintenance Seattle",
       "exterior cleaning Seattle WA"
+    ]
+  },
+  {
+    slug: "restaurant-kitchen-cleaning",
+    title: "Restaurant Kitchen Cleaning",
+    shortDescription:
+      "Detailed cleaning for commercial kitchens, including floors, food-preparation surfaces, equipment exteriors, grease-prone areas, walls, and other high-use kitchen spaces.",
+    problem:
+      "Commercial kitchens and dining areas see heavy daily use, and grease buildup, food residue, and high foot traffic make floors, prep surfaces, and equipment exteriors difficult to keep consistently clean between shifts.",
+    solution:
+      "We provide scheduled cleaning for restaurant kitchens and dining areas, covering floors, food-preparation surfaces, equipment exteriors, grease-prone areas, and walls, timed around your service hours so cleaning doesn't compete with food prep or dining traffic.",
+    benefits: [
+      "Dedicated attention to grease-prone areas, floors, and equipment exteriors",
+      "Cleaning for dining areas, food-preparation surfaces, and high-touch points",
+      "Restroom cleaning included as part of routine service",
+      "Scheduling built around operating hours and peak service times",
+      "Consistent crew familiar with your kitchen layout and priorities",
+      "Written scope of work confirmed after a walkthrough"
+    ],
+    process: [
+      "Facility walkthrough to review kitchen layout, dining areas, and priority zones",
+      "Written quote with agreed service frequency, scope, and pricing",
+      "Recurring service begins, scheduled around your operating hours"
+    ],
+    seoTitle: "Restaurant Kitchen Cleaning Seattle",
+    seoDescription:
+      "Restaurant and commercial kitchen cleaning in Seattle — dining areas, food-prep surfaces, floors, and grease-prone areas cleaned on a schedule built around your operating hours.",
+    keywords: [
+      "restaurant cleaning Seattle",
+      "commercial kitchen cleaning Seattle",
+      "restaurant janitorial services",
+      "commercial kitchen sanitation cleaning",
+      "grease-prone kitchen cleaning"
     ]
   }
 ];
