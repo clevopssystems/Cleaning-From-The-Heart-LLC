@@ -96,7 +96,7 @@ const residentialGroup: ServiceCard[] = [
     title: "Deep Cleaning",
     icon: Zap,
     blurb:
-      "A thorough top-to-bottom reset for kitchens, bathrooms, floors, and the areas routine cleaning usually skips."
+      "A thorough top-to-bottom reset for homes and businesses that need more than routine cleaning. Compare residential and commercial options."
   },
   {
     slug: "move-in-move-out-cleaning",

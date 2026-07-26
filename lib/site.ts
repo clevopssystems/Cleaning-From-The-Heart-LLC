@@ -11,6 +11,8 @@ export type ServiceSlug =
   | "move-in-move-out-cleaning"
   | "residential-cleaning"
   | "deep-cleaning"
+  | "residential-deep-cleaning"
+  | "commercial-deep-cleaning"
   | "solar-panel-cleaning"
   | "restaurant-kitchen-cleaning";
 
@@ -423,35 +425,99 @@ export const services: Service[] = [
     slug: "deep-cleaning",
     title: "Deep Cleaning",
     shortDescription:
-      "A comprehensive top-to-bottom cleaning for homes and spaces that need more than routine maintenance. Ideal for move-ins, seasonal resets, rentals, and neglected areas.",
+      "Detailed, top-to-bottom cleaning for homes and businesses that need more than routine maintenance. Choose residential deep cleaning for your home or commercial deep cleaning for your business.",
     problem:
       "Routine cleaning maintains a space, but doesn't address built-up grime, overlooked corners, or surfaces that need detailed work to get back to a clean baseline.",
     solution:
-      "Our deep cleaning service covers kitchens, bathrooms, floors, baseboards, high-touch surfaces, and every area that standard cleaning typically skips.",
+      "We provide dedicated residential and commercial deep cleaning plans, each scoped to how homes and facilities actually get used, rather than a single generic checklist.",
     benefits: [
-      "Thorough kitchen cleaning including appliances and cabinet exteriors",
-      "Detailed bathroom scrubbing including grout, fixtures, and tile",
-      "Baseboard, vent, and corner cleaning throughout",
-      "Deep floor cleaning, scrubbing, and mopping",
-      "High-touch surface, light switch, and door handle cleaning",
-      "Inside oven and refrigerator cleaning available",
-      "Ideal for move-ins, move-outs, and seasonal resets",
-      "Available for homes, apartments, and rental properties"
+      "Separate residential and commercial deep cleaning plans",
+      "Scope customized to the property's size, condition, and priorities",
+      "Ideal for move-ins, seasonal resets, and neglected areas",
+      "Available before starting a recurring cleaning schedule",
+      "Written checklist confirmed before service begins",
+      "Available for homes, apartments, rentals, offices, and facilities"
     ],
     process: [
-      "Tell us your space size, current condition, and specific priorities",
-      "We confirm scope and schedule a date that works for you",
-      "Deep cleaning is completed from top to bottom with a written checklist"
+      "Tell us about your property and current condition",
+      "We confirm a customized scope and schedule a date that works for you",
+      "Deep cleaning is completed from top to bottom against the agreed scope"
     ],
-    seoTitle: "Deep Cleaning Seattle",
+    seoTitle: "Deep Cleaning Seattle | Residential & Commercial",
     seoDescription:
-      "Deep cleaning in Seattle for homes, apartments, offices, move-ins, move-outs, kitchens, bathrooms, floors, and detailed cleaning needs.",
+      "Deep cleaning in Seattle for homes and businesses. Compare residential and commercial deep cleaning and request a free, customized quote.",
     keywords: [
       "deep cleaning Seattle",
       "deep house cleaning Seattle",
-      "move out cleaning Seattle WA",
-      "detailed home cleaning Seattle",
+      "commercial deep cleaning Seattle",
+      "detailed cleaning service Seattle",
       "thorough cleaning service Seattle"
+    ]
+  },
+  {
+    slug: "residential-deep-cleaning",
+    title: "Residential Deep Cleaning",
+    shortDescription:
+      "A more thorough, top-to-bottom cleaning for houses, apartments, condos, and townhomes that need more attention than routine upkeep, ideal for move-ins, move-outs, and seasonal resets.",
+    problem:
+      "Routine cleaning maintains a home that's already in kept-up condition, but it doesn't address built-up grime, overlooked corners, or the detailed attention a home needs after a period without professional cleaning.",
+    solution:
+      "We provide residential deep cleaning for kitchens, bathrooms, bedrooms, living areas, baseboards, and high-touch surfaces, with the scope confirmed to your home's size, condition, and priorities before we start.",
+    benefits: [
+      "Detailed kitchen and bathroom cleaning, including fixtures and tile",
+      "Baseboard, trim, and door-handle attention throughout the home",
+      "Suited to houses, apartments, condos, and townhomes",
+      "Ideal for move-ins, move-outs, and seasonal resets",
+      "Available before starting a recurring residential cleaning schedule",
+      "Scope confirmed in writing before service begins"
+    ],
+    process: [
+      "Tell us about your home's size, condition, and priorities",
+      "We confirm a customized scope and schedule a date that works for you",
+      "Your home is deep cleaned from top to bottom against the agreed scope"
+    ],
+    seoTitle: "Residential Deep Cleaning Seattle",
+    seoDescription:
+      "Residential deep cleaning in Seattle for houses, apartments, condos, and townhomes. Detailed home cleaning with a scope customized to your property.",
+    keywords: [
+      "residential deep cleaning Seattle",
+      "house deep cleaning Seattle",
+      "home deep cleaning services",
+      "apartment deep cleaning Seattle",
+      "detailed home cleaning Seattle"
+    ]
+  },
+  {
+    slug: "commercial-deep-cleaning",
+    title: "Commercial Deep Cleaning",
+    shortDescription:
+      "A more thorough, periodic cleaning for offices, schools, retail spaces, and facilities that need more attention than routine janitorial service, ideal before recurring service begins or after heavy use.",
+    problem:
+      "Routine janitorial service maintains a facility day to day, but it doesn't address buildup, overlooked areas, or the detailed attention a facility needs after heavy use or a period without professional cleaning.",
+    solution:
+      "We provide commercial deep cleaning for workspaces, restrooms, break rooms, floors, and high-touch surfaces, with the scope built around your facility type and agreed service plan before we start.",
+    benefits: [
+      "Detailed attention to workspaces, restrooms, and break rooms",
+      "Floor and high-touch surface attention beyond routine janitorial service",
+      "Suited to offices, schools, retail spaces, and commercial facilities",
+      "Available before recurring janitorial service begins",
+      "Scheduling coordinated around business hours and access requirements",
+      "Scope confirmed in writing before service begins"
+    ],
+    process: [
+      "Tell us about your facility and current condition",
+      "We confirm a customized scope and schedule around your operations",
+      "Your facility is deep cleaned against the agreed scope, area by area"
+    ],
+    seoTitle: "Commercial Deep Cleaning Seattle",
+    seoDescription:
+      "Commercial deep cleaning in Seattle for offices, schools, retail spaces, and facilities. Detailed cleaning with a scope customized to your business.",
+    keywords: [
+      "commercial deep cleaning Seattle",
+      "business deep cleaning Seattle",
+      "office deep cleaning services",
+      "facility deep cleaning Seattle",
+      "periodic deep cleaning for businesses"
     ]
   },
   {

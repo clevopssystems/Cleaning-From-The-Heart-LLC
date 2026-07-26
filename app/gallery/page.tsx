@@ -66,7 +66,7 @@ const serviceLinkGroups = [
     heading: "Need home or move cleaning?",
     links: [
       { label: "Residential Cleaning", href: "/services/residential-cleaning" },
-      { label: "Deep Cleaning", href: "/services/deep-cleaning" },
+      { label: "Residential Deep Cleaning", href: "/services/residential-deep-cleaning" },
       { label: "Move-In / Move-Out Cleaning", href: "/services/move-in-move-out-cleaning" }
     ]
   }

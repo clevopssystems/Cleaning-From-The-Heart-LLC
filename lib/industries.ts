@@ -29,6 +29,17 @@ export interface IndustryFaq {
   answer: string;
 }
 
+export interface IndustryAreaGroup {
+  title: string;
+  items: string[];
+}
+
+export interface IndustryServiceGroup {
+  title: string;
+  description: string;
+  items: string[];
+}
+
 export interface IndustryPageContent {
   metaTitle: string;
   metaDescription: string;
@@ -37,8 +48,14 @@ export interface IndustryPageContent {
   heroIntro: string;
   directAnswer: string;
   priorities: IndustryPriority[];
+  /** Optional — property/facility types this page's cleaning plans support. Only shown when provided. */
+  propertyTypes?: IndustryPriority[];
   areasIncluded: string[];
+  /** Optional — categorized version of areasIncluded (e.g. interior common areas vs. exterior). Renders instead of the flat areasIncluded grid when provided. */
+  areaGroups?: IndustryAreaGroup[];
   scheduleNote: string;
+  /** Optional — recurring vs. periodic/project cleaning services described for this industry. */
+  cleaningServiceGroups?: IndustryServiceGroup[];
   relatedServiceSlugs: ServiceSlug[];
   relatedIndustrySlugs: string[];
   faqs: IndustryFaq[];
@@ -178,85 +195,192 @@ export const industries: Industry[] = [
     hubDescription:
       "Shared lobbies, corridors, stairwells, and leasing offices are maintained across single buildings or full portfolios, with turnover cleaning coordinated around move-out and move-in dates. Multi-property accounts get one consistent point of contact instead of separate arrangements for every address.",
     page: {
-      metaTitle: "Property Management Cleaning Services in Seattle | Cleaning From The Heart LLC",
+      metaTitle: "Commercial Cleaning for Property Managers in Seattle | Cleaning From The Heart LLC",
       metaDescription:
-        "Cleaning for property-managed buildings and portfolios in Seattle — common areas, entrances, stairwells, and unit turnover cleaning coordinated around your leasing calendar.",
+        "Commercial cleaning for Seattle property managers and building owners — common areas, offices, restrooms, and unit turnovers on a customized recurring schedule. Request a walkthrough.",
       heroLabel: "PROPERTY MANAGEMENT CLEANING",
       h1: "Commercial Cleaning for Property Managers in Seattle",
       heroIntro:
-        "Property managers juggle shared common areas, leasing offices, and unit turnovers across one building or an entire portfolio. Our cleaning plans cover lobbies, corridors, stairwells, and leasing spaces on a recurring schedule, with turnover cleaning available when units need to be ready between tenants. Communication runs through a single point of contact so multi-property accounts don't require separate conversations for every address. Request a walkthrough to confirm scope across your properties.",
+        "Cleaning From The Heart LLC provides commercial cleaning for property managers, building owners, landlords, and commercial property management firms across Seattle. We maintain shared common areas, entrances, and tenant or unit turnovers for office buildings, multi-tenant properties, retail centers, and apartment communities, with cleaning schedules built around your leasing calendar and access requirements. Multi-property portfolios are coordinated through a single point of contact instead of separate arrangements for every address. Request a property walkthrough and we'll confirm scope, schedule, and pricing in writing.",
       directAnswer:
-        "Cleaning Support Built Around Your Facility for a managed property means treating common areas and unit turnovers as two related but separate parts of the same account. Lobbies, corridors, and stairwells go on a recurring weekly schedule that keeps shared spaces presentable for every resident or tenant in the building. Unit turnover cleaning is scheduled separately, timed against your actual move-out and move-in dates rather than a fixed weekly slot, so units are ready without gaps in your leasing calendar. For portfolios with more than one address, everything runs through a single point of contact, so you're not re-explaining your standards to a different crew or coordinator for each property.",
+        "Property managers are responsible for keeping shared spaces presentable, coordinating access across multiple tenants or units, and holding a consistent standard whether they oversee one building or a full portfolio. Cleaning From The Heart LLC supports that by treating recurring common-area cleaning and unit or suite turnover cleaning as two related but separately scheduled parts of the same account. Lobbies, corridors, and stairwells go on a recurring weekly schedule that keeps shared spaces presentable for every tenant or resident in the building. Turnover cleaning is scheduled against your actual move-out and move-in dates rather than a fixed weekly slot, so units and suites are ready without gaps in your leasing calendar. For portfolios with more than one address, everything runs through a single point of contact, so you're not re-explaining your standards to a different crew or coordinator for each property.",
       priorities: [
         {
-          title: "Common Areas",
+          title: "Common-Area Cleaning",
           description:
-            "Lobbies, corridors, and elevator landings see traffic from every resident or tenant in the building and need consistent attention to stay presentable."
+            "Lobbies, corridors, and elevator landings carry traffic from every tenant or resident in the building and need consistent attention to stay presentable."
         },
         {
-          title: "Building Entrances",
+          title: "Building Entrances & Curb Appeal",
           description:
-            "Entry glass, door hardware, and welcome mats are a first impression for prospective tenants touring the property."
+            "Entry glass, door hardware, and walkways are a prospective tenant's first impression when touring the property."
         },
         {
-          title: "Leasing Offices",
-          description: "Leasing and management offices are kept client-ready for tours and move-in appointments."
+          title: "Leasing & Management Offices",
+          description: "Leasing and management offices are kept client-ready for tours, appointments, and move-in day."
         },
         {
-          title: "Stairwells",
+          title: "Stairwells & Corridors",
           description:
-            "Stairwells often go overlooked between unit cleanings but see steady foot traffic and need their own place on the schedule."
+            "Stairwells and back corridors often go overlooked between unit cleanings but see steady foot traffic and need their own place on the schedule."
         },
         {
           title: "Turnover Coordination",
           description:
-            "Unit turnover cleaning is scheduled around move-out and move-in dates so units are ready without gaps in your leasing calendar."
+            "Unit and suite turnover cleaning is scheduled around move-out and move-in dates so spaces are ready without gaps in your leasing calendar."
         },
         {
-          title: "Cross-Property Communication",
+          title: "Multi-Property Communication",
           description:
-            "Multi-property accounts get one consistent point of contact instead of separate conversations for every address."
+            "Portfolios with more than one address get one consistent point of contact instead of separate conversations for every property."
+        }
+      ],
+      propertyTypes: [
+        {
+          title: "Multi-Tenant Office Buildings",
+          description:
+            "Class A, B, and C office buildings with shared lobbies, corridors, and restrooms cleaned to a consistent standard across every tenant floor."
+        },
+        {
+          title: "Mixed-Use Developments",
+          description:
+            "Ground-floor retail paired with office or residential space above, where common areas serve tenants on different schedules and needs."
+        },
+        {
+          title: "Retail Centers & Strip Malls",
+          description:
+            "Shared walkways, entrances, and common areas serving multiple retail tenants under one property manager."
+        },
+        {
+          title: "Apartment & Multifamily Communities",
+          description:
+            "Shared lobbies, corridors, mailrooms, and leasing offices, with unit turnover cleaning coordinated around move-in and move-out dates."
+        },
+        {
+          title: "Professional & Medical Office Suites",
+          description:
+            "Tenant suites cleaned as part of a building's common-area and suite cleaning plan, using the same general commercial cleaning scope as any other tenant space."
+        },
+        {
+          title: "Commercial Property Portfolios",
+          description:
+            "Multiple buildings or addresses managed under one account, with consistent scope and a single point of contact across the portfolio."
         }
       ],
       areasIncluded: [
         "Lobbies & common areas",
         "Building entrances",
-        "Leasing offices",
+        "Leasing & management offices",
         "Stairwells & elevator landings",
         "Shared restrooms",
         "Turnover / unit cleaning",
         "Trash & recycling areas",
         "Parking area walkways"
       ],
+      areaGroups: [
+        {
+          title: "Interior Common Areas",
+          items: [
+            "Lobbies & reception areas",
+            "Hallways & corridors",
+            "Elevators & elevator landings",
+            "Stairwells",
+            "Shared restrooms",
+            "Break rooms & kitchenettes",
+            "Mail & package areas",
+            "Leasing & management offices"
+          ]
+        },
+        {
+          title: "Tenant & Unit Areas",
+          items: [
+            "Tenant suites & offices (where included in scope)",
+            "Unit turnover cleaning",
+            "Interior glass & partitions",
+            "Floor care in common and leased spaces",
+            "Trash & recycling collection points"
+          ]
+        },
+        {
+          title: "Exterior-Facing & Support Areas",
+          items: [
+            "Building entrances",
+            "Sidewalks & walkways",
+            "Loading areas",
+            "Parking area walkways",
+            "Dumpster & waste enclosure areas"
+          ]
+        }
+      ],
       scheduleNote:
-        "Common areas are typically cleaned weekly, with turnover cleaning scheduled around individual move-out and move-in dates. Portfolios with multiple properties can stagger service across a shared weekly calendar.",
-      relatedServiceSlugs: ["commercial-cleaning", "move-in-move-out-cleaning", "pressure-washing"],
+        "Common areas are typically cleaned weekly, with higher-traffic lobbies and entrances sometimes moved to twice-weekly service. Turnover cleaning is scheduled against individual move-out and move-in dates rather than a fixed slot, and portfolios with multiple properties can stagger service across a shared weekly calendar coordinated through one point of contact.",
+      cleaningServiceGroups: [
+        {
+          title: "Recurring Common-Area Cleaning",
+          description: "Ongoing service that keeps shared spaces consistent week after week.",
+          items: [
+            "Common-area & lobby cleaning",
+            "Restroom cleaning & restocking",
+            "Floor care (vacuuming, mopping, and routine floor cleaning)",
+            "Trash & recycling collection",
+            "Interior glass spot cleaning",
+            "Multi-property portfolio scheduling"
+          ]
+        },
+        {
+          title: "Turnover & Periodic Cleaning",
+          description: "Scheduled around specific dates rather than a fixed weekly visit.",
+          items: [
+            "Move-in & move-out turnover cleaning",
+            "Periodic deep cleaning for common areas",
+            "Post-construction & tenant-improvement cleanup",
+            "Pressure washing for entrances & walkways",
+            "Carpet care for lobbies & shared corridors"
+          ]
+        }
+      ],
+      relatedServiceSlugs: ["commercial-cleaning", "commercial-deep-cleaning", "move-in-move-out-cleaning", "pressure-washing"],
       relatedIndustrySlugs: ["offices-commercial-buildings", "retail-stores", "hospitality-properties"],
       faqs: [
         {
-          question: "Can you clean multiple properties under one account?",
+          question: "What types of commercial properties do you clean for property managers?",
           answer:
-            "Yes. Multi-property portfolios are common and are coordinated through a single point of contact rather than separate arrangements per address."
+            "We clean multi-tenant office buildings, mixed-use developments, retail centers, apartment and multifamily communities, and professional or medical office suites. Cleaning plans cover shared common areas and, where agreed, individual tenant suites or units."
         },
         {
-          question: "Do you handle move-out and move-in turnover cleaning?",
+          question: "Can you clean both common areas and individual tenant suites?",
           answer:
-            "Yes, turnover cleaning is available and scheduled around your leasing calendar so units are ready between tenants."
+            "Yes. Common-area cleaning and tenant suite or unit cleaning are scoped as separate line items, since they usually run on different schedules. A written scope after the walkthrough spells out exactly which areas are included."
         },
         {
-          question: "Who do we contact if something is missed in a common area?",
+          question: "Can the cleaning schedule be adjusted for different areas of the property?",
           answer:
-            "You get a direct line to the team servicing your property, so issues are reported and addressed without a call center."
+            "Yes. Lobbies and entrances can run on a different cadence than back-of-house corridors or leasing offices, based on foot traffic and how the space is used."
         },
         {
-          question: "Can cleaning be scheduled around resident move-in days?",
+          question: "Do you offer after-hours or before-hours commercial cleaning?",
           answer:
-            "Yes, common-area and turnover schedules are coordinated with your leasing office to avoid conflicts with move-in appointments."
+            "Yes, service is commonly scheduled before or after business hours, or during quieter access windows, so cleaning doesn't interfere with tenants, staff, or leasing appointments."
         },
         {
-          question: "Do you clean stairwells and elevator landings separately from unit turnovers?",
+          question: "Can you support more than one managed property under a single account?",
           answer:
-            "Yes, common areas including stairwells and landings are cleaned on their own recurring schedule, independent of individual unit turnovers."
+            "Yes. Multi-property and portfolio accounts are common and are coordinated through a single point of contact, so you're not managing separate arrangements or standards for every address."
+        },
+        {
+          question: "What is typically included in a property management cleaning plan?",
+          answer:
+            "Most plans cover common-area cleaning, restrooms, entrances, and trash and recycling areas on a recurring schedule, plus turnover cleaning scheduled around move-out and move-in dates. Exact scope depends on your property and is confirmed during the walkthrough."
+        },
+        {
+          question: "How is pricing determined for property management cleaning?",
+          answer:
+            "Pricing depends on square footage, the number of common areas and restrooms, how many properties are included, and your preferred cleaning frequency. We provide a written quote after a walkthrough rather than a flat rate."
+        },
+        {
+          question: "How do we get started with a cleaning plan for our property or portfolio?",
+          answer:
+            "Request a walkthrough through our contact form or by phone. We'll review your property, confirm scope and schedule, and follow up with a written, no-obligation proposal."
         }
       ]
     }

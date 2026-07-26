@@ -121,8 +121,8 @@ const cleaningOptions: OptionCardData[] = [
     title: "Deep Home Cleaning",
     description:
       "A more thorough, one-time reset for homes that need extra attention, baseboards, fixtures, detailed bathroom tile and grout, oven and refrigerator exteriors, cabinet fronts, and surfaces routine cleaning tends to skip.",
-    href: "/services/deep-cleaning",
-    ctaLabel: "Explore Deep Cleaning"
+    href: "/services/residential-deep-cleaning",
+    ctaLabel: "Explore Residential Deep Cleaning"
   },
   {
     Icon: PackageOpen,
@@ -166,8 +166,8 @@ const comparisonCards: ComparisonCard[] = [
     bestFor: "Homes needing a more thorough reset",
     condition: "Build-up, overlooked areas, or a first-time visit",
     focus: "Baseboards, fixtures, cabinet fronts, detailed kitchens and bathrooms with tile and grout attention",
-    nextStepLabel: "Explore Deep Cleaning",
-    nextStepHref: "/services/deep-cleaning"
+    nextStepLabel: "Explore Residential Deep Cleaning",
+    nextStepHref: "/services/residential-deep-cleaning"
   },
   {
     title: "Move-In Cleaning",
@@ -377,10 +377,10 @@ const faqItems = [
 // ─── Related services (only routes that exist) ─────────────────────────────
 const relatedServices = [
   {
-    title: "Deep Cleaning",
+    title: "Residential Deep Cleaning",
     description: "A more thorough top-to-bottom cleaning for homes that need extra attention.",
-    href: "/services/deep-cleaning",
-    ctaLabel: "Explore our deep cleaning service"
+    href: "/services/residential-deep-cleaning",
+    ctaLabel: "Explore residential deep cleaning"
   },
   {
     title: "Move-In / Move-Out Cleaning",

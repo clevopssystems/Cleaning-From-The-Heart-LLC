@@ -208,8 +208,8 @@ const specialtyGroup: ServiceCardData[] = [
     title: "Commercial Deep Cleaning",
     description:
       "A full top-to-bottom reset for spaces that need intensive attention, ideal for new accounts, post-event recovery, or long-overdue facilities.",
-    href: "/contact#quote-form",
-    ctaLabel: "Request a Deep Cleaning Quote"
+    href: "/services/commercial-deep-cleaning",
+    ctaLabel: "Explore Commercial Deep Cleaning"
   },
   {
     Icon: Droplets,

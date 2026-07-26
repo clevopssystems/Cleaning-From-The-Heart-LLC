@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
@@ -124,20 +125,69 @@ export default async function IndustryDetailPage({ params }: IndustryDetailPageP
 
   const industrySchema = {
     "@context": "https://schema.org",
-    "@type": "WebPage",
-    "@id": `${SITE_URL}/industries/${industry.slug}#webpage`,
-    name: page.metaTitle,
-    description: page.metaDescription,
-    url: `${SITE_URL}/industries/${industry.slug}`,
-    about: { "@id": `${SITE_URL}/#business` },
-    breadcrumb: { "@id": `${SITE_URL}/industries/${industry.slug}#breadcrumb` }
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": `${SITE_URL}/industries/${industry.slug}#webpage`,
+        name: page.metaTitle,
+        description: page.metaDescription,
+        url: `${SITE_URL}/industries/${industry.slug}`,
+        about: { "@id": `${SITE_URL}/#business` },
+        breadcrumb: { "@id": `${SITE_URL}/industries/${industry.slug}#breadcrumb` }
+      },
+      {
+        "@type": "Service",
+        "@id": `${SITE_URL}/industries/${industry.slug}#service`,
+        name: page.h1,
+        serviceType: `${industry.name} Cleaning`,
+        provider: { "@id": `${SITE_URL}/#business` },
+        areaServed: [
+          { "@type": "City", name: "Seattle" },
+          { "@type": "City", name: "Bellevue" },
+          { "@type": "City", name: "Renton" },
+          { "@type": "City", name: "Kent" },
+          { "@type": "City", name: "Tukwila" },
+          { "@type": "City", name: "Everett" },
+          { "@type": "City", name: "Shoreline" },
+          { "@type": "City", name: "Federal Way" },
+          { "@type": "City", name: "Kirkland" },
+          { "@type": "City", name: "Tacoma" },
+          { "@type": "City", name: "Bothell" }
+        ],
+        description: page.metaDescription,
+        url: `${SITE_URL}/industries/${industry.slug}`
+      },
+      {
+        "@type": "FAQPage",
+        "@id": `${SITE_URL}/industries/${industry.slug}#faq`,
+        mainEntity: page.faqs.map((faq) => ({
+          "@type": "Question",
+          name: faq.question,
+          acceptedAnswer: { "@type": "Answer", text: faq.answer }
+        }))
+      }
+    ]
   };
 
   return (
     <>
       {/* ── HERO ─────────────────────────────────────────────────────────── */}
-      <section className="relative -mt-16 overflow-hidden bg-hero-glow text-white">
+      <section className="relative -mt-16 overflow-hidden bg-ink text-white">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          className="hero-video absolute inset-0 h-full w-full object-cover"
+          aria-hidden
+        >
+          <source src="/home/hero/hero-bg.mp4" type="video/mp4" />
+        </video>
+
+        <div className="absolute inset-0 bg-ink/65" aria-hidden />
         <div className="absolute inset-0 opacity-20 surface-grid" aria-hidden />
+        <div className="absolute inset-0 bg-gradient-to-br from-brand-900/50 to-transparent" aria-hidden />
         <div className="absolute -left-32 -top-32 h-96 w-96 rounded-full bg-brand-600/30 blur-3xl" aria-hidden />
         <Container className="relative section-shell-tight pt-24">
           <Breadcrumbs items={breadcrumbItems} />
@@ -178,7 +228,19 @@ export default async function IndustryDetailPage({ params }: IndustryDetailPageP
       {/* ── DIRECT-ANSWER SUMMARY ───────────────────────────────────────── */}
       <section className="section-shell-tight bg-white">
         <Container>
-          <SectionHeading eyebrow="Our Approach" title="Cleaning Support Built Around Your Facility" description={page.directAnswer} />
+          <div className="grid items-center gap-10 lg:grid-cols-[1fr_38%] lg:gap-14">
+            <SectionHeading eyebrow="Our Approach" title="Cleaning Support Built Around Your Facility" description={page.directAnswer} />
+            <div className="mx-auto w-full max-w-sm overflow-hidden rounded-3xl border border-brand-100 shadow-card lg:mx-0 lg:max-w-none">
+              <Image
+                src="/services/intro/intro-image.png"
+                alt={`Commercial cleaning equipment staged in a building lobby for ${industry.name.toLowerCase()} cleaning`}
+                width={900}
+                height={1125}
+                className="aspect-[4/5] w-full object-cover"
+                sizes="(max-width: 1024px) 100vw, 38vw"
+              />
+            </div>
+          </div>
         </Container>
       </section>
 
@@ -201,25 +263,64 @@ export default async function IndustryDetailPage({ params }: IndustryDetailPageP
         </Container>
       </section>
 
+      {/* ── PROPERTY TYPES ───────────────────────────────────────────────── */}
+      {page.propertyTypes && page.propertyTypes.length > 0 ? (
+        <section className="section-shell-tight bg-white">
+          <Container>
+            <SectionHeading
+              eyebrow="Property Types"
+              title="Property Types We Support"
+              description="Cleaning plans are built for the way each property type is actually used and accessed."
+            />
+            <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+              {page.propertyTypes.map((type) => (
+                <article key={type.title} className="card flex h-full flex-col gap-2">
+                  <h3 className="text-sm font-semibold text-ink">{type.title}</h3>
+                  <p className="text-sm leading-relaxed text-muted">{type.description}</p>
+                </article>
+              ))}
+            </div>
+          </Container>
+        </section>
+      ) : null}
+
       {/* ── AREAS INCLUDED + SCHEDULES ───────────────────────────────────── */}
-      <section className="section-shell-tight bg-white">
+      <section className="section-shell-tight bg-surface">
         <Container>
           <div className="grid gap-12 lg:grid-cols-2">
             <div>
               <span className="eyebrow">Scope</span>
               <h2 className="text-3xl font-bold leading-tight tracking-tight md:text-4xl">Areas That May Be Included</h2>
               <p className="mt-4 text-base leading-relaxed text-muted">
-                A starting point for what a customized plan typically covers. Exact scope is confirmed through a
-                walkthrough and written proposal.
+                A starting point for what a customized plan typically covers. Final scope depends on the
+                walkthrough, property requirements, frequency, and access, and is confirmed in a written proposal.
               </p>
-              <div className="mt-6 grid grid-cols-1 gap-2.5 sm:grid-cols-2">
-                {page.areasIncluded.map((area) => (
-                  <div key={area} className="flex items-start gap-2 rounded-xl border border-brand-100 bg-surface px-3.5 py-3">
-                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-brand-600" aria-hidden />
-                    <span className="text-sm font-medium text-ink">{area}</span>
-                  </div>
-                ))}
-              </div>
+              {page.areaGroups && page.areaGroups.length > 0 ? (
+                <div className="mt-6 space-y-5">
+                  {page.areaGroups.map((group) => (
+                    <div key={group.title}>
+                      <p className="text-xs font-semibold uppercase tracking-wide text-brand-700">{group.title}</p>
+                      <div className="mt-2.5 grid grid-cols-1 gap-2.5 sm:grid-cols-2">
+                        {group.items.map((area) => (
+                          <div key={area} className="flex items-start gap-2 rounded-xl border border-brand-100 bg-white px-3.5 py-3">
+                            <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-brand-600" aria-hidden />
+                            <span className="text-sm font-medium text-ink">{area}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <div className="mt-6 grid grid-cols-1 gap-2.5 sm:grid-cols-2">
+                  {page.areasIncluded.map((area) => (
+                    <div key={area} className="flex items-start gap-2 rounded-xl border border-brand-100 bg-white px-3.5 py-3">
+                      <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-brand-600" aria-hidden />
+                      <span className="text-sm font-medium text-ink">{area}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
 
             <div>
@@ -228,7 +329,7 @@ export default async function IndustryDetailPage({ params }: IndustryDetailPageP
               <p className="mt-4 text-base leading-relaxed text-muted">{page.scheduleNote}</p>
               <div className="mt-6 grid gap-3 sm:grid-cols-2">
                 {genericScheduleOptions.map((option) => (
-                  <div key={option.title} className="rounded-xl border border-brand-100 bg-surface p-4">
+                  <div key={option.title} className="rounded-xl border border-brand-100 bg-white p-4">
                     <p className="text-sm font-semibold text-ink">{option.title}</p>
                     <p className="mt-1 text-xs leading-relaxed text-muted">{option.description}</p>
                   </div>
@@ -239,10 +340,39 @@ export default async function IndustryDetailPage({ params }: IndustryDetailPageP
         </Container>
       </section>
 
-      {/* ── RELEVANT CLEANING SERVICES ──────────────────────────────────── */}
+      {/* ── CLEANING SERVICES ───────────────────────────────────────────── */}
+      {page.cleaningServiceGroups && page.cleaningServiceGroups.length > 0 ? (
+        <section className="section-shell-tight bg-white">
+          <Container>
+            <SectionHeading
+              eyebrow="Cleaning Services"
+              title="Cleaning Services That Support Your Property"
+              description="Recurring service maintains shared spaces week to week; periodic services handle turnovers and less frequent needs."
+            />
+            <div className="mt-8 grid gap-5 md:grid-cols-2">
+              {page.cleaningServiceGroups.map((group) => (
+                <article key={group.title} className="card flex h-full flex-col gap-3">
+                  <h3 className="text-base font-semibold text-ink">{group.title}</h3>
+                  <p className="text-sm leading-relaxed text-muted">{group.description}</p>
+                  <ul className="mt-1 space-y-2">
+                    {group.items.map((item) => (
+                      <li key={item} className="flex items-start gap-2 text-sm text-ink">
+                        <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-brand-600" aria-hidden />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </article>
+              ))}
+            </div>
+          </Container>
+        </section>
+      ) : null}
+
+      {/* ── RELATED CLEANING SERVICES ────────────────────────────────────── */}
       <section className="section-shell-tight bg-surface">
         <Container>
-          <SectionHeading eyebrow="Relevant Services" title="Cleaning Services That Support This Industry" />
+          <SectionHeading eyebrow="Related Services" title="Related Cleaning Services" />
           <div className="mt-8 grid gap-5 md:grid-cols-3">
             {relatedServices.map((service) => (
               <article key={service!.slug} className="card-hover flex h-full flex-col gap-3">
