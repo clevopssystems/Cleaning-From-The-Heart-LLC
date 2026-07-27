@@ -5,7 +5,7 @@ import {
   Home,
   Sparkles,
   PackageOpen,
-  PackageCheck,
+  Hammer,
   Repeat,
   PartyPopper,
   CalendarClock,
@@ -24,29 +24,34 @@ import { Reveal } from "@/components/shared/Reveal";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
 import { GroupedScopeAccordion, type GroupedScopeItem } from "@/components/services/GroupedScopeAccordion";
-import { siteConfig } from "@/lib/site";
+import { siteConfig, serviceAreas } from "@/lib/site";
 
 const SITE_URL = "https://cleaningfromtheheartllc.com";
 
+const PAGE_TITLE = "Residential Deep Cleaning Seattle | Cleaning From The Heart";
+const PAGE_DESCRIPTION =
+  "Residential deep cleaning in Seattle for houses, apartments, condos, and townhomes. Detailed kitchen, bathroom, and baseboard work, scoped to your home. Free quote.";
+
 export const metadata: Metadata = {
-  title: { absolute: "Residential Deep Cleaning Seattle | Cleaning From The Heart LLC" },
-  description:
-    "Residential deep cleaning in Seattle for houses, apartments, condos, and townhomes. Detailed home cleaning with a scope customized to your property. Free quotes.",
+  title: { absolute: PAGE_TITLE },
+  description: PAGE_DESCRIPTION,
   alternates: {
     canonical: "/services/residential-deep-cleaning"
   },
   keywords: [
     "residential deep cleaning Seattle",
-    "residential deep cleaning services Seattle",
+    "home deep cleaning services in Seattle",
     "house deep cleaning Seattle",
-    "home deep cleaning services",
+    "one-time deep cleaning Seattle",
+    "whole-house deep cleaning Seattle",
     "apartment deep cleaning Seattle",
-    "detailed home cleaning"
+    "condo deep cleaning Seattle",
+    "townhome deep cleaning Seattle",
+    "detailed house cleaning Seattle"
   ],
   openGraph: {
-    title: "Residential Deep Cleaning Seattle | Cleaning From The Heart LLC",
-    description:
-      "Residential deep cleaning in Seattle for houses, apartments, condos, and townhomes. Detailed home cleaning with a scope customized to your property.",
+    title: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
     url: `${SITE_URL}/services/residential-deep-cleaning`,
     siteName: "Cleaning From The Heart LLC",
     locale: "en_US",
@@ -60,9 +65,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Residential Deep Cleaning Seattle | Cleaning From The Heart LLC",
-    description:
-      "Residential deep cleaning in Seattle for houses, apartments, condos, and townhomes. Detailed home cleaning with a scope customized to your property.",
+    title: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
     images: ["/home/services/deep-cleaning-service.jpg"]
   }
 };
@@ -72,10 +76,10 @@ export const metadata: Metadata = {
 // ─────────────────────────────────────────────────────────────────────────
 
 const glanceItems = [
-  "Detailed kitchen & bathroom attention",
-  "Baseboard, trim & fixture cleaning",
-  "Suited to houses, apartments, condos & townhomes",
-  "Scope confirmed in writing before service begins"
+  "Detailed kitchen & bathroom work",
+  "Baseboards, trim, fixtures & door frames",
+  "Houses, apartments, condos & townhomes",
+  "Scope confirmed in writing before we start"
 ];
 
 const trustStripItems = [
@@ -90,60 +94,75 @@ const scopeGroups: GroupedScopeItem[] = [
   {
     iconName: "UtensilsCrossed",
     title: "Kitchen",
-    summary: "Countertops, cabinet fronts, appliance exteriors & floor edges.",
+    summary: "Counters, cabinet fronts, backsplash, appliance exteriors & floor edges.",
     intro:
-      "Kitchen deep cleaning goes beyond daily wiping to address buildup on surfaces and fixtures that routine visits tend to move past.",
+      "Kitchen deep cleaning targets the grease and buildup that routine wiping leaves behind, on cabinet faces, backsplash tile, appliance exteriors, and the floor edges around them.",
     tasks: [
       "Countertop and accessible surface detailing",
-      "Cabinet front cleaning",
-      "Appliance exterior cleaning",
-      "Backsplash wiping",
-      "Sink and faucet detailing",
-      "Floor edge and baseboard attention"
+      "Cabinet front and handle cleaning",
+      "Appliance exterior cleaning, including reachable refrigerator sides and top",
+      "Backsplash scrubbing and grease removal",
+      "Sink and faucet scrubbing and polishing",
+      "Floor edges, corners, and baseboards"
     ]
   },
   {
     iconName: "ShowerHead",
     title: "Bathroom",
-    summary: "Fixtures, tile, grout attention & detailed surface cleaning.",
+    summary: "Tubs, showers, tile with grout attention, fixtures & mirrors.",
     intro:
-      "Bathrooms get focused attention on fixtures and tile surfaces where grime builds up between regular cleanings.",
+      "Bathrooms get focused work on soap scum, hard-water marks, and the tile and grout lines where buildup collects between regular cleanings.",
     tasks: [
-      "Toilet, sink & fixture detailing",
-      "Tub or shower cleaning",
-      "Tile surface cleaning, with grout attention where appropriate",
-      "Mirror cleaning",
-      "High-touch surface cleaning",
-      "Floor detailing"
+      "Toilets cleaned inside and out",
+      "Tub and shower scrubbing, including shower doors and tracks",
+      "Tile cleaning, with grout-line attention where appropriate",
+      "Sink, vanity, and fixture detailing",
+      "Streak-free mirror cleaning",
+      "Floor detailing, including edges and behind the door"
     ]
   },
   {
     iconName: "Sofa",
     title: "Bedrooms & Living Areas",
-    summary: "Detailed dusting, baseboards, window sills & accessible surfaces.",
+    summary: "Hand-wiped dusting, baseboards, window sills & floor detail.",
     intro:
-      "Bedrooms and living areas get detailed dusting and floor-edge attention that routine visits often move past quickly.",
+      "Bedrooms and living areas get hand-wiped detail work and floor attention that a routine visit usually covers more quickly.",
     tasks: [
-      "Detailed dusting of accessible surfaces",
-      "Baseboard cleaning",
-      "Window sill wiping",
+      "Detailed dusting of accessible surfaces and furniture",
+      "Baseboard and trim cleaning",
+      "Window sill and ledge wiping",
       "Door and door-frame wiping",
-      "Detailed vacuuming and mopping",
-      "Corner and edge attention"
+      "Vacuuming and mopping, including edges and under reachable furniture",
+      "Corner and cobweb attention"
     ]
   },
   {
     iconName: "DoorOpen",
     title: "Whole-Home Details",
-    summary: "Light fixtures, switch plates, door handles & cobweb removal.",
+    summary: "High dusting, light fixtures, switch plates, handles & vent covers.",
     intro: "These detail tasks run throughout the home rather than belonging to a single room.",
     tasks: [
+      "High dusting and cobweb removal",
       "Light fixture dusting where safely accessible",
-      "Switch plate and door handle cleaning",
-      "Trim and baseboard detailing",
-      "Cobweb removal",
-      "Detailed vacuuming and mopping throughout",
-      "Surface sanitizing where appropriate"
+      "Switch plate, outlet cover, and door handle cleaning",
+      "Accessible vent cover dusting",
+      "Railing and banister wiping",
+      "High-touch surface cleaning throughout"
+    ]
+  },
+  {
+    iconName: "Layers",
+    title: "Optional Add-Ons",
+    summary: "Quoted separately during the estimate rather than assumed as standard.",
+    intro:
+      "These tasks take noticeably more time, so they're priced as add-ons instead of being included by default. Tell us which ones you want when you request your quote and they'll be built into your scope.",
+    tasks: [
+      "Oven interior cleaning",
+      "Refrigerator interior cleaning",
+      "Cabinet and drawer interiors",
+      "Interior window cleaning",
+      "Blind dusting or cleaning",
+      "Second kitchens, finished basements, and other extra rooms"
     ]
   }
 ];
@@ -151,66 +170,90 @@ const scopeGroups: GroupedScopeItem[] = [
 // ─── Deep cleaning vs. recurring residential cleaning ──────────────────────
 const comparisonColumns = [
   {
-    title: "Recurring Residential Cleaning",
+    title: "Recurring House Cleaning",
     points: [
-      "Maintains cleanliness on an ongoing schedule",
-      "Focuses on routine household cleaning tasks",
-      "Helps prevent buildup between visits"
+      "Keeps an already-clean home maintained on a weekly, biweekly, or monthly rhythm",
+      "Covers routine kitchen, bathroom, floor, and dusting work",
+      "Keeps buildup from returning between visits"
     ],
     href: "/services/residential-cleaning",
-    ctaLabel: "View Recurring Residential Cleaning"
+    ctaLabel: "Explore recurring residential cleaning"
   },
   {
     title: "Residential Deep Cleaning",
     points: [
-      "Provides more detailed, one-time attention",
-      "Addresses neglected or less frequently cleaned areas",
-      "Often completed before recurring service begins"
+      "A more detailed, one-time reset for built-up dust and grime",
+      "Reaches overlooked and hard-to-reach areas room by room",
+      "Often the right starting point before recurring service begins"
     ],
     href: "#included",
-    ctaLabel: "See What May Be Included"
+    ctaLabel: "See what a deep clean includes"
   }
 ];
 
 // ─── When homeowners book a deep clean ──────────────────────────────────────
 const whenToBookItems = [
-  { Icon: Sparkles, title: "Seasonal Reset", description: "A thorough refresh between the routine visits your home already gets." },
-  { Icon: PackageOpen, title: "Moving Into a Home", description: "A whole-home clean before belongings and daily life move in." },
-  { Icon: PackageCheck, title: "Preparing to Move Out", description: "Detailed cleaning ahead of a handoff, inspection, or turnover." },
-  { Icon: Repeat, title: "Before Recurring Service", description: "A reset that recurring residential cleaning can then maintain." },
-  { Icon: PartyPopper, title: "Before Guests or Events", description: "Extra attention before hosting family, guests, or an occasion." },
-  { Icon: CalendarClock, title: "Long-Overdue Cleaning", description: "For a home that hasn't had professional attention in a while." }
+  {
+    Icon: CalendarClock,
+    title: "Cleaning Is Overdue",
+    description: "For a home that hasn't had a detailed cleaning in months, one visit brings every room back to a clean baseline."
+  },
+  {
+    Icon: Repeat,
+    title: "Before Recurring Service",
+    description: "Many households start here. One deep clean sets the baseline, then recurring visits hold it there in less time."
+  },
+  {
+    Icon: Sparkles,
+    title: "Seasonal Reset",
+    description: "A spring or fall reset that clears the dust, cobwebs, and buildup a normal cleaning routine leaves behind over a season."
+  },
+  {
+    Icon: PartyPopper,
+    title: "Before Guests or Holidays",
+    description: "Extra attention in kitchens, bathrooms, and living areas before family visits, a holiday, or an event at home."
+  },
+  {
+    Icon: Hammer,
+    title: "After a Home Project",
+    description: "Fine dust travels far after a renovation, a painting job, or a big reorganization. A deep clean clears it from surfaces and edges."
+  },
+  {
+    Icon: PackageOpen,
+    title: "Around a Move",
+    description: "A whole-home clean before belongings arrive, or once rooms are empty and the usually blocked areas are finally reachable."
+  }
 ];
 
 // ─── Customized scope factors ──────────────────────────────────────────────
 const scopeFactors = [
-  "Property size",
-  "Number of rooms",
+  "Home size",
+  "Bedrooms & bathrooms",
   "Current condition",
-  "Occupied or vacant status",
-  "Priority areas",
-  "Surface types",
-  "Access",
-  "Add-on requests",
-  "Desired timing"
+  "Occupied or vacant",
+  "Priority rooms",
+  "Surface & floor types",
+  "Pets in the home",
+  "Access & parking",
+  "Add-ons selected"
 ];
 
 // ─── Why choose us ──────────────────────────────────────────────────────────
 const whyChooseItems = [
   {
     Icon: ClipboardList,
-    title: "Scope Customized to Your Home",
-    description: "No two homes get the same checklist. Scope and priorities are confirmed for your specific property before service begins."
+    title: "Scope Built Around Your Home",
+    description: "No two homes get the same checklist. Priority rooms, current condition, and any add-ons are confirmed for your property before service begins."
   },
   {
     Icon: ListChecks,
     title: "Written Scope Confirmed Before Service",
-    description: "The agreed scope is confirmed in writing during the estimate, so expectations are clear before your deep clean begins."
+    description: "The agreed scope goes in writing during the estimate, so you know exactly what's covered before the deep clean starts."
   },
   {
     Icon: Home,
-    title: "Residential and Commercial Experience",
-    description: "We clean homes and businesses across the Seattle area, bringing the same structured approach to every property."
+    title: "Experience Across Home Types",
+    description: "Houses, apartments, condos, townhomes, and rentals across the Seattle area, from lightly used homes to ones needing heavier detail work."
   },
   {
     Icon: MessageCircle,
@@ -233,67 +276,82 @@ const whyChooseItems = [
 const processSteps = [
   {
     number: "01",
-    title: "Tell Us About Your Home",
-    description: "Share your property type, size, current condition, and priority areas so we understand your starting point."
+    title: "Request a Quote",
+    description: "Send us your property type, home size, current condition, and the rooms that matter most. No cost, no obligation."
   },
   {
     number: "02",
-    title: "Receive a Customized Scope",
-    description: "We confirm the scope of work, schedule, and pricing specific to your home before anything is booked."
+    title: "Confirm Scope and Date",
+    description: "We put the agreed scope, any add-ons, the schedule, and pricing in writing for your home before anything is booked."
   },
   {
     number: "03",
     title: "We Deep Clean Your Home",
-    description: "Our team follows the agreed scope from top to bottom on the scheduled date."
+    description: "Our team works room by room against the agreed scope, from high dusting and detail work down to the floors."
   },
   {
     number: "04",
     title: "Final Review",
-    description: "We review the completed work against the agreed scope, and you can reach out with any follow-up questions."
+    description: "We check the finished work against the agreed scope, and you can reach out directly with any follow-up."
   }
 ];
 
 // ─── FAQ ────────────────────────────────────────────────────────────────────
 const faqItems = [
   {
+    question: "What is residential deep cleaning?",
+    answer:
+      "Residential deep cleaning is a detailed, top-to-bottom cleaning of a home that goes beyond routine upkeep. It targets built-up dust and grime, kitchen and bathroom detail work, baseboards and trim, fixtures, door frames, and the hard-to-reach areas a normal visit passes over. Cleaning From The Heart LLC provides it for houses, apartments, condos, and townhomes in Seattle."
+  },
+  {
     question: "What is the difference between regular cleaning and deep cleaning?",
     answer:
-      "Recurring residential cleaning maintains a home that's already in generally kept-up condition, kitchens, bathrooms, floors, and dusting on a repeating schedule. Residential deep cleaning is a more thorough, one-time service for homes that need extra attention, baseboards, fixtures, and areas that build up between regular visits."
+      "Regular cleaning maintains a home that's already in kept-up condition: kitchens, bathrooms, floors, and dusting on a repeating schedule. Deep cleaning is a more thorough, one-time reset that addresses buildup and the areas routine visits move past, such as baseboards, trim, fixtures, tile and grout, and beneath reachable furniture. Many homes get one deep clean, then stay on top of it with recurring service."
   },
   {
-    question: "How long does residential deep cleaning take?",
+    question: "Can residential deep cleaning be booked as a one-time service?",
     answer:
-      "It depends on your home's size, current condition, the scope requested, and the number of cleaners assigned. We can give you a closer estimate once we know more about your property during the quote."
+      "Yes. A deep clean can be booked on its own, with no recurring commitment. Some households book a single reset each season or before hosting, and others use the deep clean as the starting point for a weekly, biweekly, or monthly schedule. You can decide about recurring service after the deep clean is finished."
   },
   {
-    question: "Do I need to leave the home during the cleaning?",
+    question: "How long does a residential deep clean take?",
     answer:
-      "It's your choice. Some clients stay home during the visit and others prefer to be away. Access arrangements are confirmed during scheduling."
+      "It depends on your home's size, its current condition, the scope requested, and how many cleaners are assigned. A lightly used two-bedroom condo takes far less time than a larger house that hasn't had a detailed cleaning in months. We give you a closer time estimate once we know more about your property during the quote."
   },
   {
-    question: "Can I request specific priority areas?",
+    question: "How is residential deep cleaning priced?",
     answer:
-      "Yes. You can share priority rooms or tasks when requesting a quote, and they're confirmed as part of the agreed scope before service begins."
-  },
-  {
-    question: "Is deep cleaning available for apartments and townhomes?",
-    answer:
-      "Yes. We provide residential deep cleaning for houses, apartments, condominiums, and townhomes throughout our Seattle-area service area."
-  },
-  {
-    question: "Can deep cleaning be scheduled before recurring cleaning starts?",
-    answer:
-      "Yes. Many clients schedule a deep clean first, then move into a recurring residential cleaning schedule to maintain the results afterward."
-  },
-  {
-    question: "Is move-in or move-out cleaning the same as deep cleaning?",
-    answer:
-      "They overlap but aren't identical. Move-in and move-out cleaning is timed around a property transition, while residential deep cleaning is also used for seasonal resets and other one-time needs. See our move-in / move-out cleaning page for that specific service."
+      "Pricing is based on your home rather than a flat rate. Home size, number of bedrooms and bathrooms, current condition, priority rooms, surface types, access, and any add-ons all affect how long a deep clean takes, and time is what drives the estimate. Share those details and we'll follow up with a customized quote."
   },
   {
     question: "Are appliance interiors included?",
     answer:
-      "It depends on the agreed scope. Appliance interior cleaning isn't assumed as standard, so let us know during the quote if you'd like it included."
+      "Not by default. Oven, refrigerator, and other appliance interiors take significant extra time, so they're quoted as add-ons rather than assumed as standard. The same applies to cabinet and drawer interiors, interior windows, and blinds. Tell us which of these you want when you request a quote and they'll be priced into your scope."
+  },
+  {
+    question: "Do I need to be home during the deep cleaning?",
+    answer:
+      "That's your choice. Some clients stay home during the visit, and others share access instructions and go about their day. Either works. Access details, parking, and any rooms you'd rather we skip are confirmed during scheduling, so the team knows what to expect before arriving."
+  },
+  {
+    question: "How should I prepare my home for a deep clean?",
+    answer:
+      "A little preparation sends more of the visit toward cleaning rather than sorting. Consolidate clutter from counters and floors, secure valuables and fragile items, and let us know about pets and any rooms to leave alone. Pointing out delicate surfaces or problem areas in advance helps us plan the visit as well."
+  },
+  {
+    question: "Is deep cleaning available for apartments, condos, and townhomes?",
+    answer:
+      "Yes. We provide residential deep cleaning for single-family houses, apartments, condominiums, townhomes, and rental homes throughout our Seattle-area service area. Smaller units generally take less time, but the detail work is the same: kitchens, bathrooms, baseboards, fixtures, floors, and the reachable areas in between."
+  },
+  {
+    question: "Can recurring cleaning start after a deep clean?",
+    answer:
+      "Yes, and it's a common sequence. The deep clean brings a home to a clean baseline, and recurring residential cleaning holds it there on a weekly, biweekly, or monthly schedule. Maintenance visits usually take less time than the initial deep clean, because the buildup has already been dealt with."
+  },
+  {
+    question: "Is move-in or move-out cleaning the same as deep cleaning?",
+    answer:
+      "They overlap but aren't identical. Move-in and move-out cleaning is timed around a property transition and an empty home, often with an inspection or handoff attached. Residential deep cleaning is also used for seasonal resets, pre-holiday cleaning, and overdue homes that are still lived in. See our move-in / move-out cleaning page for that specific service."
   }
 ];
 
@@ -302,22 +360,26 @@ const relatedServices = [
   {
     title: "Residential Cleaning",
     description: "Ongoing recurring cleaning for homes already in generally maintained condition.",
-    href: "/services/residential-cleaning"
+    href: "/services/residential-cleaning",
+    ctaLabel: "Explore recurring residential cleaning"
   },
   {
-    title: "Deep Cleaning Hub",
+    title: "Deep Cleaning",
     description: "Compare residential and commercial deep cleaning to find the right fit.",
-    href: "/services/deep-cleaning"
+    href: "/services/deep-cleaning",
+    ctaLabel: "Compare deep cleaning options"
   },
   {
     title: "Move-In / Move-Out Cleaning",
-    description: "Turnover-ready cleaning for residences changing hands or getting ready for a new chapter.",
-    href: "/services/move-in-move-out-cleaning"
+    description: "Turnover-ready cleaning timed around a move, an inspection, or a handoff.",
+    href: "/services/move-in-move-out-cleaning",
+    ctaLabel: "View move-in and move-out cleaning"
   },
   {
     title: "Carpet Cleaning",
     description: "Deep extraction cleaning that lifts embedded dirt, stains, and odor from home carpet.",
-    href: "/services/carpet-cleaning"
+    href: "/services/carpet-cleaning",
+    ctaLabel: "See our carpet cleaning service"
   }
 ];
 
@@ -334,38 +396,27 @@ const residentialDeepCleaningSchema = {
       name: "Residential Deep Cleaning Seattle",
       serviceType: "Residential Deep Cleaning",
       provider: { "@id": `${SITE_URL}/#business` },
-      areaServed: [
-        { "@type": "City", name: "Seattle" },
-        { "@type": "City", name: "Renton" },
-        { "@type": "City", name: "Bellevue" },
-        { "@type": "City", name: "Kent" },
-        { "@type": "City", name: "Everett" },
-        { "@type": "City", name: "Tukwila" },
-        { "@type": "City", name: "Shoreline" },
-        { "@type": "City", name: "Federal Way" },
-        { "@type": "City", name: "Kirkland" },
-        { "@type": "City", name: "Tacoma" },
-        { "@type": "City", name: "Bothell" }
-      ],
+      areaServed: serviceAreas.map((area) => ({ "@type": "City", name: area })),
+      audience: { "@type": "Audience", audienceType: "Seattle homeowners and renters" },
       description:
-        "Residential deep cleaning in Seattle for houses, apartments, condos, and townhomes. Detailed cleaning with a scope customized to the home.",
-      url: `${SITE_URL}/services/residential-deep-cleaning`
+        "Residential deep cleaning in Seattle for houses, apartments, condos, and townhomes. Detailed, one-time cleaning of kitchens, bathrooms, bedrooms, living areas, baseboards, and high-touch surfaces, with a scope customized to the home.",
+      url: `${SITE_URL}/services/residential-deep-cleaning`,
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Residential Deep Cleaning Scope",
+        itemListElement: scopeGroups.map((group) => ({
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name:
+              group.title === "Optional Add-Ons" ? "Optional Deep Cleaning Add-Ons" : `${group.title} Deep Cleaning`,
+            description: group.summary
+          }
+        }))
+      }
     },
-    {
-      "@type": "BreadcrumbList",
-      "@id": `${SITE_URL}/services/residential-deep-cleaning#breadcrumb`,
-      itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
-        { "@type": "ListItem", position: 2, name: "Services", item: `${SITE_URL}/services` },
-        { "@type": "ListItem", position: 3, name: "Deep Cleaning", item: `${SITE_URL}/services/deep-cleaning` },
-        {
-          "@type": "ListItem",
-          position: 4,
-          name: "Residential Deep Cleaning",
-          item: `${SITE_URL}/services/residential-deep-cleaning`
-        }
-      ]
-    },
+    // NOTE: BreadcrumbList is emitted by the shared <Breadcrumbs> component below,
+    // so it is intentionally not repeated here.
     {
       "@type": "FAQPage",
       "@id": `${SITE_URL}/services/residential-deep-cleaning#faq`,
@@ -397,15 +448,15 @@ export default function ResidentialDeepCleaningPage() {
 
           <div className="mt-6 grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
             <div>
-              <span className="eyebrow-light">Seattle Residential Deep Cleaning</span>
+              <span className="eyebrow-light">Seattle Home Deep Cleaning</span>
               <h1 className="text-balance text-4xl font-bold leading-[1.1] tracking-tight text-white md:text-5xl">
                 Residential Deep Cleaning Services in Seattle
               </h1>
               <p className="mt-6 text-base leading-relaxed text-white/70 md:text-lg">
-                Cleaning From The Heart LLC provides residential deep cleaning for houses, apartments, condos,
-                and townhomes across the Seattle area. It&apos;s a more thorough, one-time service for homes
-                that need extra attention, before a recurring routine begins, during a seasonal reset, or
-                around a move. Scope is confirmed to your home before we start.
+                Residential deep cleaning is a detailed, top-to-bottom clean that reaches the buildup and
+                overlooked areas routine visits move past. Cleaning From The Heart LLC provides it for houses,
+                apartments, condos, and townhomes across Seattle, as a one-time reset, a seasonal catch-up, or
+                the first clean before recurring service begins. Your scope is confirmed before we start.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link href="/contact#quote-form" className="cta-gold">
@@ -471,18 +522,18 @@ export default function ResidentialDeepCleaningPage() {
             <div className="order-1 lg:order-2">
               <span className="eyebrow">What Residential Deep Cleaning Covers</span>
               <h2 id="residential-deep-intro-heading" className="text-3xl font-bold leading-tight tracking-tight md:text-4xl">
-                A More Thorough Clean for Houses, Apartments, Condos & Townhomes
+                A More Detailed Clean for Seattle Houses, Apartments, Condos & Townhomes
               </h2>
               <p className="mt-5 text-base leading-relaxed text-muted">
-                Residential deep cleaning is a more thorough, top-to-bottom service for homes that need more
-                attention than routine upkeep provides. It targets built-up grime, baseboards, fixtures, and
-                the detailed surfaces that get skipped between regular visits.
+                A residential deep clean goes further than routine upkeep. It targets built-up grime in
+                kitchens and bathrooms, baseboards and trim, fixtures, door frames, and the hard-to-reach spots
+                a regular visit passes over on a normal schedule.
               </p>
               <p className="mt-4 text-base leading-relaxed text-muted">
-                It&apos;s commonly requested for a seasonal reset, before or after a move, before starting a
-                recurring cleaning schedule, or when a home hasn&apos;t had professional cleaning in a while.
-                Homes can be occupied or vacant, and the exact scope is confirmed to your property&apos;s size,
-                condition, and priorities during the estimate.
+                Seattle homeowners and renters usually book one for a seasonal reset, before hosting, after a
+                home project, or when a house hasn&apos;t had professional cleaning in a while. Homes can be
+                occupied or vacant. The scope depends on your home&apos;s size, current condition, priority
+                rooms, accessible areas, and any add-ons you select, all confirmed during the estimate.
               </p>
 
               <div className="mt-8 flex flex-wrap gap-3">
@@ -505,8 +556,8 @@ export default function ResidentialDeepCleaningPage() {
           <SectionHeading
             center
             eyebrow="Scope of Work"
-            title="What May Be Included in Residential Deep Cleaning?"
-            description="Depending on the agreed scope, residential deep cleaning may include the tasks below. The exact scope depends on your home's size, current condition, surface types, and priorities, confirmed during the estimate."
+            title="What Is Included in Residential Deep Cleaning?"
+            description="A residential deep clean may include the room-by-room work below. The exact scope depends on your home's size, current condition, surface types, priority rooms, and any add-ons you select, and it's confirmed during the estimate."
           />
 
           <div className="mt-10">
@@ -515,8 +566,8 @@ export default function ResidentialDeepCleaningPage() {
 
           <div className="mx-auto mt-10 max-w-[900px] text-center">
             <p className="text-sm leading-relaxed text-muted">
-              Appliance interiors, cabinet interiors, and high exterior windows are confirmed separately during
-              the estimate rather than assumed as standard inclusions.
+              Add-ons such as appliance interiors, cabinet interiors, interior windows, and blinds are quoted
+              separately rather than assumed as standard. Tell us which ones matter when you request a quote.
             </p>
             <div className="mt-6 flex flex-wrap justify-center gap-3">
               <Link href="/contact#quote-form" className="cta-primary">
@@ -532,8 +583,8 @@ export default function ResidentialDeepCleaningPage() {
         <Container>
           <SectionHeading
             eyebrow="A Common Question"
-            title="Deep Cleaning vs. Recurring Residential Cleaning"
-            description="Both keep your home clean, but they serve different purposes. Recurring cleaning maintains a home that's already in kept-up condition; deep cleaning provides a more detailed, one-time reset."
+            title="Deep Cleaning vs. Recurring House Cleaning"
+            description="Both keep a home clean, but they do different jobs. Recurring cleaning maintains a home that's already in kept-up condition. Deep cleaning resets the home first, which is why many households book one before starting a recurring schedule."
           />
 
           <div className="mt-10 grid gap-5 md:grid-cols-2">
@@ -566,7 +617,11 @@ export default function ResidentialDeepCleaningPage() {
       {/* ── WHEN HOMEOWNERS BOOK A DEEP CLEAN ───────────────────────────── */}
       <section className="section-shell-tight bg-surface">
         <Container>
-          <SectionHeading eyebrow="When It Helps" title="When Homeowners Book Residential Deep Cleaning" />
+          <SectionHeading
+            eyebrow="When It Helps"
+            title="When Should Homeowners Schedule a Deep Clean?"
+            description="Homeowners usually schedule a deep clean when routine upkeep has fallen behind, before a date on the calendar, or as the first step into a recurring routine."
+          />
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {whenToBookItems.map(({ Icon, title, description }, index) => (
               <Reveal key={title} delay={index * 0.06}>
@@ -595,9 +650,9 @@ export default function ResidentialDeepCleaningPage() {
               Every Deep Cleaning Scope Is Built Around Your Home
             </h2>
             <p className="mt-5 text-base leading-relaxed text-muted">
-              We don&apos;t publish flat residential deep cleaning rates, because homes vary too much for a
-              single number to be accurate. The factors below shape the scope and estimate for your specific
-              home.
+              We don&apos;t publish flat residential deep cleaning rates, because a two-bedroom condo and a
+              four-bedroom house on the same street need very different amounts of time. The factors below
+              shape the scope and the estimate for your home.
             </p>
           </div>
 
@@ -677,8 +732,8 @@ export default function ResidentialDeepCleaningPage() {
         <Container>
           <SectionHeading
             eyebrow="How It Works"
-            title="How Residential Deep Cleaning Works"
-            description="A clear four-step process from your first message to a cleaned, reviewed home."
+            title="How Our Residential Deep Cleaning Process Works"
+            description="Four steps from your first message to a finished home, with the scope agreed in writing before anyone starts cleaning."
           />
 
           <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
@@ -720,9 +775,9 @@ export default function ResidentialDeepCleaningPage() {
           <div className="grid gap-12 lg:grid-cols-[1fr_1.6fr]">
             <div>
               <span className="eyebrow">FAQ</span>
-              <h2 className="text-3xl font-semibold leading-tight md:text-4xl">Residential Deep Cleaning FAQs</h2>
+              <h2 className="text-3xl font-semibold leading-tight md:text-4xl">Residential Deep Cleaning Questions</h2>
               <p className="mt-4 text-base text-muted">
-                Answers to what Seattle-area homeowners ask us most before booking a deep clean.
+                What Seattle-area homeowners and renters ask us most before booking a deep clean.
               </p>
               <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-5">
                 <p className="text-sm font-semibold text-ink">Have a specific question?</p>
@@ -763,9 +818,9 @@ export default function ResidentialDeepCleaningPage() {
       {/* ── RELATED SERVICES ────────────────────────────────────────────── */}
       <section className="section-shell-tight bg-white">
         <Container>
-          <SectionHeading eyebrow="Related Services" title="Related Cleaning Services" />
+          <SectionHeading eyebrow="Related Services" title="Related Home Cleaning Services" />
           <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {relatedServices.map(({ title, description, href }) => (
+            {relatedServices.map(({ title, description, href, ctaLabel }) => (
               <div key={title} className="card flex h-full flex-col gap-3">
                 <h3 className="text-sm font-semibold text-ink">{title}</h3>
                 <p className="flex-1 text-xs leading-relaxed text-muted">{description}</p>
@@ -773,8 +828,8 @@ export default function ResidentialDeepCleaningPage() {
                   href={href}
                   className="inline-flex items-center text-xs font-semibold text-brand-700 transition-colors hover:text-brand-900"
                 >
-                  Learn more
-                  <ArrowRight className="ml-1 h-3 w-3" aria-hidden />
+                  {ctaLabel}
+                  <ArrowRight className="ml-1 h-3 w-3 shrink-0" aria-hidden />
                 </Link>
               </div>
             ))}
@@ -791,17 +846,18 @@ export default function ResidentialDeepCleaningPage() {
 
             <div className="relative flex flex-col gap-10 lg:flex-row lg:items-center lg:justify-between">
               <div className="max-w-2xl">
-                <p className="eyebrow-light">Get Reliable Residential Deep Cleaning in Seattle</p>
+                <p className="eyebrow-light">Book Residential Deep Cleaning in Seattle</p>
                 <h2 className="mt-1 text-balance text-4xl font-bold tracking-tight text-white md:text-5xl">
                   Ready for a Detailed Home Reset?
                 </h2>
                 <p className="mt-5 text-base leading-relaxed text-white/65 md:text-lg">
-                  Tell us about your property, current condition, and priorities. Cleaning From The Heart LLC
-                  will follow up with a customized residential deep cleaning estimate.
+                  Tell us your home&apos;s size, its current condition, and the rooms that matter most.
+                  Cleaning From The Heart LLC will follow up with a customized residential deep cleaning quote
+                  for your Seattle home.
                 </p>
 
                 <ul className="mt-6 flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:gap-x-6">
-                  {["Scope customized to your home", "One-time or before recurring service", "30+ years of Seattle cleaning experience"].map(
+                  {["Scope confirmed before we start", "One-time or before recurring service", "30+ years of Seattle cleaning experience"].map(
                     (item) => (
                       <li key={item} className="flex items-center gap-2 text-sm text-white/70">
                         <CheckCircle2 className="h-4 w-4 shrink-0 text-accent" aria-hidden />
