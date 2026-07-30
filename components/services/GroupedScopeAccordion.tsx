@@ -4,15 +4,21 @@ import { useId, useState } from "react";
 import type { LucideIcon } from "lucide-react";
 import {
   AppWindow,
+  Armchair,
   CheckCircle2,
   UtensilsCrossed,
+  Utensils,
   ShowerHead,
   Sofa,
   DoorOpen,
   Building2,
   Coffee,
+  Footprints,
   Layers,
-  Warehouse
+  Refrigerator,
+  Trash2,
+  Warehouse,
+  Wine
 } from "lucide-react";
 
 // Server components (the pages that render this) can't pass function props
@@ -20,14 +26,20 @@ import {
 // carries an icon *name* and this client component resolves it locally.
 const iconMap: Record<string, LucideIcon> = {
   AppWindow,
+  Armchair,
   UtensilsCrossed,
+  Utensils,
   ShowerHead,
   Sofa,
   DoorOpen,
   Building2,
   Coffee,
+  Footprints,
   Layers,
-  Warehouse
+  Refrigerator,
+  Trash2,
+  Warehouse,
+  Wine
 };
 
 export interface GroupedScopeItem {

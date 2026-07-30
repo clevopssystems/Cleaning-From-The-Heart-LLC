@@ -14,6 +14,7 @@ export type ServiceSlug =
   | "residential-deep-cleaning"
   | "commercial-deep-cleaning"
   | "solar-panel-cleaning"
+  | "restaurant-cleaning"
   | "restaurant-kitchen-cleaning";
 
 export interface Service {
@@ -556,36 +557,75 @@ export const services: Service[] = [
     ]
   },
   {
-    slug: "restaurant-kitchen-cleaning",
-    title: "Restaurant Kitchen Cleaning",
+    slug: "restaurant-cleaning",
+    title: "Restaurant Cleaning",
     shortDescription:
-      "Detailed cleaning for commercial kitchens, including floors, food-preparation surfaces, equipment exteriors, grease-prone areas, walls, and other high-use kitchen spaces.",
+      "Whole-restaurant cleaning for dining rooms, entrances, bars, customer restrooms, staff areas, and floors, available as recurring janitorial service or a one-time reset.",
     problem:
-      "Commercial kitchens and dining areas see heavy daily use, and grease buildup, food residue, and high foot traffic make floors, prep surfaces, and equipment exteriors difficult to keep consistently clean between shifts.",
+      "Front-of-house condition is the first thing guests judge, but dining rooms, entry glass, restrooms, and staff areas are the hardest spaces to keep up with once service starts and the team is focused on turning tables.",
     solution:
-      "We provide scheduled cleaning for restaurant kitchens and dining areas, covering floors, food-preparation surfaces, equipment exteriors, grease-prone areas, and walls, timed around your service hours so cleaning doesn't compete with food prep or dining traffic.",
+      "We handle the customer-facing and supporting areas of the restaurant on a written scope and a schedule that fits between close and open, so the room is reset before the first guest walks in.",
     benefits: [
-      "Dedicated attention to grease-prone areas, floors, and equipment exteriors",
-      "Cleaning for dining areas, food-preparation surfaces, and high-touch points",
-      "Restroom cleaning included as part of routine service",
-      "Scheduling built around operating hours and peak service times",
-      "Consistent crew familiar with your kitchen layout and priorities",
+      "Dining rooms, tables, chairs, and customer seating areas",
+      "Entrances, lobbies, host stations, and interior glass",
+      "Customer restrooms and staff restrooms in the agreed scope",
+      "Bars, service counters, staff areas, and back corridors",
+      "Floor care, trash removal, and high-touch surface attention",
+      "Recurring janitorial plans or one-time restaurant cleaning",
+      "Back-of-house kitchen work can be added to the same plan",
       "Written scope of work confirmed after a walkthrough"
     ],
     process: [
-      "Facility walkthrough to review kitchen layout, dining areas, and priority zones",
-      "Written quote with agreed service frequency, scope, and pricing",
-      "Recurring service begins, scheduled around your operating hours"
+      "Walkthrough of the dining room, entry, bar, restrooms, and staff areas",
+      "Written scope, service frequency, access plan, and quote",
+      "Service runs on the agreed schedule, with scope adjusted as the season changes"
+    ],
+    seoTitle: "Restaurant Cleaning Services in Seattle",
+    seoDescription:
+      "Restaurant cleaning in Seattle for dining rooms, entrances, bars, restrooms, and staff areas. Recurring janitorial service or one-time cleaning, scheduled around service hours.",
+    keywords: [
+      "restaurant cleaning services Seattle",
+      "Seattle restaurant cleaning",
+      "commercial restaurant cleaning",
+      "restaurant janitorial services Seattle",
+      "dining room cleaning Seattle",
+      "front of house restaurant cleaning"
+    ]
+  },
+  {
+    slug: "restaurant-kitchen-cleaning",
+    title: "Restaurant Kitchen Cleaning",
+    shortDescription:
+      "Back-of-house cleaning for commercial kitchens, covering food-preparation surfaces, kitchen floors, grease-prone areas, equipment exteriors, and accessible wall and high-touch surfaces.",
+    problem:
+      "Grease film, food residue, and foot traffic build up faster in a commercial kitchen than anywhere else in a restaurant, and floor edges, equipment exteriors, and splash areas are the first things a busy crew has to skip at the end of a shift.",
+    solution:
+      "We clean the back of house on a written scope, working through prep surfaces, sinks, kitchen floors and edges, grease-prone areas, and accessible equipment exteriors after service ends or before the kitchen opens.",
+    benefits: [
+      "Prep counters, backsplashes, sinks, and accessible fixtures",
+      "Kitchen floors, edges, corners, and grease-prone areas",
+      "Equipment exteriors, handles, and control-area surfaces",
+      "Reachable wall splash areas, doors, and high-touch points",
+      "Dish areas, staff areas, and restrooms when included in the scope",
+      "Recurring, periodic, or one-time commercial kitchen cleaning",
+      "After-hours scheduling around prep and service times",
+      "Written scope of work confirmed after a kitchen walkthrough"
+    ],
+    process: [
+      "Kitchen walkthrough covering layout, equipment, buildup, and access",
+      "Written scope, cleaning frequency, service window, and quote",
+      "Scheduled service begins, with scope reviewed as the menu or volume changes"
     ],
     seoTitle: "Restaurant Kitchen Cleaning Seattle",
     seoDescription:
-      "Restaurant and commercial kitchen cleaning in Seattle — dining areas, food-prep surfaces, floors, and grease-prone areas cleaned on a schedule built around your operating hours.",
+      "Commercial kitchen cleaning in Seattle for food-preparation areas, kitchen floors, grease-prone surfaces, and equipment exteriors, scheduled after hours around your service times.",
     keywords: [
-      "restaurant cleaning Seattle",
+      "restaurant kitchen cleaning Seattle",
       "commercial kitchen cleaning Seattle",
-      "restaurant janitorial services",
-      "commercial kitchen sanitation cleaning",
-      "grease-prone kitchen cleaning"
+      "commercial kitchen floor cleaning",
+      "food preparation area cleaning",
+      "recurring restaurant kitchen cleaning",
+      "grease-prone kitchen cleaning Seattle"
     ]
   }
 ];

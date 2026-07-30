@@ -942,12 +942,12 @@ export const industries: Industry[] = [
     navGroup: "Customer-Facing Facilities",
     iconName: "ChefHat",
     hasPage: false,
-    href: "/services/restaurant-kitchen-cleaning",
+    href: "/services/restaurant-cleaning",
     carouselDescription:
-      "Dining areas, commercial kitchens, and food-preparation surfaces need focused attention to floors, grease-prone areas, and high-touch points. Cleaning plans are scheduled around service hours so food-service operations are never disrupted.",
-    carouselLinkLabel: "Explore Restaurant & Kitchen Cleaning",
+      "Dining rooms, entrances, bars, and restrooms are covered by restaurant cleaning; food-preparation areas, kitchen floors, and grease-prone surfaces are covered by restaurant kitchen cleaning. Both are scheduled around service hours.",
+    carouselLinkLabel: "Explore Restaurant Cleaning",
     hubDescription:
-      "Specialized cleaning for dining areas, commercial kitchens, food-preparation surfaces, floors, grease-prone areas, restrooms, and high-touch points. Cleaning plans are tailored around operating hours, food-service environments, and sanitation requirements."
+      "Two services cover food-service buildings. Restaurant cleaning handles the dining room, entrances, bars, customer restrooms, staff areas, and floors. Restaurant kitchen cleaning handles the back of house, including food-preparation surfaces, kitchen floors, grease-prone areas, and equipment exteriors."
   },
   {
     slug: "fitness-centers",

@@ -3,8 +3,10 @@ import Link from "next/link";
 import Image from "next/image";
 import {
   Building2,
+  ChefHat,
   GraduationCap,
   Layers,
+  UtensilsCrossed,
   Sparkles,
   Zap,
   ShieldCheck,
@@ -158,6 +160,14 @@ const facilityCleaningGroup: ServiceCardData[] = [
     ctaLabel: "View School Cleaning"
   },
   {
+    Icon: UtensilsCrossed,
+    title: "Restaurant Cleaning",
+    description:
+      "Whole-restaurant service for dining rooms, entrances, bars, host stations, customer restrooms, and staff areas, worked between close and open.",
+    href: "/services/restaurant-cleaning",
+    ctaLabel: "View Restaurant Cleaning"
+  },
+  {
     Icon: ShowerHead,
     title: "Restroom & Common-Area Cleaning",
     description:
@@ -203,6 +213,14 @@ const floorAndSurfaceGroup: ServiceCardData[] = [
 ];
 
 const specialtyGroup: ServiceCardData[] = [
+  {
+    Icon: ChefHat,
+    title: "Restaurant Kitchen Cleaning",
+    description:
+      "Back-of-house cleaning for commercial kitchens: food-preparation surfaces, kitchen floors and edges, grease-prone areas, and equipment exteriors.",
+    href: "/services/restaurant-kitchen-cleaning",
+    ctaLabel: "See Kitchen Cleaning"
+  },
   {
     Icon: Zap,
     title: "Commercial Deep Cleaning",
@@ -490,7 +508,7 @@ const faqItems = [
   {
     question: "Do you clean restaurants and commercial kitchens?",
     answer:
-      "Yes, for front-of-house areas such as dining rooms, entrances, waiting areas, customer restrooms, and seating surroundings. Back-of-house kitchen scope varies significantly by layout and equipment, so it's confirmed during a walkthrough rather than sold as a standard package."
+      "Yes, and they are covered by two separate services. Restaurant cleaning handles the facility as a whole, including dining rooms, entrances, bars, host stations, customer restrooms, and staff areas. Restaurant kitchen cleaning covers the back of house in detail, including food-preparation surfaces, kitchen floors, grease-prone areas, and equipment exteriors. Both are scoped during a walkthrough rather than sold as standard packages, and they can run on a single plan."
   },
   {
     question: "How do I request a commercial cleaning quote?",

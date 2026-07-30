@@ -6,8 +6,10 @@ import {
   Phone,
   CheckCircle2,
   Building2,
+  ChefHat,
   GraduationCap,
   KeyRound,
+  UtensilsCrossed,
   Home,
   HardHat,
   Droplets,
@@ -59,6 +61,20 @@ const commercialGroup: ServiceCard[] = [
     icon: GraduationCap,
     blurb:
       "Cleaning support for schools, classrooms, offices, restrooms, and shared spaces where safety and consistency matter."
+  },
+  {
+    slug: "restaurant-cleaning",
+    title: "Restaurant Cleaning",
+    icon: UtensilsCrossed,
+    blurb:
+      "Whole-restaurant cleaning for dining rooms, entrances, bars, restrooms, and staff areas, scheduled between close and open."
+  },
+  {
+    slug: "restaurant-kitchen-cleaning",
+    title: "Restaurant Kitchen Cleaning",
+    icon: ChefHat,
+    blurb:
+      "Back-of-house detail for commercial kitchens: prep surfaces, kitchen floors, grease-prone areas, and equipment exteriors."
   },
   {
     slug: "strip-and-wax",
@@ -488,7 +504,7 @@ export default function ServicesPage() {
               id="commercial"
               eyebrow="Commercial & Facility Cleaning"
               title="Cleaning for Offices, Schools, and Commercial Facilities"
-              intro="Reliable cleaning for offices, schools, retail spaces, managed properties, and commercial facilities that need consistent care."
+              intro="Reliable cleaning for offices, schools, restaurants, retail spaces, managed properties, and commercial facilities that need consistent care. Restaurant cleaning covers the dining room and guest-facing areas; restaurant kitchen cleaning is the back-of-house service."
               cards={commercialGroup}
               conversionCard={recurringCard}
               image="/home/services/commercial-cleaning.jpg"
