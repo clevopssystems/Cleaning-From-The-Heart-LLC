@@ -3,6 +3,7 @@
 import { useId, useState } from "react";
 import type { LucideIcon } from "lucide-react";
 import {
+  AppWindow,
   CheckCircle2,
   UtensilsCrossed,
   ShowerHead,
@@ -18,6 +19,7 @@ import {
 // like a Lucide component across the server/client boundary, so each item
 // carries an icon *name* and this client component resolves it locally.
 const iconMap: Record<string, LucideIcon> = {
+  AppWindow,
   UtensilsCrossed,
   ShowerHead,
   Sofa,
