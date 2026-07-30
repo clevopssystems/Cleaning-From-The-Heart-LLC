@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: ServiceDetailPageProps): Prom
     openGraph: {
       title: `${service.seoTitle} | Cleaning From The Heart LLC`,
       description: service.seoDescription,
-      url: `https://cleaningfromtheheartllc.com${canonical}`,
+      url: `https://www.cleaningfromtheheartllc.com${canonical}`,
       siteName: "Cleaning From The Heart LLC",
       locale: "en_US",
       type: "website",

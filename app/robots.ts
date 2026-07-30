@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/"
     },
-    sitemap: "https://cleaningfromtheheartllc.com/sitemap.xml"
+    sitemap: "https://www.cleaningfromtheheartllc.com/sitemap.xml"
   };
 }

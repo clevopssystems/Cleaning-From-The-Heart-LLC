@@ -29,7 +29,7 @@ import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
 import { siteConfig, getServiceBySlug, whyChooseUs } from "@/lib/site";
 import { getIndustryBySlug, getIndustryByAnySlug, getIndustryPageSlugs, industryProcessSteps } from "@/lib/industries";
 
-const SITE_URL = "https://cleaningfromtheheartllc.com";
+const SITE_URL = "https://www.cleaningfromtheheartllc.com";
 
 const iconMap: Record<string, LucideIcon> = {
   Building2,
@@ -120,9 +120,12 @@ export default async function IndustryDetailPage({ params }: IndustryDetailPageP
   const breadcrumbItems = [
     { label: "Home", href: "/" },
     { label: "Industries We Serve", href: "/industries-we-serve" },
-    { label: industry.name }
+    { label: industry.name, href: `/industries/${industry.slug}` }
   ];
 
+  // BreadcrumbList is emitted by the shared <Breadcrumbs> component below.
+  // To avoid duplicate or incomplete breadcrumb entities, this page schema
+  // intentionally does not define or separately reference another BreadcrumbList.
   const industrySchema = {
     "@context": "https://schema.org",
     "@graph": [
@@ -132,8 +135,7 @@ export default async function IndustryDetailPage({ params }: IndustryDetailPageP
         name: page.metaTitle,
         description: page.metaDescription,
         url: `${SITE_URL}/industries/${industry.slug}`,
-        about: { "@id": `${SITE_URL}/#business` },
-        breadcrumb: { "@id": `${SITE_URL}/industries/${industry.slug}#breadcrumb` }
+        about: { "@id": `${SITE_URL}/#business` }
       },
       {
         "@type": "Service",

@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     title: "Seattle Cleaning Services | Cleaning From The Heart LLC",
     description:
       "Commercial, residential, janitorial, window, pressure washing, carpet, floor care, and move-out cleaning services in Seattle, WA.",
-    url: "https://cleaningfromtheheartllc.com/",
+    url: "https://www.cleaningfromtheheartllc.com/",
     siteName: "Cleaning From The Heart LLC",
     locale: "en_US",
     type: "website",

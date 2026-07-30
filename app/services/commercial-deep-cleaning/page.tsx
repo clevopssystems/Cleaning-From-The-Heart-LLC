@@ -35,7 +35,7 @@ import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
 import { GroupedScopeAccordion, type GroupedScopeItem } from "@/components/services/GroupedScopeAccordion";
 import { siteConfig } from "@/lib/site";
 
-const SITE_URL = "https://cleaningfromtheheartllc.com";
+const SITE_URL = "https://www.cleaningfromtheheartllc.com";
 
 export const metadata: Metadata = {
   title: { absolute: "Commercial Deep Cleaning Seattle | Cleaning From The Heart LLC" },
@@ -415,21 +415,8 @@ const commercialDeepCleaningSchema = {
         "Commercial deep cleaning in Seattle for offices, schools, retail spaces, and facilities. Detailed cleaning with a scope customized to the facility and service plan.",
       url: `${SITE_URL}/services/commercial-deep-cleaning`
     },
-    {
-      "@type": "BreadcrumbList",
-      "@id": `${SITE_URL}/services/commercial-deep-cleaning#breadcrumb`,
-      itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
-        { "@type": "ListItem", position: 2, name: "Services", item: `${SITE_URL}/services` },
-        { "@type": "ListItem", position: 3, name: "Deep Cleaning", item: `${SITE_URL}/services/deep-cleaning` },
-        {
-          "@type": "ListItem",
-          position: 4,
-          name: "Commercial Deep Cleaning",
-          item: `${SITE_URL}/services/commercial-deep-cleaning`
-        }
-      ]
-    },
+    // BreadcrumbList is emitted once by the shared <Breadcrumbs> component below,
+    // so it is intentionally not duplicated in this @graph.
     {
       "@type": "FAQPage",
       "@id": `${SITE_URL}/services/commercial-deep-cleaning#faq`,
@@ -455,7 +442,7 @@ export default function CommercialDeepCleaningPage() {
               { label: "Home", href: "/" },
               { label: "Services", href: "/services" },
               { label: "Deep Cleaning", href: "/services/deep-cleaning" },
-              { label: "Commercial Deep Cleaning" }
+              { label: "Commercial Deep Cleaning", href: "/services/commercial-deep-cleaning" }
             ]}
           />
 

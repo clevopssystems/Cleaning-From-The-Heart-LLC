@@ -29,7 +29,7 @@ import { SectionHeading } from "@/components/shared/SectionHeading";
 import { ResidentialScopeAccordion } from "@/components/services/ResidentialScopeAccordion";
 import { siteConfig, serviceAreas, galleryItems } from "@/lib/site";
 
-const SITE_URL = "https://cleaningfromtheheartllc.com";
+const SITE_URL = "https://www.cleaningfromtheheartllc.com";
 
 export const metadata: Metadata = {
   title: { absolute: "Residential Cleaning Services Seattle, WA | Cleaning From The Heart LLC" },

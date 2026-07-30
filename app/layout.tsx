@@ -19,7 +19,7 @@ const sora = Sora({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://cleaningfromtheheartllc.com"),
+  metadataBase: new URL("https://www.cleaningfromtheheartllc.com"),
   title: {
     default: "Cleaning From The Heart LLC | Seattle Cleaning Services",
     template: "%s | Cleaning From The Heart LLC"
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     "deep cleaning Seattle"
   ],
   alternates: {
-    canonical: "https://cleaningfromtheheartllc.com"
+    canonical: "https://www.cleaningfromtheheartllc.com"
   },
   icons: {
     icon: [
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     title: "Cleaning From The Heart LLC | Seattle Cleaning Services",
     description:
       "Commercial and residential cleaning, window cleaning, pressure washing, carpet cleaning, floor care, and move-in/move-out services throughout Seattle. 30+ years of experience. Free quotes.",
-    url: "https://cleaningfromtheheartllc.com",
+    url: "https://www.cleaningfromtheheartllc.com",
     siteName: "Cleaning From The Heart LLC",
     locale: "en_US",
     type: "website",
@@ -80,9 +80,9 @@ export const metadata: Metadata = {
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "@id": "https://cleaningfromtheheartllc.com/#business",
+  "@id": "https://www.cleaningfromtheheartllc.com/#business",
   name: siteConfig.name,
-  image: "https://cleaningfromtheheartllc.com/services/hero/hero-cleaning-team.png",
+  image: "https://www.cleaningfromtheheartllc.com/services/hero/hero-cleaning-team.png",
   telephone: siteConfig.phoneDisplay,
   email: siteConfig.email,
   address: {
@@ -109,7 +109,7 @@ const localBusinessSchema = {
     { "@type": "City", name: "Tacoma" },
     { "@type": "City", name: "Bothell" }
   ],
-  url: "https://cleaningfromtheheartllc.com",
+  url: "https://www.cleaningfromtheheartllc.com",
   sameAs: [siteConfig.instagramHref, siteConfig.facebookHref, siteConfig.tiktokHref],
   openingHours: "Mo-Sa 07:00-19:00",
   priceRange: "$$",

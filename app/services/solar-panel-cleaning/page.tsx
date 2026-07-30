@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: `${service.seoTitle} | Cleaning From The Heart LLC`,
     description: service.seoDescription,
-    url: "https://cleaningfromtheheartllc.com/services/solar-panel-cleaning",
+    url: "https://www.cleaningfromtheheartllc.com/services/solar-panel-cleaning",
     siteName: "Cleaning From The Heart LLC",
     locale: "en_US",
     type: "website",

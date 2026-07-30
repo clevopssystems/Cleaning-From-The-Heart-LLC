@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { services } from "@/lib/site";
 import { getIndustryPageSlugs } from "@/lib/industries";
 
-const base = "https://cleaningfromtheheartllc.com";
+const base = "https://www.cleaningfromtheheartllc.com";
 
 // Priority reflects each page's role in the site hierarchy, not how often it
 // changes — hub/landing pages outrank the detail pages they link to.

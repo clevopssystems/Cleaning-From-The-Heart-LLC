@@ -47,7 +47,7 @@ import { IndustryCarousel } from "@/components/industries/IndustryCarousel";
 import { siteConfig, serviceAreas } from "@/lib/site";
 import { industries } from "@/lib/industries";
 
-const SITE_URL = "https://cleaningfromtheheartllc.com";
+const SITE_URL = "https://www.cleaningfromtheheartllc.com";
 
 export const metadata: Metadata = {
   title: "Commercial Cleaning in Seattle, WA | Cleaning From The Heart",

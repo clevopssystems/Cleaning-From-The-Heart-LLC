@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     title: "Seattle Cleaning Services | Cleaning From The Heart LLC",
     description:
       "Commercial, residential, exterior, and specialty cleaning services for Seattle-area offices, homes, schools, and commercial properties. 30+ years of experience.",
-    url: "https://cleaningfromtheheartllc.com/services",
+    url: "https://www.cleaningfromtheheartllc.com/services",
     type: "website"
   }
 };
@@ -243,7 +243,7 @@ const servicesFaqs = [
   }
 ];
 
-const SITE_URL = "https://cleaningfromtheheartllc.com";
+const SITE_URL = "https://www.cleaningfromtheheartllc.com";
 
 const servicesSchema = {
   "@context": "https://schema.org",

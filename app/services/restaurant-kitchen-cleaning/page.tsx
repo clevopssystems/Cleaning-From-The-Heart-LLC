@@ -41,7 +41,7 @@ import { siteConfig, serviceAreas } from "@/lib/site";
 // Sources are recorded in docs/temporary-restaurant-image-sources.md.
 const IMG = "/images/services/restaurant-kitchen-cleaning";
 
-const SITE_URL = "https://cleaningfromtheheartllc.com";
+const SITE_URL = "https://www.cleaningfromtheheartllc.com";
 
 const PAGE_TITLE = "Restaurant Kitchen Cleaning Seattle | Cleaning From The Heart";
 const PAGE_DESCRIPTION =
@@ -582,7 +582,7 @@ export default function RestaurantKitchenCleaningPage() {
             items={[
               { label: "Home", href: "/" },
               { label: "Services", href: "/services" },
-              { label: "Restaurant Kitchen Cleaning" }
+              { label: "Restaurant Kitchen Cleaning", href: "/services/restaurant-kitchen-cleaning" }
             ]}
           />
 

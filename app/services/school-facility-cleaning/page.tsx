@@ -37,7 +37,7 @@ import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
 import { GroupedScopeAccordion, type GroupedScopeItem } from "@/components/services/GroupedScopeAccordion";
 import { siteConfig, serviceAreas } from "@/lib/site";
 
-const SITE_URL = "https://cleaningfromtheheartllc.com";
+const SITE_URL = "https://www.cleaningfromtheheartllc.com";
 
 const PAGE_TITLE = "School Cleaning Services Seattle | Cleaning From The Heart";
 const PAGE_DESCRIPTION =
@@ -720,7 +720,7 @@ export default function SchoolFacilityCleaningPage() {
             items={[
               { label: "Home", href: "/" },
               { label: "Services", href: "/services" },
-              { label: "School & Educational Facility Cleaning" }
+              { label: "School & Educational Facility Cleaning", href: "/services/school-facility-cleaning" }
             ]}
           />
 

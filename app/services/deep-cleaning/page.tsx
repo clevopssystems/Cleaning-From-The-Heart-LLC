@@ -21,7 +21,7 @@ import { SectionHeading } from "@/components/shared/SectionHeading";
 import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
 import { siteConfig } from "@/lib/site";
 
-const SITE_URL = "https://cleaningfromtheheartllc.com";
+const SITE_URL = "https://www.cleaningfromtheheartllc.com";
 
 export const metadata: Metadata = {
   title: { absolute: "Deep Cleaning Services in Seattle | Cleaning From The Heart LLC" },
@@ -228,16 +228,9 @@ const deepCleaningHubSchema = {
           }
         ]
       }
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": `${SITE_URL}/services/deep-cleaning#breadcrumb`,
-      itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
-        { "@type": "ListItem", position: 2, name: "Services", item: `${SITE_URL}/services` },
-        { "@type": "ListItem", position: 3, name: "Deep Cleaning", item: `${SITE_URL}/services/deep-cleaning` }
-      ]
     }
+    // BreadcrumbList is emitted once by the shared <Breadcrumbs> component below,
+    // so it is intentionally not duplicated in this @graph.
   ]
 };
 
@@ -253,7 +246,7 @@ export default function DeepCleaningHubPage() {
             items={[
               { label: "Home", href: "/" },
               { label: "Services", href: "/services" },
-              { label: "Deep Cleaning" }
+              { label: "Deep Cleaning", href: "/services/deep-cleaning" }
             ]}
           />
 

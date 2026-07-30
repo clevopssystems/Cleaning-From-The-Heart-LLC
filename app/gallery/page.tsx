@@ -6,7 +6,7 @@ import { Container } from "@/components/shared/Container";
 import { ResultsGallery } from "@/components/sections/gallery/ResultsGallery";
 import { galleryItems, galleryCategories, siteConfig } from "@/lib/site";
 
-const SITE_URL = "https://cleaningfromtheheartllc.com";
+const SITE_URL = "https://www.cleaningfromtheheartllc.com";
 
 export const metadata: Metadata = {
   title: { absolute: "Cleaning Results Gallery | Cleaning From The Heart LLC Seattle" },

@@ -26,7 +26,7 @@ import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
 import { GroupedScopeAccordion, type GroupedScopeItem } from "@/components/services/GroupedScopeAccordion";
 import { siteConfig, serviceAreas } from "@/lib/site";
 
-const SITE_URL = "https://cleaningfromtheheartllc.com";
+const SITE_URL = "https://www.cleaningfromtheheartllc.com";
 
 const PAGE_TITLE = "Residential Deep Cleaning Seattle | Cleaning From The Heart";
 const PAGE_DESCRIPTION =
@@ -442,7 +442,7 @@ export default function ResidentialDeepCleaningPage() {
               { label: "Home", href: "/" },
               { label: "Services", href: "/services" },
               { label: "Deep Cleaning", href: "/services/deep-cleaning" },
-              { label: "Residential Deep Cleaning" }
+              { label: "Residential Deep Cleaning", href: "/services/residential-deep-cleaning" }
             ]}
           />
 

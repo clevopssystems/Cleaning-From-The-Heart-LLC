@@ -6,12 +6,18 @@ export interface BreadcrumbItem {
   href?: string;
 }
 
-const SITE_URL = "https://cleaningfromtheheartllc.com";
+const SITE_URL = "https://www.cleaningfromtheheartllc.com";
 
 export function Breadcrumbs({ items }: { items: BreadcrumbItem[] }) {
+  // The final crumb contains the current page path and is used to create a stable
+  // @id for this page's complete BreadcrumbList. This component is the single
+  // breadcrumb JSON-LD emitter on pages that render it.
+  const currentPath = items[items.length - 1]?.href;
+
   const schema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
+    ...(currentPath ? { "@id": `${SITE_URL}${currentPath}#breadcrumb` } : {}),
     itemListElement: items.map((item, index) => ({
       "@type": "ListItem",
       position: index + 1,

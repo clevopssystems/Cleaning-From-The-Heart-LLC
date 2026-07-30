@@ -20,7 +20,7 @@ import { Container } from "@/components/shared/Container";
 import { ContactForm } from "@/components/sections/ContactForm";
 import { siteConfig } from "@/lib/site";
 
-const SITE_URL = "https://cleaningfromtheheartllc.com";
+const SITE_URL = "https://www.cleaningfromtheheartllc.com";
 
 export const metadata: Metadata = {
   title: { absolute: "Request a Cleaning Quote | Cleaning From The Heart LLC Seattle" },

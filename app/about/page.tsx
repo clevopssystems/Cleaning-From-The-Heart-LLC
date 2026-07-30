@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     title: "About Cleaning From The Heart LLC | Seattle Cleaning Company",
     description:
       "A locally owned, family-operated Seattle cleaning company with 30+ years of experience serving offices, schools, commercial properties, and homes.",
-    url: "https://cleaningfromtheheartllc.com/about",
+    url: "https://www.cleaningfromtheheartllc.com/about",
     type: "website"
   }
 };
@@ -94,17 +94,17 @@ const aboutSchema = {
   "@graph": [
     {
       "@type": "AboutPage",
-      "@id": "https://cleaningfromtheheartllc.com/about#aboutpage",
-      url: "https://cleaningfromtheheartllc.com/about",
+      "@id": "https://www.cleaningfromtheheartllc.com/about#aboutpage",
+      url: "https://www.cleaningfromtheheartllc.com/about",
       name: "About Cleaning From The Heart LLC",
       description:
         "Cleaning From The Heart LLC is a locally owned, family-operated cleaning company serving Seattle and surrounding areas, with 30+ years of experience in commercial, residential, office, school, and property cleaning. The company is owned by Joshua Alexander.",
-      about: { "@id": "https://cleaningfromtheheartllc.com/#business" },
-      mainEntity: { "@id": "https://cleaningfromtheheartllc.com/#business" }
+      about: { "@id": "https://www.cleaningfromtheheartllc.com/#business" },
+      mainEntity: { "@id": "https://www.cleaningfromtheheartllc.com/#business" }
     },
     {
       "@type": "FAQPage",
-      "@id": "https://cleaningfromtheheartllc.com/about#faq",
+      "@id": "https://www.cleaningfromtheheartllc.com/about#faq",
       mainEntity: aboutFaqs.map((faq) => ({
         "@type": "Question",
         name: faq.question,

@@ -27,7 +27,7 @@ import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
 import { siteConfig, services, getServiceBySlug } from "@/lib/site";
 import { industries } from "@/lib/industries";
 
-const SITE_URL = "https://cleaningfromtheheartllc.com";
+const SITE_URL = "https://www.cleaningfromtheheartllc.com";
 
 const iconMap: Record<string, LucideIcon> = {
   Building2,
@@ -101,6 +101,9 @@ const relatedServiceSlugs = [
   "restaurant-kitchen-cleaning"
 ] as const;
 
+// BreadcrumbList is emitted by the shared <Breadcrumbs> component below.
+// To avoid duplicate or incomplete breadcrumb entities, this page schema
+// intentionally does not define or separately reference another BreadcrumbList.
 const webPageSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
@@ -109,8 +112,7 @@ const webPageSchema = {
   description: pageDescription,
   url: `${SITE_URL}/industries-we-serve`,
   about: { "@id": `${SITE_URL}/#business` },
-  isPartOf: { "@type": "WebSite", url: SITE_URL, name: siteConfig.name },
-  breadcrumb: { "@id": `${SITE_URL}/industries-we-serve#breadcrumb` }
+  isPartOf: { "@type": "WebSite", url: SITE_URL, name: siteConfig.name }
 };
 
 export default function IndustriesHubPage() {
@@ -131,7 +133,12 @@ export default function IndustriesHubPage() {
         <div className="absolute inset-0 opacity-20 surface-grid" aria-hidden />
         <div className="absolute -left-32 -top-32 h-96 w-96 rounded-full bg-brand-600/30 blur-3xl" aria-hidden />
         <Container className="relative section-shell-tight pt-24">
-          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Industries We Serve" }]} />
+          <Breadcrumbs
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Industries We Serve", href: "/industries-we-serve" }
+            ]}
+          />
 
           <div className="mt-6 max-w-3xl">
             <span className="eyebrow-light">Industries We Serve</span>
