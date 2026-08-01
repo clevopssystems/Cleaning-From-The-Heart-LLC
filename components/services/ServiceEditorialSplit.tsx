@@ -6,8 +6,8 @@ interface ServiceEditorialSplitProps extends Omit<ServiceImagePanelProps, "class
   imagePosition?: "left" | "right";
   /** Grid template for the two columns at `lg` and up. */
   columns?: string;
-  /** Vertical alignment of the two columns. */
-  align?: "center" | "start";
+  /** Vertical alignment of the two columns. "stretch" ends them level — pair it with `aspect="fill"`. */
+  align?: "center" | "start" | "stretch";
   /** The text column: heading, copy, lists, CTAs. */
   children: React.ReactNode;
   /** Extra classes for the grid wrapper. */
@@ -39,7 +39,7 @@ export function ServiceEditorialSplit({
       className={cn(
         "grid gap-10 lg:gap-14",
         columns,
-        align === "center" ? "lg:items-center" : "lg:items-start",
+        align === "center" ? "lg:items-center" : align === "start" ? "lg:items-start" : "lg:items-stretch",
         className
       )}
     >

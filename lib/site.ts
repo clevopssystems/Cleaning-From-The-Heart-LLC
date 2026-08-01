@@ -147,13 +147,15 @@ export const services: Service[] = [
     ],
     seoTitle: "Strip and Wax Floor Services in Seattle, WA",
     seoDescription:
-      "Professional strip and wax floor services in Seattle for long-lasting shine and protection. Restore commercial hard floors with Cleaning From The Heart LLC.",
+      "Commercial strip and wax floor services in Seattle for VCT, vinyl, and tile. Old finish stripped, floors neutralized, and fresh coats applied. After-hours scheduling.",
     keywords: [
       "strip and wax Seattle",
-      "floor waxing Seattle",
+      "floor stripping and waxing Seattle",
       "commercial floor stripping Seattle",
-      "floor restoration Seattle WA",
-      "strip wax floors Seattle"
+      "floor waxing services Seattle",
+      "VCT strip and wax Seattle",
+      "scrub and recoat Seattle",
+      "floor restoration Seattle WA"
     ]
   },
   {
