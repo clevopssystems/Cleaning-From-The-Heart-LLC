@@ -94,17 +94,17 @@ export const services: Service[] = [
     slug: "carpet-cleaning",
     title: "Carpet Cleaning",
     shortDescription:
-      "Deep carpet cleaning that removes embedded dirt, stains, and odors, restoring a fresh, professional appearance to offices, rentals, and commercial spaces.",
+      "Deep extraction carpet cleaning that lifts embedded dirt, spots, and odors from offices, common areas, rental units, and homes across the Seattle area.",
     problem:
-      "Carpets accumulate dust, allergens, stains, and odor over time, making spaces feel worn, unhealthy, and unprofessional to clients and staff alike.",
+      "Carpet collects tracked-in soil, spills, and odor faster than vacuuming can keep up with, so traffic lanes darken and rooms look worn long before the carpet itself is worn out.",
     solution:
-      "Our carpet cleaning service uses thorough extraction methods to remove what regular vacuuming misses, improving both appearance and indoor air quality.",
+      "Our carpet cleaning combines targeted pre-treatment, individual spot treatment, and deep extraction, with the scope built around the carpet's condition, the traffic it takes, and how the building is used.",
     benefits: [
-      "Removes embedded dirt, allergens, and odor from high-traffic carpet",
+      "Lifts embedded dirt and tracked-in soil that vacuuming leaves behind",
       "Targeted pre-treatment for stubborn spots and ground-in debris",
-      "Improves indoor air quality and overall freshness throughout the space",
-      "Ideal for offices, rental units, and move-in/move-out transitions",
-      "Helps extend carpet lifespan and delays costly replacement",
+      "Extra attention on traffic lanes, entrances, and heavily used areas",
+      "Commercial and residential carpet, including rentals and turnovers",
+      "Helps extend carpet lifespan by reducing the abrasive soil load",
       "Available as a one-time service or as part of a recurring maintenance schedule"
     ],
     process: [
@@ -112,15 +112,16 @@ export const services: Service[] = [
       "Pre-treatment, deep extraction cleaning, and targeted spot treatment",
       "Final walkthrough and drying guidance to protect your floor investment"
     ],
-    seoTitle: "Carpet Cleaning in Seattle, WA",
+    seoTitle: "Carpet Cleaning Seattle, WA | Commercial & Residential Service",
     seoDescription:
-      "Professional carpet cleaning in Seattle for offices, rentals, and commercial spaces. Remove stains, embedded dirt, and odors with Cleaning From The Heart LLC.",
+      "Professional carpet cleaning in Seattle for offices, commercial facilities, rental properties and homes. Request a customized quote from Cleaning From The Heart.",
     keywords: [
+      "carpet cleaning Seattle",
       "Seattle carpet cleaning",
-      "deep carpet cleaning Seattle",
       "commercial carpet cleaning Seattle",
-      "carpet stain removal Seattle",
-      "office carpet cleaning Seattle WA"
+      "residential carpet cleaning Seattle",
+      "office carpet cleaning Seattle WA",
+      "carpet stain removal Seattle"
     ]
   },
   {
