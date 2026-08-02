@@ -75,7 +75,10 @@ export async function generateMetadata({ params }: IndustryDetailPageProps): Pro
   const { metaTitle, metaDescription } = industry.page;
 
   return {
-    title: metaTitle,
+    // `absolute` opts out of the root layout's "%s | Cleaning From The Heart LLC"
+    // template — every industry metaTitle already carries the brand suffix, so
+    // without this the rendered <title> repeats the brand twice.
+    title: { absolute: metaTitle },
     description: metaDescription,
     alternates: { canonical },
     openGraph: {
@@ -111,6 +114,20 @@ export default async function IndustryDetailPage({ params }: IndustryDetailPageP
 
   const { page } = industry;
   const Icon = iconMap[industry.iconName] ?? Building2;
+  const introImage =
+    industry.slug === "offices-commercial-buildings"
+      ? {
+          src: "/services/office intro.png",
+          alt: "Bright office conference room with a long table and teal chairs",
+          width: 1086,
+          height: 1448
+        }
+      : {
+          src: "/services/intro/intro-image.png",
+          alt: `Commercial cleaning equipment staged in a building lobby for ${industry.name.toLowerCase()} cleaning`,
+          width: 900,
+          height: 1125
+        };
 
   const relatedServices = page.relatedServiceSlugs.map((serviceSlug) => getServiceBySlug(serviceSlug)).filter(Boolean);
   const relatedIndustries = page.relatedIndustrySlugs
@@ -144,6 +161,7 @@ export default async function IndustryDetailPage({ params }: IndustryDetailPageP
         serviceType: `${industry.name} Cleaning`,
         provider: { "@id": `${SITE_URL}/#business` },
         areaServed: [
+          { "@type": "AdministrativeArea", name: "King County" },
           { "@type": "City", name: "Seattle" },
           { "@type": "City", name: "Bellevue" },
           { "@type": "City", name: "Renton" },
@@ -153,6 +171,10 @@ export default async function IndustryDetailPage({ params }: IndustryDetailPageP
           { "@type": "City", name: "Shoreline" },
           { "@type": "City", name: "Federal Way" },
           { "@type": "City", name: "Kirkland" },
+          { "@type": "City", name: "Redmond" },
+          { "@type": "City", name: "Burien" },
+          { "@type": "City", name: "SeaTac" },
+          { "@type": "City", name: "Mercer Island" },
           { "@type": "City", name: "Tacoma" },
           { "@type": "City", name: "Bothell" }
         ],
@@ -175,17 +197,28 @@ export default async function IndustryDetailPage({ params }: IndustryDetailPageP
     <>
       {/* ── HERO ─────────────────────────────────────────────────────────── */}
       <section className="relative -mt-16 overflow-hidden bg-ink text-white">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          className="hero-video absolute inset-0 h-full w-full object-cover"
-          aria-hidden
-        >
-          <source src="/home/hero/hero-bg.mp4" type="video/mp4" />
-        </video>
+        {industry.slug === "offices-commercial-buildings" ? (
+          <Image
+            src="/services/office-hero.png"
+            alt=""
+            fill
+            priority
+            className="object-cover"
+            sizes="100vw"
+          />
+        ) : (
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            className="hero-video absolute inset-0 h-full w-full object-cover"
+            aria-hidden
+          >
+            <source src="/home/hero/hero-bg.mp4" type="video/mp4" />
+          </video>
+        )}
 
         <div className="absolute inset-0 bg-ink/65" aria-hidden />
         <div className="absolute inset-0 opacity-20 surface-grid" aria-hidden />
@@ -234,10 +267,10 @@ export default async function IndustryDetailPage({ params }: IndustryDetailPageP
             <SectionHeading eyebrow="Our Approach" title="Cleaning Support Built Around Your Facility" description={page.directAnswer} />
             <div className="mx-auto w-full max-w-sm overflow-hidden rounded-3xl border border-brand-100 shadow-card lg:mx-0 lg:max-w-none">
               <Image
-                src="/services/intro/intro-image.png"
-                alt={`Commercial cleaning equipment staged in a building lobby for ${industry.name.toLowerCase()} cleaning`}
-                width={900}
-                height={1125}
+                src={introImage.src}
+                alt={introImage.alt}
+                width={introImage.width}
+                height={introImage.height}
                 className="aspect-[4/5] w-full object-cover"
                 sizes="(max-width: 1024px) 100vw, 38vw"
               />
@@ -254,11 +287,22 @@ export default async function IndustryDetailPage({ params }: IndustryDetailPageP
             title={`Cleaning Priorities for ${industry.name}`}
             description="These are the areas and details that differ most for this industry."
           />
-          <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {page.priorities.map((priority) => (
-              <article key={priority.title} className="card flex h-full flex-col gap-2">
-                <h3 className="text-sm font-semibold text-ink">{priority.title}</h3>
-                <p className="text-sm leading-relaxed text-muted">{priority.description}</p>
+          {/* Editorial two-column rows instead of a card grid: the descriptions are
+              full sentences, so they read better as prose with a hairline rule
+              between items than as ragged boxes. */}
+          <div className="mt-10 border-t border-brand-100/80">
+            {page.priorities.map((priority, index) => (
+              <article
+                key={priority.title}
+                className="grid gap-2 border-b border-brand-100/80 py-6 md:grid-cols-[minmax(0,16rem)_1fr] md:gap-12 md:py-7"
+              >
+                <div className="flex items-baseline gap-3">
+                  <span className="text-xs font-semibold tabular-nums text-brand-600/70" aria-hidden>
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <h3 className="text-base font-semibold leading-snug text-ink">{priority.title}</h3>
+                </div>
+                <p className="text-[15px] leading-relaxed text-muted md:max-w-[70ch]">{priority.description}</p>
               </article>
             ))}
           </div>

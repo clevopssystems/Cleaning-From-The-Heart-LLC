@@ -32,6 +32,7 @@ import {
   Wallet,
   Warehouse
 } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import { Container } from "@/components/shared/Container";
 import { Reveal } from "@/components/shared/Reveal";
 import { SectionHeading } from "@/components/shared/SectionHeading";
@@ -314,7 +315,15 @@ const floorTypeExclusions = [
 ];
 
 // ─── Facilities ───────────────────────────────────────────────────────────
-const facilityTypes = [
+// `href`/`linkLabel` are optional — set them where an existing page covers that
+// facility type in depth, so the card can carry a contextual internal link.
+const facilityTypes: {
+  Icon: LucideIcon;
+  title: string;
+  description: string;
+  href?: string;
+  linkLabel?: string;
+}[] = [
   {
     Icon: GraduationCap,
     title: "Schools & Educational Facilities",
@@ -349,7 +358,9 @@ const facilityTypes = [
     Icon: Church,
     title: "Churches & Community Buildings",
     description:
-      "Fellowship halls, classrooms, and shared spaces where the floor gets heavy weekend use and quiet weekdays to work in."
+      "Fellowship halls, classrooms, and shared spaces where the floor gets heavy weekend use and quiet weekdays to work in.",
+    href: "/industries/places-of-worship",
+    linkLabel: "Church cleaning services in Seattle"
   },
   {
     Icon: Dumbbell,
@@ -1024,7 +1035,7 @@ export default function StripAndWaxPage() {
             description="Floor plans, traffic, and available windows differ enough between these that the scope and schedule are always written per building."
           />
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {facilityTypes.map(({ Icon, title, description }, index) => (
+            {facilityTypes.map(({ Icon, title, description, href, linkLabel }, index) => (
               <Reveal key={title} delay={index * 0.05}>
                 <article className="card flex h-full flex-col gap-3">
                   <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-100">
@@ -1032,6 +1043,15 @@ export default function StripAndWaxPage() {
                   </div>
                   <h3 className="text-sm font-semibold text-ink">{title}</h3>
                   <p className="text-sm leading-relaxed text-muted">{description}</p>
+                  {href && linkLabel ? (
+                    <Link
+                      href={href}
+                      className="mt-auto inline-flex items-center pt-1 text-xs font-semibold text-brand-700 transition-colors hover:text-brand-900"
+                    >
+                      {linkLabel}
+                      <ArrowRight className="ml-1 h-3 w-3 shrink-0" aria-hidden />
+                    </Link>
+                  ) : null}
                 </article>
               </Reveal>
             ))}

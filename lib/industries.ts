@@ -93,50 +93,112 @@ export const industries: Industry[] = [
     hasPage: true,
     href: "/industries/offices-commercial-buildings",
     carouselDescription:
-      "Workstations, meeting rooms, and shared breakrooms wear differently depending on desk density and daily foot traffic. Office cleaning plans are scheduled before or after business hours so service never competes with meetings or deadlines.",
-    carouselLinkLabel: "Explore Office & Commercial Building Cleaning",
+      "Office cleaning and commercial janitorial services for Seattle workstations, meeting rooms, breakrooms, and restrooms. Daily, weekly, and after-hours schedules built around your business hours so service never competes with meetings or deadlines.",
+    carouselLinkLabel: "Explore Office Cleaning & Janitorial Services",
     hubDescription:
-      "From single-suite offices to multi-floor headquarters, cleaning plans cover workstations, meeting rooms, breakrooms, and shared restrooms. Service is scheduled before or after business hours so cleaning never competes with meetings, calls, or deadlines, and scope adjusts to your office's size and layout.",
+      "Office cleaning and janitorial services for everything from single-suite offices to multi-tenant commercial buildings and corporate headquarters. Plans cover workstations, conference rooms, lobbies, breakrooms, restrooms, and floor care, on a daily, weekly, or after-hours schedule scoped to your building's size and layout.",
     page: {
-      metaTitle: "Office & Commercial Building Cleaning in Seattle | Cleaning From The Heart LLC",
+      metaTitle: "Office Cleaning & Janitorial Services Seattle, WA | Cleaning From The Heart LLC",
       metaDescription:
-        "Commercial cleaning for Seattle offices and commercial buildings — workstations, meeting rooms, breakrooms, and shared restrooms cleaned on a schedule built around your business hours.",
-      heroLabel: "OFFICE & COMMERCIAL BUILDING CLEANING",
-      h1: "Commercial Cleaning for Offices & Commercial Buildings in Seattle",
+        "Office cleaning and commercial janitorial services for Seattle offices and commercial buildings. Licensed, insured cleaners on nightly, weekly, or after-hours schedules.",
+      heroLabel: "OFFICE CLEANING & COMMERCIAL JANITORIAL SERVICES",
+      h1: "Office Cleaning & Janitorial Services for Seattle Offices & Commercial Buildings",
       heroIntro:
-        "Office cleaning at Cleaning From The Heart LLC is built for how a Seattle workplace actually operates, not a generic checklist. Whether you manage a single-suite office or a multi-floor building, we look at desk density, meeting room turnover, and breakroom traffic before recommending a schedule. Most offices land on weekly or bi-weekly service, timed after hours or before the workday starts. Request a walkthrough and we'll confirm scope and pricing in writing.",
+        "Cleaning From The Heart LLC is a local, licensed and insured office cleaning company serving Seattle, WA and the surrounding King County area. Our commercial cleaners handle everything a working office needs day to day: workstations and desks, conference rooms, reception and lobby areas, breakrooms, and commercial restrooms. Whether you run a small single-suite office downtown or manage a multi-tenant commercial building, we build a custom office cleaning plan around your square footage, desk count, and business hours, then put the scope and pricing in writing. Daily, nightly, weekly, bi-weekly, monthly, and one-time office cleaning schedules are all available. Request a free walkthrough and written estimate.",
       directAnswer:
-        "Cleaning Support Built Around Your Facility means we start with how your office is actually used, not a standard package applied to every suite. A single-tenant office with a handful of desks has different priorities than a multi-floor building with several departments and shared amenities. During your walkthrough, we look at desk count, meeting room frequency, breakroom traffic, and restroom count, then build a written scope around those specifics. Scheduling is set around your business hours from the start, so cleaning happens before the workday begins, after it ends, or during a quiet stretch that works for your team, never in the middle of a meeting or a deadline.",
+        "Professional office cleaning and janitorial services in Seattle start with how your building is actually used, not a generic package. Business owners, office managers, and facility managers all tend to ask the same first question, and the honest answer is that it depends: a small office with a handful of desks needs a different janitorial program than a large corporate headquarters or a multi-tenant office building with shared common areas. During your free walkthrough we look at square footage, workstation count, restroom count, meeting room turnover, breakroom traffic, and floor types, then build a written office cleaning checklist and quote around those specifics. Scheduling is set around your business hours from the start, so cleaning happens before the workday begins, after hours in the evening, overnight, or on weekends, never in the middle of a meeting or a deadline. You get the same crew every visit, a checklist-backed result, and a direct line to a real person when something needs to change.",
       priorities: [
         {
-          title: "Workstations & Desks",
+          title: "Workstations, Desks & Cubicles",
           description:
-            "Desks, keyboards, and shared workstation surfaces accumulate dust and hand contact throughout the day; routine wiping and floor care keep them from becoming a distraction."
+            "Desk cleaning is the core of any office cleaning service. Workstations, cubicle surfaces, and shared hot desks collect dust and hand contact all day, so they are wiped and sanitized on every visit and the floors around them vacuumed."
         },
         {
-          title: "Meeting Rooms",
+          title: "Private & Executive Offices",
           description:
-            "Conference tables, chairs, and shared electronics get reset between bookings so back-to-back meetings don't inherit the last group's clutter."
+            "Private office cleaning runs on the same checklist as the open floor: surfaces dusted, waste bins emptied, glass spot-cleaned, and floors vacuumed or mopped, with papers and personal items left exactly where you left them."
         },
         {
-          title: "Reception & Lobby Areas",
+          title: "Conference, Meeting & Training Rooms",
           description:
-            "The first space clients see gets extra attention to glass, flooring, and seating so the office presents well from the moment someone walks in."
+            "Conference room cleaning resets tables, chairs, whiteboards, and shared electronics between bookings so back-to-back meetings and training sessions never inherit the last group's clutter."
         },
         {
-          title: "Breakrooms & Kitchenettes",
+          title: "Reception, Lobby & Waiting Areas",
           description:
-            "Shared counters, sinks, and appliance exteriors see heavy daily use and need more frequent attention than a private office."
+            "Reception-area cleaning and commercial lobby cleaning are what clients judge you on first. Entrance glass, fingerprint removal, lobby floor cleaning, and waiting-area seating get extra attention so the office presents well from the moment someone walks in."
         },
         {
-          title: "Shared Touchpoints",
+          title: "Breakrooms & Office Kitchens",
           description:
-            "Door handles, light switches, and shared equipment are treated as priority surfaces rather than an afterthought."
+            "Break-room and office-kitchen sanitizing covers shared counters, sinks, tables, microwave and refrigerator exteriors, and trash and recycling removal. These are the highest-use shared spaces in most offices and need the most frequent attention."
         },
         {
-          title: "After-Hours Scheduling",
+          title: "Commercial Restrooms & Restocking",
           description:
-            "Cleaning is scheduled before or after business hours so it never interrupts calls, meetings, or focused work."
+            "Office restroom cleaning includes fixtures, partitions, mirrors, and floors, plus restroom supply restocking of paper products, soap, and liners when you want consumables handled as part of the janitorial program."
+        },
+        {
+          title: "High-Touch Surfaces & Disinfection",
+          description:
+            "Door handles, light switches, elevator buttons, railings, and shared equipment are treated as priority high-touch surfaces and disinfected rather than left as an afterthought."
+        },
+        {
+          title: "Carpets & Hard Floors",
+          description:
+            "Commercial floor care covers carpet vacuuming and spot cleaning, hard-floor sweeping and mopping, and periodic buffing, polishing, or extraction on high-traffic paths, lobbies, and corridors."
+        },
+        {
+          title: "Hallways, Stairwells & Elevators",
+          description:
+            "Shared circulation space is easy to skip and obvious when it is. Hallway and corridor cleaning, stairwell cleaning, and elevator cleaning are written into the scope so common areas stay consistent with the suites."
+        }
+      ],
+      propertyTypes: [
+        {
+          title: "Small & Single-Suite Offices",
+          description:
+            "Small office cleaning for single-suite tenants, satellite branches, and independent practices. No minimum square footage and no oversized package you don't need."
+        },
+        {
+          title: "Large Offices & Corporate Headquarters",
+          description:
+            "Corporate office cleaning for full-floor and multi-floor headquarters, with staffing and scope scaled to departments, amenity spaces, and executive areas."
+        },
+        {
+          title: "Multi-Tenant Office Buildings",
+          description:
+            "Multi-tenant office building cleaning covering both tenant spaces and shared common areas, coordinated through building management or your property manager."
+        },
+        {
+          title: "Coworking & Shared Workspaces",
+          description:
+            "Coworking office cleaning for shared workspace operators, with higher-frequency service on hot desks, phone booths, breakrooms, and shared restrooms."
+        },
+        {
+          title: "Law, Accounting & Insurance Offices",
+          description:
+            "Professional service office cleaning for law offices, accounting and financial offices, and insurance offices where client-facing presentation and discretion both matter."
+        },
+        {
+          title: "Real Estate & Property Management Offices",
+          description:
+            "Real estate office cleaning and property management office cleaning, including showroom and leasing areas that see steady walk-in traffic."
+        },
+        {
+          title: "Technology, Startup & Creative Offices",
+          description:
+            "Technology office cleaning, startup office cleaning, and creative agency office cleaning for open-plan floors with high desk density and heavy breakroom use."
+        },
+        {
+          title: "Administrative, Government & Nonprofit Offices",
+          description:
+            "Administrative office cleaning for government offices, nonprofit offices, and public-facing service counters that need dependable, low-disruption service."
+        },
+        {
+          title: "Call Centers, Sales & Construction Site Offices",
+          description:
+            "Call center cleaning, sales office cleaning, and construction office cleaning where shift schedules, shared headsets and desks, or tracked-in site dirt change the routine."
         }
       ],
       areasIncluded: [
@@ -149,35 +211,224 @@ export const industries: Industry[] = [
         "Trash removal",
         "Entrance glass"
       ],
+      areaGroups: [
+        {
+          title: "Workspaces & Offices",
+          items: [
+            "Workstations & desks",
+            "Cubicles & shared hot desks",
+            "Private & executive offices",
+            "Conference & meeting rooms",
+            "Training rooms",
+            "Copy rooms & mailrooms"
+          ]
+        },
+        {
+          title: "Reception & Common Areas",
+          items: [
+            "Reception & lobby areas",
+            "Waiting areas",
+            "Hallways & shared corridors",
+            "Stairwells & elevators",
+            "Employee lounges",
+            "Entrance & entry-door glass"
+          ]
+        },
+        {
+          title: "Breakrooms, Kitchens & Restrooms",
+          items: [
+            "Breakrooms & kitchenettes",
+            "Office & staff kitchens",
+            "Commercial restroom cleaning",
+            "Restroom supply restocking",
+            "Paper product & soap restocking",
+            "Trash, recycling & waste-bin cleaning"
+          ]
+        },
+        {
+          title: "Surfaces, Floors & Detail Work",
+          items: [
+            "High-touch surface disinfection",
+            "Door handles & light switches",
+            "High dusting & cobweb removal",
+            "Baseboards & window sills",
+            "Carpet vacuuming & spot cleaning",
+            "Hard-floor mopping & buffing",
+            "Interior & partition glass cleaning",
+            "Fingerprint removal on glass"
+          ]
+        }
+      ],
       scheduleNote:
-        "Most offices run on weekly or bi-weekly service; higher-density floors or offices with heavier visitor traffic sometimes move to twice-weekly. The right cadence depends on desk count, foot traffic, and how the space is used day to day, confirmed during your walkthrough.",
-      relatedServiceSlugs: ["commercial-cleaning", "window-glass-cleaning", "carpet-cleaning"],
+        "There is no single right cadence for office cleaning. Most Seattle offices run on weekly or bi-weekly janitorial service; higher-density floors, coworking spaces, and offices with heavy visitor traffic often move to several visits per week, nightly, or daily service. Lower-traffic suites do well on monthly service, and one-time office cleaning is available for turnovers, events, or a first reset before recurring service begins. Flexible schedules are the norm: evening, overnight, weekend, and before-opening visits are all standard, and the frequency is confirmed in writing after your walkthrough rather than locked to a package.",
+      cleaningServiceGroups: [
+        {
+          title: "Recurring Office Cleaning & Janitorial Services",
+          description:
+            "The ongoing janitorial program that keeps your workplace presentable week to week, on whatever frequency your building actually needs, as a contract or month-to-month service provider.",
+          items: [
+            "Daily & nightly janitorial services",
+            "Weekly, bi-weekly & monthly office cleaning",
+            "After-hours, evening & weekend cleaning",
+            "Day porter services for daytime coverage",
+            "Custom janitorial checklists per suite or floor",
+            "Restroom & breakroom supply restocking"
+          ]
+        },
+        {
+          title: "Periodic & Project Cleaning",
+          description:
+            "Deeper resets scheduled between recurring visits, or as a one-time project when the space changes hands or comes out of construction.",
+          items: [
+            "Office deep cleaning & commercial deep cleaning",
+            "Post-construction & renovation office cleanup",
+            "Move-in & move-out office cleaning",
+            "Office disinfection & touchpoint sanitizing",
+            "High dusting, vents & light fixtures",
+            "Seasonal top-to-bottom resets"
+          ]
+        },
+        {
+          title: "Commercial Floor & Carpet Care",
+          description:
+            "Periodic floor maintenance that routine vacuuming and mopping cannot handle on its own, scheduled on a recurring cycle.",
+          items: [
+            "Commercial carpet cleaning & hot-water extraction",
+            "Office carpet spot & traffic-lane cleaning",
+            "Hard-floor scrubbing, mopping & polishing",
+            "Strip and wax services for VCT & tile",
+            "Floor buffing & burnishing",
+            "Concrete & lobby floor cleaning"
+          ]
+        },
+        {
+          title: "Glass, Windows & Exterior",
+          description:
+            "The presentation details clients notice first, handled alongside the interior janitorial scope.",
+          items: [
+            "Interior office window cleaning",
+            "Partition & entry-door glass cleaning",
+            "Reception & lobby glass detailing",
+            "Window sill & track cleaning",
+            "Commercial pressure washing for entryways",
+            "Exterior walkway & entrance upkeep"
+          ]
+        }
+      ],
+      relatedServiceSlugs: [
+        "commercial-cleaning",
+        "commercial-deep-cleaning",
+        "carpet-cleaning",
+        "strip-and-wax",
+        "window-glass-cleaning",
+        "post-construction-renovation-cleanup"
+      ],
       relatedIndustrySlugs: ["property-management", "financial-institutions", "government-public-buildings"],
       faqs: [
         {
+          question: "How much does office cleaning cost in Seattle?",
+          answer:
+            "There is no flat rate, because a 1,200 sq ft suite with one restroom and a 20,000 sq ft floor with six are not the same job. What commercial cleaners charge in Seattle is driven by square footage, number of workstations, restroom count, floor types, and how often you want service. Because pricing scales to your actual scope, recurring service stays affordable for small offices while still covering what a larger building needs. We walk the space, then send a written estimate with the scope and price spelled out. The walkthrough and quote are free and there is no obligation."
+        },
+        {
+          question: "What is included in office cleaning services?",
+          answer:
+            "A standard office cleaning scope covers workstations and desks, private offices, conference and meeting rooms, reception and lobby areas, breakrooms and office kitchens, restrooms, hallways and common areas, trash and recycling removal, high-touch surface disinfection, carpet vacuuming, and hard-floor mopping. Interior glass, high dusting, baseboards, and floor care are added at the frequency your building needs. Your final checklist is confirmed in writing after the walkthrough."
+        },
+        {
+          question: "What is the difference between commercial cleaning and janitorial services?",
+          answer:
+            "In practice the terms overlap, but janitorial services usually mean the recurring, scheduled maintenance work that keeps a building running day to day: restrooms, trash, breakrooms, vacuuming, and restocking. Commercial cleaning is the broader category and includes periodic and project work such as deep cleaning, carpet extraction, strip and wax, post-construction cleanup, and window cleaning. We provide both, and most office accounts combine a recurring janitorial schedule with floor care and deep cleaning on a longer cycle."
+        },
+        {
           question: "Can office cleaning be scheduled entirely after hours?",
           answer:
-            "Yes. Most office accounts are cleaned before opening or after close specifically so cleaning never overlaps with meetings, calls, or focused work."
+            "Yes. Most office accounts are cleaned before opening or after close specifically so cleaning never overlaps with meetings, calls, or focused work. Evening, overnight, and early-morning office cleaning are all standard, and access details such as keys, fobs, alarm codes, and building security procedures are confirmed before the first visit."
+        },
+        {
+          question: "Do you offer weekend office cleaning?",
+          answer:
+            "Yes. Weekend cleaning works well for offices that prefer no crew on site during the work week, and for periodic work like carpet extraction or strip and wax that needs drying time before staff return on Monday."
+        },
+        {
+          question: "How often should an office be professionally cleaned?",
+          answer:
+            "Restrooms and breakrooms in an office with daily staff presence generally need attention at least weekly, and daily or several times per week once foot traffic climbs. Most Seattle offices land on weekly or bi-weekly service for the full scope. Open-plan floors with high desk density, client-facing lobbies, and coworking spaces usually justify more frequent visits. We recommend a cadence after the walkthrough instead of guessing from square footage alone."
+        },
+        {
+          question: "Do you offer daily, weekly, or monthly office cleaning?",
+          answer:
+            "All of them, plus nightly, biweekly, several-visits-per-week, and one-time office cleaning. Frequency is part of the written scope and can be adjusted as your office grows, adds headcount, or changes its in-office days."
+        },
+        {
+          question: "Do commercial cleaners provide their own cleaning supplies and equipment?",
+          answer:
+            "Yes. Our crews arrive with the equipment and cleaning products needed for the agreed scope. If your building requires specific products, has a green-cleaning standard, or wants us to use consumables you already stock, that is confirmed during the walkthrough and written into the scope."
+        },
+        {
+          question: "Do janitorial services include restroom supply restocking?",
+          answer:
+            "Restroom restocking of paper towels, toilet tissue, soap, and liners can be included in your janitorial program. Some offices prefer to supply their own consumables and have us stock them; others want the supplies handled entirely. Either arrangement is confirmed in the written scope."
+        },
+        {
+          question: "Are your commercial cleaners licensed and insured?",
+          answer:
+            "Yes. Cleaning From The Heart LLC is licensed and insured, and the same trained crew returns to your office visit after visit rather than a rotating roster of strangers. Proof of insurance can be provided for your building management or property manager before service begins."
+        },
+        {
+          question: "Do you require a long-term janitorial contract?",
+          answer:
+            "No. Recurring office cleaning contracts are available when your building or property manager needs a fixed term for budgeting, but they are not a requirement to start. Many accounts run as ongoing month-to-month janitorial service that either side can adjust. If you are comparing cleaning vendors or need a facility cleaning contractor added to an approved supplier list, we can provide the documentation your procurement process asks for."
+        },
+        {
+          question: "Can you create a custom office cleaning checklist for our building?",
+          answer:
+            "Yes, and that is the default. Every account gets a written checklist specific to your space rather than a generic package, so nothing gets skipped and you can verify the result after each visit. The checklist can be broken out by floor, suite, or area for larger buildings."
+        },
+        {
+          question: "Do you clean small offices in Seattle?",
+          answer:
+            "Yes. Single-suite offices, satellite branches, and small professional practices are a regular part of our work. Scope and pricing scale down to match, so a small office is not paying for a program built for a corporate floor."
+        },
+        {
+          question: "Do you handle multi-floor or multi-tenant office buildings?",
+          answer:
+            "Yes, from single-suite offices to multi-floor and multi-tenant commercial buildings. Scope and staffing are adjusted to match size and layout, and common areas can be scoped separately from tenant spaces when building management and tenants are billed differently."
+        },
+        {
+          question: "Can office cleaners work around employees who are still in the building?",
+          answer:
+            "Yes. Some offices prefer daytime or day porter coverage, where a crew member handles restrooms, breakrooms, and common areas during business hours. Work is sequenced to stay out of the way, and noisy tasks like vacuuming and floor care are timed around meetings and quiet periods."
         },
         {
           question: "Do you clean individual workstations and desks?",
           answer:
-            "Desk and workstation surfaces are wiped as part of routine service. Personal items and paperwork are left in place; we clean around what's already on the desk."
+            "Desk and workstation surfaces are wiped as part of routine service. Personal items and paperwork are left in place; we clean around what's already on the desk. If your team clears desks on a set day, we can align the deeper wipe-down with that schedule."
         },
         {
           question: "What if our conference rooms are booked back-to-back?",
           answer:
-            "We coordinate timing with your office manager so conference rooms are reset between the cleaning visit and your first meeting of the day."
+            "We coordinate timing with your office manager so conference rooms are reset between the cleaning visit and your first meeting of the day. For rooms that turn over constantly, a day porter visit mid-day is usually the better fit than trying to work around the calendar."
         },
         {
-          question: "Do you handle multi-floor or multi-suite office buildings?",
+          question: "Do you clean office carpets and hard floors?",
           answer:
-            "Yes, from single-suite offices to multi-floor buildings. Scope and staffing are adjusted to match the size and layout of your space."
+            "Yes. Routine visits include carpet vacuuming, spot cleaning, and hard-floor sweeping and mopping. Deeper commercial floor care such as hot-water carpet extraction, floor scrubbing, buffing, polishing, and strip and wax for VCT and tile is scheduled on a periodic cycle, usually after hours or on weekends so floors are dry before your team returns."
         },
         {
-          question: "How is pricing determined for office cleaning?",
+          question: "Do you offer office deep cleaning?",
           answer:
-            "Pricing depends on square footage, number of workstations, restroom count, and how often you want service. We provide a written quote after a walkthrough."
+            "Yes. Commercial deep cleaning goes past the recurring checklist into high dusting, vents and light fixtures, baseboards, interior glass, appliance interiors, and detailed restroom and breakroom work. Offices typically schedule it quarterly or semi-annually alongside their regular janitorial service, or as a one-time reset before recurring service starts."
+        },
+        {
+          question: "What areas around Seattle do you serve?",
+          answer:
+            "We provide office cleaning and commercial janitorial services across Seattle, WA, including downtown Seattle, and throughout the greater Seattle and King County area: Bellevue, Renton, Kent, Tukwila, Kirkland, Redmond, Shoreline, Burien, SeaTac, Mercer Island, Federal Way, Bothell, Everett, and Tacoma. If your office is nearby but not listed, call and we'll confirm coverage."
+        },
+        {
+          question: "How do I get an office cleaning quote or estimate?",
+          answer:
+            "Request a free quote through the form or call (206) 850-8484. We schedule a walkthrough of your office, confirm scope, frequency, and access, then send a written, no-obligation estimate. Most quotes go out within a day or two of the walkthrough."
         }
       ]
     }
@@ -579,23 +830,31 @@ export const industries: Industry[] = [
       "Classrooms, administrative offices, hallways, and restrooms all follow the rhythm of the school day. We clean campuses before or after instructional hours, with attention to high-touch surfaces and shared spaces that see heavy daily use from students and staff alike."
   },
   {
+    // NOTE: this industry is rendered by a dedicated route at
+    // app/industries/places-of-worship/page.tsx, which takes precedence over
+    // the generic /industries/[slug] template (same pattern as the dedicated
+    // service pages). The URL is unchanged. The fields below still drive the
+    // nav, the /industries-we-serve hub grid, the commercial-cleaning
+    // carousel, related-industry cards, and the sitemap; the `page` object is
+    // kept as a consistent fallback for the shared template but is not what
+    // renders at this URL — edit the dedicated page for on-page content.
     slug: "places-of-worship",
-    name: "Places of Worship",
+    name: "Churches & Places of Worship",
     navGroup: "Education & Community",
     iconName: "Church",
     hasPage: true,
     href: "/industries/places-of-worship",
     carouselDescription:
-      "Worship spaces, seating areas, and community rooms see different traffic patterns depending on service times and events. Cleaning is scheduled around your congregation's calendar, not a fixed weekday routine.",
-    carouselLinkLabel: "Explore Cleaning for Places of Worship",
+      "Church cleaning for sanctuaries, fellowship halls, nurseries, classrooms, and restrooms across the Seattle area. Cleaning is scheduled around your service times and event calendar, not a fixed weekday routine.",
+    carouselLinkLabel: "Explore Church & Places of Worship Cleaning",
     hubDescription:
-      "Worship spaces, seating areas, classrooms, kitchens, and restrooms are cleaned around your service times and event calendar rather than a fixed weekday routine, with added visits available around larger community gatherings.",
+      "Church cleaning services for churches, mosques, synagogues, temples, and chapels. Sanctuaries, fellowship halls, nurseries, classrooms, kitchens, and restrooms are cleaned around your service times and event calendar, with added visits available around weddings, funerals, and larger community gatherings.",
     page: {
-      metaTitle: "Cleaning Services for Places of Worship in Seattle | Cleaning From The Heart LLC",
+      metaTitle: "Church Cleaning Services Seattle | Places of Worship",
       metaDescription:
-        "Cleaning for Seattle-area churches, mosques, synagogues, and worship centers — scheduled around service times and community events, not a fixed weekday routine.",
-      heroLabel: "PLACES OF WORSHIP CLEANING",
-      h1: "Commercial Cleaning for Places of Worship in Seattle",
+        "Professional church cleaning services in Seattle for sanctuaries, fellowship halls, nurseries, classrooms, offices and restrooms. Request a facility walkthrough.",
+      heroLabel: "CHURCH & RELIGIOUS FACILITY CLEANING",
+      h1: "Church Cleaning Services for Places of Worship in Seattle",
       heroIntro:
         "Places of worship have a cleaning rhythm built around service times, weekly programs, and community events rather than a standard business-hours schedule. We clean worship spaces, seating areas, community and classroom rooms, kitchens, entrances, and restrooms on a schedule that respects your calendar. Whether your building sees one weekly service or daily programming, scope and timing are confirmed with your facilities coordinator before service begins. Request a walkthrough to discuss your congregation's schedule.",
       directAnswer:
