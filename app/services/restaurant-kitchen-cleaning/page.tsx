@@ -512,10 +512,10 @@ const relatedServices = [
     ctaLabel: "View pressure washing"
   },
   {
-    title: "Window & Glass Cleaning",
+    title: "Commercial Window Cleaning",
     description: "Interior and exterior glass for storefronts, entry doors, and dining-room windows.",
-    href: "/services/window-glass-cleaning",
-    ctaLabel: "Explore window cleaning"
+    href: "/services/commercial-window-cleaning",
+    ctaLabel: "Explore commercial window cleaning"
   }
 ];
 
@@ -621,7 +621,7 @@ export default function RestaurantKitchenCleaningPage() {
             />
           </div>
 
-          {/* Problem panel — sits under the hero split so neither column gets crowded. */}
+          {/* Problem panel, sits under the hero split so neither column gets crowded. */}
           <div className="card-dark mt-10">
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-10">
               <div>
@@ -1080,7 +1080,7 @@ export default function RestaurantKitchenCleaningPage() {
             height={933}
             sizes="(max-width: 1023px) 100vw, 40vw"
             aspect="aspect-[3/2]"
-            caption="Reference image showing back-of-house conditions — dish, storage, and supporting areas are written into the scope when you want them covered."
+            caption="Reference image showing back-of-house conditions, dish, storage, and supporting areas are written into the scope when you want them covered."
             imagePosition="left"
             columns="lg:grid-cols-[0.85fr_1fr]"
           >

@@ -5,12 +5,16 @@ import type { LucideIcon } from "lucide-react";
 import {
   AppWindow,
   Armchair,
+  Blinds,
   CalendarCheck,
   CheckCircle2,
   ClipboardList,
   Droplets,
+  Frame,
+  Home,
   ShieldCheck,
   Sparkles,
+  Store,
   UtensilsCrossed,
   Utensils,
   ShowerHead,
@@ -32,11 +36,15 @@ import {
 const iconMap: Record<string, LucideIcon> = {
   AppWindow,
   Armchair,
+  Blinds,
   CalendarCheck,
   ClipboardList,
   Droplets,
+  Frame,
+  Home,
   ShieldCheck,
   Sparkles,
+  Store,
   UtensilsCrossed,
   Utensils,
   ShowerHead,
@@ -60,7 +68,7 @@ export interface GroupedScopeItem {
   tasks: string[];
 }
 
-// Generic room/area accordion driven entirely by props — used by the
+// Generic room/area accordion driven entirely by props, used by the
 // residential and commercial deep cleaning pages so each can pass its own
 // grouped scope data without duplicating the accordion markup.
 export function GroupedScopeAccordion({ items }: { items: GroupedScopeItem[] }) {

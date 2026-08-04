@@ -39,7 +39,7 @@ export function WhyChooseUsSection() {
           </div>
         </Reveal>
 
-        {/* Editorial list — replaces 6-card grid */}
+        {/* Editorial list, replaces 6-card grid */}
         <div className="mt-12 divide-y divide-white/10">
           {whyChooseUs.map((item, index) => {
             const Icon = iconMap[item.iconName] ?? ShieldCheck;

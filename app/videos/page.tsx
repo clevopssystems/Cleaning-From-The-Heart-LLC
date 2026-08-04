@@ -5,7 +5,7 @@ import { VideoGallerySection } from "@/components/sections/home/VideoGallerySect
 export const metadata: Metadata = {
   title: "Video Gallery | Watch Our Cleaning Team in Action",
   description:
-    "Watch real on-site footage from our Seattle commercial cleaning jobs — offices, carpet cleaning, strip & wax, and more.",
+    "Watch real on-site footage from our Seattle commercial cleaning jobs: offices, carpet cleaning, strip & wax, and more.",
   alternates: {
     canonical: "/videos",
   },
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default function VideosPage() {
   return (
     <>
-      {/* Page hero — dark, consistent with site VideoSection */}
+      {/* Page hero, dark, consistent with site VideoSection */}
       <section className="relative -mt-16 overflow-hidden bg-ink text-white">
         {/* Decorative layers */}
         <div className="absolute inset-0 opacity-[0.05] surface-grid" aria-hidden />

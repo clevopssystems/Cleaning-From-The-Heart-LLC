@@ -97,7 +97,7 @@ export function Header() {
           </Link>
         </div>
 
-        {/* Mobile actions — one-tap call + menu */}
+        {/* Mobile actions, one-tap call + menu */}
         <div className="flex items-center gap-1 md:hidden">
           <Link
             href={siteConfig.phoneHref}
@@ -124,7 +124,7 @@ export function Header() {
         </div>
       </Container>
 
-      {/* Mobile dropdown — always solid */}
+      {/* Mobile dropdown, always solid */}
       {open && (
         <div className="border-t border-brand-100 bg-white md:hidden">
           <Container className="flex flex-col gap-1 py-3">

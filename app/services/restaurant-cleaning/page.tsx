@@ -504,10 +504,10 @@ const relatedServices = [
     ctaLabel: "Explore carpet cleaning"
   },
   {
-    title: "Window & Glass Cleaning",
+    title: "Commercial Window Cleaning",
     description: "Storefront glass, entry doors, and dining-room windows, inside and out.",
-    href: "/services/window-glass-cleaning",
-    ctaLabel: "View window & glass cleaning"
+    href: "/services/commercial-window-cleaning",
+    ctaLabel: "View commercial window cleaning"
   },
   {
     title: "Pressure Washing",
@@ -619,7 +619,7 @@ export default function RestaurantCleaningPage() {
             />
           </div>
 
-          {/* Problem panel — sits under the hero split so neither column gets crowded. */}
+          {/* Problem panel, sits under the hero split so neither column gets crowded. */}
           <div className="card-dark mt-10">
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-10">
               <div>
@@ -1009,7 +1009,7 @@ export default function RestaurantCleaningPage() {
             height={867}
             sizes="(max-width: 1023px) 100vw, 40vw"
             aspect="aspect-[3/2]"
-            caption="Reference image showing the kind of room this service is built around — dining areas, counters, and floors each carry their own priority."
+            caption="Reference image showing the kind of room this service is built around, dining areas, counters, and floors each carry their own priority."
             imagePosition="left"
             columns="lg:grid-cols-[0.85fr_1fr]"
           >

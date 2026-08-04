@@ -53,7 +53,7 @@ export function TeamSection() {
                 <div className="relative aspect-[3/4] w-full overflow-hidden bg-surface">
                   <Image
                     src="/about/owner/owner.jpg"
-                    alt="Cleaning From The Heart LLC owner — professional cleaning service in Seattle, WA"
+                    alt="Cleaning From The Heart LLC owner, professional cleaning service in Seattle, WA"
                     fill
                     className="object-cover object-top"
                     sizes="(max-width: 768px) 90vw, 40vw"

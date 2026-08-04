@@ -40,7 +40,7 @@ const SITE_URL = "https://www.cleaningfromtheheartllc.com";
 const PAGE_PATH = "/industries/places-of-worship";
 
 // This dedicated route replaces the generic /industries/[slug] template render
-// for this industry. The URL is unchanged so no redirect is needed — the
+// for this industry. The URL is unchanged so no redirect is needed, the
 // `places-of-worship` entry in lib/industries.ts still supplies the nav,
 // hub-grid, carousel, and sitemap data for it.
 const PAGE_TITLE = "Church Cleaning Services Seattle | Places of Worship";
@@ -628,10 +628,10 @@ const relatedServices = [
     ctaLabel: "Learn about hard-floor care"
   },
   {
-    title: "Window & Glass Cleaning",
+    title: "Commercial Window Cleaning",
     description: "Interior and exterior window service for worship buildings, entries, and offices.",
-    href: "/services/window-glass-cleaning",
-    ctaLabel: "See window and glass cleaning"
+    href: "/services/commercial-window-cleaning",
+    ctaLabel: "See commercial window cleaning"
   },
   {
     title: "Commercial Deep Cleaning",

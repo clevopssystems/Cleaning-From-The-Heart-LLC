@@ -4,18 +4,18 @@ import { cn } from "@/lib/utils";
 export interface ServiceImagePanelProps {
   src: string;
   alt: string;
-  /** Intrinsic width of the file on disk — used to reserve layout space. Ignored when `aspect` is "fill". */
+  /** Intrinsic width of the file on disk, used to reserve layout space. Ignored when `aspect` is "fill". */
   width: number;
-  /** Intrinsic height of the file on disk — used to reserve layout space. Ignored when `aspect` is "fill". */
+  /** Intrinsic height of the file on disk, used to reserve layout space. Ignored when `aspect` is "fill". */
   height: number;
   /** Responsive `sizes` hint. Always pass one that matches the real column width. */
   sizes: string;
   /**
    * Tailwind aspect-ratio class for the rendered crop, e.g. "aspect-[4/3]".
-   * Pass "none" to render the file at its own ratio with nothing cropped away —
+   * Pass "none" to render the file at its own ratio with nothing cropped away ,
    * use it for before/after composites, where a crop would slice a panel in half.
    * Pass "fill" to let the photograph take the full height of whatever row it
-   * sits in — use it beside a text column so the two end level. The caller owns
+   * sits in, use it beside a text column so the two end level. The caller owns
    * the mobile height in that case, since a stacked column has none to inherit:
    * pass something like "min-h-[22rem] lg:min-h-0" as `className`.
    */

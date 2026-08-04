@@ -10,7 +10,7 @@ interface RevealProps {
 
 /**
  * Fade-in + slide-up animation on scroll.
- * Uses native IntersectionObserver instead of framer-motion — identical
+ * Uses native IntersectionObserver instead of framer-motion, identical
  * visual result with zero third-party JS overhead.
  */
 export function Reveal({ children, delay = 0, className }: RevealProps) {

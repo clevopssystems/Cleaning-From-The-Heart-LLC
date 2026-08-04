@@ -10,9 +10,9 @@ export function HeroSection() {
       {/*
         BACKGROUND VIDEO
         Files needed in /public/home/hero/:
-          hero-bg.mp4      — H.264, 1920×1080, no audio, target < 2 MB
-          hero-bg.webm     — VP9/AV1 encode of the same clip (~40% smaller than MP4)
-          hero-bg-poster.jpg — first frame, ~30 KB JPEG
+          hero-bg.mp4     , H.264, 1920×1080, no audio, target < 2 MB
+          hero-bg.webm    , VP9/AV1 encode of the same clip (~40% smaller than MP4)
+          hero-bg-poster.jpg, first frame, ~30 KB JPEG
       */}
       <video
         autoPlay
@@ -55,7 +55,7 @@ export function HeroSection() {
               for homes, offices, schools, property managers, and commercial spaces across the Seattle area.
             </p>
 
-            {/* Proof points — plain, no bullet markers */}
+            {/* Proof points, plain, no bullet markers */}
             <p className="mt-6 text-sm text-white/70">
               30+ years of cleaning experience · Commercial &amp; residential · Seattle-area service
             </p>

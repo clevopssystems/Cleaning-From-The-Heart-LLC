@@ -6,7 +6,7 @@ interface ServiceEditorialSplitProps extends Omit<ServiceImagePanelProps, "class
   imagePosition?: "left" | "right";
   /** Grid template for the two columns at `lg` and up. */
   columns?: string;
-  /** Vertical alignment of the two columns. "stretch" ends them level — pair it with `aspect="fill"`. */
+  /** Vertical alignment of the two columns. "stretch" ends them level, pair it with `aspect="fill"`. */
   align?: "center" | "start" | "stretch";
   /** The text column: heading, copy, lists, CTAs. */
   children: React.ReactNode;

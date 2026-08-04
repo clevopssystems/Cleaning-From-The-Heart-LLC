@@ -6,10 +6,10 @@ import { Reveal } from "@/components/shared/Reveal";
 import { workGalleryItems } from "@/lib/site";
 
 const altTexts = [
-  "Cleaning From The Heart LLC — professional cleaning result in Seattle, WA",
+  "Cleaning From The Heart LLC, professional cleaning result in Seattle, WA",
   "Commercial floor cleaning completed by Cleaning From The Heart LLC near Seattle",
   "Residential cleaning work by Cleaning From The Heart LLC in the Seattle area",
-  "Cleaning From The Heart LLC — office and commercial space cleaning in Seattle",
+  "Cleaning From The Heart LLC, office and commercial space cleaning in Seattle",
   "Move-out cleaning service completed by Cleaning From The Heart LLC near Seattle",
   "Post-construction and deep cleaning service by Cleaning From The Heart LLC in Seattle"
 ];
@@ -43,7 +43,7 @@ export function WorkInActionSection() {
           </div>
         </Reveal>
 
-        {/* Uniform 3-column grid — no complex layout, no whitespace gaps */}
+        {/* Uniform 3-column grid, no complex layout, no whitespace gaps */}
         <div className="mt-8 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-3">
           {workGalleryItems.map((item, i) => (
             <Reveal key={item.image} delay={i * 0.06}>

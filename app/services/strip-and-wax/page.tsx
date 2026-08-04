@@ -315,7 +315,7 @@ const floorTypeExclusions = [
 ];
 
 // ─── Facilities ───────────────────────────────────────────────────────────
-// `href`/`linkLabel` are optional — set them where an existing page covers that
+// `href`/`linkLabel` are optional, set them where an existing page covers that
 // facility type in depth, so the card can carry a contextual internal link.
 const facilityTypes: {
   Icon: LucideIcon;
@@ -618,10 +618,10 @@ const relatedServices = [
     ctaLabel: "See post-construction cleanup"
   },
   {
-    title: "Window & Glass Cleaning",
+    title: "Commercial Window Cleaning",
     description: "Entry glass and interior partitions, commonly booked with a floor project on the same visit.",
-    href: "/services/window-glass-cleaning",
-    ctaLabel: "View window & glass cleaning"
+    href: "/services/commercial-window-cleaning",
+    ctaLabel: "View commercial window cleaning"
   }
 ];
 
@@ -772,7 +772,7 @@ export default function StripAndWaxPage() {
             </div>
           </div>
 
-          {/* Problem panel — sits under the hero split so neither column gets crowded. */}
+          {/* Problem panel, sits under the hero split so neither column gets crowded. */}
           <div className="card-dark mt-10">
             <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {glanceItems.map((item) => (

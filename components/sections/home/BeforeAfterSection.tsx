@@ -14,7 +14,7 @@ export function BeforeAfterSection() {
         <SectionHeading
           eyebrow="Before & After"
           title="The Difference Is Visible"
-          description="Real properties we service across Seattle. Every job follows the same standard — consistent, thorough, and verifiable."
+          description="Real properties we service across Seattle. Every job follows the same consistent, thorough, and verifiable standard."
         />
       </Container>
 

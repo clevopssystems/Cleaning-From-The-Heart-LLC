@@ -36,7 +36,7 @@ export function GuaranteeSection() {
       <div className="absolute -left-40 top-1/2 h-[30rem] w-[30rem] -translate-y-1/2 rounded-full bg-brand-600/20 blur-3xl" aria-hidden />
       <div className="absolute -right-24 bottom-0 h-64 w-64 rounded-full bg-accent/8 blur-3xl" aria-hidden />
 
-      {/* Large watermark — purely decorative, sets the tone */}
+      {/* Large watermark, purely decorative, sets the tone */}
       <div
         className="pointer-events-none absolute inset-0 flex select-none items-center justify-end pr-6 md:pr-16"
         aria-hidden
@@ -49,7 +49,7 @@ export function GuaranteeSection() {
       <Container className="relative">
         <div className="grid items-start gap-16 lg:grid-cols-[1fr_1.15fr] lg:gap-20">
 
-          {/* Left — large number + statement */}
+          {/* Left, large number + statement */}
           <Reveal>
             <div>
               <span className="eyebrow-light">Our Promise to You</span>
@@ -86,7 +86,7 @@ export function GuaranteeSection() {
             </div>
           </Reveal>
 
-          {/* Right — editorial divided list, no cards */}
+          {/* Right, editorial divided list, no cards */}
           <div className="divide-y divide-white/10">
             {guaranteePoints.map((point, index) => (
               <Reveal key={point.title} delay={index * 0.09}>

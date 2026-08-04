@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/services/hero/hero-cleaning-team.png",
-        alt: "Commercial cleaning in Seattle — Cleaning From The Heart LLC"
+        alt: "Commercial cleaning in Seattle, Cleaning From The Heart LLC"
       }
     ]
   },
@@ -122,7 +122,7 @@ const trustByTypes = [
   { label: "Healthcare Facilities", Icon: HeartPulse }
 ];
 
-// Duplicated for a seamless CSS marquee loop — both halves must stay identical and in order.
+// Duplicated for a seamless CSS marquee loop, both halves must stay identical and in order.
 const marqueeTrustByTypes = [...trustByTypes, ...trustByTypes];
 
 // ─── Commercial Cleaning Solutions (grouped services) ─────────────────────
@@ -204,11 +204,11 @@ const floorAndSurfaceGroup: ServiceCardData[] = [
   },
   {
     Icon: Sparkles,
-    title: "Window & Glass Cleaning",
+    title: "Commercial Window Cleaning",
     description:
-      "Streak-free interior glass cleaning for storefronts, entry doors, partitions, and office windows that improves natural light and curb appeal.",
-    href: "/services/window-glass-cleaning",
-    ctaLabel: "Explore Window Cleaning"
+      "Interior and exterior glass cleaning for storefronts, entry doors, partitions, and office windows that improves natural light and curb appeal.",
+    href: "/services/commercial-window-cleaning",
+    ctaLabel: "Explore Commercial Window Cleaning"
   }
 ];
 
@@ -271,7 +271,7 @@ const specialtyGroup: ServiceCardData[] = [
   }
 ];
 
-// Industries We Serve section now sources its data from lib/industries.ts —
+// Industries We Serve section now sources its data from lib/industries.ts ,
 // the same config also powers /industries, the nav dropdown, and each
 // /industries/[slug] page. See that file for the full industry list.
 
@@ -837,7 +837,7 @@ export default function CommercialCleaningLandingPage() {
       </div>
 
       {/* ─────────────────────────────────────────────────────────────────────
-          3. WHAT'S INCLUDED — cleaning scope by facility area
+          3. WHAT'S INCLUDED, cleaning scope by facility area
           ───────────────────────────────────────────────────────────────────── */}
       <section className="section-shell bg-white scroll-mt-24" id="included">
         <Container>
@@ -891,7 +891,7 @@ export default function CommercialCleaningLandingPage() {
       </section>
 
       {/* ─────────────────────────────────────────────────────────────────────
-          5. COMMERCIAL CLEANING SOLUTIONS — grouped services
+          5. COMMERCIAL CLEANING SOLUTIONS, grouped services
           ───────────────────────────────────────────────────────────────────── */}
       <section className="section-shell bg-white scroll-mt-24" id="services">
         <Container>

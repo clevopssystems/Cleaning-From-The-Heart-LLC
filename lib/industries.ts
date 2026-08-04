@@ -1,13 +1,13 @@
 import type { ServiceSlug } from "@/lib/site";
 
-// ─── INDUSTRIES WE SERVE — central configuration ───────────────────────────
+// ─── INDUSTRIES WE SERVE, central configuration ───────────────────────────
 // Single source of truth for:
 //   - The "Industries We Serve" nav dropdown (Header.tsx)
 //   - The /industries hub page (directory grid)
 //   - The compact carousel on /services/commercial-cleaning
 //   - Individual /industries/[slug] pages
 //
-// Schools & Educational Facilities intentionally has hasPage: false — a
+// Schools & Educational Facilities intentionally has hasPage: false, a
 // dedicated /services/school-facility-cleaning page already covers this
 // topic in lib/site.ts. Building a second page at /industries/schools-...
 // would duplicate that page's intent, so every card/link for this industry
@@ -48,13 +48,13 @@ export interface IndustryPageContent {
   heroIntro: string;
   directAnswer: string;
   priorities: IndustryPriority[];
-  /** Optional — property/facility types this page's cleaning plans support. Only shown when provided. */
+  /** Optional, property/facility types this page's cleaning plans support. Only shown when provided. */
   propertyTypes?: IndustryPriority[];
   areasIncluded: string[];
-  /** Optional — categorized version of areasIncluded (e.g. interior common areas vs. exterior). Renders instead of the flat areasIncluded grid when provided. */
+  /** Optional, categorized version of areasIncluded (e.g. interior common areas vs. exterior). Renders instead of the flat areasIncluded grid when provided. */
   areaGroups?: IndustryAreaGroup[];
   scheduleNote: string;
-  /** Optional — recurring vs. periodic/project cleaning services described for this industry. */
+  /** Optional, recurring vs. periodic/project cleaning services described for this industry. */
   cleaningServiceGroups?: IndustryServiceGroup[];
   relatedServiceSlugs: ServiceSlug[];
   relatedIndustrySlugs: string[];
@@ -67,12 +67,12 @@ export interface Industry {
   navGroup: IndustryNavGroup;
   iconName: string;
   hasPage: boolean;
-  /** Resolved link target — an /industries/{slug} route, or an existing /services/{slug} page when hasPage is false. */
+  /** Resolved link target, an /industries/{slug} route, or an existing /services/{slug} page when hasPage is false. */
   href: string;
-  /** ~25-40 words — used on the commercial-cleaning page carousel card. */
+  /** ~25-40 words, used on the commercial-cleaning page carousel card. */
   carouselDescription: string;
   carouselLinkLabel: string;
-  /** ~35-60 words — used on the /industries hub directory grid card. */
+  /** ~35-60 words, used on the /industries hub directory grid card. */
   hubDescription: string;
   page?: IndustryPageContent;
 }
@@ -320,7 +320,7 @@ export const industries: Industry[] = [
         "commercial-deep-cleaning",
         "carpet-cleaning",
         "strip-and-wax",
-        "window-glass-cleaning",
+        "commercial-window-cleaning",
         "post-construction-renovation-cleanup"
       ],
       relatedIndustrySlugs: ["property-management", "financial-institutions", "government-public-buildings"],
@@ -448,7 +448,7 @@ export const industries: Industry[] = [
     page: {
       metaTitle: "Commercial Cleaning for Property Managers in Seattle | Cleaning From The Heart LLC",
       metaDescription:
-        "Commercial cleaning for Seattle property managers and building owners — common areas, offices, restrooms, and unit turnovers on a customized recurring schedule. Request a walkthrough.",
+        "Commercial cleaning for Seattle property managers and building owners, common areas, offices, restrooms, and unit turnovers on a customized recurring schedule. Request a walkthrough.",
       heroLabel: "PROPERTY MANAGEMENT CLEANING",
       h1: "Commercial Cleaning for Property Managers in Seattle",
       heroIntro:
@@ -590,7 +590,7 @@ export const industries: Industry[] = [
           ]
         }
       ],
-      relatedServiceSlugs: ["commercial-cleaning", "commercial-deep-cleaning", "move-in-move-out-cleaning", "pressure-washing"],
+      relatedServiceSlugs: ["commercial-cleaning", "commercial-deep-cleaning", "commercial-window-cleaning", "move-in-move-out-cleaning", "pressure-washing"],
       relatedIndustrySlugs: ["offices-commercial-buildings", "retail-stores", "hospitality-properties"],
       faqs: [
         {
@@ -651,7 +651,7 @@ export const industries: Industry[] = [
     page: {
       metaTitle: "Financial Institution Cleaning in Seattle | Cleaning From The Heart LLC",
       metaDescription:
-        "Commercial cleaning for Seattle banks and credit unions — customer areas, offices, and interior glass cleaned discreetly around your branch hours and security procedures.",
+        "Commercial cleaning for Seattle banks and credit unions, customer areas, offices, and interior glass cleaned discreetly around your branch hours and security procedures.",
       heroLabel: "FINANCIAL INSTITUTION CLEANING",
       h1: "Commercial Cleaning for Financial Institutions in Seattle",
       heroIntro:
@@ -700,7 +700,7 @@ export const industries: Industry[] = [
       ],
       scheduleNote:
         "Branch locations typically run on weekly service scheduled outside customer hours. Access and escort requirements for controlled areas are confirmed during the initial walkthrough and built into every visit.",
-      relatedServiceSlugs: ["commercial-cleaning", "window-glass-cleaning"],
+      relatedServiceSlugs: ["commercial-cleaning", "commercial-window-cleaning"],
       relatedIndustrySlugs: ["offices-commercial-buildings", "government-public-buildings", "retail-stores"],
       faqs: [
         {
@@ -744,7 +744,7 @@ export const industries: Industry[] = [
     page: {
       metaTitle: "Government & Public Building Cleaning in Seattle | Cleaning From The Heart LLC",
       metaDescription:
-        "Commercial cleaning for Seattle government and public buildings — lobbies, offices, and meeting rooms cleaned on a dependable schedule that respects public hours and access rules.",
+        "Commercial cleaning for Seattle government and public buildings, lobbies, offices, and meeting rooms cleaned on a dependable schedule that respects public hours and access rules.",
       heroLabel: "GOVERNMENT & PUBLIC BUILDING CLEANING",
       h1: "Commercial Cleaning for Government & Public Buildings in Seattle",
       heroIntro:
@@ -789,7 +789,7 @@ export const industries: Industry[] = [
       ],
       scheduleNote:
         "Most public buildings run on a weekly schedule, with additional attention around public meetings or high-visitor days. Access windows and security sign-in procedures are confirmed during the walkthrough.",
-      relatedServiceSlugs: ["commercial-cleaning", "window-glass-cleaning", "pressure-washing"],
+      relatedServiceSlugs: ["commercial-cleaning", "commercial-window-cleaning", "pressure-washing"],
       relatedIndustrySlugs: ["offices-commercial-buildings", "financial-institutions", "places-of-worship"],
       faqs: [
         {
@@ -837,7 +837,7 @@ export const industries: Industry[] = [
     // nav, the /industries-we-serve hub grid, the commercial-cleaning
     // carousel, related-industry cards, and the sitemap; the `page` object is
     // kept as a consistent fallback for the shared template but is not what
-    // renders at this URL — edit the dedicated page for on-page content.
+    // renders at this URL, edit the dedicated page for on-page content.
     slug: "places-of-worship",
     name: "Churches & Places of Worship",
     navGroup: "Education & Community",
@@ -898,7 +898,7 @@ export const industries: Industry[] = [
       ],
       scheduleNote:
         "Scheduling varies more than most facility types since it follows your service times and event calendar. Weekly cleaning ahead of your main service is common, with added visits around larger events.",
-      relatedServiceSlugs: ["commercial-cleaning", "window-glass-cleaning"],
+      relatedServiceSlugs: ["commercial-cleaning", "commercial-window-cleaning"],
       relatedIndustrySlugs: ["government-public-buildings", "schools-educational-facilities", "property-management"],
       faqs: [
         {
@@ -940,7 +940,7 @@ export const industries: Industry[] = [
     page: {
       metaTitle: "Retail Store Cleaning Services in Seattle | Cleaning From The Heart LLC",
       metaDescription:
-        "Commercial cleaning for Seattle retail stores — sales floors, fitting rooms, and checkout areas cleaned before opening or overnight so your store is ready at open.",
+        "Commercial cleaning for Seattle retail stores, sales floors, fitting rooms, and checkout areas cleaned before opening or overnight so your store is ready at open.",
       heroLabel: "RETAIL STORE CLEANING",
       h1: "Commercial Cleaning for Retail Stores in Seattle",
       heroIntro:
@@ -988,7 +988,7 @@ export const industries: Industry[] = [
       ],
       scheduleNote:
         "Retail cleaning is almost always scheduled before opening or overnight after close. Frequency depends on foot traffic and store size, from a few nights a week to daily service.",
-      relatedServiceSlugs: ["commercial-cleaning", "window-glass-cleaning", "strip-and-wax"],
+      relatedServiceSlugs: ["commercial-cleaning", "commercial-window-cleaning", "strip-and-wax"],
       relatedIndustrySlugs: ["auto-dealerships", "hospitality-properties", "property-management"],
       faqs: [
         {
@@ -1033,7 +1033,7 @@ export const industries: Industry[] = [
     page: {
       metaTitle: "Auto Dealership Cleaning Services in Seattle | Cleaning From The Heart LLC",
       metaDescription:
-        "Commercial cleaning for Seattle auto dealerships — showroom floors, interior glass, and service waiting rooms held to a consistent, high-visibility standard.",
+        "Commercial cleaning for Seattle auto dealerships, showroom floors, interior glass, and service waiting rooms held to a consistent, high-visibility standard.",
       heroLabel: "AUTO DEALERSHIP CLEANING",
       h1: "Commercial Cleaning for Auto Dealerships in Seattle",
       heroIntro:
@@ -1079,7 +1079,7 @@ export const industries: Industry[] = [
       ],
       scheduleNote:
         "Showroom floors are often cleaned daily or several times a week given constant customer traffic, while offices and back areas may run on a weekly schedule. Exact cadence is confirmed during your walkthrough.",
-      relatedServiceSlugs: ["commercial-cleaning", "window-glass-cleaning", "strip-and-wax"],
+      relatedServiceSlugs: ["commercial-cleaning", "commercial-window-cleaning", "strip-and-wax"],
       relatedIndustrySlugs: ["retail-stores", "hospitality-properties", "warehouses-industrial-facilities"],
       faqs: [
         {
@@ -1121,7 +1121,7 @@ export const industries: Industry[] = [
     page: {
       metaTitle: "Hospitality Property Cleaning in Seattle | Cleaning From The Heart LLC",
       metaDescription:
-        "Commercial cleaning for Seattle hospitality properties — lobbies, corridors, and guest-facing common areas cleaned on a schedule built around occupancy and events.",
+        "Commercial cleaning for Seattle hospitality properties, lobbies, corridors, and guest-facing common areas cleaned on a schedule built around occupancy and events.",
       heroLabel: "HOSPITALITY PROPERTY CLEANING",
       h1: "Commercial Cleaning for Hospitality Properties in Seattle",
       heroIntro:
@@ -1168,7 +1168,7 @@ export const industries: Industry[] = [
       ],
       scheduleNote:
         "Properties with steady occupancy often need daily attention to lobbies and public restrooms, with event spaces cleaned around your booking calendar. Frequency is confirmed based on occupancy and event volume.",
-      relatedServiceSlugs: ["commercial-cleaning", "window-glass-cleaning", "carpet-cleaning"],
+      relatedServiceSlugs: ["commercial-cleaning", "commercial-window-cleaning", "carpet-cleaning"],
       relatedIndustrySlugs: ["retail-stores", "fitness-centers", "property-management"],
       faqs: [
         {
@@ -1223,7 +1223,7 @@ export const industries: Industry[] = [
     page: {
       metaTitle: "Fitness Center Cleaning Services in Seattle | Cleaning From The Heart LLC",
       metaDescription:
-        "Commercial cleaning for Seattle fitness centers and gyms — equipment touchpoints, locker rooms, and restrooms cleaned around your peak operating hours.",
+        "Commercial cleaning for Seattle fitness centers and gyms, equipment touchpoints, locker rooms, and restrooms cleaned around your peak operating hours.",
       heroLabel: "FITNESS CENTER CLEANING",
       h1: "Commercial Cleaning for Fitness Centers in Seattle",
       heroIntro:
@@ -1268,7 +1268,7 @@ export const industries: Industry[] = [
       ],
       scheduleNote:
         "Fitness centers often need daily or near-daily attention to locker rooms and restrooms given continuous use, with the exercise floor cleaned around your peak hours. Exact frequency is confirmed during the walkthrough.",
-      relatedServiceSlugs: ["commercial-cleaning", "window-glass-cleaning"],
+      relatedServiceSlugs: ["commercial-cleaning", "commercial-window-cleaning"],
       relatedIndustrySlugs: ["healthcare-facilities", "hospitality-properties", "retail-stores"],
       faqs: [
         {
@@ -1309,7 +1309,7 @@ export const industries: Industry[] = [
     page: {
       metaTitle: "Healthcare Facility Cleaning in Seattle | Cleaning From The Heart LLC",
       metaDescription:
-        "General commercial cleaning for Seattle healthcare-adjacent facilities — waiting areas, offices, and restrooms cleaned on a reliable schedule, with scope confirmed in writing.",
+        "General commercial cleaning for Seattle healthcare-adjacent facilities, waiting areas, offices, and restrooms cleaned on a reliable schedule, with scope confirmed in writing.",
       heroLabel: "HEALTHCARE FACILITY CLEANING",
       h1: "Commercial Cleaning for Healthcare Facilities in Seattle",
       heroIntro:
@@ -1354,7 +1354,7 @@ export const industries: Industry[] = [
       ],
       scheduleNote:
         "Waiting areas and restrooms often benefit from daily or several-times-weekly attention given visitor volume, while administrative offices may run weekly. Scope and frequency are confirmed in writing before service begins.",
-      relatedServiceSlugs: ["commercial-cleaning", "window-glass-cleaning"],
+      relatedServiceSlugs: ["commercial-cleaning", "commercial-window-cleaning"],
       relatedIndustrySlugs: ["fitness-centers", "government-public-buildings", "offices-commercial-buildings"],
       faqs: [
         {
@@ -1397,7 +1397,7 @@ export const industries: Industry[] = [
     page: {
       metaTitle: "Warehouse & Industrial Facility Cleaning in Seattle | Cleaning From The Heart LLC",
       metaDescription:
-        "Commercial cleaning for Seattle warehouses and industrial sites — offices, employee areas, and entryways cleaned around shift changes and site safety procedures.",
+        "Commercial cleaning for Seattle warehouses and industrial sites, offices, employee areas, and entryways cleaned around shift changes and site safety procedures.",
       heroLabel: "WAREHOUSE & INDUSTRIAL FACILITY CLEANING",
       h1: "Commercial Cleaning for Warehouses & Industrial Facilities in Seattle",
       heroIntro:
@@ -1482,7 +1482,7 @@ export function getIndustryByAnySlug(slug: string): Industry | undefined {
   return industries.find((industry) => industry.slug === slug);
 }
 
-// 4-step process shown on every individual industry page — generic and
+// 4-step process shown on every individual industry page, generic and
 // intentionally identical in structure to the process already used on
 // /services/commercial-cleaning, just condensed to four steps.
 export const industryProcessSteps = [

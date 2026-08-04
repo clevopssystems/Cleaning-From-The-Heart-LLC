@@ -122,7 +122,7 @@ export function IndustryCarousel({ industries }: { industries: Industry[] }) {
           ref={scrollerRef}
           role="region"
           aria-roledescription="carousel"
-          aria-label="Industries we serve — scroll or use arrow keys to browse"
+          aria-label="Industries we serve, scroll or use arrow keys to browse"
           tabIndex={0}
           onKeyDown={handleKeyDown}
           className="no-scrollbar flex snap-x snap-mandatory gap-5 overflow-x-auto scroll-smooth pb-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-4 motion-reduce:scroll-auto"

@@ -30,7 +30,7 @@ export function VideoGallerySection() {
           </div>
         </Reveal>
 
-        {/* Video grid — 1 col → 2 col → 4 col */}
+        {/* Video grid, 1 col → 2 col → 4 col */}
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-5 xl:grid-cols-4">
           {videos.map((video, index) => (
             <Reveal key={video.id} delay={Math.min(index * 0.05, 0.35)}>

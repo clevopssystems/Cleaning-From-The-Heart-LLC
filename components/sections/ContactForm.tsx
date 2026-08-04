@@ -287,7 +287,7 @@ export function ContactForm() {
         <p className="text-right text-xs text-muted">{form.message.length} / 2000</p>
       </div>
 
-      {/* Honeypot — visually hidden, never filled by real users */}
+      {/* Honeypot, visually hidden, never filled by real users */}
       <div aria-hidden="true" style={HONEYPOT_STYLE}>
         <label htmlFor="website">Website</label>
         <input

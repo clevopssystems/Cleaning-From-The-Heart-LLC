@@ -12,7 +12,7 @@ const trustBadges = [
   },
   {
     label: "Seattle-Owned Business",
-    sub: "A local team with local accountability. Not a franchise, not a national chain — a Seattle-area business that knows these properties.",
+    sub: "A local team with local accountability. Not a franchise or a national chain, but a Seattle-area business that knows these properties.",
     icon: MapPin
   },
   {

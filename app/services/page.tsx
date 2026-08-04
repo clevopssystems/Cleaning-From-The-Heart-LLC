@@ -91,11 +91,11 @@ const commercialGroup: ServiceCard[] = [
       "Deep extraction cleaning that lifts embedded dirt, stains, and odor from office and commercial carpet."
   },
   {
-    slug: "window-glass-cleaning",
-    title: "Window & Glass Cleaning",
+    slug: "window-cleaning",
+    title: "Window Cleaning",
     icon: Sparkles,
     blurb:
-      "Streak-free interior and exterior glass cleaning for storefronts, offices, and commercial buildings."
+      "Interior and exterior glass for storefronts, offices, and homes. Choose the commercial or residential option from the main window cleaning page."
   }
 ];
 

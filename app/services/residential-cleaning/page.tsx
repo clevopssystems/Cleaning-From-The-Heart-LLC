@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/home/services/full-home-cleaning.jpg",
-        alt: "Residential cleaning in a Seattle-area home — Cleaning From The Heart LLC"
+        alt: "Residential cleaning in a Seattle-area home, Cleaning From The Heart LLC"
       }
     ]
   },
@@ -395,10 +395,10 @@ const relatedServices = [
     ctaLabel: "Learn about our carpet cleaning service"
   },
   {
-    title: "Window & Glass Cleaning",
-    description: "Streak-free interior and exterior glass cleaning for Seattle-area homes.",
-    href: "/services/window-glass-cleaning",
-    ctaLabel: "See our window and glass cleaning service"
+    title: "Residential Window Cleaning",
+    description: "Interior and exterior glass cleaning for Seattle-area houses, condos, and townhomes.",
+    href: "/services/residential-window-cleaning",
+    ctaLabel: "See residential window cleaning"
   }
 ];
 
@@ -690,7 +690,7 @@ export default function ResidentialCleaningPage() {
       </section>
 
       {/* ─────────────────────────────────────────────────────────────────────
-          4. WHAT IS INCLUDED — room-by-room scope
+          4. WHAT IS INCLUDED, room-by-room scope
           ───────────────────────────────────────────────────────────────────── */}
       <section className="section-shell bg-white scroll-mt-24" id="included">
         <Container>

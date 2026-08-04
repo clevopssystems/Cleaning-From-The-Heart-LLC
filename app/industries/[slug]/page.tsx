@@ -76,7 +76,7 @@ export async function generateMetadata({ params }: IndustryDetailPageProps): Pro
 
   return {
     // `absolute` opts out of the root layout's "%s | Cleaning From The Heart LLC"
-    // template — every industry metaTitle already carries the brand suffix, so
+    // template, every industry metaTitle already carries the brand suffix, so
     // without this the rendered <title> repeats the brand twice.
     title: { absolute: metaTitle },
     description: metaDescription,
@@ -91,7 +91,7 @@ export async function generateMetadata({ params }: IndustryDetailPageProps): Pro
       images: [
         {
           url: "/services/hero/hero-cleaning-team.png",
-          alt: `${industry.name} cleaning in Seattle — Cleaning From The Heart LLC`
+          alt: `${industry.name} cleaning in Seattle, Cleaning From The Heart LLC`
         }
       ]
     },

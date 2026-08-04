@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/services/hero/hero-cleaning-team.png",
-        alt: "Solar panel cleaning in Seattle — Cleaning From The Heart LLC"
+        alt: "Solar panel cleaning in Seattle, Cleaning From The Heart LLC"
       }
     ]
   },

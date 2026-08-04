@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/services/hero/hero-cleaning-team.png",
-        alt: "Commercial deep cleaning in progress at a Seattle-area facility — Cleaning From The Heart LLC"
+        alt: "Commercial deep cleaning in progress at a Seattle-area facility, Cleaning From The Heart LLC"
       }
     ]
   },
@@ -117,7 +117,7 @@ const propertiesServed: PropertyLink[] = [
   { Icon: HeartPulse, label: "Healthcare-Adjacent Facilities", href: "/industries/healthcare-facilities" }
 ];
 
-// ─── What may be included — grouped by facility area ───────────────────────
+// ─── What may be included, grouped by facility area ───────────────────────
 const scopeGroups: GroupedScopeItem[] = [
   {
     iconName: "Building2",

@@ -41,7 +41,7 @@ const SITE_URL = "https://www.cleaningfromtheheartllc.com";
 
 const PAGE_TITLE = "School Cleaning Services Seattle | Cleaning From The Heart";
 const PAGE_DESCRIPTION =
-  "School and educational facility cleaning in Seattle — classrooms, restrooms, common areas, athletic spaces, daytime support, evening custodial service, and school floor care.";
+  "School and educational facility cleaning in Seattle, classrooms, restrooms, common areas, athletic spaces, daytime support, evening custodial service, and school floor care.";
 
 export const metadata: Metadata = {
   title: { absolute: PAGE_TITLE },
@@ -602,10 +602,10 @@ const relatedServices = [
     ctaLabel: "Explore carpet cleaning"
   },
   {
-    title: "Window & Glass Cleaning",
+    title: "Commercial Window Cleaning",
     description: "Interior and exterior window service for school buildings and entrances.",
-    href: "/services/window-glass-cleaning",
-    ctaLabel: "View window & glass cleaning"
+    href: "/services/commercial-window-cleaning",
+    ctaLabel: "View commercial window cleaning"
   },
   {
     title: "Pressure Washing",

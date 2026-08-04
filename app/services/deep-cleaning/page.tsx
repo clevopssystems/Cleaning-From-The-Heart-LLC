@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/home/services/deep-cleaning-service.jpg",
-        alt: "Deep cleaning in progress at a Seattle-area property — Cleaning From The Heart LLC"
+        alt: "Deep cleaning in progress at a Seattle-area property, Cleaning From The Heart LLC"
       }
     ]
   },

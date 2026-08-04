@@ -46,7 +46,7 @@ a {
   background-size: 24px 24px;
 }
 
-/* ─── Cards — light sections ─── */
+/* ─── Cards, light sections ─── */
 
 .card {
   @apply rounded-2xl border border-brand-100 bg-white p-7 shadow-card;
@@ -56,7 +56,7 @@ a {
   @apply rounded-2xl border border-brand-100 bg-white p-7 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover;
 }
 
-/* ─── Cards — dark sections ─── */
+/* ─── Cards, dark sections ─── */
 
 .card-dark {
   @apply rounded-2xl border border-white/10 bg-white/5 p-7;
@@ -97,7 +97,7 @@ a {
 /* ─── Media cards ─── */
 
 /* Use .card-media for cards that start with a top image/video area.
-   Handles overflow, border-radius, and hover — content area should use p-5 or p-6 internally. */
+   Handles overflow, border-radius, and hover, content area should use p-5 or p-6 internally. */
 .card-media {
   @apply overflow-hidden rounded-2xl border border-brand-100 bg-white shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover;
 }
@@ -157,7 +157,7 @@ a {
 /*
   Track renders two identical copies of its items back to back (width: max-content).
   Translating exactly -50% moves it by the width of one copy, so the loop restarts
-  on a frame that's pixel-identical to the start — no jump, no gap.
+  on a frame that's pixel-identical to the start, no jump, no gap.
 */
 @keyframes marquee-scroll {
   from {

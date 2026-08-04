@@ -10,7 +10,7 @@ import {
 } from "@/lib/site";
 
 // ---------------------------------------------------------------------------
-// Rate limiter — Upstash Redis (shared across every Vercel serverless instance).
+// Rate limiter, Upstash Redis (shared across every Vercel serverless instance).
 //
 // If the Upstash env vars are absent (local dev) we skip rate limiting and log
 // a warning.  In production, missing vars means NO rate limiting, which is why
@@ -38,7 +38,7 @@ function createRatelimiter(): Ratelimit | null {
 const ratelimiter = createRatelimiter();
 
 // ---------------------------------------------------------------------------
-// Allowed select-field values — anything outside these sets is rejected.
+// Allowed select-field values, anything outside these sets is rejected.
 // These are built from the SAME shared arrays the contact form renders
 // (lib/site.ts), so the frontend options and backend whitelist can never drift.
 // "" is always allowed because these fields are optional.
@@ -133,7 +133,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Invalid JSON." }, { status: 400 });
   }
 
-  // Reject arrays, strings, numbers, null — must be a plain object.
+  // Reject arrays, strings, numbers, null, must be a plain object.
   if (typeof parsed !== "object" || parsed === null || Array.isArray(parsed)) {
     return NextResponse.json({ error: "Invalid request body." }, { status: 400 });
   }
@@ -201,7 +201,7 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  // Reject select-field values not in the known lists — prevents arbitrary
+  // Reject select-field values not in the known lists, prevents arbitrary
   // strings from being injected into the email even after sanitization.
   // These fields are optional, so an empty string is always accepted.
   if (!ALLOWED_SERVICES.has(service)) {

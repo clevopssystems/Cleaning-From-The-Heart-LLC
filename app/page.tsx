@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/services/hero/hero-cleaning-team.png",
-        alt: "Cleaning From The Heart LLC — Seattle commercial and residential cleaning"
+        alt: "Cleaning From The Heart LLC, Seattle commercial and residential cleaning"
       }
     ]
   },
@@ -74,34 +74,34 @@ const faqSchema = {
 export default function HomePage() {
   return (
     <>
-      {/* 1. Hero — image-led entry point with clear headline and CTAs */}
+      {/* 1. Hero, image-led entry point with clear headline and CTAs */}
       <HeroSection />
 
-      {/* 2. Social proof strip — tight dark metrics bar */}
+      {/* 2. Social proof strip, tight dark metrics bar */}
       <SocialProofStrip />
 
-      {/* 3. Real people — owner-run team, warm human copy near the top */}
+      {/* 3. Real people, owner-run team, warm human copy near the top */}
       <TeamSection />
 
-      {/* 4. Gallery — real work photos, the core proof section */}
+      {/* 4. Gallery, real work photos, the core proof section */}
       <WorkInActionSection />
 
-      {/* 5. Who We Help — homeowners, offices, schools, property managers */}
+      {/* 5. Who We Help, homeowners, offices, schools, property managers */}
       <WhoWeWorkWithSection />
 
-      {/* 6. Services — image-based cards + compact more-services list */}
+      {/* 6. Services, image-based cards + compact more-services list */}
       <ServicesSection />
 
-      {/* 7. How It Works — simple 3-step process */}
+      {/* 7. How It Works, simple 3-step process */}
       <HowItWorksSection />
 
-      {/* 8. 30+ years / service promise — final trust CTA */}
+      {/* 8. 30+ years / service promise, final trust CTA */}
       <GuaranteeSection />
 
-      {/* 9. FAQ — common questions */}
+      {/* 9. FAQ, common questions */}
       <FaqSection />
 
-      {/* 10. Service Areas — local SEO copy + cities */}
+      {/* 10. Service Areas, local SEO copy + cities */}
       <ServiceAreaSection />
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />

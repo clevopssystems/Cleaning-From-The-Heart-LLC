@@ -75,8 +75,11 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
-        source: "/services/window-cleaning",
-        destination: "/services/window-glass-cleaning",
+        // /services/window-cleaning is now the real window cleaning hub, with
+        // /services/commercial-window-cleaning and /services/residential-window-cleaning
+        // underneath it. The old combined URL redirects into the hub.
+        source: "/services/window-glass-cleaning",
+        destination: "/services/window-cleaning",
         permanent: true,
       },
       {

@@ -30,7 +30,7 @@ export function VideoSection() {
                   Watch How We Work
                 </h2>
                 <p className="mt-3 max-w-xl text-sm leading-relaxed text-white/55 md:text-base">
-                  Real footage from actual jobs — no staging, no filters.
+                  Real footage from actual jobs, with no staging and no filters.
                 </p>
               </div>
               <Link
@@ -43,7 +43,7 @@ export function VideoSection() {
             </div>
           </Reveal>
 
-          {/* 4-video grid — 1 col mobile / 2 col tablet / 4 col desktop */}
+          {/* 4-video grid, 1 col mobile / 2 col tablet / 4 col desktop */}
           <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {previewVideos.map((video, index) => (
               <Reveal key={video.id} delay={Math.min(index * 0.07, 0.28)}>

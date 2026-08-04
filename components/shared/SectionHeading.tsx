@@ -3,7 +3,7 @@ interface SectionHeadingProps {
   title: string;
   description?: string;
   center?: boolean;
-  light?: boolean; // Use on dark backgrounds — switches text to white tones
+  light?: boolean; // Use on dark backgrounds, switches text to white tones
 }
 
 export function SectionHeading({ eyebrow, title, description, center = false, light = false }: SectionHeadingProps) {

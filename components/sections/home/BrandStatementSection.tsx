@@ -21,7 +21,7 @@ export function BrandStatementSection() {
       />
 
       {/*
-        NO Container — this section intentionally breaks the grid.
+        NO Container, this section intentionally breaks the grid.
         Inner content uses its own max-width and padding.
       */}
       <div className="relative mx-auto max-w-[90rem] px-6 sm:px-10 lg:px-16">

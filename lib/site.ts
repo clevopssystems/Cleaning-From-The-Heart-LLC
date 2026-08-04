@@ -3,7 +3,9 @@ export type ServiceSlug =
   | "carpet-cleaning"
   | "strip-and-wax"
   | "school-facility-cleaning"
-  | "window-glass-cleaning"
+  | "window-cleaning"
+  | "commercial-window-cleaning"
+  | "residential-window-cleaning"
   | "pressure-washing"
   | "junk-removal"
   | "parking-lot-exterior-maintenance"
@@ -193,36 +195,107 @@ export const services: Service[] = [
     ]
   },
   {
-    slug: "window-glass-cleaning",
-    title: "Window & Glass Cleaning",
+    slug: "window-cleaning",
+    title: "Window Cleaning",
     shortDescription:
-      "Professional window and glass cleaning for commercial properties that improves visibility, appearance, and first impressions.",
+      "Interior and exterior window cleaning for Seattle-area homes, offices, storefronts, and managed properties, available as a one-time service or on a recurring schedule.",
     problem:
-      "Smudged, dusty, and water-spotted windows make your property look neglected and reduce natural light quality for staff and visitors.",
+      "Seattle glass takes rain spotting, pollen, road film, and fingerprints faster than most owners expect, and the sills, frames, and edges around the glass are the part that never gets touched.",
     solution:
-      "We clean interior and exterior glass surfaces using professional tools and methods for a streak-free finish and a cleaner overall look.",
+      "We clean glass inside, outside, or both, with a detail pass on accessible frames, sills, and edges, and the scope written around your property, its access, and how the windows are reached.",
     benefits: [
-      "Streak-free cleaning for windows, entry doors, and glass partitions",
-      "Improved curb appeal and a brighter, more professional interior",
-      "Regular maintenance options for storefronts and office buildings",
-      "Attention to smudges, fingerprints, and hard-water spots",
-      "Safer and more efficient process using proper equipment",
-      "Service tailored to your property access and business hours"
+      "Interior glass, exterior glass, or complete inside-and-out service",
+      "Entry-door glass, patio-door glass, and interior glass partitions",
+      "Detail pass on accessible frames, sills, and glass edges",
+      "Water-fed pole work for reachable exterior glass above ground level",
+      "Separate residential and commercial service pages and scopes",
+      "One-time seasonal cleaning or a recurring maintenance schedule"
     ],
     process: [
-      "Walkthrough to identify glass surfaces, access points, and scheduling needs",
-      "Interior and exterior glass cleaning with detail pass on frames and edges",
-      "Final quality check for streak-free results and customer approval"
+      "Share your property type, window count, and whether you want interior, exterior, or both",
+      "We confirm scope, access, and pricing in writing before anything is booked",
+      "Glass is cleaned on the agreed date, with a final pass over frames, sills, and edges"
     ],
-    seoTitle: "Window Cleaning Seattle",
+    seoTitle: "Window Cleaning Services Seattle, WA",
     seoDescription:
-      "Window cleaning in Seattle for homes, offices, storefronts, and commercial properties. Exterior glass cleaning with professional care.",
+      "Professional window cleaning in Seattle for homes, offices, storefronts, and managed properties. Compare residential and commercial service and request a free quote.",
     keywords: [
       "window cleaning Seattle",
-      "commercial glass cleaning Seattle",
+      "window cleaning services Seattle",
+      "professional window cleaners Seattle",
+      "window washing Seattle",
+      "window cleaning company Seattle",
+      "interior and exterior window cleaning Seattle"
+    ]
+  },
+  {
+    slug: "commercial-window-cleaning",
+    title: "Commercial Window Cleaning",
+    shortDescription:
+      "Window and glass cleaning for Seattle offices, storefronts, retail spaces, restaurants, schools, and managed properties, scheduled around how the building operates.",
+    problem:
+      "Customer-facing glass is the first thing anyone judges a business on, and entry doors, display windows, and lobby glass pick up handprints and street film faster than any other surface in the building.",
+    solution:
+      "We clean storefront, entry, lobby, and reachable exterior glass on a written scope and a frequency chosen from your foot traffic, exposure, and appearance standards.",
+    benefits: [
+      "Storefront glass, display windows, and street-facing panes",
+      "Entry doors, push plates, lobby glass, and interior partitions",
+      "Reachable exterior glass at ground and low-rise levels",
+      "Recurring weekly through quarterly schedules, or one-time service",
+      "Scheduling around opening hours and building access requirements",
+      "Can be combined with commercial cleaning on a single plan"
+    ],
+    process: [
+      "Property walkthrough covering glass inventory, access, and reachability",
+      "Written scope and quote with the agreed frequency and service window",
+      "Scheduled service, with a review pass and scope adjusted as the site changes"
+    ],
+    seoTitle: "Commercial Window Cleaning Seattle | Business Window Washing",
+    seoDescription:
+      "Commercial window cleaning in Seattle for offices, storefronts, retail spaces, restaurants, schools, and managed properties. Recurring or one-time service, quoted per property.",
+    keywords: [
+      "commercial window cleaning Seattle",
       "storefront window cleaning Seattle",
-      "office window cleaning Seattle WA",
-      "streak free window cleaning Seattle"
+      "office window cleaning Seattle",
+      "business window washing Seattle",
+      "commercial glass cleaning Seattle",
+      "property management window cleaning Seattle",
+      "recurring commercial window cleaning"
+    ]
+  },
+  {
+    slug: "residential-window-cleaning",
+    title: "Residential Window Cleaning",
+    shortDescription:
+      "House window cleaning for Seattle-area homes, condos, townhomes, and apartments, inside, outside, or both, with accessible frames, sills, and glass doors included.",
+    problem:
+      "Home windows collect fingerprints and dust on the inside and rain spotting, pollen, and cobwebs on the outside, and the upper-floor panes are the ones most households give up on entirely.",
+    solution:
+      "We clean interior and exterior house glass, reach upper-floor exterior panes from the ground with a water-fed pole where the property allows, and detail the accessible frames and sills as part of the visit.",
+    benefits: [
+      "Interior glass, exterior glass, or complete inside-and-out service",
+      "Patio-door, slider, and French-door glass",
+      "Accessible frame and sill wiping included with the glass",
+      "Upper-floor exterior panes reached from the ground where access allows",
+      "Cobweb clearing around reachable exterior window areas",
+      "Screen and track detailing available as add-ons, confirmed before booking"
+    ],
+    process: [
+      "Tell us your home type, rough window count, and whether you want inside, outside, or both",
+      "We confirm access, optional detail work, and a written quote with no obligation",
+      "Your windows are cleaned on the agreed date and checked before we leave"
+    ],
+    seoTitle: "Residential Window Cleaning Seattle | House Window Washing",
+    seoDescription:
+      "Residential window cleaning in Seattle for houses, condos, townhomes, and apartments. Choose interior, exterior, or complete inside-and-out service. Free quote.",
+    keywords: [
+      "residential window cleaning Seattle",
+      "house window cleaning Seattle",
+      "home window cleaning services Seattle",
+      "window washing for homes Seattle",
+      "condo window cleaning Seattle",
+      "townhouse window cleaning Seattle",
+      "inside and outside window cleaning"
     ]
   },
   {
@@ -666,9 +739,9 @@ export const cleaningFrequencyOptions = [
 
 export const contactMethodOptions = ["Phone", "Email", "Text"] as const;
 
-// Home page service showcase — 6 featured cards
+// Home page service showcase, 6 featured cards
 // To add a photo to any card: set image to "/home/services/{name}.jpg"
-// Upload photos to /public/home/services/ — recommended size: 800×450px (16:9)
+// Upload photos to /public/home/services/, recommended size: 800×450px (16:9)
 export const homeServiceCards = [
   {
     title: "Commercial Cleaning",
@@ -697,8 +770,8 @@ export const homeServiceCards = [
   {
     title: "Window Cleaning",
     description:
-      "Professional window and glass cleaning for homes and commercial properties. Streak-free results, improved curb appeal, and a brighter, cleaner space.",
-    href: "/services/window-glass-cleaning",
+      "Interior and exterior window cleaning for homes and commercial properties. Separate residential and commercial options, one-time or on a recurring schedule.",
+    href: "/services/window-cleaning",
     iconName: "Sparkles",
     image: "/home/services/window-cleaning.jpg"
   },
@@ -893,12 +966,12 @@ export const testimonialPlaceholders = [
 //   2. Place after-X.jpg  in /public/images/results/after/
 //   3. Uncomment (or copy) one of the entries below and fill in the details.
 //
-// The section renders nothing if this array is empty — safe to leave until
+// The section renders nothing if this array is empty, safe to leave until
 // you have real before/after photos ready.
 export const beforeAfterItems: {
   before: string;
   after: string;
-  /** true when the before/after images are portrait orientation — renders taller containers */
+  /** true when the before/after images are portrait orientation, renders taller containers */
   portrait?: boolean;
 }[] = [
   {
@@ -936,7 +1009,7 @@ export const beforeAfterItems: {
 //   1. Place the file in /public/images/results/our-work/
 //   2. Uncomment (or copy) one of the entries below and fill in the details.
 //
-// The section renders nothing if this array is empty — safe to leave until
+// The section renders nothing if this array is empty, safe to leave until
 // you have real photos ready.
 export const workGalleryItems: {
   image: string;
@@ -1159,25 +1232,25 @@ export const galleryItems: GalleryItem[] = [
 // Upload location: /public/home/team/
 export const teamMediaItems = [
   {
-    // Replace with: /public/home/team/team-1.jpg — team member on the job
+    // Replace with: /public/home/team/team-1.jpg, team member on the job
     image: "/home/team/team-1.svg",
     alt: "Professional cleaning team member preparing for a commercial job",
     caption: "Professional & Experienced"
   },
   {
-    // Replace with: /public/home/team/team-2.jpg — professional equipment/supplies
+    // Replace with: /public/home/team/team-2.jpg, professional equipment/supplies
     image: "/home/team/team-2.svg",
     alt: "Commercial-grade cleaning equipment and professional supplies",
     caption: "Professional-Grade Equipment"
   },
   {
-    // Replace with: /public/home/team/team-3.jpg — team at work in a commercial space
+    // Replace with: /public/home/team/team-3.jpg, team at work in a commercial space
     image: "/home/team/team-3.svg",
     alt: "Team performing detailed office cleaning with structured checklist process",
     caption: "Detail-Oriented Process"
   },
   {
-    // Replace with: /public/home/team/team-4.jpg — completed, spotless result
+    // Replace with: /public/home/team/team-4.jpg, completed, spotless result
     image: "/home/team/team-4.svg",
     alt: "Completed commercial cleaning result, spotless and client-ready",
     caption: "Consistent Results"
@@ -1213,7 +1286,7 @@ export const videoFeatures = [
   }
 ];
 
-// homeStats is retained for backward compatibility — not currently rendered as numbers.
+// homeStats is retained for backward compatibility, not currently rendered as numbers.
 // Update with real data before using on the site.
 export const homeStats = [
   { value: "30+ Years", label: "Decades of professional cleaning experience" },

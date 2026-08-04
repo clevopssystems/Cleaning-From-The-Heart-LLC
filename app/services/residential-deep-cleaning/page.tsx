@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/home/services/deep-cleaning-service.jpg",
-        alt: "Residential deep cleaning in progress at a Seattle-area home — Cleaning From The Heart LLC"
+        alt: "Residential deep cleaning in progress at a Seattle-area home, Cleaning From The Heart LLC"
       }
     ]
   },
@@ -89,7 +89,7 @@ const trustStripItems = [
   { Icon: MapPin, label: "Seattle-area availability" }
 ];
 
-// ─── What may be included — grouped by room/area ───────────────────────────
+// ─── What may be included, grouped by room/area ───────────────────────────
 const scopeGroups: GroupedScopeItem[] = [
   {
     iconName: "UtensilsCrossed",

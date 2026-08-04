@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/services/hero/hero-cleaning-team.png",
-        alt: "Cleaning From The Heart LLC — Commercial Cleaning by Industry in Seattle"
+        alt: "Cleaning From The Heart LLC, Commercial Cleaning by Industry in Seattle"
       }
     ]
   },
@@ -90,10 +90,10 @@ const planFactors = [
   "Client priorities & periodic maintenance"
 ];
 
-// Relevant existing service pages linked from the hub — real routes only.
+// Relevant existing service pages linked from the hub, real routes only.
 const relatedServiceSlugs = [
   "commercial-cleaning",
-  "window-glass-cleaning",
+  "commercial-window-cleaning",
   "carpet-cleaning",
   "strip-and-wax",
   "pressure-washing",

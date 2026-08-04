@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     template: "%s | Cleaning From The Heart LLC"
   },
   description:
-    "Commercial and residential cleaning in Seattle — janitorial, window, pressure washing, carpet, floor care, and move-out cleaning. 30+ years of experience.",
+    "Commercial and residential cleaning in Seattle: janitorial, window, pressure washing, carpet, floor care, and move-out cleaning. 30+ years of experience.",
   keywords: [
     "Seattle cleaning services",
     "commercial cleaning Seattle",
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/services/hero/hero-cleaning-team.png",
-        alt: "Cleaning From The Heart LLC — Seattle Commercial & Residential Cleaning"
+        alt: "Cleaning From The Heart LLC, Seattle Commercial & Residential Cleaning"
       }
     ]
   },

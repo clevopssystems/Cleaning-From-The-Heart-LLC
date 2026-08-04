@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: ServiceDetailPageProps): Prom
       images: [
         {
           url: "/services/hero/hero-cleaning-team.png",
-          alt: `${service.title} in Seattle — Cleaning From The Heart LLC`
+          alt: `${service.title} in Seattle, Cleaning From The Heart LLC`
         }
       ]
     },

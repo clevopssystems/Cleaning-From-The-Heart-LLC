@@ -50,7 +50,7 @@ const serviceLinkGroups = [
     heading: "Need exterior or window cleaning?",
     links: [
       { label: "Pressure Washing", href: "/services/pressure-washing" },
-      { label: "Window & Glass Cleaning", href: "/services/window-glass-cleaning" },
+      { label: "Window Cleaning", href: "/services/window-cleaning" },
       { label: "Solar Panel Cleaning", href: "/services/solar-panel-cleaning" }
     ]
   },
