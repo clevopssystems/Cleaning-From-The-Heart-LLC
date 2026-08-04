@@ -119,7 +119,7 @@ const residentialGroup: ServiceCard[] = [
     title: "Move-In / Move-Out Cleaning",
     icon: Truck,
     blurb:
-      "Detailed turnover cleaning that prepares homes and rentals for new occupants and final inspections."
+      "Detailed one-time cleaning for apartments, houses, rentals, and commercial suites between occupants, timed around movers and walkthroughs."
   }
 ];
 

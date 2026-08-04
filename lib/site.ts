@@ -434,32 +434,32 @@ export const services: Service[] = [
     slug: "move-in-move-out-cleaning",
     title: "Move-In / Move-Out Cleaning",
     shortDescription:
-      "Comprehensive move-in and move-out cleaning for offices and properties to prepare spaces for new occupants and professional handoff.",
+      "Detailed one-time cleaning for apartments, houses, rentals, offices, and commercial suites that are changing occupants, timed around movers, walkthroughs, and key handovers.",
     problem:
-      "Property transitions often leave behind dust, residue, and overlooked areas that can delay move-ins and impact client or tenant expectations.",
+      "An empty property shows everything the furniture was hiding, and the cleaning has to fit into a moving timeline set by a lease end, a closing, or a turnover date.",
     solution:
-      "We deliver detail-focused transition cleaning that prepares units and commercial spaces for move-in, move-out, and final inspections.",
+      "We provide detailed move-in and move-out cleaning for homes, rental units, and commercial spaces, with the scope built around the property's condition and the date it has to be finished by.",
     benefits: [
-      "Deep cleaning for vacant units and transition-ready commercial spaces",
-      "Focus on kitchens, restrooms, floors, and high-touch areas",
-      "Supports property managers, landlords, and business transitions",
-      "Improves presentation for inspections and new occupancy",
-      "Flexible scheduling aligned with turnover timelines",
-      "Reliable service with clear scope and communication"
+      "Room-by-room cleaning for vacant homes, apartments, and rental units",
+      "Kitchens, bathrooms, storage, baseboards, and floors as the priority areas",
+      "Appliance interiors, cabinet interiors, and window work available as add-ons",
+      "Support for renters, homeowners, landlords, property managers, and realtors",
+      "Commercial move-outs, tenant handovers, and new-occupancy cleaning",
+      "Scheduling coordinated with movers, repairs, and inspection deadlines"
     ],
     process: [
-      "Walkthrough to assess condition, timeline, and service priorities",
-      "Detailed move-in or move-out cleaning across agreed areas",
-      "Final inspection pass to confirm readiness"
+      "Share the property type, size, condition, and the date it needs to be finished",
+      "We confirm the scope in writing, including any optional add-on work",
+      "The property is cleaned area by area against the agreed scope"
     ],
-    seoTitle: "Move-In / Move-Out Cleaning Seattle",
+    seoTitle: "Move-In & Move-Out Cleaning Seattle",
     seoDescription:
-      "Move-in and move-out cleaning in Seattle for renters, homeowners, landlords, and property managers preparing spaces for the next step.",
+      "Move-in and move-out cleaning in Seattle for apartments, homes, rentals, offices, and commercial properties. Request a customized quote.",
     keywords: [
-      "move in move out cleaning Seattle",
-      "turnover cleaning Seattle",
-      "vacant unit cleaning Seattle",
-      "property transition cleaning Seattle WA",
+      "move out cleaning Seattle",
+      "move in cleaning Seattle",
+      "apartment move out cleaning Seattle",
+      "tenant turnover cleaning Seattle",
       "commercial move out cleaning Seattle"
     ]
   },
