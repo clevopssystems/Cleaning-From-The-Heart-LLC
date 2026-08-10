@@ -17,6 +17,8 @@ import {
   Gauge,
   GraduationCap,
   Hotel,
+  House,
+  Key,
   Layers,
   MapPin,
   MessageCircle,
@@ -27,6 +29,7 @@ import {
   SprayCan,
   Store,
   Trash2,
+  TreePine,
   Truck,
   Users,
   Utensils,
@@ -44,9 +47,9 @@ import { siteConfig, serviceAreas } from "@/lib/site";
 const SITE_URL = "https://www.cleaningfromtheheartllc.com";
 const PAGE_PATH = "/services/pressure-washing";
 
-const PAGE_TITLE = "Commercial Pressure Washing Seattle | Free Quote";
+const PAGE_TITLE = "Pressure Washing Seattle | Cleaning From The Heart";
 const PAGE_DESCRIPTION =
-  "Commercial pressure washing in Seattle for concrete, sidewalks, storefronts, parking areas, loading docks and managed properties. Request a free quote.";
+  "Pressure washing in Seattle for driveways, concrete, sidewalks, patios, storefronts and parking areas at homes, businesses and managed properties. Free quote.";
 
 // Stock photograph, not a company project photo. It is used because it shows
 // flat-surface concrete cleaning accurately; the caption never presents it as
@@ -58,27 +61,42 @@ const INTRO_IMAGE = "/home/services/pressure-wash.jpg";
 const OVERVIEW_IMAGE = "/services/pressure-washing-intro.png";
 
 export const metadata: Metadata = {
-  // Brand is intentionally omitted from <title> so the search result leads with
-  // the service and city, matching the other rebuilt service pages. It stays in
-  // the JSON-LD WebPage name below.
+  // `absolute` bypasses the layout title template, which would otherwise append
+  // the brand a second time. The brand is written into PAGE_TITLE here instead
+  // so this page leads with the primary term and still names the company.
   title: { absolute: PAGE_TITLE },
   description: PAGE_DESCRIPTION,
   alternates: {
     canonical: PAGE_PATH
   },
   keywords: [
-    "commercial pressure washing Seattle",
+    // Primary
     "pressure washing Seattle",
     "pressure washing services Seattle",
+    "Seattle pressure washing",
     "pressure washing company Seattle",
-    "commercial power washing Seattle",
+    "professional pressure washing Seattle",
     "power washing Seattle",
-    "commercial exterior cleaning Seattle",
+    "power washing services Seattle",
+    // Residential cluster
+    "residential pressure washing Seattle",
+    "driveway pressure washing Seattle",
+    "driveway cleaning Seattle",
     "concrete pressure washing Seattle",
     "sidewalk pressure washing Seattle",
+    "walkway pressure washing Seattle",
+    "patio pressure washing Seattle",
+    "residential concrete cleaning Seattle",
+    "exterior surface cleaning Seattle",
+    // Commercial cluster
+    "commercial pressure washing Seattle",
+    "commercial power washing Seattle",
+    "commercial concrete cleaning Seattle",
     "storefront pressure washing Seattle",
+    "commercial sidewalk cleaning Seattle",
     "parking garage pressure washing Seattle",
-    "loading dock pressure washing Seattle"
+    "loading dock pressure washing Seattle",
+    "pressure washing for property managers Seattle"
   ],
   openGraph: {
     title: PAGE_TITLE,
@@ -109,79 +127,84 @@ export const metadata: Metadata = {
 const jumpLinks = [
   { label: "Overview", href: "#overview" },
   { label: "Surfaces", href: "#surfaces" },
-  { label: "Buildup", href: "#buildup" },
   { label: "Seattle Weather", href: "#seattle" },
-  { label: "Properties", href: "#properties" },
+  { label: "Residential", href: "#residential" },
+  { label: "Driveways", href: "#driveways" },
   { label: "Concrete", href: "#concrete" },
+  { label: "Patios", href: "#patios" },
+  { label: "Commercial", href: "#commercial" },
   { label: "Parking", href: "#parking" },
-  { label: "Loading Docks", href: "#loading" },
+  { label: "Properties", href: "#properties" },
   { label: "Process", href: "#process" },
   { label: "FAQs", href: "#faq" }
 ];
 
 const glanceItems = [
-  "Concrete, sidewalks, entrances, parking and service areas",
+  "Driveways, concrete, sidewalks, walkways, patios and entries",
+  "Storefronts, parking areas, loading docks and service areas",
   "Surfaces assessed before the pressure is set",
-  "Scheduled around trading hours, deliveries and weather",
   "One-time cleanups or recurring exterior maintenance"
 ];
 
 const trustStripItems = [
-  { Icon: Building2, label: "Commercial & managed properties" },
-  { Icon: ClipboardList, label: "Written scope before we book" },
-  { Icon: CalendarClock, label: "After-hours & weekend scheduling" },
+  { Icon: House, label: "Homes, businesses & managed properties" },
+  { Icon: ClipboardList, label: "Free written quote before we book" },
+  { Icon: CalendarClock, label: "Weekday, weekend & after-hours work" },
   { Icon: MessageCircle, label: "Direct line to the owner" }
 ];
 
 // ─── Surfaces ─────────────────────────────────────────────────────────────
+// Deliberately mixed: the first four categories are shared by houses and
+// businesses, the next three are commercial-specific, and the last is the
+// catch-all for surfaces that only get cleaned after an on-site assessment.
 const surfaceCategories = [
   {
-    Icon: Layers,
-    title: "Concrete & Hard Surfaces",
+    Icon: Car,
+    title: "Driveways & Concrete",
     description:
-      "Flat exterior concrete is the bulk of commercial pressure washing: entry pads, courtyards, exterior stairs, concrete aprons and the slabs around a building that nobody cleans until they look grey. Surface cleaners cover open concrete evenly, and edges and corners are finished by hand."
+      "Residential driveways, parking aprons, garage approaches and the flat concrete around a building. Surface cleaners cover open slabs evenly so the finish stays consistent, and edges, joints and corners are worked by hand."
   },
   {
     Icon: Footprints,
     title: "Sidewalks & Walkways",
     description:
-      "Public-facing sidewalks, pedestrian paths between buildings and shared walkways through a property. These take constant foot traffic, sit exposed to weather and are the first surface a visitor stands on."
+      "Front paths, side returns, public sidewalk frontage, pedestrian routes between buildings and shared walkways through a property. Constant foot traffic, permanent weather exposure, and the first surface anyone stands on."
+  },
+  {
+    Icon: TreePine,
+    title: "Patios & Outdoor Hard Surfaces",
+    description:
+      "Concrete and paver patios, flagstone areas, courtyards, seating areas and breezeways. Shaded corners on these hold organic growth longest, which is why they are the most common residential request here."
+  },
+  {
+    Icon: DoorOpen,
+    title: "Entrances, Steps & Porches",
+    description:
+      "Entry pads, exterior stairs and landings, porch concrete, thresholds and ramp approaches. Small areas that take far more traffic per square foot than anything around them, so they show wear first."
   },
   {
     Icon: Store,
-    title: "Storefronts & Entrances",
+    title: "Storefronts & Commercial Frontage",
     description:
-      "The concrete directly outside a shop, restaurant or office entrance, plus thresholds, entry steps and the approach a customer walks. Small in area, disproportionate in what it says about a business."
+      "The concrete directly outside a shop, restaurant or office entrance, plus the frontage below display glass and any outdoor seating or queue space beside the door."
   },
   {
     Icon: Building2,
-    title: "Ground-Level Building Exteriors",
-    description:
-      "Reachable exterior wall surfaces, column bases, planter walls and hard landscaping at ground level. Masonry, brick and painted finishes are assessed first, because material and condition decide whether pressure is appropriate at all."
-  },
-  {
-    Icon: Car,
-    title: "Parking Garages & Parking Areas",
+    title: "Parking Areas & Garages",
     description:
       "Garage floors, drive lanes, ramps, stair and elevator approaches, and selected surfaces in open parking areas. Enclosed structures need drainage and containment planned before anyone starts."
   },
   {
     Icon: Truck,
-    title: "Loading Docks & Service Areas",
+    title: "Loading & Service Areas",
     description:
-      "Dock aprons, delivery bays, service entrances and the back-of-building concrete that takes trucks, pallet jacks and spills. Usually the dirtiest area on a commercial property and the least often cleaned."
+      "Dock aprons, delivery bays, service entrances, back-of-building concrete and the dumpster pads and waste-enclosure floors behind them. Usually the dirtiest area on a property and the least often cleaned."
   },
   {
-    Icon: Trash2,
-    title: "Dumpster Pads & Waste Enclosures",
+    Icon: Layers,
+    title: "Other Appropriate Exterior Surfaces",
     description:
-      "Concrete pads under and around bins, enclosure floors and the surrounding hard surfaces. This is cleaning, not sanitising: the aim is to lift residue and reduce odour-causing buildup on the concrete."
-  },
-  {
-    Icon: Waves,
-    title: "Courtyards & Outdoor Common Areas",
-    description:
-      "Shared patios, seating areas, breezeways and the hard surfaces between buildings on apartment, condominium and office campuses. Shaded corners here tend to hold organic growth longest."
+      "Ground-level exterior wall surfaces, column bases, planter walls and hard landscaping. Brick, masonry, painted finishes and older mortar are assessed first, because material and condition decide whether pressure is appropriate at all."
   }
 ];
 
@@ -200,36 +223,163 @@ const buildupTypes = [
   {
     Icon: Footprints,
     title: "Gum & Traffic Residue",
-    description: "Compacted gum, scuffing and the dark traffic lanes that develop where everyone walks the same line into a building."
+    description: "Compacted gum, scuffing and the dark traffic lanes that develop on a front path or a walkway where everyone walks the same line."
   },
   {
-    Icon: Utensils,
-    title: "Food & Beverage Spills",
-    description: "Drink spills, dropped food and the residue trailing out of a restaurant, café or break-area door onto the concrete outside."
+    Icon: TreePine,
+    title: "Leaf, Tannin & Planting Marks",
+    description: "Dark tannin staining where leaves have broken down on concrete, and the silt that washes onto paths from beds, borders and lawns."
   },
   {
     Icon: Fuel,
     title: "Oil & Grease Staining",
-    description: "Drips in parking areas, grease around dock doors and kitchen exhaust residue that settles on nearby ground surfaces."
+    description: "Drips on a driveway or in a parking area, grease around dock doors, and kitchen exhaust residue that settles on nearby ground surfaces."
   },
   {
     Icon: Car,
     title: "Tire Marks & Vehicle Grime",
-    description: "Rubber deposits, brake dust and road film left on garage floors, drive lanes and dock aprons by daily vehicle movement."
+    description: "Rubber deposits, brake dust and road film left on driveways, garage floors, drive lanes and dock aprons by daily vehicle movement."
   },
   {
     Icon: CloudRain,
     title: "Weather & Runoff Staining",
-    description: "Rain-carried dirt, downspout runoff trails, leaf tannin marks and the streaking that gathers below gutters and roof edges."
+    description: "Rain-carried dirt, downspout runoff trails and the streaking that gathers on concrete below gutters, roof edges and overhangs."
   },
   {
-    Icon: Trash2,
-    title: "Waste-Area Residue",
-    description: "Leakage and buildup on dumpster pads and enclosure floors, which is usually what a persistent back-of-building smell is coming from."
+    Icon: Utensils,
+    title: "Food, Drink & Waste Residue",
+    description: "Spills around outdoor seating and back doors, plus the leakage on dumpster pads and enclosure floors behind restaurants and retail."
+  }
+];
+
+// ─── Residential ──────────────────────────────────────────────────────────
+// Scope here is deliberately limited to durable exterior hard surfaces at
+// ground level, which is what lib/site.ts documents (driveways, sidewalks,
+// exterior surfaces) and what the real gallery photographs show. Roof washing,
+// deck and fence washing are not claimed anywhere on this site, so they are
+// not claimed here either.
+const residentialAreas = [
+  "Driveways, parking aprons and garage approaches",
+  "Front paths, side returns and garden walkways",
+  "Public sidewalk frontage outside the property",
+  "Concrete and paver patios and seating areas",
+  "Entry steps, landings, porches and thresholds",
+  "Courtyards and other durable outdoor hard surfaces"
+];
+
+const residentialReasons = [
+  {
+    Icon: House,
+    title: "Curb appeal that has slipped without anyone noticing",
+    description:
+      "Concrete darkens slowly and evenly, so the change never registers day to day. The line where a cleaned section meets an uncleaned one is usually the first time a homeowner sees how far it had gone."
+  },
+  {
+    Icon: Key,
+    title: "Selling, listing or letting a property",
+    description:
+      "Exterior hard surfaces photograph badly when they are green or grey, and the driveway and front path are in almost every listing photo. This is commonly booked in the week before photography or a first viewing."
+  },
+  {
+    Icon: CloudRain,
+    title: "A wet season that got the better of a surface",
+    description:
+      "After a Seattle autumn and winter, shaded paths and north-facing patios carry a season of organic growth. A single spring clean resets them, and shaded areas often move to a repeating visit."
+  },
+  {
+    Icon: Gauge,
+    title: "A surface that needs judgement, not force",
+    description:
+      "Pavers with sand joints, older brick, soft mortar and painted steps all need a different approach from a sound concrete slab. Which category a surface falls into is settled at the assessment, before any work is quoted."
+  }
+];
+
+// ─── Driveways ────────────────────────────────────────────────────────────
+const drivewayBuildup = [
+  {
+    title: "Dirt, silt and general grime",
+    description:
+      "Road grit, airborne dust and soil washed down from beds and lawns. This is the layer that dulls a driveway uniformly, and it is also the one that lifts most completely."
+  },
+  {
+    title: "Moss, algae and organic growth",
+    description:
+      "The green film and dark patches that establish on damp concrete, plus moss rooted into control joints, expansion gaps and the low spots where water sits after rain."
+  },
+  {
+    title: "Tire marks and traffic residue",
+    description:
+      "Rubber deposits and brake dust where cars turn and park, and the darker wheel tracks that develop along the line vehicles use every day."
+  },
+  {
+    title: "Oil and fluid staining",
+    description:
+      "Drips under a parking spot. Recent marks sitting on the surface usually improve considerably. Oil that has soaked into porous concrete over years has stained the slab itself, and cleaning improves those areas rather than erasing them."
+  },
+  {
+    title: "Leaf and tannin marks",
+    description:
+      "Dark staining left where leaves have sat and broken down on the concrete, common under trees and along the edges of a driveway."
+  },
+  {
+    title: "Runoff trails and weather streaking",
+    description:
+      "The dirt lines that form where water runs off a roof edge, a downspout or a slope and crosses the driveway on the same path every time it rains."
+  }
+];
+
+// ─── Patios ───────────────────────────────────────────────────────────────
+const patioSurfaces = [
+  {
+    title: "Poured concrete patios",
+    description:
+      "The most straightforward surface on this list. Sound concrete tolerates a surface cleaner well and cleans up evenly across a large area."
+  },
+  {
+    title: "Paver and flagstone areas",
+    description:
+      "Cleaned with the joints in mind. Sand-filled joints can be disturbed by careless work, so pressure and angle are adjusted, and you will be told if joint sand is likely to need topping up afterwards."
+  },
+  {
+    title: "Courtyards and shared outdoor areas",
+    description:
+      "Seating areas, breezeways and the hard surfaces between buildings on condominium, apartment and office properties, where shaded corners hold growth longest."
+  },
+  {
+    title: "Steps, edging and surrounds",
+    description:
+      "The exterior stairs, kerbs, low walls and hard edging around a patio, worked by hand so the finish matches the open area rather than stopping at it."
   }
 ];
 
 // ─── Properties and industries served ─────────────────────────────────────
+const residentialProperties = [
+  {
+    Icon: House,
+    title: "Houses & Townhomes",
+    description:
+      "Driveways, front paths, patios, porches and entry steps at single-family homes and townhomes across the Seattle area.",
+    href: "/services/residential-cleaning",
+    linkLabel: "Residential cleaning"
+  },
+  {
+    Icon: Users,
+    title: "Condominium & HOA Common Areas",
+    description:
+      "Shared walkways, breezeways, entry courtyards and garage levels, quoted for the association or the managing agent.",
+    href: "/industries/property-management",
+    linkLabel: "Property management cleaning"
+  },
+  {
+    Icon: Key,
+    title: "Rental & Investment Properties",
+    description:
+      "Exterior hard surfaces cleaned between tenancies, often alongside the interior turnover clean so the whole property is handled in one visit.",
+    href: "/services/move-in-move-out-cleaning",
+    linkLabel: "Move-in / move-out cleaning"
+  }
+];
+
 const propertiesServed = [
   {
     Icon: Building2,
@@ -433,10 +583,10 @@ const assessmentFactors = [
 // ─── Why choose us ────────────────────────────────────────────────────────
 const whyChooseItems = [
   {
-    Icon: Building2,
-    title: "Built Around Commercial Properties",
+    Icon: House,
+    title: "Homes and Commercial Properties Alike",
     description:
-      "Most of this work is business frontage, managed property and facility exteriors. Scope is written against the areas that matter to a property manager, not against a residential price list."
+      "A driveway and front path at a house, and the frontage, walkways and service areas across a managed portfolio, are both normal work here. Scope is written against your property rather than a fixed package."
   },
   {
     Icon: Gauge,
@@ -460,7 +610,7 @@ const whyChooseItems = [
     Icon: ClipboardList,
     title: "One Vendor, Several Services",
     description:
-      "Pressure washing can sit alongside commercial cleaning, window cleaning, floor care and junk removal under one point of contact instead of four."
+      "Pressure washing can sit alongside house cleaning, window cleaning, commercial janitorial, floor care and junk removal under one point of contact instead of four."
   },
   {
     Icon: MessageCircle,
@@ -500,20 +650,20 @@ const processSteps = [
 
 // ─── Recurring service ────────────────────────────────────────────────────
 const oneTimeUses = [
-  "A property that has not had its exteriors cleaned in years",
-  "Preparing for a leasing tour, inspection or photography",
+  "A driveway, patio or property that has not been cleaned in years",
+  "Preparing a home for listing photography or a first viewing",
+  "Preparing for a leasing tour, inspection or event",
   "After construction, renovation or exterior repair work",
-  "Before an event, opening or seasonal trading period",
-  "Tenant turnover on a commercial unit",
-  "Clearing a specific problem: a stained dock, a mossy walkway, a dirty garage level"
+  "Tenant turnover on a rental or a commercial unit",
+  "Clearing a specific problem: a mossy path, a stained dock, a dirty garage level"
 ];
 
 const recurringUses = [
+  "Driveways, front paths and patios cleaned each spring",
   "Entrances and storefront concrete on a regular cycle",
   "Seasonal cleaning as wet-weather buildup accumulates",
   "Sidewalks and shared walkways across a managed property",
   "Dock aprons and waste-enclosure pads on a set rotation",
-  "Parking structure levels staged across the year",
   "Exterior work coordinated with an existing cleaning schedule"
 ];
 
@@ -528,6 +678,24 @@ const frequencyFactors = [
 
 // ─── Related services ─────────────────────────────────────────────────────
 const relatedServices = [
+  {
+    title: "Residential Window Cleaning",
+    description: "Glass, frames, sills and screens at a house. Booked with a driveway or patio wash when the whole exterior is being reset.",
+    href: "/services/residential-window-cleaning",
+    ctaLabel: "See residential window cleaning"
+  },
+  {
+    title: "Residential Cleaning",
+    description: "Recurring interior house cleaning, quoted alongside exterior work when a property is being handled in one visit.",
+    href: "/services/residential-cleaning",
+    ctaLabel: "View residential cleaning"
+  },
+  {
+    title: "Move-In / Move-Out Cleaning",
+    description: "Turnover cleans for homes and rentals, where the driveway, path and patio are often washed in the same booking.",
+    href: "/services/move-in-move-out-cleaning",
+    ctaLabel: "See move-in / move-out cleaning"
+  },
   {
     title: "Commercial Cleaning",
     description: "Recurring interior janitorial service for offices, retail and facilities, with exterior work quoted alongside it.",
@@ -554,35 +722,39 @@ const relatedServices = [
   },
   {
     title: "Junk Removal",
-    description: "Non-hazardous items cleared from service areas and yards, best done before the concrete gets cleaned.",
+    description: "Non-hazardous items cleared from yards, garages and service areas, best done before the concrete gets cleaned.",
     href: "/services/junk-removal",
     ctaLabel: "See junk removal"
   },
   {
     title: "Solar Panel Cleaning",
-    description: "Panel washing for commercial roof and ground arrays, where soiling reduces output.",
+    description: "Panel washing for residential and commercial roof and ground arrays, where soiling reduces output.",
     href: "/services/solar-panel-cleaning",
     ctaLabel: "Explore solar panel cleaning"
-  },
-  {
-    title: "Strip & Wax",
-    description: "Interior hard-floor stripping, waxing and refinishing, the indoor counterpart to exterior surface work.",
-    href: "/services/strip-and-wax",
-    ctaLabel: "View strip and wax"
   }
 ];
 
 // ─── FAQ ──────────────────────────────────────────────────────────────────
 const faqItems = [
   {
+    question: "What surfaces can you pressure wash?",
+    answer:
+      "Durable exterior hard surfaces at ground level: driveways, concrete sidewalks and walkways, front paths, patios and paver areas, entry pads, porches, exterior stairs, courtyards, concrete pads, parking structure floors and ramps, dock aprons and dumpster pads. Brick, masonry, older mortar and painted surfaces are assessed individually, because the material and its condition decide whether pressure washing is appropriate at all and at what pressure. If a surface should not be cleaned this way, we will tell you rather than take the risk."
+  },
+  {
+    question: "Do you provide residential pressure washing in Seattle?",
+    answer:
+      "Yes. Driveways, front paths and walkways, patios, porches, entry steps and other durable exterior hard surfaces at houses, townhomes and condominium properties are all regular work. Homeowners usually book it as a spring reset after a wet season, before listing a property, or when a shaded path has gone green. Quotes are free and given in writing after we have seen the surfaces involved."
+  },
+  {
     question: "Do you provide commercial pressure washing in Seattle?",
     answer:
       "Yes. Commercial exterior surface cleaning is regular work for us across Seattle and the surrounding cities, for business owners, property managers and facility managers. Typical jobs are entrances and storefront concrete, sidewalks and shared walkways, courtyards, parking structures, dock aprons and waste-enclosure pads. Work is quoted per property after we have seen the surfaces and the access."
   },
   {
-    question: "What surfaces can you pressure wash?",
+    question: "Can you pressure wash driveways?",
     answer:
-      "Exterior hard surfaces at ground level: concrete sidewalks, walkways, entry areas, courtyards, exterior stairs, concrete pads, pavers, parking structure floors, ramps, dock aprons and dumpster pads. Brick, masonry and painted surfaces are assessed individually, because the material and its condition decide whether pressure washing is appropriate and at what pressure. If a surface should not be cleaned this way, we will tell you rather than take the risk."
+      "Yes, and it is one of the most requested jobs on the residential side. A driveway collects road grit, tire marks and traffic residue at the same time as moss and algae establish in the joints and low spots, so it usually needs both an even pass with a surface cleaner and hand work along the edges and control joints. Sound concrete handles this well. Where a driveway is cracking, spalling or has a failing sealer, we will say so before quoting rather than force pressure into it."
   },
   {
     question: "Can pressure washing remove moss and algae from concrete?",
@@ -595,14 +767,19 @@ const faqItems = [
       "Sometimes fully, often partially. Recent drips sitting on the surface generally come up. Oil that has soaked into porous concrete over months or years has stained the slab itself, and no amount of pressure changes that. We assess the staining first and give you a realistic expectation before quoting, rather than promising a result the surface cannot deliver."
   },
   {
+    question: "Can you clean sidewalks and walkways?",
+    answer:
+      "Yes. Front paths and side returns at a house, public sidewalk frontage, connecting paths between buildings, shared walkways across a managed property and covered breezeways are all part of this service. They collect traffic grime, gum, spills and organic growth, and a walkway usually develops a dark central lane where everyone walks. Public-facing sidewalks are normally cleaned early morning or after hours, with the section cordoned while it is worked and rinsed."
+  },
+  {
+    question: "Can you pressure wash patios and outdoor hard surfaces?",
+    answer:
+      "Yes, on durable surfaces. Concrete patios, paver areas, flagstone, courtyards and the steps and edging around them are all cleaned regularly, and shaded patios are where organic growth shows worst in this climate. Pavers are worked with the joints in mind, because careless pressure disturbs joint sand, and we will tell you if it is likely to need topping up afterwards. Not every outdoor material belongs under high pressure, so the surface is assessed before the method is set."
+  },
+  {
     question: "Do you clean parking garages and parking areas?",
     answer:
       "Yes. Garage floors, drive lanes, ramps, entrances, stair and elevator approaches and selected surface-lot areas. Enclosed structures need planning around drainage, runoff and traffic, so the work is normally staged level by level or bay by bay, overnight or at weekends, keeping the rest of the structure open. If what you need is routine litter and debris upkeep rather than washing, our parking lot and exterior maintenance service covers that."
-  },
-  {
-    question: "Can you pressure wash commercial sidewalks and walkways?",
-    answer:
-      "Yes, and it is one of the most requested areas on commercial properties. Sidewalk frontage, connecting paths, shared walkways and covered breezeways all collect traffic grime, gum, spills and organic growth. Public-facing sidewalks are usually cleaned early morning or after hours so pedestrian routes are affected as little as possible, with the area cordoned while it is worked and rinsed."
   },
   {
     question: "Do you pressure wash loading docks and service areas?",
@@ -615,9 +792,19 @@ const faqItems = [
       "Yes, and for most commercial work it has to be. Early mornings, evenings, weekends and quiet trading periods are all normal. Areas are worked in sections so a walkway, entrance, dock or garage level is closed off for the shortest time possible. Surfaces stay wet for a period afterwards, so the timing is planned with that in mind rather than handing a soaked entrance back at opening."
   },
   {
-    question: "How often should a commercial property be pressure washed?",
+    question: "How often should exterior concrete be pressure washed?",
     answer:
-      "There is no universal schedule, and anyone quoting one has not looked at your property. Frequency depends on foot and vehicle traffic, how exposed or shaded the surfaces are, whether food, waste or vehicles are involved, nearby trees and runoff, the surface material, and the standard you present the property to. A busy restaurant entrance and a quiet office courtyard genuinely do not need the same cycle. We will suggest a realistic interval after seeing the site."
+      "There is no universal schedule, and anyone quoting one has not looked at the property. Frequency depends on foot and vehicle traffic, how exposed or shaded the surfaces are, whether food, waste or vehicles are involved, nearby trees and runoff, the surface material, and the standard you want it kept to. Many Seattle homeowners find an annual spring clean handles a driveway and front path, while a shaded north-facing patio may want it more often. A busy restaurant entrance and a quiet office courtyard sit at opposite ends of the same range. We suggest a realistic interval after seeing the site."
+  },
+  {
+    question: "How do you decide the right pressure for a surface?",
+    answer:
+      "It is settled on site, before anything is switched on. We look at the material, its age and condition, the type and depth of the buildup, what is around the area that needs protecting, and where the water will run. Sound concrete tolerates a great deal. Aged brick, soft or failing mortar, painted finishes and anything already cracking or spalling do not, and forcing them causes damage rather than a better result. On stubborn organic growth a pre-treatment and dwell time usually achieve more than turning the machine up, so some surfaces are deliberately cleaned at lower pressure. Where a surface should not be pressure washed at all, we say so at the quote."
+  },
+  {
+    question: "Do you provide recurring pressure washing?",
+    answer:
+      "Yes, as a one-time clean or on a repeating cycle. Homeowners commonly set an annual or seasonal visit for a driveway, path and patio. Commercial and managed properties more often run a rolling schedule: entrances and storefront concrete on a regular cycle, shared walkways across a portfolio, dock aprons and waste-enclosure pads on a set rotation, and parking structure levels staged across the year. Where a property already has a cleaning schedule with us, exterior work is normally folded into the same calendar."
   },
   {
     question: "Do you provide pressure washing for property managers?",
@@ -640,29 +827,34 @@ const pressureWashingSchema = {
       "@type": "WebPage",
       "@id": `${SITE_URL}${PAGE_PATH}#webpage`,
       url: `${SITE_URL}${PAGE_PATH}`,
-      name: `${PAGE_TITLE} | Cleaning From The Heart`,
+      name: PAGE_TITLE,
       description: PAGE_DESCRIPTION,
       about: { "@id": `${SITE_URL}${PAGE_PATH}#service` },
       isPartOf: { "@id": `${SITE_URL}/#business` }
     },
     {
+      // One Service entity covers the whole page. Residential and commercial
+      // pressure washing are described inside it rather than split into
+      // competing entities, because /services/pressure-washing is the single
+      // umbrella page for both.
       "@type": "Service",
       "@id": `${SITE_URL}${PAGE_PATH}#service`,
-      name: "Commercial Pressure Washing in Seattle",
-      serviceType: "Commercial Pressure Washing",
+      name: "Pressure Washing Services in Seattle",
+      serviceType: "Pressure Washing",
+      alternateName: ["Power Washing", "Exterior Surface Cleaning"],
       provider: { "@id": `${SITE_URL}/#business` },
       areaServed: serviceAreas.map((area) => ({ "@type": "City", name: area })),
       audience: {
         "@type": "Audience",
         audienceType:
-          "Seattle-area property managers, facility managers, building owners, business owners and commercial tenants"
+          "Seattle-area homeowners, residents, business owners, property managers, facility managers, building owners and commercial tenants"
       },
       description:
-        "Commercial pressure washing and exterior hard-surface cleaning in Seattle for concrete, sidewalks, walkways, storefronts and entrances, ground-level building exteriors, parking garages and parking areas, loading docks, service areas, dumpster pads and outdoor common areas. Available as one-time exterior cleaning or on a recurring maintenance schedule, with the method and pressure matched to the surface after an on-site assessment.",
+        "Residential and commercial pressure washing in Seattle. Exterior hard-surface cleaning for driveways, concrete, sidewalks and walkways, patios and paver areas, entrances, steps and porches, storefronts and commercial frontage, parking garages and parking areas, loading docks, service areas, dumpster pads and outdoor common areas. Available as one-time exterior cleaning or on a recurring maintenance schedule, with the method and pressure matched to the surface after an on-site assessment.",
       url: `${SITE_URL}${PAGE_PATH}`,
       hasOfferCatalog: {
         "@type": "OfferCatalog",
-        name: "Commercial Pressure Washing Surfaces",
+        name: "Pressure Washing Surfaces",
         itemListElement: surfaceCategories.map((surface) => ({
           "@type": "Offer",
           itemOffered: {
@@ -719,14 +911,15 @@ export default function PressureWashingPage() {
 
           <div className="mt-6 grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
             <div>
-              <span className="eyebrow-light">Seattle Commercial Pressure Washing</span>
+              <span className="eyebrow-light">Seattle Pressure Washing</span>
               <h1 className="text-balance text-4xl font-bold leading-[1.1] tracking-tight text-white md:text-5xl">
-                Commercial Pressure Washing Services in Seattle
+                Pressure Washing Services in Seattle
               </h1>
               <p className="mt-6 text-base leading-relaxed text-white/70 md:text-lg">
-                Exterior surface cleaning for commercial buildings, concrete, sidewalks, storefronts and entrances,
-                parking areas, loading zones and managed properties across Seattle. The pressure and the method are
-                matched to the surface, and the schedule is built around how your property actually operates.
+                Professional pressure washing for residential and commercial properties across Seattle: driveways,
+                concrete, sidewalks and walkways, patios, entrances and steps, storefronts, parking areas and other
+                durable exterior surfaces. The method and the pressure are matched to the surface after we have
+                looked at it, and the schedule is built around how the property is actually used.
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-3">
                 <Link href="/contact#quote-form" className="cta-gold">
@@ -757,14 +950,14 @@ export default function PressureWashingPage() {
                 <h2 className="mt-4 text-base font-semibold text-white">The Common Problem</h2>
                 <p className="mt-2 text-sm leading-relaxed text-white/60">
                   Exterior concrete darkens slowly. Dirt, traffic residue, moss and algae, spills and weather
-                  staining accumulate over months until an entrance, walkway or dock area looks neglected, and by
-                  then nobody on site can remember what it used to look like.
+                  staining accumulate over months until a driveway, front path, entrance or walkway looks
+                  neglected, and by then nobody can remember what it used to look like.
                 </p>
                 <h2 className="mt-5 text-base font-semibold text-white">How We Help</h2>
                 <p className="mt-2 text-sm leading-relaxed text-white/60">
                   We assess the surface, the buildup and the access first, then clean with an approach suited to
-                  that specific area, working around your operating hours so entrances and service routes stay
-                  usable.
+                  that specific area, scheduled so a home is not disrupted and a business keeps its entrances and
+                  service routes usable.
                 </p>
               </div>
               <ul className="mt-6 grid gap-3 border-t border-white/10 pt-6">
@@ -827,25 +1020,52 @@ export default function PressureWashingPage() {
             <div>
               <span className="eyebrow">What This Service Is</span>
               <h2 id="overview-heading" className="text-3xl font-bold leading-tight tracking-tight md:text-4xl">
-                Professional Pressure Washing for Seattle Commercial Properties
+                Pressure Washing for Homes, Businesses &amp; Managed Properties
               </h2>
               <p className="mt-5 text-base leading-relaxed text-muted">
-                Cleaning From The Heart LLC provides commercial pressure washing and exterior hard-surface cleaning
-                for businesses, commercial buildings, facilities and managed properties throughout Seattle. The work
-                covers the exterior surfaces people actually use: concrete sidewalks and walkways, entry areas and
-                exterior stairs, storefront frontage, courtyards and shared outdoor areas, parking structure floors
-                and ramps, loading docks and service entrances, and the waste-enclosure pads at the back of a
-                building.
+                Cleaning From The Heart LLC provides professional pressure washing and exterior hard-surface
+                cleaning throughout Seattle, for homeowners, business owners and property managers alike. The work
+                covers the exterior surfaces people actually use: driveways and concrete, sidewalks, front paths
+                and walkways, patios and paver areas, entry pads, porches and exterior steps, storefront frontage,
+                courtyards and shared outdoor areas, parking structure floors and ramps, loading docks and service
+                entrances, and the waste-enclosure pads behind a building.
               </p>
               <p className="mt-4 text-base leading-relaxed text-muted">
-                Most enquiries come from property managers, facility managers, building owners and business owners
-                who have watched a surface get gradually worse and want it dealt with properly rather than hosed
-                down. Some of it is a single cleanup on a property that has gone years without one. Some of it is a
-                recurring schedule for entrances and walkways that will not stay clean on their own.
+                On the residential side, most calls are about a driveway, a front path or a patio that has quietly
+                gone green or grey over a wet season, often before listing a house or ahead of the summer. On the
+                commercial side, they come from property managers, facility managers, building owners and business
+                owners who have watched a surface get gradually worse and want it dealt with properly rather than
+                hosed down. Both are normal work here, and both are quoted the same way.
               </p>
               <p className="mt-4 text-base leading-relaxed text-muted">
+                Some of it is a single cleanup on a property that has gone years without one. Some of it is a
+                recurring schedule for driveways, entrances and walkways that will not stay clean on their own.
                 Every quote follows a look at the actual surfaces, because material, condition and the type of
-                buildup change the job more than square footage does. Exterior work is also quoted alongside{" "}
+                buildup change the job more than square footage does.
+              </p>
+              <p className="mt-4 text-base leading-relaxed text-muted">
+                If you have been searching for power washing rather than pressure washing, this is the same
+                service. The two terms are used interchangeably in Seattle, and what matters far more than the
+                label is that the pressure, the water and any pre-treatment are chosen to suit the surface in
+                front of us.
+              </p>
+              <p className="mt-4 text-base leading-relaxed text-muted">
+                Exterior work is often quoted alongside other services when a property is being handled in one
+                visit, whether that is{" "}
+                <Link
+                  href="/services/residential-cleaning"
+                  className="font-semibold text-brand-700 underline underline-offset-4 hover:text-brand-900"
+                >
+                  residential cleaning
+                </Link>{" "}
+                and{" "}
+                <Link
+                  href="/services/residential-window-cleaning"
+                  className="font-semibold text-brand-700 underline underline-offset-4 hover:text-brand-900"
+                >
+                  residential window cleaning
+                </Link>{" "}
+                at a house, or{" "}
                 <Link
                   href="/services/commercial-cleaning"
                   className="font-semibold text-brand-700 underline underline-offset-4 hover:text-brand-900"
@@ -859,12 +1079,7 @@ export default function PressureWashingPage() {
                 >
                   commercial window cleaning
                 </Link>{" "}
-                when a property wants its exterior handled as one job.
-              </p>
-              <p className="mt-4 text-base leading-relaxed text-muted">
-                Residential exterior work, driveways, patios and walkways on a house, is part of what we do as well,
-                and several of the photographs on this page come from that work. The service described here is
-                built around commercial and managed properties.
+                across a business or managed property.
               </p>
             </div>
 
@@ -888,8 +1103,8 @@ export default function PressureWashingPage() {
         <Container>
           <SectionHeading
             eyebrow="Scope of Work"
-            title="Commercial Surfaces We Pressure Wash"
-            description="The exterior hard surfaces that carry a commercial property: what visitors walk on, what vehicles drive over and what sits behind the building where nobody looks until it becomes a problem."
+            title="Exterior Surfaces We Pressure Wash"
+            description="The durable exterior hard surfaces at a house or a business: what people walk on, what vehicles drive over, and the areas out of sight that nobody looks at until they become a problem."
           />
 
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -914,6 +1129,12 @@ export default function PressureWashingPage() {
               surfaces are assessed on site, cleaned at a reduced pressure where that is appropriate, and left
               alone where it is not. You will be told which category a surface falls into before the quote is
               agreed.
+            </p>
+            <p className="mt-3 text-sm leading-relaxed text-muted">
+              This service is focused on durable exterior hard surfaces at ground level. Roof washing is not
+              something we offer, and timber decking, fencing and delicate cladding are handled case by case after
+              an assessment rather than assumed to be suitable. If a surface falls outside what we do, we will say
+              so plainly instead of taking the job on.
             </p>
           </div>
         </Container>
@@ -987,13 +1208,14 @@ export default function PressureWashingPage() {
             <p className="mt-5 text-base leading-relaxed text-muted">
               Seattle does not get dramatic rainfall so much as persistent rainfall. Surfaces stay damp for long
               stretches through autumn, winter and spring, and damp concrete is where moss and algae establish
-              themselves. It is the single most common reason a commercial property books this service.
+              themselves. It is the single most common reason a property here books this service, whether that is
+              a house with a shaded front path or an office block with a north-facing courtyard.
             </p>
             <p className="mt-4 text-base leading-relaxed text-muted">
-              Where it shows first is predictable. North-facing walkways that never catch direct sun. Concrete
-              under a canopy, an overhang or a stairwell. Paths beside planting beds, under trees, or along a fence
-              line. Low spots where water sits after it stops raining. Those areas go green, then dark, and start
-              looking neglected long before the open, sunlit parts of the same property do.
+              Where it shows first is predictable. North-facing driveways and walkways that never catch direct sun.
+              Concrete under a canopy, an overhang or a stairwell. Paths beside planting beds, under trees, or
+              along a fence line. Low spots where water sits after it stops raining. Those areas go green, then
+              dark, and start looking neglected long before the open, sunlit parts of the same property do.
             </p>
             <p className="mt-4 text-base leading-relaxed text-muted">
               Wet weather also carries dirt around. Runoff traces dark lines below downspouts and roof edges,
@@ -1002,148 +1224,243 @@ export default function PressureWashingPage() {
               changes how a building reads from the street.
             </p>
             <p className="mt-4 text-base leading-relaxed text-muted">
-              The practical consequence for maintenance planning is that exterior cleaning here is a cycle rather
-              than a one-time fix, and that timing matters. Work is planned around dry-enough windows and around
-              when the property can spare the area, which is why exterior cleaning for commercial sites is usually
-              set up as a schedule rather than an emergency call.
+              The practical consequence is that exterior cleaning here is a cycle rather than a one-time fix, and
+              that timing matters. Work is planned around dry-enough windows and around when the property can
+              spare the area. For most homes that lands as a spring clean once the worst of the wet season has
+              passed; for commercial sites it usually becomes a standing schedule rather than an emergency call.
             </p>
           </ServiceEditorialSplit>
         </Container>
       </section>
 
-      {/* ── PROPERTIES SERVED ───────────────────────────────────────────── */}
-      <section className="section-shell scroll-mt-28 bg-white" id="properties">
+      {/* ── RESIDENTIAL ─────────────────────────────────────────────────── */}
+      <section className="section-shell scroll-mt-28 bg-white" id="residential">
         <Container>
-          <SectionHeading
-            eyebrow="Who We Work With"
-            title="Pressure Washing for Seattle Businesses & Managed Properties"
-            description="Different property types wear their exteriors out in different ways. These are the ones that book this service most, each linked to what we do for that sector."
-          />
+          <div className="max-w-3xl">
+            <span className="eyebrow">Residential</span>
+            <h2 className="text-3xl font-bold leading-tight tracking-tight md:text-4xl">
+              Residential Pressure Washing in Seattle
+            </h2>
+            <p className="mt-5 text-base leading-relaxed text-muted">
+              Residential pressure washing is the fastest visible improvement most homeowners can make to the
+              outside of a house, and it is usually the cheapest. A driveway, a front path and a patio are the
+              three surfaces a visitor crosses before they reach the door, and all three darken so gradually that
+              the change is invisible until a cleaned section sits next to an uncleaned one.
+            </p>
+            <p className="mt-4 text-base leading-relaxed text-muted">
+              We clean the durable exterior hard surfaces at a property: driveways and parking aprons, front paths
+              and side returns, sidewalk frontage, concrete and paver patios, entry steps, landings and porches,
+              and courtyards. The work is the same care we bring to a commercial site, scaled to a house and
+              scheduled so it takes a morning rather than a weekend.
+            </p>
+            <p className="mt-4 text-base leading-relaxed text-muted">
+              What matters more than raw power is knowing what a surface can take. A sound concrete driveway, a
+              sand-jointed paver patio, older brick edging and a painted set of steps are four different jobs, and
+              treating them as one is how exteriors get damaged. Every surface is assessed before the method and
+              the pressure are set, and anything we would not recommend cleaning this way is flagged at the quote.
+            </p>
+          </div>
 
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {propertiesServed.map(({ Icon, title, description, href, linkLabel }, index) => (
-              <Reveal key={title} delay={index * 0.05}>
-                <article className="card flex h-full flex-col gap-3">
+          <div className="mt-10 grid gap-5 lg:grid-cols-[0.85fr_1.15fr]">
+            <article className="card">
+              <div className="flex items-center gap-3">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-100">
+                  <House className="h-5 w-5 text-brand-700" aria-hidden />
+                </div>
+                <h3 className="text-base font-semibold text-ink">Areas we clean at a home</h3>
+              </div>
+              <ul className="mt-6 grid gap-2.5">
+                {residentialAreas.map((item) => (
+                  <li key={item} className="flex items-start gap-2 text-sm text-ink">
+                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-brand-600" aria-hidden />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-6 border-t border-brand-100 pt-5 text-xs leading-relaxed text-muted">
+                Roof washing is not a service we offer, and timber decking, fencing and delicate cladding are
+                assessed individually rather than assumed to suit high pressure.
+              </p>
+            </article>
+
+            <div className="grid gap-4 sm:grid-cols-2">
+              {residentialReasons.map(({ Icon, title, description }) => (
+                <article key={title} className="rounded-2xl border border-brand-100 bg-surface p-6">
                   <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-100">
                     <Icon className="h-5 w-5 text-brand-700" aria-hidden />
                   </div>
-                  <h3 className="text-sm font-semibold text-ink">{title}</h3>
-                  <p className="flex-1 text-sm leading-relaxed text-muted">{description}</p>
-                  <Link
-                    href={href}
-                    className="inline-flex items-center text-xs font-semibold text-brand-700 transition-colors hover:text-brand-900"
-                  >
-                    {linkLabel}
-                    <ArrowRight className="ml-1 h-3 w-3 shrink-0" aria-hidden />
-                  </Link>
+                  <h3 className="mt-4 text-sm font-semibold text-ink">{title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted">{description}</p>
                 </article>
-              </Reveal>
-            ))}
+              ))}
+            </div>
           </div>
 
-          <p className="mx-auto mt-8 max-w-3xl text-center text-sm leading-relaxed text-muted">
-            Property types beyond these are covered too, see{" "}
+          <p className="mt-8 text-sm leading-relaxed text-muted">
+            Exterior work at a house is often booked with{" "}
             <Link
-              href="/industries-we-serve"
+              href="/services/residential-window-cleaning"
               className="font-semibold text-brand-700 underline underline-offset-4 hover:text-brand-900"
             >
-              all the industries we serve
+              residential window cleaning
+            </Link>{" "}
+            or a{" "}
+            <Link
+              href="/services/move-in-move-out-cleaning"
+              className="font-semibold text-brand-700 underline underline-offset-4 hover:text-brand-900"
+            >
+              move-in / move-out clean
             </Link>
-            .
+            , so the inside and the outside of the property are handled in the same visit.
           </p>
         </Container>
       </section>
 
-      {/* ── MID-PAGE CTA ────────────────────────────────────────────────── */}
-      <section className="bg-surface pt-14 md:pt-20">
+      {/* ── DRIVEWAYS ───────────────────────────────────────────────────── */}
+      <section className="section-shell scroll-mt-28 bg-surface" id="driveways">
         <Container>
-          <div className="rounded-3xl border border-brand-100 bg-white px-7 py-8 md:px-10">
-            <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-              <div className="max-w-2xl">
-                <h2 className="text-lg font-semibold text-ink">Know which areas need cleaning?</h2>
+          <ServiceEditorialSplit
+            src="/images/gallery/gallery-19.jpg"
+            alt="Before and after views of a driveway being pre-treated and then cleaned by pressure washing"
+            width={1080}
+            height={1080}
+            sizes="(max-width: 1023px) 100vw, 45vw"
+            aspect="none"
+            caption="Driveway pressure washing at a Seattle-area property: pre-treatment applied, and the same surface after washing and rinsing."
+            imagePosition="left"
+            columns="lg:grid-cols-[0.9fr_1fr]"
+            align="start"
+          >
+            <span className="eyebrow">Driveways</span>
+            <h2 className="text-3xl font-bold leading-tight tracking-tight md:text-4xl">
+              Driveway Pressure Washing in Seattle
+            </h2>
+            <p className="mt-5 text-base leading-relaxed text-muted">
+              A driveway is the largest single piece of concrete on most properties and the one that takes the most
+              punishment. It carries vehicles, collects everything that washes down off the roof and the garden,
+              and sits exposed to the weather year round. It is also the first thing anyone sees from the street,
+              which is why driveway cleaning is the most requested residential job on this page.
+            </p>
+            <p className="mt-4 text-base leading-relaxed text-muted">
+              Driveways rarely have one problem. A typical Seattle driveway carries a layer of general grime, moss
+              and algae in the joints and along the shaded edge, tire marks where the car turns, tannin staining
+              under a tree, and often an oil mark or two. Each of those responds differently, so an even pass with
+              a surface cleaner is only half the work. Joints, control gaps, edges and the apron at the pavement
+              are worked separately, and heavier organic buildup is pre-treated and given time to break down before
+              it is washed off.
+            </p>
+            <p className="mt-6 text-base font-semibold text-ink">What we typically find on a driveway:</p>
+            <div className="mt-4 grid gap-3 sm:grid-cols-2">
+              {drivewayBuildup.map(({ title, description }) => (
+                <article key={title} className="rounded-2xl border border-brand-100 bg-white p-5">
+                  <h3 className="text-sm font-semibold text-ink">{title}</h3>
+                  <p className="mt-1.5 text-sm leading-relaxed text-muted">{description}</p>
+                </article>
+              ))}
+            </div>
+            <div className="mt-6 rounded-2xl border border-brand-200 bg-white px-6 py-5">
+              <h3 className="text-sm font-semibold text-ink">On oil stains, plainly</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted">
+                We do not promise complete oil stain removal, and you should be wary of anyone who does. Concrete
+                is porous. A fresh drip sitting on the surface usually lifts. Oil that has been soaking into the
+                slab for years has stained the material itself, and cleaning will improve how it looks without
+                erasing it. How much comes up depends on the stain, its age and the surface, and we will give you a
+                realistic view of your driveway before you agree to anything.
+              </p>
+            </div>
+          </ServiceEditorialSplit>
+        </Container>
+      </section>
+
+      {/* ── CONCRETE ────────────────────────────────────────────────────── */}
+      <section className="section-shell scroll-mt-28 bg-white" id="concrete">
+        <Container>
+          <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14">
+            <div>
+              <span className="eyebrow">Concrete</span>
+              <h2 className="text-3xl font-bold leading-tight tracking-tight md:text-4xl">
+                Concrete Pressure Washing in Seattle
+              </h2>
+              <p className="mt-5 text-base leading-relaxed text-muted">
+                Concrete is the default surface at almost every property, residential and commercial alike, and it
+                hides its condition well. Because it darkens uniformly and slowly, a slab can lose most of its
+                original tone before anyone registers that it has changed. The contrast at the edge of a cleaned
+                section is usually what makes the point.
+              </p>
+              <p className="mt-4 text-base leading-relaxed text-muted">
+                It is also porous, which is the fact that governs this work. Water, oil, tannin and organic growth
+                all move into the surface rather than resting on it, so cleaning concrete properly means lifting
+                what has penetrated the top layer, not just rinsing across the top of it. Open areas are covered
+                with a surface cleaner for an even result, edges, corners and joints are worked separately, and
+                heavier buildup gets pre-treated and given time to break down before it is washed.
+              </p>
+              <div className="mt-8 rounded-2xl border border-brand-200 bg-surface px-6 py-6">
+                <h3 className="text-sm font-semibold text-ink">Cleaning does not repair concrete</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted">
-                  Send the property type, the surfaces involved, roughly how much area, and when the work would
-                  need to happen. Photographs of the worst areas tell us more than a description does, and the
-                  quote comes back in writing with no obligation.
+                  Where a slab is cracking, spalling or has a failing sealer, we will say so during the assessment.
+                  Pushing pressure into damaged concrete makes it worse rather than better, and a surface already
+                  breaking down needs a repair conversation, not a washing one.
                 </p>
               </div>
-              <div className="flex flex-wrap gap-3">
-                <Link href="/contact#quote-form" className="cta-primary">
-                  {siteConfig.primaryCta}
-                </Link>
-                <Link href={siteConfig.phoneHref} className="cta-secondary">
-                  <Phone className="mr-2 h-4 w-4" aria-hidden />
-                  {siteConfig.secondaryCta}
-                </Link>
-              </div>
+            </div>
+
+            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+              <article className="card">
+                <div className="flex items-center gap-3">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-100">
+                    <House className="h-5 w-5 text-brand-700" aria-hidden />
+                  </div>
+                  <h3 className="text-base font-semibold text-ink">Residential concrete</h3>
+                </div>
+                <ul className="mt-6 grid gap-2.5">
+                  {[
+                    "Driveways and parking aprons",
+                    "Front paths and side returns",
+                    "Sidewalk frontage at the kerb",
+                    "Patio slabs and seating areas",
+                    "Entry pads, porches and steps",
+                    "Garage approaches and thresholds"
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-2 text-sm text-ink">
+                      <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-brand-600" aria-hidden />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </article>
+
+              <article className="card">
+                <div className="flex items-center gap-3">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-100">
+                    <Building2 className="h-5 w-5 text-brand-700" aria-hidden />
+                  </div>
+                  <h3 className="text-base font-semibold text-ink">Commercial concrete</h3>
+                </div>
+                <ul className="mt-6 grid gap-2.5">
+                  {[
+                    "Sidewalks and entry aprons",
+                    "Walkways and connecting paths",
+                    "Exterior stairs and landings",
+                    "Courtyards and plaza areas",
+                    "Loading and delivery aprons",
+                    "Concrete pads and equipment bases",
+                    "Parking structure floors and ramps",
+                    "Bin pads and enclosure floors"
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-2 text-sm text-ink">
+                      <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-brand-600" aria-hidden />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </article>
             </div>
           </div>
         </Container>
       </section>
 
-      {/* ── CONCRETE ────────────────────────────────────────────────────── */}
-      <section className="section-shell scroll-mt-28 bg-surface" id="concrete">
-        <Container>
-          <ServiceEditorialSplit
-            src="/images/gallery/gallery-19.jpg"
-            alt="Before and after views of a large concrete drive area being pre-treated and then cleaned"
-            width={1080}
-            height={1080}
-            sizes="(max-width: 1023px) 100vw, 45vw"
-            aspect="none"
-            caption="Pre-treatment applied to a large concrete area, and the same surface after washing and rinsing."
-            imagePosition="left"
-            columns="lg:grid-cols-[0.9fr_1fr]"
-            align="start"
-          >
-            <span className="eyebrow">Concrete</span>
-            <h2 className="text-3xl font-bold leading-tight tracking-tight md:text-4xl">
-              Concrete Pressure Washing in Seattle
-            </h2>
-            <p className="mt-5 text-base leading-relaxed text-muted">
-              Concrete is the default surface on almost every commercial property, and it hides its condition well.
-              Because it darkens uniformly and slowly, a slab can lose most of its original tone before anyone
-              registers that it has changed. The contrast at the edge of a cleaned section is usually what makes
-              the point.
-            </p>
-            <p className="mt-4 text-base leading-relaxed text-muted">
-              It is also porous, which is the fact that governs this work. Water, oil, tannin and organic growth
-              all move into the surface rather than resting on it, so cleaning concrete properly means lifting what
-              has penetrated the top layer, not just rinsing the top of it. Open areas are covered with a surface
-              cleaner for an even result, edges, corners and joints are worked separately, and heavier buildup gets
-              pre-treated and given time to break down before it is washed.
-            </p>
-            <p className="mt-4 text-base leading-relaxed text-muted">
-              Commercial concrete we clean includes:
-            </p>
-            <ul className="mt-4 grid gap-2.5 sm:grid-cols-2">
-              {[
-                "Sidewalks and entry aprons",
-                "Walkways and connecting paths",
-                "Exterior stairs and landings",
-                "Courtyards and plaza areas",
-                "Loading and delivery aprons",
-                "Concrete pads and equipment bases",
-                "Parking structure floors and ramps",
-                "Bin pads and enclosure floors"
-              ].map((item) => (
-                <li key={item} className="flex items-start gap-2 text-sm text-ink">
-                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-brand-600" aria-hidden />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-            <p className="mt-6 text-sm leading-relaxed text-muted">
-              Where a slab is cracking, spalling or has a failing sealer, we will say so during the assessment.
-              Cleaning does not repair concrete, and pushing pressure into damaged areas makes them worse rather
-              than better.
-            </p>
-          </ServiceEditorialSplit>
-        </Container>
-      </section>
-
       {/* ── SIDEWALKS ───────────────────────────────────────────────────── */}
-      <section className="section-shell bg-white" id="sidewalks">
+      <section className="section-shell scroll-mt-28 bg-surface" id="sidewalks">
         <Container>
           <div className="max-w-3xl">
             <span className="eyebrow">Sidewalks</span>
@@ -1157,11 +1474,13 @@ export default function PressureWashingPage() {
               that lane and the untrodden edges is the clearest sign a surface is overdue.
             </p>
             <p className="mt-4 text-base leading-relaxed text-muted">
-              This is presentation work more than anything else. A visitor forms an impression of a building on the
+              It is the same job at a house and at a business, only the scale changes. A front path and the
+              sidewalk frontage at the kerb wear exactly the way a shared campus walkway does, and both are cleaned
+              here. This is presentation work more than anything else: a visitor forms an impression on the
               approach, before the door, and shared walkways across an apartment complex or office campus are the
-              part of the property tenants see every single day. We clean these areas so they look maintained, we
-              do not claim that cleaning makes a walkway safe or prevents accidents, which depends on the surface,
-              the weather and the property&apos;s own maintenance.
+              part of a property residents and tenants see every single day. We clean these areas so they look
+              maintained. We do not claim that cleaning makes a walkway safe or prevents accidents, which depends
+              on the surface, the weather and the property&apos;s own maintenance.
             </p>
           </div>
 
@@ -1208,6 +1527,171 @@ export default function PressureWashingPage() {
         </Container>
       </section>
 
+      {/* ── PATIOS ──────────────────────────────────────────────────────── */}
+      <section className="section-shell scroll-mt-28 bg-white" id="patios">
+        <Container>
+          <div className="grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:gap-14">
+            <div>
+              <span className="eyebrow">Patios</span>
+              <h2 className="text-3xl font-bold leading-tight tracking-tight md:text-4xl">
+                Patio &amp; Outdoor Surface Pressure Washing
+              </h2>
+              <p className="mt-5 text-base leading-relaxed text-muted">
+                Patios sit still. Unlike a driveway or a path, nothing crosses them for months at a time in the wet
+                part of the year, so organic growth settles in undisturbed and a surface that looked fine in
+                September can be green by March. Shaded patios, north-facing seating areas and anything under a
+                tree or an overhang show it first.
+              </p>
+              <p className="mt-4 text-base leading-relaxed text-muted">
+                Patio cleaning is worth doing before the season rather than during it. A patio that has been washed
+                and rinsed in spring is usable straight away, and the difference between a cleaned paver area and
+                the state it was in is normally the most dramatic before-and-after on a residential property.
+              </p>
+              <p className="mt-4 text-base leading-relaxed text-muted">
+                Outdoor hard surfaces are not interchangeable, though, and this is where surface assessment earns
+                its place. Poured concrete, pavers with sand joints, flagstone, tile and timber all behave
+                differently under pressure. We work out what a surface is and what condition it is in before
+                deciding the method, and anything that should not be pressure washed is identified at the quote
+                rather than discovered afterwards.
+              </p>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-2">
+              {patioSurfaces.map(({ title, description }) => (
+                <article key={title} className="rounded-2xl border border-brand-100 bg-surface p-6">
+                  <h3 className="text-sm font-semibold text-ink">{title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted">{description}</p>
+                </article>
+              ))}
+              <div className="rounded-2xl border border-brand-200 bg-surface p-6 sm:col-span-2">
+                <div className="flex items-start gap-4">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-100">
+                    <TreePine className="h-5 w-5 text-brand-700" aria-hidden />
+                  </div>
+                  <div>
+                    <h3 className="text-sm font-semibold text-ink">Timber decking is a separate conversation</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-muted">
+                      Softwood decking is easy to damage with a pressure washer: too much force raises the grain,
+                      furs the timber and strips finish unevenly. We do not treat decking as a standard part of
+                      this service. If you have one, tell us and we will look at it, but we will only take it on
+                      where the condition of the timber makes it sensible.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* ── MID-PAGE CTA ────────────────────────────────────────────────── */}
+      <section className="bg-surface pt-14 md:pt-20">
+        <Container>
+          <div className="rounded-3xl border border-brand-100 bg-white px-7 py-8 md:px-10">
+            <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+              <div className="max-w-2xl">
+                <h2 className="text-lg font-semibold text-ink">Know which areas need cleaning?</h2>
+                <p className="mt-2 text-sm leading-relaxed text-muted">
+                  Send the property type, the surfaces involved, roughly how much area, and when the work would
+                  need to happen. Photographs of the worst areas tell us more than a description does, and the
+                  quote comes back in writing with no obligation.
+                </p>
+              </div>
+              <div className="flex flex-wrap gap-3">
+                <Link href="/contact#quote-form" className="cta-primary">
+                  {siteConfig.primaryCta}
+                </Link>
+                <Link href={siteConfig.phoneHref} className="cta-secondary">
+                  <Phone className="mr-2 h-4 w-4" aria-hidden />
+                  {siteConfig.secondaryCta}
+                </Link>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* ── COMMERCIAL ──────────────────────────────────────────────────── */}
+      <section className="section-shell scroll-mt-28 bg-surface" id="commercial">
+        <Container>
+          <SectionHeading
+            eyebrow="Commercial"
+            title="Commercial Pressure Washing in Seattle"
+            description="The other half of this service. Commercial pressure washing covers business frontage, facility exteriors and managed property, and it is a different job from cleaning a driveway — larger areas, live operations, and access that has to be planned."
+          />
+
+          <div className="mt-10 grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-14">
+            <div>
+              <p className="text-base leading-relaxed text-muted">
+                Commercial power washing is regular work for us across Seattle for business owners, property
+                managers, facility managers and building owners. The surfaces are the ones a property runs on:
+                entrances and storefront concrete, public sidewalk frontage, shared walkways and courtyards,
+                parking structures and drive lanes, dock aprons and service entrances, and the waste-enclosure
+                pads at the back that nobody looks at until they smell.
+              </p>
+              <p className="mt-4 text-base leading-relaxed text-muted">
+                What changes at commercial scale is not the cleaning so much as everything around it. A business
+                cannot close its entrance for a day, a garage cannot empty every level at once, and a dock cannot
+                be out of use when trucks are booked. So the work is staged, cordoned and scheduled: early
+                mornings, evenings, weekends and quiet trading periods, with areas released back into use section
+                by section as they are finished.
+              </p>
+              <p className="mt-4 text-base leading-relaxed text-muted">
+                For managed portfolios, scope can be standardised so each property is cleaned to the same
+                specification, and exterior work can run on the same calendar as an existing{" "}
+                <Link
+                  href="/services/commercial-cleaning"
+                  className="font-semibold text-brand-700 underline underline-offset-4 hover:text-brand-900"
+                >
+                  commercial cleaning
+                </Link>{" "}
+                schedule, through one point of contact. The sections below cover the three commercial areas we are
+                asked about most.
+              </p>
+            </div>
+
+            <div className="grid gap-4">
+              {[
+                {
+                  Icon: Store,
+                  title: "Storefronts & entrances",
+                  description:
+                    "The highest-return area on any business frontage, and a short enough job to fit before opening."
+                },
+                {
+                  Icon: Car,
+                  title: "Parking garages & parking areas",
+                  description:
+                    "Floors, drive lanes, ramps and approaches, staged level by level so the structure stays open."
+                },
+                {
+                  Icon: Truck,
+                  title: "Loading docks & service areas",
+                  description:
+                    "Dock aprons, delivery bays, back-of-building concrete and dumpster pads, planned around delivery windows."
+                },
+                {
+                  Icon: Building2,
+                  title: "Managed property portfolios",
+                  description:
+                    "One specification applied across multiple sites, coordinated with on-site staff and existing schedules."
+                }
+              ].map(({ Icon, title, description }) => (
+                <article key={title} className="rounded-2xl border border-brand-100 bg-white p-6">
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-100">
+                      <Icon className="h-5 w-5 text-brand-700" aria-hidden />
+                    </div>
+                    <h3 className="text-sm font-semibold text-ink">{title}</h3>
+                  </div>
+                  <p className="mt-3 text-sm leading-relaxed text-muted">{description}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </Container>
+      </section>
+
       {/*
         ─── IMAGE SLOT ──────────────────────────────────────────────────────
         Storefront section. No storefront pressure-washing photograph exists in
@@ -1227,7 +1711,7 @@ export default function PressureWashingPage() {
         ─────────────────────────────────────────────────────────────────────
       */}
       {/* ── STOREFRONTS ─────────────────────────────────────────────────── */}
-      <section className="section-shell bg-surface" id="storefronts">
+      <section className="section-shell scroll-mt-28 bg-white" id="storefronts">
         <Container>
           <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:gap-14">
             <div>
@@ -1260,7 +1744,7 @@ export default function PressureWashingPage() {
 
             <div className="grid gap-4 sm:grid-cols-2">
               {storefrontPoints.map(({ title, description }) => (
-                <article key={title} className="rounded-2xl border border-brand-100 bg-white p-6">
+                <article key={title} className="rounded-2xl border border-brand-100 bg-surface p-6">
                   <h3 className="text-sm font-semibold text-ink">{title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted">{description}</p>
                 </article>
@@ -1279,7 +1763,7 @@ export default function PressureWashingPage() {
         ─────────────────────────────────────────────────────────────────────
       */}
       {/* ── PARKING ─────────────────────────────────────────────────────── */}
-      <section className="section-shell scroll-mt-28 bg-white" id="parking">
+      <section className="section-shell scroll-mt-28 bg-surface" id="parking">
         <Container>
           <div className="max-w-3xl">
             <span className="eyebrow">Parking</span>
@@ -1320,7 +1804,7 @@ export default function PressureWashingPage() {
 
             <div className="grid gap-4">
               {parkingConsiderations.map(({ title, description }) => (
-                <article key={title} className="rounded-2xl border border-brand-100 bg-surface p-6">
+                <article key={title} className="rounded-2xl border border-brand-100 bg-white p-6">
                   <h3 className="text-sm font-semibold text-ink">{title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted">{description}</p>
                 </article>
@@ -1419,6 +1903,86 @@ export default function PressureWashingPage() {
         </Container>
       </section>
 
+      {/* ── PROPERTIES SERVED ───────────────────────────────────────────── */}
+      <section className="section-shell scroll-mt-28 bg-surface" id="properties">
+        <Container>
+          <SectionHeading
+            eyebrow="Who We Work With"
+            title="Properties We Pressure Wash in Seattle"
+            description="Different properties wear their exteriors out in different ways. These are the ones that book this service most, each linked to what we do for that sector."
+          />
+
+          <div className="mt-10">
+            <div className="flex items-center gap-3">
+              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-brand-100">
+                <House className="h-4 w-4 text-brand-700" aria-hidden />
+              </div>
+              <h3 className="text-lg font-semibold text-ink">Residential Properties</h3>
+            </div>
+            <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              {residentialProperties.map(({ Icon, title, description, href, linkLabel }, index) => (
+                <Reveal key={title} delay={index * 0.05}>
+                  <article className="card flex h-full flex-col gap-3">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-100">
+                      <Icon className="h-5 w-5 text-brand-700" aria-hidden />
+                    </div>
+                    <h4 className="text-sm font-semibold text-ink">{title}</h4>
+                    <p className="flex-1 text-sm leading-relaxed text-muted">{description}</p>
+                    <Link
+                      href={href}
+                      className="inline-flex items-center text-xs font-semibold text-brand-700 transition-colors hover:text-brand-900"
+                    >
+                      {linkLabel}
+                      <ArrowRight className="ml-1 h-3 w-3 shrink-0" aria-hidden />
+                    </Link>
+                  </article>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-12">
+            <div className="flex items-center gap-3">
+              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-brand-100">
+                <Building2 className="h-4 w-4 text-brand-700" aria-hidden />
+              </div>
+              <h3 className="text-lg font-semibold text-ink">Commercial &amp; Managed Properties</h3>
+            </div>
+            <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              {propertiesServed.map(({ Icon, title, description, href, linkLabel }, index) => (
+                <Reveal key={title} delay={index * 0.05}>
+                  <article className="card flex h-full flex-col gap-3">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-100">
+                      <Icon className="h-5 w-5 text-brand-700" aria-hidden />
+                    </div>
+                    <h4 className="text-sm font-semibold text-ink">{title}</h4>
+                    <p className="flex-1 text-sm leading-relaxed text-muted">{description}</p>
+                    <Link
+                      href={href}
+                      className="inline-flex items-center text-xs font-semibold text-brand-700 transition-colors hover:text-brand-900"
+                    >
+                      {linkLabel}
+                      <ArrowRight className="ml-1 h-3 w-3 shrink-0" aria-hidden />
+                    </Link>
+                  </article>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+
+          <p className="mx-auto mt-10 max-w-3xl text-center text-sm leading-relaxed text-muted">
+            Property types beyond these are covered too, see{" "}
+            <Link
+              href="/industries-we-serve"
+              className="font-semibold text-brand-700 underline underline-offset-4 hover:text-brand-900"
+            >
+              all the industries we serve
+            </Link>
+            .
+          </p>
+        </Container>
+      </section>
+
       {/* ── SURFACE-APPROPRIATE CLEANING ────────────────────────────────── */}
       <section className="section-shell bg-white" id="approach">
         <Container>
@@ -1467,8 +2031,8 @@ export default function PressureWashingPage() {
         <Container>
           <SectionHeading
             eyebrow="Why Us"
-            title="Why Seattle Businesses Choose Cleaning From The Heart"
-            description="A locally owned, family-operated company with 30+ years of hands-on experience across Seattle-area commercial and residential properties."
+            title="Why Seattle Property Owners Choose Cleaning From The Heart"
+            description="A locally owned, family-operated company with 30+ years of hands-on experience across Seattle-area residential and commercial properties."
           />
 
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -1492,8 +2056,8 @@ export default function PressureWashingPage() {
         <Container>
           <SectionHeading
             eyebrow="How It Works"
-            title="Our Commercial Pressure Washing Process"
-            description="Four steps from first call to finished surfaces. Everything that affects the price or the schedule is settled before a date is held."
+            title="Our Pressure Washing Process"
+            description="Four steps from first call to finished surfaces, the same at a house as at a commercial site. Everything that affects the price or the schedule is settled before a date is held."
           />
 
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -1609,17 +2173,20 @@ export default function PressureWashingPage() {
 
       {/*
         ─── IMAGE NOTES ─────────────────────────────────────────────────────
-        The two photographs below are genuine company work, but both are from
-        residential exterior jobs (a hardscaped patio and a paver/flagstone
-        area), so the captions describe them for exactly what they are and
-        never imply a commercial site. They also come from `galleryItems` in
-        lib/site.ts, which is what feeds /gallery.
+        Every real pressure-washing photograph on this site is a residential
+        exterior job, which is why they now sit in the residential half of the
+        page: gallery-19 (a driveway) in the driveway section, gallery-18 (a
+        paver/flagstone area) in the Seattle-climate section, and the two below.
+        The captions describe them for exactly what they are and never imply a
+        commercial site. All four come from `galleryItems` in lib/site.ts, which
+        is what feeds /gallery.
 
         When commercial pressure-washing photos exist, add them to
         /public/images/services/pressure-washing/ plus matching `galleryItems`
-        entries, and swap them in here. Priority shots:
-          1. Commercial concrete sidewalk, before/after pair
-          2. Storefront or building entrance, before/after pair
+        entries, and place them in the commercial half of the page (the
+        storefront and parking sections carry IMAGE SLOT notes). Priority shots:
+          1. Storefront or building entrance, before/after pair
+          2. Commercial concrete sidewalk, before/after pair
           3. Parking garage level or drive lane, before/after pair
           4. Loading dock apron or dumpster pad, before/after pair
         Note: these gallery files are before/after composites, so they must
@@ -1631,8 +2198,8 @@ export default function PressureWashingPage() {
         <Container>
           <SectionHeading
             eyebrow="Our Work"
-            title="Pressure Washing Results"
-            description="Exterior surface cleaning from Seattle-area properties. Both of these show hard surfaces that had years of weather and organic buildup on them before the visit."
+            title="Pressure Washing Before &amp; After Results"
+            description="Exterior surface cleaning at Seattle-area properties. Both of these show residential hard surfaces that had carried years of weather and organic buildup before the visit."
           />
 
           <div className="mt-10 grid gap-5 md:grid-cols-2">
@@ -1674,8 +2241,8 @@ export default function PressureWashingPage() {
         <Container>
           <SectionHeading
             eyebrow="Related Services"
-            title="Complete Exterior Property Cleaning"
-            description="Pressure washing covers the hard surfaces. These are the services properties most often run alongside it, usually on the same schedule and the same quote."
+            title="Services Booked Alongside Pressure Washing"
+            description="Pressure washing covers the exterior hard surfaces. These are the services homes and commercial properties most often run alongside it, usually on the same schedule and the same quote."
           />
           <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {relatedServices.map(({ title, description, href, ctaLabel }) => (
@@ -1705,7 +2272,7 @@ export default function PressureWashingPage() {
                   <MapPin className="h-5 w-5 text-brand-700" aria-hidden />
                 </div>
                 <h2 className="mt-5 text-2xl font-bold leading-tight tracking-tight md:text-3xl">
-                  Commercial Pressure Washing in Seattle &amp; Nearby Areas
+                  Pressure Washing in Seattle &amp; Nearby Areas
                 </h2>
                 <p className="mt-4 text-base leading-relaxed text-muted">
                   Seattle is where most of this work happens, and the surrounding cities below are served from the
@@ -1739,11 +2306,11 @@ export default function PressureWashingPage() {
             <div>
               <span className="eyebrow">FAQ</span>
               <h2 className="text-3xl font-semibold leading-tight md:text-4xl">
-                Commercial Pressure Washing FAQs
+                Pressure Washing FAQs
               </h2>
               <p className="mt-4 text-base text-muted">
-                What property managers, facility managers and business owners ask most before booking exterior
-                surface cleaning.
+                What homeowners, business owners and property managers ask most before booking exterior surface
+                cleaning in Seattle.
               </p>
               <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-5">
                 <p className="text-sm font-semibold text-ink">Question about your own property?</p>
@@ -1794,13 +2361,13 @@ export default function PressureWashingPage() {
 
             <div className="relative flex flex-col gap-10 lg:flex-row lg:items-center lg:justify-between">
               <div className="max-w-2xl">
-                <p className="eyebrow-light">Commercial Pressure Washing in Seattle</p>
+                <p className="eyebrow-light">Pressure Washing in Seattle</p>
                 <h2 className="mt-1 text-balance text-4xl font-bold tracking-tight text-white md:text-5xl">
                   Need Pressure Washing for Your Seattle Property?
                 </h2>
                 <p className="mt-5 text-base leading-relaxed text-white/65 md:text-lg">
                   Tell us the property type, which exterior surfaces are involved, roughly how much area, and when
-                  the work needs to happen. Business owners, property managers and facility managers get a written
+                  the work needs to happen. Homeowners, business owners and property managers all get a written
                   scope back with a realistic view of what each surface will look like afterwards.
                 </p>
 
