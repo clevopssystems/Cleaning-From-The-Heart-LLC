@@ -334,34 +334,41 @@ export const services: Service[] = [
   {
     slug: "junk-removal",
     title: "Junk Removal",
+    // NOTE: /services/junk-removal has its own dedicated page component, so
+    // seoTitle/seoDescription/problem/solution below are no longer rendered for
+    // that route. shortDescription is still used by the industries pages, so it
+    // is kept in sync with the page's residential + commercial positioning.
     shortDescription:
-      "Fast, professional junk removal for offices and commercial properties to clear out unwanted items and reclaim usable space.",
+      "Junk removal and hauling for homes, offices, rental units, and commercial properties, clearing eligible non-hazardous furniture, clutter, and unwanted items.",
     problem:
-      "Old furniture, equipment, and unwanted materials pile up quickly and create clutter, inefficiency, and an unprofessional environment.",
+      "Unwanted furniture, clutter, and accumulated items take over space that has a better use, during moves, tenant turnovers, office changes, or years of ordinary property use.",
     solution:
-      "Our team removes non-hazardous junk from your property efficiently so your space is cleaner, safer, and ready for productive use.",
+      "We remove eligible non-hazardous items and clear the agreed areas so the property is easier to use, easier to clean, and ready for whatever comes next.",
     benefits: [
-      "Clears office furniture, non-hazardous debris, and unwanted items",
-      "Creates more usable space in storage areas and work zones",
-      "Reduces clutter that affects workflow and presentation",
-      "Supports cleanouts during transitions and facility updates",
-      "Prompt scheduling with straightforward communication",
-      "Responsible disposal practices whenever applicable"
+      "Clears household and office furniture, boxes, and non-hazardous clutter",
+      "Residential, commercial, and property-management cleanouts",
+      "Frees up storage rooms, garages, and back-of-house areas",
+      "Supports moves, tenant turnovers, and property transitions",
+      "Scope confirmed in writing before anything is loaded",
+      "Clear non-hazardous service boundary, stated up front"
     ],
     process: [
-      "On-site review of item volume, access, and removal scope",
-      "Scheduled pickup and efficient removal by our team",
-      "Final walkthrough to confirm space is cleared as expected"
+      "Review of items, volume, access, and removal scope",
+      "Scope confirmation, including anything needing a dedicated provider",
+      "Scheduled removal and hauling of the agreed items",
+      "Final review to confirm the agreed areas are cleared"
     ],
-    seoTitle: "Commercial Junk Removal in Seattle, WA",
+    seoTitle: "Junk Removal Services in Seattle, WA",
     seoDescription:
-      "Commercial junk removal in Seattle for offices and properties. Clear unwanted items quickly and restore clean, usable space.",
+      "Junk removal in Seattle for homes, offices, rental properties, and commercial cleanouts. Furniture, clutter, and eligible non-hazardous items hauled away.",
     keywords: [
       "junk removal Seattle",
+      "junk removal services Seattle",
+      "residential junk removal Seattle",
       "commercial junk removal Seattle",
+      "furniture removal Seattle",
       "office cleanout Seattle",
-      "property junk hauling Seattle",
-      "business junk pickup Seattle WA"
+      "property cleanout Seattle"
     ]
   },
   {
