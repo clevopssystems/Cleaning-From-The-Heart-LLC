@@ -3,11 +3,11 @@ import { Resend } from "resend";
 import { Ratelimit } from "@upstash/ratelimit";
 import { Redis } from "@upstash/redis";
 import {
-  quoteServiceOptions,
-  propertyTypeOptions,
-  cleaningFrequencyOptions,
-  contactMethodOptions
-} from "@/lib/site";
+  validateQuoteSubmission,
+  firstQuoteError,
+  isUrgentTimeline,
+  type QuoteSubmission
+} from "@/lib/quote-form";
 
 // ---------------------------------------------------------------------------
 // Rate limiter, Upstash Redis (shared across every Vercel serverless instance).
@@ -38,15 +38,12 @@ function createRatelimiter(): Ratelimit | null {
 const ratelimiter = createRatelimiter();
 
 // ---------------------------------------------------------------------------
-// Allowed select-field values, anything outside these sets is rejected.
-// These are built from the SAME shared arrays the contact form renders
-// (lib/site.ts), so the frontend options and backend whitelist can never drift.
-// "" is always allowed because these fields are optional.
+// Field validation lives in lib/quote-form.ts and is shared with the contact
+// form component, so the options a visitor can pick and the values this route
+// accepts are generated from the same lists and can never drift apart.
+// Every select field is optional, so "" is always allowed; any other value
+// must appear in the canonical option list or the request is rejected.
 // ---------------------------------------------------------------------------
-const ALLOWED_SERVICES = new Set<string>(["", ...quoteServiceOptions]);
-const ALLOWED_PROPERTY_TYPES = new Set<string>(["", ...propertyTypeOptions]);
-const ALLOWED_FREQUENCIES = new Set<string>(["", ...cleaningFrequencyOptions]);
-const ALLOWED_CONTACT_METHODS = new Set<string>(["", ...contactMethodOptions]);
 
 // 16 KB is more than enough for a contact form.
 const MAX_BODY_BYTES = 16 * 1024;
@@ -162,80 +159,104 @@ export async function POST(req: NextRequest) {
   }
 
   // ── 7. Field extraction ───────────────────────────────────────────────────
-  const name = typeof body.name === "string" ? body.name : "";
-  const email = typeof body.email === "string" ? body.email : "";
-  const phone = typeof body.phone === "string" ? body.phone : "";
-  const service = typeof body.service === "string" ? body.service : "";
-  const propertyType = typeof body.propertyType === "string" ? body.propertyType : "";
-  const frequency = typeof body.frequency === "string" ? body.frequency : "";
-  const contactMethod = typeof body.contactMethod === "string" ? body.contactMethod : "";
-  const message = typeof body.message === "string" ? body.message : "";
+  // Every field is coerced to a string first, so a non-string (or missing)
+  // value becomes "" rather than reaching the validator or the email body.
+  const field = (key: keyof QuoteSubmission): string =>
+    typeof body[key] === "string" ? (body[key] as string) : "";
+
+  const submission: QuoteSubmission = {
+    name: field("name"),
+    email: field("email"),
+    phone: field("phone"),
+    contactMethod: field("contactMethod"),
+    service: field("service"),
+    propertyType: field("propertyType"),
+    frequency: field("frequency"),
+    timeline: field("timeline"),
+    message: field("message"),
+  };
 
   // ── 8. Input validation ───────────────────────────────────────────────────
-  if (!name.trim() || name.trim().length < 2 || name.trim().length > 100) {
-    return NextResponse.json(
-      { error: "Name must be between 2 and 100 characters." },
-      { status: 400 }
-    );
-  }
-
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!email.trim() || !emailRegex.test(email.trim())) {
-    return NextResponse.json(
-      { error: "Please enter a valid email address." },
-      { status: 400 }
-    );
-  }
-
-  if (!message.trim() || message.trim().length < 10 || message.trim().length > 2000) {
-    return NextResponse.json(
-      { error: "Message must be between 10 and 2000 characters." },
-      { status: 400 }
-    );
-  }
-
-  if (phone.trim() && !/^[\d\s()\-+.]{7,20}$/.test(phone.trim())) {
-    return NextResponse.json(
-      { error: "Please enter a valid phone number." },
-      { status: 400 }
-    );
-  }
-
-  // Reject select-field values not in the known lists, prevents arbitrary
-  // strings from being injected into the email even after sanitization.
-  // These fields are optional, so an empty string is always accepted.
-  if (!ALLOWED_SERVICES.has(service)) {
-    return NextResponse.json({ error: "Invalid service selection." }, { status: 400 });
-  }
-
-  if (!ALLOWED_PROPERTY_TYPES.has(propertyType)) {
-    return NextResponse.json({ error: "Invalid property type selection." }, { status: 400 });
-  }
-
-  if (!ALLOWED_FREQUENCIES.has(frequency)) {
-    return NextResponse.json({ error: "Invalid cleaning frequency selection." }, { status: 400 });
-  }
-
-  if (!ALLOWED_CONTACT_METHODS.has(contactMethod)) {
-    return NextResponse.json({ error: "Invalid contact method selection." }, { status: 400 });
+  // Same validator the form component runs client-side. It enforces the length
+  // limits, the email and phone formats, the required service selection, the
+  // select-field whitelists, and the conditional rule that a phone number is
+  // required when the visitor asks to be contacted by phone call or text message.
+  const validationErrors = validateQuoteSubmission(submission);
+  const validationError = firstQuoteError(validationErrors);
+  if (validationError) {
+    return NextResponse.json({ error: validationError }, { status: 400 });
   }
 
   // ── 9. Send email ─────────────────────────────────────────────────────────
   const resend = new Resend(process.env.RESEND_API_KEY);
 
-  const safeName = sanitize(name);
-  const safeEmail = sanitize(email);
-  const safePhone = sanitize(phone);
-  const safeService = sanitize(service);
-  const safePropertyType = sanitize(propertyType);
-  const safeFrequency = sanitize(frequency);
-  const safeContactMethod = sanitize(contactMethod);
-  const safeMessage = sanitize(message).replace(/\n/g, "<br>");
+  const safeName = sanitize(submission.name);
+  const safeEmail = sanitize(submission.email);
+  const safePhone = sanitize(submission.phone);
+  const safeContactMethod = sanitize(submission.contactMethod);
+  const safeService = sanitize(submission.service);
+  const safePropertyType = sanitize(submission.propertyType);
+  const safeFrequency = sanitize(submission.frequency);
+  const safeTimeline = sanitize(submission.timeline);
+  const safeMessagePlain = sanitize(submission.message);
+  const safeMessage = safeMessagePlain.replace(/\n/g, "<br>");
+  const urgent = isUrgentTimeline(submission.timeline);
   const submittedAt = new Date().toLocaleString("en-US", {
     timeZone: "America/Los_Angeles",
     dateStyle: "full",
     timeStyle: "short",
   });
+
+  const NOT_PROVIDED = "Not provided";
+
+  // Lead details in scan order. Contact details first, then what they need,
+  // then scheduling, so the whole lead reads top to bottom without hunting.
+  const rows: { label: string; value: string; strong?: boolean }[] = [
+    { label: "Name", value: safeName },
+    { label: "Email", value: safeEmail },
+    { label: "Phone", value: safePhone || NOT_PROVIDED },
+    { label: "Preferred Contact", value: safeContactMethod || "No preference given" },
+    { label: "Service", value: safeService, strong: true },
+    { label: "Property Type", value: safePropertyType || NOT_PROVIDED },
+    { label: "Frequency", value: safeFrequency || NOT_PROVIDED },
+    { label: "Needed", value: safeTimeline || NOT_PROVIDED, strong: urgent },
+  ];
+
+  const rowsHtml = rows
+    .map((row, index) => {
+      const background = index % 2 === 0 ? "#eff6ff" : "#ffffff";
+      const value =
+        row.label === "Email"
+          ? `<a href="mailto:${safeEmail}" style="color:#1e40af;text-decoration:none;">${safeEmail}</a>`
+          : row.strong
+            ? `<strong>${row.value}</strong>`
+            : row.value;
+      return `
+            <tr style="background:${background};">
+              <td style="padding:12px 16px;font-weight:700;color:#374151;width:170px;font-size:14px;">${row.label}</td>
+              <td style="padding:12px 16px;color:#111827;font-size:14px;">${value}</td>
+            </tr>`;
+    })
+    .join("");
+
+  // Plain-text alternative, mirrors the HTML for clients that prefer text.
+  const textBody = [
+    urgent ? "TIME-SENSITIVE LEAD" : null,
+    "NEW QUOTE REQUEST",
+    "",
+    ...rows.map((row) => `${row.label}:\n${row.value}`),
+    "",
+    `Message:\n${safeMessagePlain || NOT_PROVIDED}`,
+    "",
+    `Submitted ${submittedAt} (Pacific Time) via cleaningfromtheheartllc.com`,
+  ]
+    .filter((line) => line !== null)
+    .join("\n\n");
+
+  const subjectParts = ["New Quote Request"];
+  if (safeService) subjectParts.push(safeService);
+  if (safeName) subjectParts.push(safeName);
+  if (urgent && safeTimeline) subjectParts.push(safeTimeline);
 
   console.log("RESEND_API_KEY exists:", !!process.env.RESEND_API_KEY);
   console.log("Sending email via Resend...");
@@ -246,56 +267,28 @@ export async function POST(req: NextRequest) {
       from: "Quotes <quotes@clevops.co>",
       to: ["Cleanfromtheheartllc@gmail.com"],
       replyTo: safeEmail,
-      subject: safeName
-        ? `New Cleaning Quote Request from ${safeName}`
-        : "New Cleaning Quote Request",
+      subject: subjectParts.join(" · "),
+      text: textBody,
       html: `
         <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;background:#f8fafc;padding:32px;border-radius:12px;">
           <div style="margin-bottom:24px;">
             <h1 style="margin:0 0 4px;color:#1e40af;font-size:22px;">New Quote Request</h1>
             <p style="margin:0;color:#6b7280;font-size:14px;">Cleaning From The Heart LLC · Website quote form</p>
           </div>
-
-          <table style="width:100%;border-collapse:collapse;border-radius:8px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.08);">
-            <tr style="background:#eff6ff;">
-              <td style="padding:12px 16px;font-weight:700;color:#374151;width:170px;font-size:14px;">Lead Source</td>
-              <td style="padding:12px 16px;color:#111827;font-size:14px;">Website quote form</td>
-            </tr>
-            <tr style="background:#ffffff;">
-              <td style="padding:12px 16px;font-weight:700;color:#374151;font-size:14px;">Full Name</td>
-              <td style="padding:12px 16px;color:#111827;font-size:14px;">${safeName}</td>
-            </tr>
-            <tr style="background:#eff6ff;">
-              <td style="padding:12px 16px;font-weight:700;color:#374151;font-size:14px;">Email</td>
-              <td style="padding:12px 16px;font-size:14px;">
-                <a href="mailto:${safeEmail}" style="color:#1e40af;text-decoration:none;">${safeEmail}</a>
-              </td>
-            </tr>
-            <tr style="background:#ffffff;">
-              <td style="padding:12px 16px;font-weight:700;color:#374151;font-size:14px;">Phone</td>
-              <td style="padding:12px 16px;color:#111827;font-size:14px;">${safePhone || "Not provided"}</td>
-            </tr>
-            <tr style="background:#eff6ff;">
-              <td style="padding:12px 16px;font-weight:700;color:#374151;font-size:14px;">Service Needed</td>
-              <td style="padding:12px 16px;color:#111827;font-size:14px;">${safeService || "Not provided"}</td>
-            </tr>
-            <tr style="background:#ffffff;">
-              <td style="padding:12px 16px;font-weight:700;color:#374151;font-size:14px;">Property Type</td>
-              <td style="padding:12px 16px;color:#111827;font-size:14px;">${safePropertyType || "Not provided"}</td>
-            </tr>
-            <tr style="background:#eff6ff;">
-              <td style="padding:12px 16px;font-weight:700;color:#374151;font-size:14px;">Cleaning Frequency</td>
-              <td style="padding:12px 16px;color:#111827;font-size:14px;">${safeFrequency || "Not provided"}</td>
-            </tr>
-            <tr style="background:#ffffff;">
-              <td style="padding:12px 16px;font-weight:700;color:#374151;font-size:14px;">Preferred Contact Method</td>
-              <td style="padding:12px 16px;color:#111827;font-size:14px;">${safeContactMethod || "Not provided"}</td>
-            </tr>
+${
+  urgent
+    ? `
+          <div style="margin-bottom:20px;background:#fef3c7;border-left:4px solid #d97706;border-radius:8px;padding:12px 16px;">
+            <p style="margin:0;color:#92400e;font-size:14px;font-weight:700;">Time-sensitive: this lead needs service ${safeTimeline.toLowerCase()}.</p>
+          </div>`
+    : ""
+}
+          <table style="width:100%;border-collapse:collapse;border-radius:8px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.08);">${rowsHtml}
           </table>
 
           <div style="margin-top:20px;background:#ffffff;border-radius:8px;padding:16px 20px;border-left:4px solid #1e40af;box-shadow:0 1px 3px rgba(0,0,0,0.08);">
             <p style="margin:0 0 8px;font-weight:700;color:#374151;font-size:14px;">Message</p>
-            <p style="margin:0;color:#374151;line-height:1.7;font-size:14px;">${safeMessage || "Not provided"}</p>
+            <p style="margin:0;color:#374151;line-height:1.7;font-size:14px;">${safeMessage || NOT_PROVIDED}</p>
           </div>
 
           <p style="margin-top:24px;color:#9ca3af;font-size:12px;border-top:1px solid #e5e7eb;padding-top:16px;">
