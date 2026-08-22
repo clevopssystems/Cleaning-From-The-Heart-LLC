@@ -375,11 +375,11 @@ export const services: Service[] = [
     slug: "parking-lot-exterior-maintenance",
     title: "Parking Lot & Exterior Maintenance",
     shortDescription:
-      "Exterior upkeep for parking lots and property fronts to keep your facility clean, safe, and professional from the curb inward.",
+      "Commercial parking lot cleaning and routine exterior upkeep for Seattle properties, covering lots, sidewalks, entrances, curbs, and perimeter areas.",
     problem:
-      "Parking areas and exteriors collect litter, dirt, and debris quickly, creating a poor first impression and avoidable maintenance issues.",
+      "Parking areas and exteriors collect litter, leaves, and loose debris quickly, so a well-run commercial property starts looking like one that is not.",
     solution:
-      "We provide routine exterior maintenance support for lots, entry areas, and perimeter zones to keep your property consistently presentable.",
+      "We provide hand-performed exterior cleaning for lots, walkways, entry areas, and perimeter zones, one-time or on a recurring schedule you choose.",
     benefits: [
       "Cleaner parking areas, walkways, and building approaches",
       "Helps maintain a safer, more professional customer arrival experience",
@@ -393,15 +393,21 @@ export const services: Service[] = [
       "Scheduled exterior maintenance of approved lot and perimeter areas",
       "Routine quality checks with updates and scope refinements"
     ],
-    seoTitle: "Parking Lot & Exterior Maintenance in Seattle, WA",
+    // NOTE: /services/parking-lot-exterior-maintenance has its own dedicated
+    // page, which owns its metadata. These fields are kept accurate so the
+    // service stays coherent wherever services[] is rendered.
+    seoTitle: "Parking Lot Cleaning Seattle | Exterior Maintenance Services",
     seoDescription:
-      "Parking lot and exterior maintenance services in Seattle for cleaner, safer, and more professional commercial properties.",
+      "Commercial parking lot cleaning and exterior maintenance in Seattle for offices, retail, apartments and managed properties. One-time or recurring.",
     keywords: [
       "parking lot cleaning Seattle",
-      "exterior maintenance Seattle",
+      "commercial parking lot cleaning Seattle",
+      "parking lot cleaning services Seattle",
+      "exterior maintenance services Seattle",
       "commercial exterior cleaning Seattle",
-      "property maintenance Seattle WA",
-      "parking area upkeep Seattle"
+      "exterior property cleaning Seattle",
+      "parking area cleaning Seattle",
+      "property maintenance Seattle WA"
     ]
   },
   {
@@ -713,38 +719,12 @@ export const services: Service[] = [
   }
 ];
 
-// ─── QUOTE FORM OPTIONS ───────────────────────────────────────────────────────
-// Single source of truth for the Get a Quote form. These same arrays are imported
-// by BOTH the contact form (frontend) and the contact API route (backend
-// validation), so the values a visitor can submit and the values the server
-// accepts can never drift apart. If you add or rename an option, do it here only.
-//
-// Service options are derived directly from the real `services` list above, with
-// a "Not Sure Yet" catch-all appended for visitors who are still deciding.
-export const quoteServiceOptions: readonly string[] = [
-  ...services.map((service) => service.title),
-  "Not Sure Yet"
-];
-
-export const propertyTypeOptions = [
-  "Home",
-  "Office",
-  "School or Educational Facility",
-  "Commercial Property",
-  "Rental or Managed Property",
-  "Post-Construction Project",
-  "Other"
-] as const;
-
-export const cleaningFrequencyOptions = [
-  "One-time Cleaning",
-  "Weekly",
-  "Bi-weekly",
-  "Monthly",
-  "Not Sure Yet"
-] as const;
-
-export const contactMethodOptions = ["Phone", "Email", "Text"] as const;
+// ─── QUOTE FORM OPTIONS ───────────────────────────────────
+// The Get a Quote form’s option lists, grouping, and validation rules live in
+// lib/quote-form.ts, which derives its service labels from the services array
+// above by slug. Both the contact form and the /api/contact route import from
+// there, so the values a visitor can submit and the values the server accepts
+// can never drift apart. Add or rename quote-form options in that file only.
 
 // Home page service showcase, 6 featured cards
 // To add a photo to any card: set image to "/home/services/{name}.jpg"
