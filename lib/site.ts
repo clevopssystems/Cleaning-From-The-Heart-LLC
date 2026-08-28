@@ -413,34 +413,45 @@ export const services: Service[] = [
   {
     slug: "post-construction-renovation-cleanup",
     title: "Post-Construction & Renovation Cleanup",
+    // NOTE: /services/post-construction-renovation-cleanup has its own
+    // dedicated page component, so seoTitle/seoDescription/problem/solution
+    // below are no longer rendered for that route. shortDescription is still
+    // used by the services hub and the industries pages, so it is kept in sync
+    // with the page's residential + commercial positioning.
     shortDescription:
-      "Detailed post-construction and renovation cleanup that removes dust, debris, and residue so your space is ready for handoff or occupancy.",
+      "Post-construction and renovation cleaning for new builds, remodels, build-outs, and tenant improvements, clearing fine construction dust and residue before handoff or occupancy.",
     problem:
-      "Construction and renovation projects leave fine dust, debris, and residue throughout the property, delaying move-in readiness and final presentation.",
+      "Construction and renovation projects leave fine dust, residue, labels, and film across brand-new surfaces, so a property that is technically finished is still not ready to hand over.",
     solution:
-      "We perform detailed cleanup across floors, surfaces, fixtures, and high-touch points so newly completed spaces are clean, safe, and presentable.",
+      "We clean top down and room by room across the agreed areas, working the trim, glass, cabinetry, fixtures, and floors that routine cleaning skips, with the scope written before the crew is booked.",
     benefits: [
-      "Removes construction dust and debris from key surfaces and zones",
-      "Detailed cleaning of floors, fixtures, and high-touch areas",
-      "Supports final turnover readiness for owners and tenants",
-      "Improves first impression for handoff, opening, or occupancy",
-      "Flexible scheduling around project timelines",
-      "Works for office build-outs, remodels, and commercial renovations"
+      "Fine drywall, sanding, and construction dust removed from accessible surfaces",
+      "Detail cleaning of trim, doors, interior glass, cabinetry, bathrooms, and floors",
+      "Labels, sticker adhesive, and protective film removed from new installations",
+      "Residential remodels and new builds as well as commercial build-outs",
+      "Rough, final, and touch-up stages, booked in any combination",
+      "Scope coordinated around the project timeline and handover date"
     ],
     process: [
-      "Project walkthrough to define cleanup scope, access, and deadlines",
-      "Targeted dust, debris, and residue removal throughout specified areas",
-      "Final detail pass and walkthrough for turnover readiness"
+      "Project review covering property, project type, stage, and the date it must be ready",
+      "Written scope and free quote, including anything outside the service",
+      "Top-down dust removal and detail cleaning across the agreed areas",
+      "Optional touch-up pass timed to the walkthrough, opening, or move-in"
     ],
-    seoTitle: "Post-Construction Cleanup in Seattle, WA",
+    seoTitle: "Post-Construction Cleaning Seattle | Renovation Cleanup",
     seoDescription:
-      "Post-construction and renovation cleanup in Seattle for offices and commercial spaces. Remove dust and debris and prepare for occupancy.",
+      "Post-construction and renovation cleaning in Seattle for new builds, remodels, tenant improvements and build-outs. Fine construction dust removed. Free quote.",
     keywords: [
       "post construction cleaning Seattle",
+      "construction cleanup Seattle",
       "renovation cleanup Seattle",
-      "construction dust cleanup Seattle",
-      "commercial post-construction cleanup Seattle WA",
-      "final clean Seattle"
+      "post renovation cleaning Seattle",
+      "post remodel cleaning Seattle",
+      "final construction cleaning Seattle",
+      "commercial post construction cleaning Seattle",
+      "tenant improvement cleaning Seattle",
+      "residential post construction cleaning Seattle",
+      "construction dust cleanup Seattle"
     ]
   },
   {
