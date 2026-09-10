@@ -33,6 +33,8 @@ export interface Service {
 }
 
 export const siteConfig = {
+  url: "https://cleaningfromtheheartllc.com",
+  defaultOgImage: "/services/hero/hero-cleaning-team.png",
   name: "Cleaning From The Heart LLC",
   phoneDisplay: "(206) 850-8484",
   phoneHref: "tel:+12068508484",
@@ -55,7 +57,8 @@ export const navLinks = [
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
   { href: "/industries-we-serve", label: "Industries We Serve" },
-  { href: "/gallery", label: "Results" }
+  { href: "/gallery", label: "Results" },
+  { href: "/blog", label: "Blog" }
 ];
 
 export const services: Service[] = [
