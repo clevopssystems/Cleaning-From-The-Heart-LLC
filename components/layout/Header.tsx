@@ -56,13 +56,14 @@ export function Header() {
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden items-center gap-6 md:flex" aria-label="Main navigation">
+        <nav className="hidden items-center gap-4 xl:gap-6 lg:flex" aria-label="Main navigation">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
+              aria-current={pathname === link.href || (link.href === "/blog" && pathname.startsWith("/blog/")) ? "page" : undefined}
               className={cn(
-                "text-sm font-medium transition-colors",
+                "whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4",
                 transparent
                   ? "text-white/80 hover:text-white"
                   : pathname === link.href
@@ -76,11 +77,11 @@ export function Header() {
         </nav>
 
         {/* Desktop actions */}
-        <div className="hidden items-center gap-2 md:flex">
+        <div className="hidden shrink-0 items-center gap-2 lg:flex">
           <Link
             href={siteConfig.phoneHref}
             className={cn(
-              "inline-flex items-center gap-1.5 rounded-lg px-3 py-2 text-xs font-semibold transition-colors",
+              "hidden xl:inline-flex items-center gap-1.5 rounded-lg px-3 py-2 text-xs font-semibold transition-colors",
               transparent
                 ? "text-white/90 hover:bg-white/10"
                 : "text-brand-700 hover:bg-brand-50"
@@ -98,7 +99,7 @@ export function Header() {
         </div>
 
         {/* Mobile actions, one-tap call + menu */}
-        <div className="flex items-center gap-1 md:hidden">
+        <div className="flex shrink-0 items-center gap-1 lg:hidden">
           <Link
             href={siteConfig.phoneHref}
             aria-label={`Call ${siteConfig.phoneDisplay}`}
@@ -126,15 +127,16 @@ export function Header() {
 
       {/* Mobile dropdown, always solid */}
       {open && (
-        <div className="border-t border-brand-100 bg-white md:hidden">
+        <div className="border-t border-brand-100 bg-white lg:hidden">
           <Container className="flex flex-col gap-1 py-3">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
+                aria-current={pathname === link.href || (link.href === "/blog" && pathname.startsWith("/blog/")) ? "page" : undefined}
                 onClick={() => setOpen(false)}
                 className={cn(
-                  "rounded-lg px-3 py-2.5 text-sm font-medium transition-colors hover:bg-brand-50 hover:text-brand-700",
+                  "min-h-11 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors hover:bg-brand-50 hover:text-brand-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2",
                   pathname === link.href ? "bg-brand-50 text-brand-700" : "text-muted"
                 )}
               >

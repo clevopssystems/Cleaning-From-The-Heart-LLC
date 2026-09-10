@@ -1,0 +1,41 @@
+.resources {
+  overflow-wrap: anywhere;
+}
+
+.resources :is(a, button, select, summary, [tabindex]):focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
+.resources nav[aria-label="Breadcrumb"] li {
+  min-width: 0;
+}
+
+.resources nav[aria-label="Breadcrumb"] a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+.body {
+  max-width: 70ch;
+  margin-inline: auto;
+  font-size: 1.0625rem;
+  line-height: 1.85;
+}
+
+.body > * + * { margin-top: 1.5rem; }
+.body :is(h2, h3) { scroll-margin-top: 6rem; font-weight: 600; line-height: 1.35; }
+.body h2 { margin-top: 3rem; font-size: clamp(1.5rem, 3vw, 2rem); }
+.body h3 { margin-top: 2rem; font-size: 1.25rem; }
+.body :is(ul, ol) { padding-left: 1.5rem; }
+.body ul { list-style: disc; }
+.body ol { list-style: decimal; }
+.body li + li { margin-top: .5rem; }
+.body a { text-decoration: underline; text-underline-offset: 4px; }
+.body figure { margin-block: 2.5rem; }
+.body figcaption { margin-top: .75rem; font-size: .875rem; line-height: 1.6; }
+.body table { width: 100%; border-collapse: collapse; font-size: 1rem; line-height: 1.6; }
+.body caption { text-align: left; font-weight: 600; padding-bottom: 1rem; }
+.body :is(th, td) { padding: .875rem; text-align: left; vertical-align: top; min-width: 9rem; }
+.body blockquote p + p { margin-top: .75rem; }

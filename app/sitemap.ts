@@ -1,8 +1,9 @@
 import type { MetadataRoute } from "next";
-import { services } from "@/lib/site";
+import { services, siteConfig } from "@/lib/site";
 import { getIndustryPageSlugs } from "@/lib/industries";
+import { getPublishedPosts } from "@/lib/blog";
 
-const base = "https://www.cleaningfromtheheartllc.com";
+const base = siteConfig.url;
 
 // Priority reflects each page's role in the site hierarchy, not how often it
 // changes, hub/landing pages outrank the detail pages they link to.
@@ -34,15 +35,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/about", priority: PRIORITY.supporting },
     { path: "/gallery", priority: PRIORITY.supporting },
     { path: "/videos", priority: PRIORITY.supporting },
+    { path: "/blog", priority: PRIORITY.supporting },
     { path: "/contact", priority: PRIORITY.supporting }
   ];
 
   // No lastModified: the site has no real per-page content-modification data
   // source, and stamping every entry with the build/request time on every
   // generation would misrepresent all pages as continuously updated.
-  return entries.map(({ path, priority }) => ({
+  const existingEntries: MetadataRoute.Sitemap = entries.map(({ path, priority }) => ({
     url: `${base}${path}`,
     changeFrequency: "monthly",
     priority
   }));
+  return [
+    ...existingEntries,
+    ...getPublishedPosts().map(post => ({
+      url: `${base}/blog/${post.slug}`,
+      lastModified: post.updatedAt ?? post.publishedAt,
+      changeFrequency: "monthly" as const,
+      priority: PRIORITY.supporting
+    }))
+  ];
 }

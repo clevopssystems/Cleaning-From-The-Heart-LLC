@@ -8,6 +8,7 @@ import { ServicesSection } from "@/components/sections/home/ServicesSection";
 import { HowItWorksSection } from "@/components/sections/home/HowItWorksSection";
 import { GuaranteeSection } from "@/components/sections/home/GuaranteeSection";
 import { FaqSection } from "@/components/sections/home/FaqSection";
+import { ResourcesSection } from "@/components/sections/home/ResourcesSection";
 import { ServiceAreaSection } from "@/components/sections/home/ServiceAreaSection";
 import { faqs } from "@/lib/site";
 
@@ -100,6 +101,8 @@ export default function HomePage() {
 
       {/* 9. FAQ, common questions */}
       <FaqSection />
+
+      <ResourcesSection />
 
       {/* 10. Service Areas, local SEO copy + cities */}
       <ServiceAreaSection />

@@ -69,6 +69,11 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/blog" className="inline-flex min-h-11 items-center text-sm text-white/55 transition-colors hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4">
+                  Blog
+                </Link>
+              </li>
+              <li>
                 <Link href="/contact#quote-form" className="text-sm text-white/55 transition-colors hover:text-white">
                   Get a Quote
                 </Link>
@@ -92,7 +97,7 @@ export function Footer() {
               <li>
                 <Link
                   href={`mailto:${siteConfig.email}`}
-                  className="flex items-center gap-2 text-sm text-white/55 transition-colors hover:text-white"
+                  className="flex items-center gap-2 break-all text-sm text-white/55 transition-colors hover:text-white"
                 >
                   <Mail className="h-3.5 w-3.5 shrink-0 text-accent" aria-hidden />
                   {siteConfig.email}

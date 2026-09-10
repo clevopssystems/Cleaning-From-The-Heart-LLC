@@ -49,7 +49,7 @@ export function Breadcrumbs({ items }: { items: BreadcrumbItem[] }) {
           })}
         </ol>
       </nav>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />
     </>
   );
 }
