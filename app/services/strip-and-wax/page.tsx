@@ -40,6 +40,10 @@ import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
 import { GroupedScopeAccordion, type GroupedScopeItem } from "@/components/services/GroupedScopeAccordion";
 import { ServiceEditorialSplit } from "@/components/services/ServiceEditorialSplit";
 import { siteConfig, serviceAreas } from "@/lib/site";
+import { quoteHrefForService } from "@/lib/quote-form";
+
+// Quote CTAs on this page preselect this service in the quote form.
+const QUOTE_HREF = quoteHrefForService("strip-and-wax");
 
 const SITE_URL = "https://www.cleaningfromtheheartllc.com";
 
@@ -748,7 +752,7 @@ export default function StripAndWaxPage() {
                 your building keeps running.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
-                <Link href="/contact#quote-form" className="cta-gold">
+                <Link href={QUOTE_HREF} className="cta-gold">
                   Get a Free Floor Assessment
                 </Link>
                 <Link href={siteConfig.phoneHref} className="cta-ghost">
@@ -842,7 +846,7 @@ export default function StripAndWaxPage() {
               walkthrough rather than a price list.
             </p>
             <div className="mt-10 flex flex-wrap gap-3">
-              <Link href="/contact#quote-form" className="cta-primary">
+              <Link href={QUOTE_HREF} className="cta-primary">
                 Get a Strip and Wax Quote
               </Link>
               <Link href={siteConfig.phoneHref} className="cta-secondary">
@@ -976,7 +980,7 @@ export default function StripAndWaxPage() {
                 working against it.
               </p>
             </div>
-            <Link href="/contact#quote-form" className="cta-primary shrink-0">
+            <Link href={QUOTE_HREF} className="cta-primary shrink-0">
               Ask Which One You Need
               <ArrowRight className="ml-2 h-4 w-4" aria-hidden />
             </Link>
@@ -1143,7 +1147,7 @@ export default function StripAndWaxPage() {
           <Reveal delay={0.35}>
             <div className="mt-10 flex flex-wrap gap-3 border-t border-white/10 pt-10">
               <div className="flex flex-col items-start gap-1">
-                <Link href="/contact#quote-form" className="cta-gold">
+                <Link href={QUOTE_HREF} className="cta-gold">
                   Get a Free Floor Assessment
                 </Link>
                 <span className="pl-1 text-[11px] text-white/35">Takes 60 seconds · No obligation</span>
@@ -1180,7 +1184,7 @@ export default function StripAndWaxPage() {
           </div>
 
           <div className="mt-10 flex flex-wrap gap-3">
-            <Link href="/contact#quote-form" className="cta-primary">
+            <Link href={QUOTE_HREF} className="cta-primary">
               Book a Floor Walkthrough
             </Link>
             <Link href={siteConfig.phoneHref} className="cta-secondary">
@@ -1213,7 +1217,7 @@ export default function StripAndWaxPage() {
                 cost, that is what we will quote.
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
-                <Link href="/contact#quote-form" className="cta-primary">
+                <Link href={QUOTE_HREF} className="cta-primary">
                   Request a Written Quote
                 </Link>
               </div>
@@ -1326,7 +1330,7 @@ export default function StripAndWaxPage() {
                   strip or a recoat.
                 </p>
                 <div className="mt-4 flex flex-wrap gap-2">
-                  <Link href="/contact#quote-form" className="cta-primary px-4 py-2 text-xs">
+                  <Link href={QUOTE_HREF} className="cta-primary px-4 py-2 text-xs">
                     Ask Us Directly
                   </Link>
                   <Link href={siteConfig.phoneHref} className="cta-secondary px-4 py-2 text-xs">
@@ -1414,7 +1418,7 @@ export default function StripAndWaxPage() {
 
               <div className="flex flex-col gap-3 lg:min-w-[220px]">
                 <div className="flex flex-col items-start gap-1">
-                  <Link href="/contact#quote-form" className="cta-gold w-full justify-center">
+                  <Link href={QUOTE_HREF} className="cta-gold w-full justify-center">
                     Get a Free Floor Assessment
                   </Link>
                   <span className="pl-1 text-[11px] text-white/40">Takes 60 seconds · No obligation</span>

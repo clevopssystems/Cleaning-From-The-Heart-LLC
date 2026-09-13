@@ -25,6 +25,10 @@ import { SectionHeading } from "@/components/shared/SectionHeading";
 import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
 import { GroupedScopeAccordion, type GroupedScopeItem } from "@/components/services/GroupedScopeAccordion";
 import { siteConfig, serviceAreas } from "@/lib/site";
+import { quoteHrefForService } from "@/lib/quote-form";
+
+// Quote CTAs on this page preselect this service in the quote form.
+const QUOTE_HREF = quoteHrefForService("residential-deep-cleaning", "House / Single-Family Home");
 
 const SITE_URL = "https://www.cleaningfromtheheartllc.com";
 
@@ -459,7 +463,7 @@ export default function ResidentialDeepCleaningPage() {
                 the first clean before recurring service begins. Your scope is confirmed before we start.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
-                <Link href="/contact#quote-form" className="cta-gold">
+                <Link href={QUOTE_HREF} className="cta-gold">
                   Get a Free Quote
                 </Link>
                 <Link href={siteConfig.phoneHref} className="cta-ghost">
@@ -537,7 +541,7 @@ export default function ResidentialDeepCleaningPage() {
               </p>
 
               <div className="mt-8 flex flex-wrap gap-3">
-                <Link href="/contact#quote-form" className="cta-primary">
+                <Link href={QUOTE_HREF} className="cta-primary">
                   Get a Free Quote
                 </Link>
                 <Link href={siteConfig.phoneHref} className="cta-secondary">
@@ -570,7 +574,7 @@ export default function ResidentialDeepCleaningPage() {
               separately rather than assumed as standard. Tell us which ones matter when you request a quote.
             </p>
             <div className="mt-6 flex flex-wrap justify-center gap-3">
-              <Link href="/contact#quote-form" className="cta-primary">
+              <Link href={QUOTE_HREF} className="cta-primary">
                 Get a Free Quote
               </Link>
             </div>
@@ -666,7 +670,7 @@ export default function ResidentialDeepCleaningPage() {
 
           <div className="mx-auto mt-8 max-w-2xl rounded-2xl border border-brand-100 bg-surface p-6 text-center">
             <div className="flex flex-wrap justify-center gap-3">
-              <Link href="/contact#quote-form" className="cta-primary">
+              <Link href={QUOTE_HREF} className="cta-primary">
                 Request a Customized Estimate
               </Link>
             </div>
@@ -713,7 +717,7 @@ export default function ResidentialDeepCleaningPage() {
           <Reveal delay={0.35}>
             <div className="mt-10 flex flex-wrap gap-3 border-t border-white/10 pt-10">
               <div className="flex flex-col items-start gap-1">
-                <Link href="/contact#quote-form" className="cta-gold">
+                <Link href={QUOTE_HREF} className="cta-gold">
                   Get a Free Quote
                 </Link>
                 <span className="pl-1 text-[11px] text-white/35">Takes 60 seconds · No obligation</span>
@@ -758,7 +762,7 @@ export default function ResidentialDeepCleaningPage() {
           </div>
 
           <div className="mt-8 flex flex-wrap gap-3">
-            <Link href="/contact#quote-form" className="cta-primary">
+            <Link href={QUOTE_HREF} className="cta-primary">
               Request a Residential Deep Cleaning Quote
             </Link>
             <Link href={siteConfig.phoneHref} className="cta-secondary">
@@ -785,7 +789,7 @@ export default function ResidentialDeepCleaningPage() {
                   Call or message us and we&apos;ll answer anything specific to your home or schedule.
                 </p>
                 <div className="mt-4 flex flex-wrap gap-2">
-                  <Link href="/contact#quote-form" className="cta-primary px-4 py-2 text-xs">
+                  <Link href={QUOTE_HREF} className="cta-primary px-4 py-2 text-xs">
                     Ask Us Directly
                   </Link>
                   <Link href={siteConfig.phoneHref} className="cta-secondary px-4 py-2 text-xs">
@@ -870,7 +874,7 @@ export default function ResidentialDeepCleaningPage() {
 
               <div className="flex flex-col gap-3 lg:min-w-[220px]">
                 <div className="flex flex-col items-start gap-1">
-                  <Link href="/contact#quote-form" className="cta-gold w-full justify-center">
+                  <Link href={QUOTE_HREF} className="cta-gold w-full justify-center">
                     Get a Free Quote
                   </Link>
                   <span className="pl-1 text-[11px] text-white/40">Takes 60 seconds · No obligation</span>

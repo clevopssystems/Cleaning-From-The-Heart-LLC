@@ -1,4 +1,5 @@
-import type { ServiceSlug } from "@/lib/site";
+import { services, type ServiceSlug } from "@/lib/site";
+import { quoteHref, type PropertyTypeOption } from "@/lib/quote-form";
 
 // ─── INDUSTRIES WE SERVE, central configuration ───────────────────────────
 // Single source of truth for:
@@ -74,6 +75,12 @@ export interface Industry {
   carouselLinkLabel: string;
   /** ~35-60 words, used on the /industries hub directory grid card. */
   hubDescription: string;
+  /**
+   * Optional prefill applied to this industry's "Request a Free Quote" CTAs.
+   * Only set `service` when the page maps to exactly one canonical service,
+   * an industry that needs several services should prefill `property` alone.
+   */
+  quotePrefill?: { service?: ServiceSlug; property?: PropertyTypeOption };
   page?: IndustryPageContent;
 }
 
@@ -91,6 +98,7 @@ export const industries: Industry[] = [
     navGroup: "Business & Property",
     iconName: "Building2",
     hasPage: true,
+    quotePrefill: { service: "commercial-cleaning", property: "Office / Corporate Facility" },
     href: "/industries/offices-commercial-buildings",
     carouselDescription:
       "Office cleaning and commercial janitorial services for Seattle workstations, meeting rooms, breakrooms, and restrooms. Daily, weekly, and after-hours schedules built around your business hours so service never competes with meetings or deadlines.",
@@ -439,6 +447,7 @@ export const industries: Industry[] = [
     navGroup: "Business & Property",
     iconName: "KeyRound",
     hasPage: true,
+    quotePrefill: { property: "Property Management / Multi-Unit Property" },
     href: "/industries/property-management",
     carouselDescription:
       "Common areas, entrances, and stairwells carry traffic from every unit in the building, and turnover schedules rarely wait. Cleaning plans cover shared spaces across single buildings or full portfolios, coordinated with your leasing calendar.",
@@ -642,6 +651,7 @@ export const industries: Industry[] = [
     navGroup: "Business & Property",
     iconName: "Banknote",
     hasPage: true,
+    quotePrefill: { service: "commercial-cleaning", property: "Financial Institution" },
     href: "/industries/financial-institutions",
     carouselDescription:
       "Customer-facing counters, waiting areas, and interior glass need a polished, consistent look, while controlled-access areas call for discreet scheduling. Plans are built around your branch hours and security procedures.",
@@ -735,6 +745,7 @@ export const industries: Industry[] = [
     navGroup: "Business & Property",
     iconName: "Landmark",
     hasPage: true,
+    quotePrefill: { service: "commercial-cleaning", property: "Government / Public Facility" },
     href: "/industries/government-public-buildings",
     carouselDescription:
       "Public-facing lobbies, administrative offices, and meeting rooms serve a steady flow of visitors and staff. Schedules are built around your building's hours, access rules, and public meeting calendar.",
@@ -843,6 +854,7 @@ export const industries: Industry[] = [
     navGroup: "Education & Community",
     iconName: "Church",
     hasPage: true,
+    quotePrefill: { property: "Place of Worship" },
     href: "/industries/places-of-worship",
     carouselDescription:
       "Church cleaning for sanctuaries, fellowship halls, nurseries, classrooms, and restrooms across the Seattle area. Cleaning is scheduled around your service times and event calendar, not a fixed weekday routine.",
@@ -931,6 +943,7 @@ export const industries: Industry[] = [
     navGroup: "Customer-Facing Facilities",
     iconName: "ShoppingBag",
     hasPage: true,
+    quotePrefill: { service: "commercial-cleaning", property: "Retail Store" },
     href: "/industries/retail-stores",
     carouselDescription:
       "Sales floors, fitting rooms, and checkout counters need to be presentation-ready before doors open, without interrupting stocking or merchandising. Cleaning is scheduled outside customer hours to keep the store ready at open.",
@@ -1024,6 +1037,7 @@ export const industries: Industry[] = [
     navGroup: "Customer-Facing Facilities",
     iconName: "Car",
     hasPage: true,
+    quotePrefill: { service: "commercial-cleaning", property: "Auto Dealership" },
     href: "/industries/auto-dealerships",
     carouselDescription:
       "Showroom floors and interior glass are under constant customer view, while service waiting rooms and offices need the same high-visibility standard. Plans keep every customer-facing space presentation-ready.",
@@ -1112,6 +1126,7 @@ export const industries: Industry[] = [
     navGroup: "Customer-Facing Facilities",
     iconName: "Hotel",
     hasPage: true,
+    quotePrefill: { service: "commercial-cleaning", property: "Hotel / Hospitality Property" },
     href: "/industries/hospitality-properties",
     carouselDescription:
       "Lobbies, corridors, and guest-facing common areas carry steady foot traffic throughout the day and evening. Plans are built for properties where guests are present around the clock, not just during business hours.",
@@ -1214,6 +1229,7 @@ export const industries: Industry[] = [
     navGroup: "Health, Wellness & Industrial",
     iconName: "Dumbbell",
     hasPage: true,
+    quotePrefill: { service: "commercial-cleaning", property: "Fitness Center / Gym" },
     href: "/industries/fitness-centers",
     carouselDescription:
       "Equipment touchpoints, locker rooms, and high-traffic flooring see heavy use throughout the day. Plans focus on the shared surfaces members touch most, on a schedule built around your peak hours.",
@@ -1300,6 +1316,7 @@ export const industries: Industry[] = [
     navGroup: "Health, Wellness & Industrial",
     iconName: "HeartPulse",
     hasPage: true,
+    quotePrefill: { service: "commercial-cleaning", property: "Healthcare / Medical Facility" },
     href: "/industries/healthcare-facilities",
     carouselDescription:
       "Waiting areas, administrative offices, and restrooms need reliable, consistent attention. Scope covers general commercial cleaning for healthcare-adjacent spaces, confirmed in detail during your walkthrough.",
@@ -1388,6 +1405,7 @@ export const industries: Industry[] = [
     navGroup: "Health, Wellness & Industrial",
     iconName: "Warehouse",
     hasPage: true,
+    quotePrefill: { service: "commercial-cleaning", property: "Warehouse / Industrial Facility" },
     href: "/industries/warehouses-industrial-facilities",
     carouselDescription:
       "Offices, employee areas, and entryways inside a warehouse or industrial facility still need consistent cleaning, scheduled around shift changes and safety procedures rather than a typical office day.",
@@ -1491,3 +1509,17 @@ export const industryProcessSteps = [
   { title: "Prepare a Customized Scope & Quote", description: "You receive a written scope of work and pricing specific to your facility, no generic packages." },
   { title: "Begin the Approved Cleaning Schedule", description: "Service begins on the agreed schedule, with the same crew returning visit after visit." }
 ];
+
+/**
+ * Quote CTA link for an industry page. Untouched industries fall back to the
+ * plain /contact#quote-form target, and service labels are resolved from the
+ * canonical services[] list so a rename never leaves a stale CTA behind.
+ */
+export function quoteHrefForIndustry(industry: Industry): string {
+  const prefill = industry.quotePrefill;
+  if (!prefill) return quoteHref();
+  const service = prefill.service
+    ? services.find((s) => s.slug === prefill.service)?.title
+    : undefined;
+  return quoteHref({ service, property: prefill.property });
+}

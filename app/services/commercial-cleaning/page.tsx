@@ -46,6 +46,10 @@ import { ScopeAccordion } from "@/components/services/ScopeAccordion";
 import { IndustryCarousel } from "@/components/industries/IndustryCarousel";
 import { siteConfig, serviceAreas } from "@/lib/site";
 import { industries } from "@/lib/industries";
+import { quoteHrefForService } from "@/lib/quote-form";
+
+// Quote CTAs on this page preselect this service in the quote form.
+const QUOTE_HREF = quoteHrefForService("commercial-cleaning");
 
 const SITE_URL = "https://www.cleaningfromtheheartllc.com";
 
@@ -140,7 +144,7 @@ const facilityCleaningGroup: ServiceCardData[] = [
     title: "Office Cleaning",
     description:
       "Recurring cleaning for corporate offices, small businesses, and professional suites, covering desks, common areas, restrooms, and kitchen spaces.",
-    href: "/contact#quote-form",
+    href: QUOTE_HREF,
     ctaLabel: "Request a Quote"
   },
   {
@@ -148,7 +152,7 @@ const facilityCleaningGroup: ServiceCardData[] = [
     title: "Janitorial Maintenance",
     description:
       "Routine, recurring upkeep, trash removal, restroom checks, dusting, and surface cleaning, on a schedule built around your building.",
-    href: "/contact#quote-form",
+    href: QUOTE_HREF,
     ctaLabel: "Request a Quote"
   },
   {
@@ -172,7 +176,7 @@ const facilityCleaningGroup: ServiceCardData[] = [
     title: "Restroom & Common-Area Cleaning",
     description:
       "Focused sanitation of restrooms, breakrooms, and shared common areas, the highest-touch, highest-priority zones in any facility.",
-    href: "/contact#quote-form",
+    href: QUOTE_HREF,
     ctaLabel: "Request a Quote"
   },
   {
@@ -180,7 +184,7 @@ const facilityCleaningGroup: ServiceCardData[] = [
     title: "Recurring Facility Cleaning",
     description:
       "Ongoing janitorial service for warehouses, community centers, and multi-use commercial facilities on a consistent schedule.",
-    href: "/contact#quote-form",
+    href: QUOTE_HREF,
     ctaLabel: "Request a Quote"
   }
 ];
@@ -636,7 +640,7 @@ export default function CommercialCleaningLandingPage() {
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                 <div className="flex flex-col items-start gap-1">
-                  <Link href="/contact#quote-form" className="cta-gold w-full sm:w-auto">
+                  <Link href={QUOTE_HREF} className="cta-gold w-full sm:w-auto">
                     Get a Free Quote
                   </Link>
                   <span className="pl-1 text-[11px] text-white/45">Takes 60 seconds · No obligation</span>
@@ -798,7 +802,7 @@ export default function CommercialCleaningLandingPage() {
               </ul>
 
               <div className="mt-8 flex flex-wrap gap-3">
-                <Link href="/contact#quote-form" className="cta-primary">Get a Free Quote</Link>
+                <Link href={QUOTE_HREF} className="cta-primary">Get a Free Quote</Link>
                 <Link href={siteConfig.phoneHref} className="cta-secondary">
                   <Phone className="mr-2 h-4 w-4" aria-hidden />
                   {siteConfig.phoneDisplay}
@@ -863,7 +867,7 @@ export default function CommercialCleaningLandingPage() {
             </p>
 
             <div className="mt-6 flex flex-wrap justify-center gap-3">
-              <Link href="/contact#quote-form" className="cta-primary">Get a Free Quote</Link>
+              <Link href={QUOTE_HREF} className="cta-primary">Get a Free Quote</Link>
             </div>
           </div>
         </Container>
@@ -885,7 +889,7 @@ export default function CommercialCleaningLandingPage() {
           </div>
 
           <div className="mt-6 flex flex-wrap gap-3">
-            <Link href="/contact#quote-form" className="cta-primary">Request a Customized Cleaning Plan</Link>
+            <Link href={QUOTE_HREF} className="cta-primary">Request a Customized Cleaning Plan</Link>
           </div>
         </Container>
       </section>
@@ -937,7 +941,7 @@ export default function CommercialCleaningLandingPage() {
           </div>
 
           <div className="mt-10 flex flex-wrap gap-3">
-            <Link href="/contact#quote-form" className="cta-primary">Get a Free Quote</Link>
+            <Link href={QUOTE_HREF} className="cta-primary">Get a Free Quote</Link>
             <Link href="/services" className="cta-secondary">View All Services</Link>
           </div>
         </Container>
@@ -968,7 +972,7 @@ export default function CommercialCleaningLandingPage() {
                   ))}
                 </div>
                 <div className="mt-8">
-                  <Link href="/contact#quote-form" className="cta-primary">Schedule a Facility Walkthrough</Link>
+                  <Link href={QUOTE_HREF} className="cta-primary">Schedule a Facility Walkthrough</Link>
                 </div>
               </div>
             </Reveal>
@@ -999,7 +1003,7 @@ export default function CommercialCleaningLandingPage() {
                   </ul>
                 </div>
                 <div className="mt-6">
-                  <Link href="/contact#quote-form" className="cta-secondary">Discuss Your Cleaning Schedule</Link>
+                  <Link href={QUOTE_HREF} className="cta-secondary">Discuss Your Cleaning Schedule</Link>
                 </div>
               </div>
             </Reveal>
@@ -1043,7 +1047,7 @@ export default function CommercialCleaningLandingPage() {
           </div>
 
           <div className="mt-8 flex flex-wrap gap-3">
-            <Link href="/contact#quote-form" className="cta-primary">Start With a Free Inspection</Link>
+            <Link href={QUOTE_HREF} className="cta-primary">Start With a Free Inspection</Link>
             <Link href={siteConfig.phoneHref} className="cta-secondary">
               <Phone className="mr-2 h-4 w-4" aria-hidden />
               Call {siteConfig.phoneDisplay}
@@ -1142,7 +1146,7 @@ export default function CommercialCleaningLandingPage() {
           <Reveal delay={0.35}>
             <div className="mt-10 flex flex-wrap gap-3 border-t border-white/10 pt-10">
               <div className="flex flex-col items-start gap-1">
-                <Link href="/contact#quote-form" className="cta-gold">Get a Free Quote</Link>
+                <Link href={QUOTE_HREF} className="cta-gold">Get a Free Quote</Link>
                 <span className="pl-1 text-[11px] text-white/35">Takes 60 seconds · No obligation</span>
               </div>
               <Link href={siteConfig.phoneHref} className="cta-ghost">
@@ -1252,7 +1256,7 @@ export default function CommercialCleaningLandingPage() {
               based on your facility.
             </p>
             <div className="mt-5 flex flex-wrap justify-center gap-3">
-              <Link href="/contact#quote-form" className="cta-primary">Get Pricing for Your Facility</Link>
+              <Link href={QUOTE_HREF} className="cta-primary">Get Pricing for Your Facility</Link>
             </div>
           </div>
         </Container>
@@ -1274,7 +1278,7 @@ export default function CommercialCleaningLandingPage() {
               you&apos;re unsure whether we cover your address, reach out and we&apos;ll confirm.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
-              <Link href="/contact#quote-form" className="cta-primary">Check Availability in Your Area</Link>
+              <Link href={QUOTE_HREF} className="cta-primary">Check Availability in Your Area</Link>
               <Link href={siteConfig.phoneHref} className="cta-secondary">
                 <Phone className="mr-2 h-4 w-4" aria-hidden />
                 {siteConfig.phoneDisplay}
@@ -1314,7 +1318,7 @@ export default function CommercialCleaningLandingPage() {
                   schedule, same day.
                 </p>
                 <div className="mt-4 flex flex-wrap gap-2">
-                  <Link href="/contact#quote-form" className="cta-primary px-4 py-2 text-xs">Ask Us Directly</Link>
+                  <Link href={QUOTE_HREF} className="cta-primary px-4 py-2 text-xs">Ask Us Directly</Link>
                   <Link href={siteConfig.phoneHref} className="cta-secondary px-4 py-2 text-xs">Call Now</Link>
                 </div>
               </div>
@@ -1379,7 +1383,7 @@ export default function CommercialCleaningLandingPage() {
 
               <div className="flex flex-col gap-3 lg:min-w-[220px]">
                 <div className="flex flex-col items-start gap-1">
-                  <Link href="/contact#quote-form" className="cta-gold w-full justify-center">
+                  <Link href={QUOTE_HREF} className="cta-gold w-full justify-center">
                     Request a Free Quote
                   </Link>
                   <span className="pl-1 text-[11px] text-white/40">Takes 60 seconds · No obligation</span>

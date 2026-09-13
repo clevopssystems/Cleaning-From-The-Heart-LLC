@@ -35,6 +35,10 @@ import { GroupedScopeAccordion, type GroupedScopeItem } from "@/components/servi
 import { ServiceEditorialSplit } from "@/components/services/ServiceEditorialSplit";
 import { ServiceImagePanel } from "@/components/services/ServiceImagePanel";
 import { siteConfig, serviceAreas } from "@/lib/site";
+import { quoteHrefForService } from "@/lib/quote-form";
+
+// Quote CTAs on this page preselect this service in the quote form.
+const QUOTE_HREF = quoteHrefForService("commercial-window-cleaning");
 
 const SITE_URL = "https://www.cleaningfromtheheartllc.com";
 const PAGE_PATH = "/services/commercial-window-cleaning";
@@ -665,7 +669,7 @@ export default function CommercialWindowCleaningPage() {
                 actually operates.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
-                <Link href="/contact#quote-form" className="cta-gold">
+                <Link href={QUOTE_HREF} className="cta-gold">
                   Request a Commercial Quote
                 </Link>
                 <Link href={siteConfig.phoneHref} className="cta-ghost">
@@ -777,7 +781,7 @@ export default function CommercialWindowCleaningPage() {
           </div>
 
           <div className="mt-10 flex flex-wrap gap-3">
-            <Link href="/contact#quote-form" className="cta-primary">
+            <Link href={QUOTE_HREF} className="cta-primary">
               Request a Commercial Quote
             </Link>
             <Link href={siteConfig.phoneHref} className="cta-secondary">
@@ -962,7 +966,7 @@ export default function CommercialWindowCleaningPage() {
                 procedure. All of that is settled before the first visit rather than negotiated at the door.
               </p>
               <div className="mt-8">
-                <Link href="/contact#quote-form" className="cta-primary">
+                <Link href={QUOTE_HREF} className="cta-primary">
                   Discuss a Recurring Cleaning Plan
                 </Link>
               </div>
@@ -1013,7 +1017,7 @@ export default function CommercialWindowCleaningPage() {
                 covers the unit-turnover side.
               </p>
             </div>
-            <Link href="/contact#quote-form" className="cta-primary shrink-0">
+            <Link href={QUOTE_HREF} className="cta-primary shrink-0">
               Discuss a Portfolio Plan
               <ArrowRight className="ml-2 h-4 w-4" aria-hidden />
             </Link>
@@ -1122,7 +1126,7 @@ export default function CommercialWindowCleaningPage() {
           </div>
 
           <div className="mt-10 flex flex-wrap gap-3">
-            <Link href="/contact#quote-form" className="cta-primary">
+            <Link href={QUOTE_HREF} className="cta-primary">
               Schedule Business Window Cleaning
             </Link>
             <Link href={siteConfig.phoneHref} className="cta-secondary">
@@ -1207,7 +1211,7 @@ export default function CommercialWindowCleaningPage() {
           <Reveal delay={0.3}>
             <div className="mt-10 flex flex-wrap gap-3 border-t border-white/10 pt-10">
               <div className="flex flex-col items-start gap-1">
-                <Link href="/contact#quote-form" className="cta-gold">
+                <Link href={QUOTE_HREF} className="cta-gold">
                   Request a Commercial Quote
                 </Link>
                 <span className="pl-1 text-[11px] text-white/35">Takes 60 seconds · No obligation</span>
@@ -1240,7 +1244,7 @@ export default function CommercialWindowCleaningPage() {
                   plainly what we can reach.
                 </p>
                 <div className="mt-4 flex flex-wrap gap-2">
-                  <Link href="/contact#quote-form" className="cta-primary px-4 py-2 text-xs">
+                  <Link href={QUOTE_HREF} className="cta-primary px-4 py-2 text-xs">
                     Ask Us Directly
                   </Link>
                   <Link href={siteConfig.phoneHref} className="cta-secondary px-4 py-2 text-xs">
@@ -1343,7 +1347,7 @@ export default function CommercialWindowCleaningPage() {
 
               <div className="flex flex-col gap-3 lg:min-w-[220px]">
                 <div className="flex flex-col items-start gap-1">
-                  <Link href="/contact#quote-form" className="cta-gold w-full justify-center">
+                  <Link href={QUOTE_HREF} className="cta-gold w-full justify-center">
                     Request a Commercial Quote
                   </Link>
                   <span className="pl-1 text-[11px] text-white/40">Takes 60 seconds · No obligation</span>

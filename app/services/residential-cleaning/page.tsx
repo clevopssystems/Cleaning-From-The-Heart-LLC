@@ -28,6 +28,10 @@ import { Reveal } from "@/components/shared/Reveal";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 import { ResidentialScopeAccordion } from "@/components/services/ResidentialScopeAccordion";
 import { siteConfig, serviceAreas, galleryItems } from "@/lib/site";
+import { quoteHrefForService } from "@/lib/quote-form";
+
+// Quote CTAs on this page preselect this service in the quote form.
+const QUOTE_HREF = quoteHrefForService("residential-cleaning", "House / Single-Family Home");
 
 const SITE_URL = "https://www.cleaningfromtheheartllc.com";
 
@@ -113,7 +117,7 @@ const cleaningOptions: OptionCardData[] = [
     title: "Recurring House Cleaning",
     description:
       "A weekly, biweekly, or monthly rhythm for homes that just need ongoing upkeep, dusting, vacuuming, mopping, kitchen and bathroom surface cleaning, and trash removal, on the same repeating cycle.",
-    href: "/contact#quote-form",
+    href: QUOTE_HREF,
     ctaLabel: "Request Recurring Cleaning"
   },
   {
@@ -159,7 +163,7 @@ const comparisonCards: ComparisonCard[] = [
     condition: "Regularly lived-in, routine upkeep needed",
     focus: "Kitchens, bathrooms, floors, dusting, trash",
     nextStepLabel: "Request Recurring Cleaning",
-    nextStepHref: "/contact#quote-form"
+    nextStepHref: QUOTE_HREF
   },
   {
     title: "Deep Cleaning",
@@ -505,7 +509,7 @@ export default function ResidentialCleaningPage() {
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                 <div className="flex flex-col items-start gap-1">
-                  <Link href="/contact#quote-form" className="cta-gold w-full sm:w-auto">
+                  <Link href={QUOTE_HREF} className="cta-gold w-full sm:w-auto">
                     Get a Free Quote
                   </Link>
                   <span className="pl-1 text-[11px] text-white/45">Takes 60 seconds · No obligation</span>
@@ -638,7 +642,7 @@ export default function ResidentialCleaningPage() {
               </p>
 
               <div className="mt-8 flex flex-wrap gap-3">
-                <Link href="/contact#quote-form" className="cta-primary">
+                <Link href={QUOTE_HREF} className="cta-primary">
                   Get a Free Quote
                 </Link>
                 <Link href={siteConfig.phoneHref} className="cta-secondary">
@@ -711,7 +715,7 @@ export default function ResidentialCleaningPage() {
               conditions, access requirements, and cleaning priorities.
             </p>
             <div className="mt-6 flex flex-wrap justify-center gap-3">
-              <Link href="/contact#quote-form" className="cta-primary">
+              <Link href={QUOTE_HREF} className="cta-primary">
                 Get a Free Quote
               </Link>
             </div>
@@ -853,7 +857,7 @@ export default function ResidentialCleaningPage() {
           <Reveal delay={0.35}>
             <div className="mt-10 flex flex-wrap gap-3 border-t border-white/10 pt-10">
               <div className="flex flex-col items-start gap-1">
-                <Link href="/contact#quote-form" className="cta-gold">
+                <Link href={QUOTE_HREF} className="cta-gold">
                   Get a Free Quote
                 </Link>
                 <span className="pl-1 text-[11px] text-white/35">Takes 60 seconds · No obligation</span>
@@ -942,7 +946,7 @@ export default function ResidentialCleaningPage() {
           </div>
 
           <div className="mt-8 flex flex-wrap gap-3">
-            <Link href="/contact#quote-form" className="cta-primary">
+            <Link href={QUOTE_HREF} className="cta-primary">
               Request a Residential Cleaning Quote
             </Link>
             <Link href={siteConfig.phoneHref} className="cta-secondary">
@@ -1014,7 +1018,7 @@ export default function ResidentialCleaningPage() {
 
           <div className="mx-auto mt-8 max-w-2xl rounded-2xl border border-brand-100 bg-white p-6 text-center">
             <div className="flex flex-wrap justify-center gap-3">
-              <Link href="/contact#quote-form" className="cta-primary">
+              <Link href={QUOTE_HREF} className="cta-primary">
                 Request a Customized Residential Cleaning Estimate
               </Link>
             </div>
@@ -1039,7 +1043,7 @@ export default function ResidentialCleaningPage() {
               our service radius, reach out and we&apos;ll confirm.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
-              <Link href="/contact#quote-form" className="cta-primary">
+              <Link href={QUOTE_HREF} className="cta-primary">
                 Check Availability in Your Area
               </Link>
               <Link href={siteConfig.phoneHref} className="cta-secondary">
@@ -1081,7 +1085,7 @@ export default function ResidentialCleaningPage() {
                   Call or message us and we&apos;ll answer anything specific to your home or schedule.
                 </p>
                 <div className="mt-4 flex flex-wrap gap-2">
-                  <Link href="/contact#quote-form" className="cta-primary px-4 py-2 text-xs">
+                  <Link href={QUOTE_HREF} className="cta-primary px-4 py-2 text-xs">
                     Ask Us Directly
                   </Link>
                   <Link href={siteConfig.phoneHref} className="cta-secondary px-4 py-2 text-xs">
@@ -1170,7 +1174,7 @@ export default function ResidentialCleaningPage() {
 
               <div className="flex flex-col gap-3 lg:min-w-[220px]">
                 <div className="flex flex-col items-start gap-1">
-                  <Link href="/contact#quote-form" className="cta-gold w-full justify-center">
+                  <Link href={QUOTE_HREF} className="cta-gold w-full justify-center">
                     Get a Free Quote
                   </Link>
                   <span className="pl-1 text-[11px] text-white/40">Takes 60 seconds · No obligation</span>

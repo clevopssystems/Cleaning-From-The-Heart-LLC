@@ -4,12 +4,17 @@ import { Container } from "@/components/shared/Container";
 import { CtaButtons } from "@/components/shared/CtaButtons";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 import type { Service } from "@/lib/site";
+import { quoteHrefForService } from "@/lib/quote-form";
 
 interface ServicePageTemplateProps {
   service: Service;
 }
 
 export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
+  // Services without a dedicated page render through this template, their
+  // CTAs still preselect the right service in the quote form.
+  const quoteTarget = quoteHrefForService(service.slug);
+
   return (
     <>
       <section className="relative -mt-16 overflow-hidden bg-hero-glow text-white">
@@ -22,7 +27,7 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
               <h1 className="text-balance text-5xl font-bold leading-[1.1] tracking-tight text-white md:text-6xl">{service.title} Services In Seattle</h1>
               <p className="mt-6 text-base leading-relaxed text-white/70 md:text-lg">{service.shortDescription}</p>
               <div className="mt-8">
-                <CtaButtons />
+                <CtaButtons quoteTarget={quoteTarget} />
               </div>
             </div>
 
@@ -62,7 +67,7 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
             ))}
           </ol>
           <div className="mt-8 flex flex-wrap gap-3">
-            <CtaButtons />
+            <CtaButtons quoteTarget={quoteTarget} />
             <Link href="/gallery" className="cta-secondary">
               See Before & After Results
             </Link>

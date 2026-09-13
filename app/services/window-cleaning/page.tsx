@@ -27,6 +27,10 @@ import { SectionHeading } from "@/components/shared/SectionHeading";
 import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
 import { ServiceImagePanel } from "@/components/services/ServiceImagePanel";
 import { siteConfig, serviceAreas } from "@/lib/site";
+import { quoteHrefForService } from "@/lib/quote-form";
+
+// Quote CTAs on this page preselect this service in the quote form.
+const QUOTE_HREF = quoteHrefForService("window-cleaning");
 
 const SITE_URL = "https://www.cleaningfromtheheartllc.com";
 const PAGE_PATH = "/services/window-cleaning";
@@ -513,7 +517,7 @@ export default function WindowCleaningPage() {
                 anything is booked.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
-                <Link href="/contact#quote-form" className="cta-gold">
+                <Link href={QUOTE_HREF} className="cta-gold">
                   Request a Window Cleaning Quote
                 </Link>
                 <Link href={siteConfig.phoneHref} className="cta-ghost">
@@ -783,7 +787,7 @@ export default function WindowCleaningPage() {
           </div>
 
           <div className="mt-10 flex flex-wrap gap-3">
-            <Link href="/contact#quote-form" className="cta-primary">
+            <Link href={QUOTE_HREF} className="cta-primary">
               Request a Window Cleaning Quote
             </Link>
             <Link href={siteConfig.phoneHref} className="cta-secondary">
@@ -908,7 +912,7 @@ export default function WindowCleaningPage() {
           <Reveal delay={0.3}>
             <div className="mt-10 flex flex-wrap gap-3 border-t border-white/10 pt-10">
               <div className="flex flex-col items-start gap-1">
-                <Link href="/contact#quote-form" className="cta-gold">
+                <Link href={QUOTE_HREF} className="cta-gold">
                   Request a Window Cleaning Quote
                 </Link>
                 <span className="pl-1 text-[11px] text-white/35">Takes 60 seconds · No obligation</span>
@@ -942,7 +946,7 @@ export default function WindowCleaningPage() {
                 near the edge of the range are worth a call before you plan around a date.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
-                <Link href="/contact#quote-form" className="cta-primary">
+                <Link href={QUOTE_HREF} className="cta-primary">
                   Check Availability for Your Address
                 </Link>
                 <Link href="/industries-we-serve" className="cta-secondary">
@@ -1019,7 +1023,7 @@ export default function WindowCleaningPage() {
                   and cannot reach.
                 </p>
                 <div className="mt-4 flex flex-wrap gap-2">
-                  <Link href="/contact#quote-form" className="cta-primary px-4 py-2 text-xs">
+                  <Link href={QUOTE_HREF} className="cta-primary px-4 py-2 text-xs">
                     Ask Us Directly
                   </Link>
                   <Link href={siteConfig.phoneHref} className="cta-secondary px-4 py-2 text-xs">
@@ -1113,7 +1117,7 @@ export default function WindowCleaningPage() {
 
               <div className="flex flex-col gap-3 lg:min-w-[220px]">
                 <div className="flex flex-col items-start gap-1">
-                  <Link href="/contact#quote-form" className="cta-gold w-full justify-center">
+                  <Link href={QUOTE_HREF} className="cta-gold w-full justify-center">
                     Request a Free Quote
                   </Link>
                   <span className="pl-1 text-[11px] text-white/40">Takes 60 seconds · No obligation</span>

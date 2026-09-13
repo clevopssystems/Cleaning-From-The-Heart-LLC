@@ -20,6 +20,10 @@ import { Reveal } from "@/components/shared/Reveal";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
 import { siteConfig } from "@/lib/site";
+import { quoteHrefForService } from "@/lib/quote-form";
+
+// Quote CTAs on this page preselect this service in the quote form.
+const QUOTE_HREF = quoteHrefForService("deep-cleaning");
 
 const SITE_URL = "https://www.cleaningfromtheheartllc.com";
 
@@ -263,7 +267,7 @@ export default function DeepCleaningHubPage() {
                 services below.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
-                <Link href="/contact#quote-form" className="cta-gold">
+                <Link href={QUOTE_HREF} className="cta-gold">
                   Get a Free Quote
                 </Link>
                 <Link href={siteConfig.phoneHref} className="cta-ghost">
@@ -450,7 +454,7 @@ export default function DeepCleaningHubPage() {
                 scope and a free, no-obligation quote.
               </p>
               <div className="mt-8 flex flex-wrap justify-center gap-3">
-                <Link href="/contact#quote-form" className="cta-gold">
+                <Link href={QUOTE_HREF} className="cta-gold">
                   Get a Free Quote
                 </Link>
                 <Link href={siteConfig.phoneHref} className="cta-ghost">

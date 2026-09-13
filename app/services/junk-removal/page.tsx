@@ -36,6 +36,10 @@ import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
 import { ServiceImagePanel } from "@/components/services/ServiceImagePanel";
 import { ServiceEditorialSplit } from "@/components/services/ServiceEditorialSplit";
 import { siteConfig, serviceAreas } from "@/lib/site";
+import { quoteHrefForService } from "@/lib/quote-form";
+
+// Quote CTAs on this page preselect this service in the quote form.
+const QUOTE_HREF = quoteHrefForService("junk-removal");
 
 const SITE_URL = "https://www.cleaningfromtheheartllc.com";
 const PAGE_PATH = "/services/junk-removal";
@@ -584,7 +588,7 @@ export default function JunkRemovalPage() {
                 writing before anything is loaded.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
-                <Link href="/contact#quote-form" className="cta-gold">
+                <Link href={QUOTE_HREF} className="cta-gold">
                   Get a Free Quote
                 </Link>
                 <Link href={siteConfig.phoneHref} className="cta-ghost">
@@ -718,7 +722,7 @@ export default function JunkRemovalPage() {
           </div>
 
           <div className="mt-10 flex flex-wrap gap-3">
-            <Link href="/contact#quote-form" className="cta-primary">
+            <Link href={QUOTE_HREF} className="cta-primary">
               Get a Free Quote
             </Link>
             <Link href={siteConfig.phoneHref} className="cta-secondary">
@@ -828,7 +832,7 @@ export default function JunkRemovalPage() {
               </p>
 
               <div className="mt-8 flex flex-wrap gap-3">
-                <Link href="/contact#quote-form" className="cta-primary">
+                <Link href={QUOTE_HREF} className="cta-primary">
                   Quote My Home Cleanout
                 </Link>
                 <Link href="/services/residential-cleaning" className="cta-secondary">
@@ -976,7 +980,7 @@ export default function JunkRemovalPage() {
               ))}
             </ul>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/contact#quote-form" className="cta-primary">
+              <Link href={QUOTE_HREF} className="cta-primary">
                 Quote a Commercial Removal
               </Link>
               <Link href="/industries/warehouses-industrial-facilities" className="cta-secondary">
@@ -1095,7 +1099,7 @@ export default function JunkRemovalPage() {
                 the same point of contact.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
-                <Link href="/contact#quote-form" className="cta-gold">
+                <Link href={QUOTE_HREF} className="cta-gold">
                   Discuss a Portfolio
                 </Link>
                 <Link href="/industries/property-management" className="cta-ghost">
@@ -1300,7 +1304,7 @@ export default function JunkRemovalPage() {
               </p>
             </div>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/contact#quote-form" className="cta-primary">
+              <Link href={QUOTE_HREF} className="cta-primary">
                 Quote Removal &amp; Cleaning Together
               </Link>
             </div>
@@ -1510,7 +1514,7 @@ export default function JunkRemovalPage() {
 
           <div className="mt-10 flex flex-wrap gap-3">
             <div className="flex flex-col items-start gap-1">
-              <Link href="/contact#quote-form" className="cta-primary">
+              <Link href={QUOTE_HREF} className="cta-primary">
                 Get a Free Quote
               </Link>
               <span className="pl-1 text-[11px] text-muted">Takes 60 seconds · No obligation</span>
@@ -1647,7 +1651,7 @@ export default function JunkRemovalPage() {
                 before you plan around a date.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
-                <Link href="/contact#quote-form" className="cta-primary">
+                <Link href={QUOTE_HREF} className="cta-primary">
                   Check Availability for Your Address
                 </Link>
                 <Link href="/industries-we-serve" className="cta-secondary">
@@ -1697,7 +1701,7 @@ export default function JunkRemovalPage() {
                   service.
                 </p>
                 <div className="mt-4 flex flex-wrap gap-2">
-                  <Link href="/contact#quote-form" className="cta-primary px-4 py-2 text-xs">
+                  <Link href={QUOTE_HREF} className="cta-primary px-4 py-2 text-xs">
                     Ask Us Directly
                   </Link>
                   <Link href={siteConfig.phoneHref} className="cta-secondary px-4 py-2 text-xs">
@@ -1779,7 +1783,7 @@ export default function JunkRemovalPage() {
 
               <div className="flex flex-col gap-3 lg:min-w-[220px]">
                 <div className="flex flex-col items-start gap-1">
-                  <Link href="/contact#quote-form" className="cta-gold w-full justify-center">
+                  <Link href={QUOTE_HREF} className="cta-gold w-full justify-center">
                     Get a Free Quote
                   </Link>
                   <span className="pl-1 text-[11px] text-white/40">Takes 60 seconds · No obligation</span>

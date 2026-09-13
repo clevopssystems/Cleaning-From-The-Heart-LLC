@@ -36,6 +36,10 @@ import { GroupedScopeAccordion, type GroupedScopeItem } from "@/components/servi
 import { ServiceImagePanel } from "@/components/services/ServiceImagePanel";
 import { ServiceEditorialSplit } from "@/components/services/ServiceEditorialSplit";
 import { siteConfig, serviceAreas } from "@/lib/site";
+import { quoteHrefForService } from "@/lib/quote-form";
+
+// Quote CTAs on this page preselect this service in the quote form.
+const QUOTE_HREF = quoteHrefForService("move-in-move-out-cleaning");
 
 const SITE_URL = "https://www.cleaningfromtheheartllc.com";
 const PAGE_PATH = "/services/move-in-move-out-cleaning";
@@ -851,7 +855,7 @@ export default function MoveInMoveOutCleaningPage() {
                 and key handovers, with the scope set by the property rather than a fixed package.
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-3">
-                <Link href="/contact#quote-form" className="cta-gold">
+                <Link href={QUOTE_HREF} className="cta-gold">
                   {siteConfig.primaryCta}
                 </Link>
                 <Link href={siteConfig.phoneHref} className="cta-ghost">
@@ -927,7 +931,7 @@ export default function MoveInMoveOutCleaningPage() {
               </a>
             ))}
             <Link
-              href="/contact#quote-form"
+              href={QUOTE_HREF}
               className="ml-auto shrink-0 whitespace-nowrap text-brand-700 transition-colors hover:text-brand-900"
             >
               Get a Quote
@@ -1176,7 +1180,7 @@ export default function MoveInMoveOutCleaningPage() {
           </div>
 
           <div className="mt-10 flex flex-wrap gap-3">
-            <Link href="/contact#quote-form" className="cta-primary">
+            <Link href={QUOTE_HREF} className="cta-primary">
               Get a Move Cleaning Quote
             </Link>
             <Link href={siteConfig.phoneHref} className="cta-secondary">
@@ -1600,7 +1604,7 @@ export default function MoveInMoveOutCleaningPage() {
                 </p>
               </div>
               <div className="flex flex-wrap gap-3">
-                <Link href="/contact#quote-form" className="cta-primary">
+                <Link href={QUOTE_HREF} className="cta-primary">
                   Request a Customized Quote
                 </Link>
                 <Link href={siteConfig.phoneHref} className="cta-secondary">
@@ -1722,7 +1726,7 @@ export default function MoveInMoveOutCleaningPage() {
                   you what the job involves.
                 </p>
                 <div className="mt-4 flex flex-wrap gap-2">
-                  <Link href="/contact#quote-form" className="cta-primary px-4 py-2 text-xs">
+                  <Link href={QUOTE_HREF} className="cta-primary px-4 py-2 text-xs">
                     Ask Us Directly
                   </Link>
                   <Link href={siteConfig.phoneHref} className="cta-secondary px-4 py-2 text-xs">
@@ -1812,7 +1816,7 @@ export default function MoveInMoveOutCleaningPage() {
 
               <div className="flex flex-col gap-3 lg:min-w-[220px]">
                 <div className="flex flex-col items-start gap-1">
-                  <Link href="/contact#quote-form" className="cta-gold w-full justify-center">
+                  <Link href={QUOTE_HREF} className="cta-gold w-full justify-center">
                     {siteConfig.primaryCta}
                   </Link>
                   <span className="pl-1 text-[11px] text-white/40">Takes 60 seconds · No obligation</span>

@@ -27,7 +27,7 @@ import { Reveal } from "@/components/shared/Reveal";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
 import { siteConfig, getServiceBySlug, whyChooseUs } from "@/lib/site";
-import { getIndustryBySlug, getIndustryByAnySlug, getIndustryPageSlugs, industryProcessSteps } from "@/lib/industries";
+import { getIndustryBySlug, getIndustryByAnySlug, getIndustryPageSlugs, industryProcessSteps, quoteHrefForIndustry } from "@/lib/industries";
 
 const SITE_URL = "https://www.cleaningfromtheheartllc.com";
 
@@ -113,6 +113,8 @@ export default async function IndustryDetailPage({ params }: IndustryDetailPageP
   }
 
   const { page } = industry;
+  // Quote CTAs preselect this industry's service and/or property type.
+  const quoteLink = quoteHrefForIndustry(industry);
   const Icon = iconMap[industry.iconName] ?? Building2;
   const introImage =
     industry.slug === "offices-commercial-buildings"
@@ -233,7 +235,7 @@ export default async function IndustryDetailPage({ params }: IndustryDetailPageP
               <h1 className="text-balance text-4xl font-bold leading-[1.1] tracking-tight text-white md:text-5xl">{page.h1}</h1>
               <p className="mt-6 text-base leading-relaxed text-white/70 md:text-lg">{page.heroIntro}</p>
               <div className="mt-8 flex flex-wrap gap-3">
-                <Link href="/contact#quote-form" className="cta-gold">
+                <Link href={quoteLink} className="cta-gold">
                   Request a Free Quote
                 </Link>
                 <Link href={siteConfig.phoneHref} className="cta-ghost">
@@ -534,7 +536,7 @@ export default async function IndustryDetailPage({ params }: IndustryDetailPageP
                 no-obligation proposal.
               </p>
               <div className="mt-8 flex flex-wrap justify-center gap-3">
-                <Link href="/contact#quote-form" className="cta-gold">
+                <Link href={quoteLink} className="cta-gold">
                   Request a Free Quote
                 </Link>
                 <Link href="/industries-we-serve" className="cta-ghost">
