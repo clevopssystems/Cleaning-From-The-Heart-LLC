@@ -33,7 +33,7 @@ export interface Service {
 }
 
 export const siteConfig = {
-  url: "https://cleaningfromtheheartllc.com",
+  url: "https://www.cleaningfromtheheartllc.com",
   defaultOgImage: "/services/hero/hero-cleaning-team.png",
   name: "Cleaning From The Heart LLC",
   phoneDisplay: "(206) 850-8484",

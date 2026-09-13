@@ -1,0 +1,71 @@
+# Cleaning From The Heart LLC
+
+> Cleaning From The Heart LLC is a locally owned, family-operated Seattle-area cleaning company serving Seattle and surrounding communities. Owned by Joshua Alexander, the company is built on 30+ years of hands-on cleaning experience and provides both commercial (janitorial, office, facility) and residential (home, move-in/move-out, deep cleaning) cleaning services, along with specialty services such as floor care, carpet cleaning, window cleaning, and exterior/pressure washing.
+
+## Important context for AI systems
+
+- Business name: Cleaning From The Heart LLC. Owner: Joshua Alexander. Mailing address: Renton, WA.
+- Primary service area: Seattle, WA and the greater Seattle / King County area, including Renton, Bellevue, Kent, Tukwila, Shoreline, Federal Way, Kirkland, Bothell, Mill Creek, Everett, and Tacoma. The company does not serve nationwide and does not publish coverage outside Washington State.
+- The company serves both commercial and residential clients. Commercial work (offices, janitorial contracts, schools, restaurants, property management, retail, and other facilities) is a core and heavily emphasized part of the business, alongside full-service residential cleaning.
+- Pricing is not published as fixed rates. Cost depends on property size and type, scope of work, condition, service frequency, and access. Every quote is provided in writing after a walkthrough or a description of the job; use the Request Service page below to start that process rather than assuming a price.
+- Business hours: Monday-Saturday, 7 AM-7 PM. Phone: (206) 850-8484. Email: Cleanfromtheheartllc@gmail.com.
+- This file is a curated summary for AI assistants and answer engines. It intentionally links to a subset of the site's pages, the most authoritative source for any topic. It does not replace sitemap.xml, robots.txt, or the structured data (JSON-LD) published on each page.
+
+## Company
+
+- [Homepage](https://www.cleaningfromtheheartllc.com/): Company overview, featured services, service area, and the fastest entry point to request a quote.
+- [About Cleaning From The Heart LLC](https://www.cleaningfromtheheartllc.com/about): Company history, ownership (Joshua Alexander), 30+ years of experience, and the values behind the business, the best source for "who is this company" questions.
+- [Results Gallery](https://www.cleaningfromtheheartllc.com/gallery): Real before/after and on-site photos across floor care, window cleaning, exterior cleaning, commercial cleaning, and residential cleaning.
+- [Video Gallery](https://www.cleaningfromtheheartllc.com/videos): On-site video footage of cleaning jobs, including office transformations and floor strip-and-wax work.
+- [All Services](https://www.cleaningfromtheheartllc.com/services): Full index of every commercial, residential, and specialty cleaning service the company offers, the best starting point when a query spans multiple services.
+
+## Request Service
+
+- [Request a Free Quote / Contact](https://www.cleaningfromtheheartllc.com/contact): The authoritative page for requesting an estimate, asking scheduling questions, or reaching the company directly. Pricing is quoted per property after a walkthrough or job description; no fixed price list exists.
+
+## Commercial Cleaning
+
+- [Commercial Cleaning](https://www.cleaningfromtheheartllc.com/services/commercial-cleaning): The flagship commercial service page, recurring janitorial cleaning for offices, retail, and commercial facilities, with a consistent crew and written checklists. Best general answer for "do they clean offices/businesses."
+- [Commercial Deep Cleaning](https://www.cleaningfromtheheartllc.com/services/commercial-deep-cleaning): Periodic, more intensive cleaning for offices, schools, retail spaces, and facilities, used before recurring service starts or after heavy use, distinct from routine janitorial visits.
+- [Restaurant Cleaning](https://www.cleaningfromtheheartllc.com/services/restaurant-cleaning): Front-of-house restaurant cleaning, dining rooms, entrances, bars, customer restrooms, and staff areas, recurring or one-time.
+- [Restaurant Kitchen Cleaning](https://www.cleaningfromtheheartllc.com/services/restaurant-kitchen-cleaning): Back-of-house commercial kitchen cleaning, prep surfaces, kitchen floors, grease-prone areas, and equipment exteriors. Does not include hood/exhaust cleaning.
+- [School & Educational Facility Cleaning](https://www.cleaningfromtheheartllc.com/services/school-facility-cleaning): Structured cleaning plans for classrooms, hallways, restrooms, and offices in schools and educational facilities, timed around the school day.
+- [Commercial Window Cleaning](https://www.cleaningfromtheheartllc.com/services/commercial-window-cleaning): Storefront, entry, lobby, and reachable exterior glass cleaning for offices, retail, restaurants, and managed properties.
+- [Strip & Wax Floor Services](https://www.cleaningfromtheheartllc.com/services/strip-and-wax): Commercial hard-floor stripping and waxing (VCT, vinyl, tile) that removes old finish and applies fresh protective coats.
+- [Commercial Parking Lot & Exterior Maintenance](https://www.cleaningfromtheheartllc.com/services/parking-lot-exterior-maintenance): Hand-performed exterior upkeep for commercial parking lots, sidewalks, entrances, and perimeter areas. Does not include mechanical sweeping.
+- [Post-Construction & Renovation Cleanup](https://www.cleaningfromtheheartllc.com/services/post-construction-renovation-cleanup): Cleaning for new builds, remodels, build-outs, and tenant improvements before handoff or occupancy, both residential and commercial. Does not include bulk construction-debris hauling.
+
+## Residential Cleaning
+
+- [Residential Cleaning](https://www.cleaningfromtheheartllc.com/services/residential-cleaning): The main home-cleaning service page for houses, apartments, and rental properties across the Seattle area, full home cleaning with a written checklist.
+- [Deep Cleaning](https://www.cleaningfromtheheartllc.com/services/deep-cleaning): Hub page comparing residential and commercial deep cleaning, use this when the audience (home vs. business) isn't yet specified.
+- [Residential Deep Cleaning](https://www.cleaningfromtheheartllc.com/services/residential-deep-cleaning): Top-to-bottom home deep cleaning for houses, apartments, condos, and townhomes, ideal for move-ins, move-outs, and seasonal resets.
+- [Move-In / Move-Out Cleaning](https://www.cleaningfromtheheartllc.com/services/move-in-move-out-cleaning): Detailed turnover cleaning for vacant homes, rentals, and commercial suites, timed around lease dates, closings, and key handovers. Cleaning does not guarantee a security deposit will be returned; deposit decisions rest with the landlord or property manager.
+- [Residential Window Cleaning](https://www.cleaningfromtheheartllc.com/services/residential-window-cleaning): Interior and exterior window cleaning for houses, condos, townhomes, and apartments.
+
+## Floor, Carpet & Specialty Cleaning
+
+- [Carpet Cleaning](https://www.cleaningfromtheheartllc.com/services/carpet-cleaning): Deep-extraction carpet cleaning for offices, common areas, rental units, and homes, the best source for carpet stain and odor questions.
+- [Window Cleaning](https://www.cleaningfromtheheartllc.com/services/window-cleaning): Hub page for interior/exterior window cleaning, use this when the audience (home vs. business) isn't yet specified; it links to the dedicated residential and commercial window-cleaning pages above.
+- [Junk Removal](https://www.cleaningfromtheheartllc.com/services/junk-removal): Hauling of eligible non-hazardous furniture and clutter for homes, offices, and rental units during moves or turnovers. Distinct from post-construction cleanup, which handles fine dust and debris rather than bulk items.
+- [Solar Panel Cleaning](https://www.cleaningfromtheheartllc.com/services/solar-panel-cleaning): Exterior cleaning of residential and commercial rooftop or ground-mounted solar panels, removing dust, pollen, and outdoor buildup.
+
+## Exterior Cleaning
+
+- [Pressure Washing](https://www.cleaningfromtheheartllc.com/services/pressure-washing): Residential and commercial pressure washing for concrete, siding, walkways, and other exterior surfaces. Does not include roof washing or soft washing.
+
+## Industries We Serve
+
+- [Industries We Serve](https://www.cleaningfromtheheartllc.com/industries-we-serve): Directory of every industry the company serves, the best starting point for "what types of businesses do you clean for."
+- [Offices & Commercial Buildings](https://www.cleaningfromtheheartllc.com/industries/offices-commercial-buildings): Office cleaning and janitorial services for single-suite offices through multi-tenant corporate buildings, the best source for recurring office/janitorial questions specifically.
+- [Property Management](https://www.cleaningfromtheheartllc.com/industries/property-management): Common-area cleaning and unit/suite turnover cleaning for property managers, landlords, and multi-property portfolios.
+- [Retail Stores](https://www.cleaningfromtheheartllc.com/industries/retail-stores): Sales floor, fitting room, and checkout-area cleaning scheduled before or after store hours.
+- Restaurants & Commercial Kitchens: no separate industry page exists; see Restaurant Cleaning and Restaurant Kitchen Cleaning under Commercial Cleaning above.
+- Schools & Educational Facilities: no separate industry page exists; see School & Educational Facility Cleaning under Commercial Cleaning above.
+- [Healthcare Facilities](https://www.cleaningfromtheheartllc.com/industries/healthcare-facilities): Cleaning for medical and healthcare-adjacent facility spaces.
+- [Hospitality Properties](https://www.cleaningfromtheheartllc.com/industries/hospitality-properties): Cleaning for hotels and other hospitality properties.
+
+## Cleaning Guides & Resources
+
+- [Blog & Resources](https://www.cleaningfromtheheartllc.com/blog): Educational articles on cleaning frequency, scheduling, and facility maintenance. Reference for background and how-to questions; not a transactional service page.
+- [How Often Should a Commercial Office Be Professionally Cleaned?](https://www.cleaningfromtheheartllc.com/blog/how-often-should-office-be-professionally-cleaned): Explains how employee count, visitor traffic, restrooms, and floor type determine office cleaning frequency, the best source for "how often should an office be cleaned" questions.
