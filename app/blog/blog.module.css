@@ -26,16 +26,61 @@
 
 .body > * + * { margin-top: 1.5rem; }
 .body :is(h2, h3) { scroll-margin-top: 6rem; font-weight: 600; line-height: 1.35; }
-.body h2 { margin-top: 3rem; font-size: clamp(1.5rem, 3vw, 2rem); }
+.body h2 { margin-top: 3.5rem; font-size: clamp(1.5rem, 3vw, 2rem); }
+.body h2::before {
+  content: "";
+  display: block;
+  width: 2.75rem;
+  height: 4px;
+  border-radius: 2px;
+  margin-bottom: .875rem;
+  background: linear-gradient(90deg, theme("colors.brand.600"), theme("colors.accent"));
+}
 .body h3 { margin-top: 2rem; font-size: 1.25rem; }
-.body :is(ul, ol) { padding-left: 1.5rem; }
-.body ul { list-style: disc; }
-.body ol { list-style: decimal; }
-.body li + li { margin-top: .5rem; }
+.body > p:first-of-type {
+  font-size: 1.1875rem;
+  line-height: 1.75;
+  font-weight: 500;
+  color: theme("colors.ink");
+}
+.body :is(ul, ol) { padding-left: 0; list-style: none; }
+.body ul li, .body ol li { position: relative; padding-left: 2.25rem; }
+.body ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: .3em;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 9999px;
+  background-color: theme("colors.brand.50");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%230F3D2E' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 10.5l3 3 7-7'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: .7rem;
+}
+.body ol { counter-reset: item; }
+.body ol li { counter-increment: item; padding-left: 2.5rem; }
+.body ol li::before {
+  content: counter(item);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 9999px;
+  background-color: theme("colors.brand.600");
+  color: white;
+  font-size: .8125rem;
+  font-weight: 700;
+  line-height: 1.75rem;
+  text-align: center;
+}
+.body li + li { margin-top: .625rem; }
 .body a { text-decoration: underline; text-underline-offset: 4px; }
 .body figure { margin-block: 2.5rem; }
 .body figcaption { margin-top: .75rem; font-size: .875rem; line-height: 1.6; }
 .body table { width: 100%; border-collapse: collapse; font-size: 1rem; line-height: 1.6; }
 .body caption { text-align: left; font-weight: 600; padding-bottom: 1rem; }
-.body :is(th, td) { padding: .875rem; text-align: left; vertical-align: top; min-width: 9rem; }
+.body :is(th, td) { padding: .875rem 1rem; text-align: left; vertical-align: top; min-width: 9rem; }
 .body blockquote p + p { margin-top: .75rem; }
