@@ -9,7 +9,7 @@ import { BlogPreview } from "@/components/blog/BlogPreview";
 import { blogCategories } from "@/lib/blog-types";
 import type { BlogPost } from "@/lib/blog-types";
 import { getPostBySlug, getPublishedPosts, getRelatedPosts, formatBlogDate } from "@/lib/blog";
-import { getBlogPostMetadata, getBlogPostSchema, serializeBlogSchema } from "@/lib/blog-seo";
+import { getBlogPostMetadata, getBlogPostSchema, getBlogFaqSchema, serializeBlogSchema } from "@/lib/blog-seo";
 import { getIndustryBySlug } from "@/lib/industries";
 import { services, siteConfig } from "@/lib/site";
 import styles from "../blog.module.css";
@@ -43,6 +43,7 @@ export default async function BlogPostPage({ params }: Props) {
     return industry ? [{ href: industry.href, label: industry.name }] : [];
   });
   const relatedLinks = [...serviceLinks, ...industryLinks];
+  const faqSchema = getBlogFaqSchema(post);
   return (
     <div className={styles.resources}>
       <article>
@@ -111,6 +112,7 @@ export default async function BlogPostPage({ params }: Props) {
         </section>
       ) : null}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeBlogSchema(getBlogPostSchema(post)) }} />
+      {faqSchema ? <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeBlogSchema(faqSchema) }} /> : null}
     </div>
   );
 }

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { createPortal } from "react-dom";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState, useSyncExternalStore } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import type { GalleryCategory, GalleryItem } from "@/lib/site";
 
@@ -22,12 +22,17 @@ interface ResultsGalleryProps {
 export function ResultsGallery({ items, categories }: ResultsGalleryProps) {
   const [active, setActive] = useState<FilterId>("all");
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
-  const [mounted, setMounted] = useState(false);
 
   // The lightbox is rendered through a portal to document.body so it escapes
   // the `contain: layout` on .section-shell, which would otherwise trap a
-  // position:fixed overlay inside the gallery section.
-  useEffect(() => setMounted(true), []);
+  // position:fixed overlay inside the gallery section. `mounted` is only
+  // true once hydrated on the client, matching the previous effect-based
+  // check without an in-effect setState.
+  const mounted = useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false
+  );
 
   const filters = useMemo(
     () => [

@@ -788,7 +788,7 @@ export default function CommercialCleaningLandingPage() {
                 frequency and business hours that fit how your building actually operates. Cleaning can be
                 scheduled daily, weekly, in the evening, after-hours, or on weekends. Every account gets a single
                 point of contact, responsive communication, regular quality checks, and before/after documentation,
-                so you always know what was done and when, and the plan can be adjusted as your facility's needs
+                so you always know what was done and when, and the plan can be adjusted as your facility&apos;s needs
                 change.
               </p>
 
@@ -1098,7 +1098,7 @@ export default function CommercialCleaningLandingPage() {
               the broader category, covering janitorial work plus specialty services like carpet cleaning, floor
               stripping and waxing, window cleaning, pressure washing, and periodic deep cleaning. Most facilities
               need both: routine janitorial upkeep to maintain the space day to day, and scheduled specialty
-              cleaning to handle the tasks routine service doesn't cover.
+              cleaning to handle the tasks routine service doesn&apos;t cover.
             </p>
           </div>
         </Container>

@@ -532,7 +532,7 @@ export default async function IndustryDetailPage({ params }: IndustryDetailPageP
                 Request a Walkthrough & Tailored Cleaning Plan
               </h2>
               <p className="mt-5 text-base leading-relaxed text-white/65 md:text-lg">
-                Tell us about your facility and we'll schedule a walkthrough, confirm scope, and send a written,
+                Tell us about your facility and we&apos;ll schedule a walkthrough, confirm scope, and send a written,
                 no-obligation proposal.
               </p>
               <div className="mt-8 flex flex-wrap justify-center gap-3">

@@ -152,8 +152,8 @@ export default function AboutPage() {
                 <div className="flex gap-4">
                   <Quote className="h-5 w-5 shrink-0 text-brand-400 mt-0.5" aria-hidden />
                   <p className="text-base font-medium leading-relaxed text-ink">
-                    "Cleaning has always been about more than making a space look good. It is about trust, care,
-                    and doing the job the right way."
+                    &ldquo;Cleaning has always been about more than making a space look good. It is about trust, care,
+                    and doing the job the right way.&rdquo;
                   </p>
                 </div>
                 <cite className="mt-4 block pl-9 text-sm font-semibold not-italic text-brand-700">

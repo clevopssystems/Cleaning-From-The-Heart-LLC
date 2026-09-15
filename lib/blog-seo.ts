@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import type { BlogPost } from "@/lib/blog-types";
+import type { BlogPost, BlogText } from "@/lib/blog-types";
 import { siteConfig } from "@/lib/site";
 
 export const blogPageCopy = {
@@ -73,6 +73,26 @@ export function getBlogPostSchema(post: BlogPost) {
   };
 }
 
-export function serializeBlogSchema(schema: ReturnType<typeof getBlogPostSchema>) {
+function blogTextToPlainText(text: BlogText): string {
+  return text.map(part => typeof part === "string" ? part : part.text).join("");
+}
+
+/** FAQPage schema for the post's visible FAQ block only, mirroring the site's existing FAQPage convention. Undefined when the article has no FAQ block. */
+export function getBlogFaqSchema(post: BlogPost) {
+  const faqBlock = post.content.find((block): block is Extract<BlogPost["content"][number], { type: "faq" }> => block.type === "faq");
+  if (!faqBlock || !faqBlock.items.length) return undefined;
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": `${siteConfig.url}/blog/${post.slug}#faq`,
+    mainEntity: faqBlock.items.map(item => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: { "@type": "Answer", text: blogTextToPlainText(item.answer) }
+    }))
+  };
+}
+
+export function serializeBlogSchema(schema: object) {
   return JSON.stringify(schema).replace(/</g, "\\u003c");
 }

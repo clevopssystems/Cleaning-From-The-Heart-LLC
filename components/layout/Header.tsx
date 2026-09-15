@@ -12,6 +12,7 @@ export function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [prevPathname, setPrevPathname] = useState(pathname);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -20,9 +21,10 @@ export function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  useEffect(() => {
+  if (pathname !== prevPathname) {
+    setPrevPathname(pathname);
     setOpen(false);
-  }, [pathname]);
+  }
 
   const hasDarkHero =
     pathname === "/" ||

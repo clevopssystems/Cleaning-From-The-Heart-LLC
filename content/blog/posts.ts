@@ -1,4 +1,6 @@
 import type { BlogPost } from "@/lib/blog-types";
+import { siteConfig } from "@/lib/site";
+import { quoteHref } from "@/lib/quote-form";
 
 // The single content registry. Add approved articles here, or import separate
 // typed article files into this array as the library grows. See docs/blog.md.
@@ -316,7 +318,7 @@ const howOftenShouldOfficeBeProfessionallyCleaned: BlogPost = {
       type: "callout",
       title: "Need a cleaning schedule that fits your office?",
       text: [
-        "Cleaning From The Heart LLC can review your workplace, traffic patterns, and priorities to help work out a recurring ", { text: "commercial cleaning", href: "/services/commercial-cleaning" }, " schedule that actually matches how your office is used. ", { text: "Get a Free Quote", href: "/quote" }, "."
+        "Cleaning From The Heart LLC can review your workplace, traffic patterns, and priorities to help work out a recurring ", { text: "commercial cleaning", href: "/services/commercial-cleaning" }, " schedule that actually matches how your office is used. If you're still comparing providers, see our guide on ", { text: "choosing a commercial cleaning company in Seattle", href: "/blog/how-to-choose-commercial-cleaning-company-seattle" }, ". ", { text: "Get a Free Quote", href: quoteHref({ service: "Commercial Cleaning" }) }, "."
       ]
     },
     {
@@ -356,5 +358,359 @@ const howOftenShouldOfficeBeProfessionallyCleaned: BlogPost = {
   ]
 };
 
-// Intentionally empty otherwise: no placeholder articles are published.
-export const blogPosts: readonly BlogPost[] = [howOftenShouldOfficeBeProfessionallyCleaned];
+const howToChooseCommercialCleaningCompanySeattle: BlogPost = {
+  slug: "how-to-choose-commercial-cleaning-company-seattle",
+  title: "How to Choose a Commercial Cleaning Company in Seattle: 10 Questions to Ask",
+  seoTitle: "How to Choose a Commercial Cleaning Company in Seattle",
+  description:
+    "Comparing commercial cleaning companies in Seattle? Here are 10 questions to ask about scope, insurance, scheduling, and quality before you hire an office or facility cleaner.",
+  category: "commercial-cleaning",
+  publishedAt: "2026-09-15",
+  draft: false,
+  readingTime: "9 min read",
+  tags: ["commercial cleaning", "commercial cleaning company", "hiring a cleaning company", "Seattle commercial cleaning"],
+  relatedPostSlugs: ["how-often-should-office-be-professionally-cleaned"],
+  relatedServiceSlugs: ["commercial-cleaning"],
+  relatedIndustrySlugs: ["offices-commercial-buildings"],
+  image: {
+    src: "/home/work/work-office-seattle.png",
+    alt: "Cleaning From The Heart crew cleaning an open-plan Seattle office floor with a city view",
+    width: 1268,
+    height: 701
+  },
+  content: [
+    {
+      type: "paragraph",
+      text: [
+        "Choosing a commercial cleaning company in Seattle is not just a matter of picking the lowest quote. A proposal that looks like a bargain on paper can turn into inconsistent visits, a rotating cast of unfamiliar workers, or a provider who disappears the moment something goes wrong. Businesses that end up satisfied with their cleaning company usually looked past price alone and weighed scope of work, reliability, insurance, communication, scheduling, quality control, facility experience, and whether the company could take on additional services down the road."
+      ]
+    },
+    {
+      type: "paragraph",
+      text: [
+        "A good commercial cleaning company should be able to clearly explain what is included in your service, how often your property will be cleaned, who is actually performing the work, how quality issues get handled, and what happens if your cleaning needs change. If a provider can't answer those questions plainly during the sales process, that's worth noticing before you sign anything."
+      ]
+    },
+    {
+      type: "paragraph",
+      text: [
+        "This guide walks through ten questions worth asking any commercial cleaning company you're considering, along with the red flags to watch for and a checklist for comparing providers side by side."
+      ]
+    },
+    { type: "heading", level: 2, id: "facility-experience", text: "1. Do They Have Experience Cleaning Your Type of Facility?" },
+    {
+      type: "paragraph",
+      text: [
+        "Not every commercial space is cleaned the same way. An office with carpeted workstations and conference rooms has different priorities than a retail storefront with a customer-facing sales floor, a restaurant with a dining room and a working kitchen, or a school with hundreds of people moving through hallways every day. A cleaning company that has actually worked in your type of facility already knows where problems tend to show up and how to prioritize a visit around them."
+      ]
+    },
+    {
+      type: "list",
+      items: [
+        ["Offices and professional suites, covered under our ", { text: "office and commercial building cleaning", href: "/industries/offices-commercial-buildings" }, " services"],
+        ["Retail storefronts and customer-facing sales floors"],
+        ["Restaurants and food-service properties, where front-of-house and kitchen areas often need separate ", { text: "restaurant cleaning", href: "/services/restaurant-cleaning" }, " scopes"],
+        ["Schools and other ", { text: "educational facilities", href: "/services/school-facility-cleaning" }, " with heavy daily foot traffic"],
+        ["Property-managed buildings and multi-tenant properties"],
+        ["Warehouses and industrial or distribution facilities"],
+        ["Places of worship and community buildings"]
+      ]
+    },
+    {
+      type: "paragraph",
+      text: [
+        "Ask a potential provider directly whether they've serviced facilities like yours before, and what they typically prioritize in that kind of space. A vague answer, or one that treats every property the same, can be a sign the company would be learning on your account rather than bringing existing experience to it."
+      ]
+    },
+    { type: "heading", level: 2, id: "licensed-and-insured", text: "2. Are They Properly Licensed and Insured?" },
+    {
+      type: "paragraph",
+      text: [
+        "Commercial cleaning crews are in your building regularly, often with access to areas most outside vendors never see. Before hiring a company, ask what licensing applies to their business and what insurance coverage they carry. A provider should be able to explain this in plain terms rather than deflecting the question."
+      ]
+    },
+    {
+      type: "paragraph",
+      text: [
+        "This matters because a cleaning company operating without proper coverage puts your property at risk if something is damaged or someone is injured during a cleaning visit. You don't need to become an insurance expert to ask about it. You just need a straightforward answer, and ideally documentation you can keep on file."
+      ]
+    },
+    { type: "heading", level: 2, id: "whats-included", text: "3. What Exactly Is Included in the Cleaning Service?" },
+    {
+      type: "paragraph",
+      text: [
+        "\"Commercial cleaning\" means different things to different companies. For one provider it might mean trash removal and vacuuming. For another, restroom sanitation, break room cleaning, high-touch surface wiping, and common-area upkeep are standard. Before comparing pricing between two companies, make sure you're actually comparing the same scope of work."
+      ]
+    },
+    {
+      type: "list",
+      items: [
+        ["Trash and recycling removal"],
+        ["Restroom cleaning and restocking"],
+        ["Break room and kitchen area cleaning"],
+        ["Vacuuming and general floor cleaning"],
+        ["Surface wiping and dusting"],
+        ["High-touch surfaces, including door handles, light switches, and shared equipment"],
+        ["Common-area and lobby upkeep"],
+        ["Periodic floor care, handled separately from day-to-day cleaning"]
+      ]
+    },
+    {
+      type: "paragraph",
+      text: [
+        "Ask for the scope in writing, not just a verbal summary. A documented scope protects both sides: you know exactly what to expect on each visit, and the provider has a clear reference point if a task gets missed. It's also worth asking which tasks happen on every visit versus which are periodic or add-on work, since recurring cleaning and deeper, less frequent service are usually priced and scheduled differently."
+      ]
+    },
+    { type: "heading", level: 2, id: "cleaning-schedule", text: "4. Can They Build a Cleaning Schedule Around Your Business?" },
+    {
+      type: "paragraph",
+      text: [
+        "Cleaning frequency isn't one-size-fits-all. Some businesses need daily service, others do fine with a few visits a week, and some lower-traffic spaces only need weekly attention. A good commercial cleaning company should ask about your business before proposing a schedule, not the other way around."
+      ]
+    },
+    {
+      type: "list",
+      items: [
+        ["Number of employees"],
+        ["Customer or visitor traffic"],
+        ["Restroom usage"],
+        ["Floor type"],
+        ["Building size"],
+        ["Operating hours"],
+        ["Type of facility"]
+      ]
+    },
+    {
+      type: "paragraph",
+      text: [
+        "If you're not sure what frequency actually makes sense for your space, our guide on ", { text: "how often an office should be professionally cleaned", href: "/blog/how-often-should-office-be-professionally-cleaned" }, " breaks down how factors like traffic, restrooms, and floor type typically shape a realistic schedule. The same logic applies whether you're evaluating your current provider's proposal or comparing quotes from a new one."
+      ]
+    },
+    { type: "heading", level: 2, id: "who-will-clean", text: "5. Who Will Be Cleaning Your Property?" },
+    {
+      type: "paragraph",
+      text: [
+        "It's reasonable to ask who will actually be in your building. Some companies send the same crew to your property every visit, while others rotate staff frequently. Consistency matters for both quality and security: a familiar team learns your layout and expectations, while a constantly changing roster starts over every time."
+      ]
+    },
+    {
+      type: "list",
+      items: [
+        ["Whether the same crew services your property on every visit"],
+        ["How staff are trained and supervised"],
+        ["How access, such as keys or door codes, is handled and tracked"],
+        ["Who you contact directly if something needs attention"],
+        ["What the company expects around security and confidentiality in your space"]
+      ]
+    },
+    {
+      type: "paragraph",
+      text: [
+        "You don't need every detail of a company's internal staffing process, but you should have a clear picture of who is responsible for your account and how access to your property is handled."
+      ]
+    },
+    { type: "heading", level: 2, id: "quality-and-problems", text: "6. How Do They Handle Cleaning Quality and Problems?" },
+    {
+      type: "paragraph",
+      text: [
+        "No cleaning company gets every visit perfect. What separates a good provider from a frustrating one is how quickly and clearly problems get resolved. Before hiring anyone, ask how you report an issue, who responds, and how fast you can expect a fix."
+      ]
+    },
+    {
+      type: "list",
+      items: [
+        ["How to report a missed area or quality issue"],
+        ["Who responds, and how quickly"],
+        ["Whether the company does its own inspections or quality checks"],
+        ["How consistency is maintained across visits"],
+        ["Whether corrections happen promptly or require repeated follow-up"]
+      ]
+    },
+    {
+      type: "paragraph",
+      text: [
+        "A business shouldn't have to raise the same issue three times before something changes. Ask a potential provider to walk you through what actually happens after you report a problem. Their answer tells you a lot about how the account will be managed once you're a client."
+      ]
+    },
+    { type: "heading", level: 2, id: "additional-cleaning-needs", text: "7. Can They Handle Additional Cleaning Needs?" },
+    {
+      type: "paragraph",
+      text: [
+        "Routine janitorial service covers the day-to-day, but most commercial properties eventually need something outside that recurring scope. Carpets need periodic deep extraction, hard floors need stripping and refinishing, glass needs more attention than a quick wipe, and some facilities need a full deep clean before a new lease term or after a heavy-use season."
+      ]
+    },
+    {
+      type: "paragraph",
+      text: [
+        "It's worth asking whether a provider can handle services like ", { text: "carpet cleaning", href: "/services/carpet-cleaning" }, ", ", { text: "commercial window cleaning", href: "/services/commercial-window-cleaning" }, ", and ", { text: "commercial deep cleaning", href: "/services/commercial-deep-cleaning" }, " as part of the same account, or whether you'd need to find a separate vendor for each one. A company that can fold these into your existing relationship usually means fewer vendors to manage and fewer new companies to vet later."
+      ]
+    },
+    {
+      type: "image",
+      image: {
+        src: "/images/gallery/gallery-06.jpeg",
+        alt: "Commercial glass cleaning with a water-fed pole in Seattle",
+        width: 1320,
+        height: 1744,
+        caption: "Window cleaning is one of the additional services worth asking a commercial cleaning company about upfront."
+      }
+    },
+    { type: "heading", level: 2, id: "property-walkthrough", text: "8. Will They Walk Through the Property Before Finalizing the Quote?" },
+    {
+      type: "paragraph",
+      text: [
+        "Square footage alone doesn't tell a cleaning company everything it needs to know. Two buildings of the same size can have very different cleaning needs depending on layout, restroom count, occupancy, flooring, and how heavily different areas are used."
+      ]
+    },
+    {
+      type: "list",
+      items: [
+        ["Building layout and number of floors"],
+        ["Number of restrooms"],
+        ["Occupancy and foot traffic"],
+        ["Flooring types throughout the property"],
+        ["High-use or specialized areas"],
+        ["Desired cleaning frequency"],
+        ["Access requirements and timing"]
+      ]
+    },
+    {
+      type: "paragraph",
+      text: [
+        "A walkthrough, or at minimum a detailed conversation covering these factors, generally leads to a more accurate proposal than a quote based on square footage alone. That doesn't mean an in-person visit is required for every property. Smaller or more straightforward spaces can sometimes be scoped accurately over the phone or from photos, as long as the provider asks the right questions."
+      ]
+    },
+    { type: "heading", level: 2, id: "quote-clarity", text: "9. Is the Quote Clear About What You Are Paying For?" },
+    {
+      type: "paragraph",
+      text: [
+        "A written quote should tell you more than a single number. Before agreeing to anything, make sure you understand what's included, how often service happens, what counts as an add-on, and what falls outside the agreed scope entirely."
+      ]
+    },
+    {
+      type: "list",
+      items: [
+        ["Services included in the base price"],
+        ["Cleaning frequency and schedule"],
+        ["Any periodic or add-on services and how they're priced"],
+        ["What is explicitly excluded from the scope"],
+        ["Who supplies cleaning products and equipment"],
+        ["How the company communicates about scheduling or scope changes"]
+      ]
+    },
+    {
+      type: "paragraph",
+      text: [
+        "If a proposal is vague about any of these points, ask for clarification before signing. A clear quote isn't about price shopping. It's about knowing exactly what you're agreeing to so there are no surprises once service starts."
+      ]
+    },
+    { type: "heading", level: 2, id: "local-responsive-communication", text: "10. Are They Local, Responsive and Easy to Communicate With?" },
+    {
+      type: "paragraph",
+      text: [
+        "Cleaning needs change. A schedule adjustment, a spill that needs same-day attention, or a coordination issue with a property manager all require a provider who is easy to reach and quick to respond. Ask how a potential provider prefers to communicate, and how quickly you can expect a reply when something comes up."
+      ]
+    },
+    {
+      type: "paragraph",
+      text: [
+        "A locally based cleaning company that understands Seattle properties, from older office buildings to newer mixed-use developments, is often easier to coordinate with than a distant call center handling accounts across multiple states. Responsiveness during the sales process is usually a reasonable preview of what to expect once you're an active client."
+      ]
+    },
+    { type: "heading", level: 2, id: "red-flags", text: "Red Flags to Watch for When Hiring a Commercial Cleaner" },
+    {
+      type: "paragraph",
+      text: [
+        "A few warning signs tend to show up before a bad fit becomes an expensive mistake. None of these automatically disqualify a provider on its own, but a company showing several of them at once is worth a second look."
+      ]
+    },
+    {
+      type: "list",
+      items: [
+        ["An unclear or undocumented scope of work"],
+        ["Proposals that stay vague about what's actually included"],
+        ["Reluctance to explain pricing, staffing, or how problems are handled"],
+        ["Poor communication before a contract is even signed"],
+        ["No clear answer about how quality issues get resolved"],
+        ["Vague or evasive answers about insurance"],
+        ["Confident promises made without ever seeing or asking about the property"],
+        ["Unexplained fees or add-ons that appear after the fact"],
+        ["No defined cleaning schedule, just a vague plan to work it out later"]
+      ]
+    },
+    {
+      type: "paragraph",
+      text: [
+        "A lower price isn't automatically a red flag on its own. Some smaller or newer companies offer competitive pricing while still delivering solid service. The real warning signs are a lack of clarity and a lack of communication, not the number on the quote."
+      ]
+    },
+    { type: "heading", level: 2, id: "comparison-checklist", text: "Commercial Cleaning Company Comparison Checklist" },
+    {
+      type: "paragraph",
+      text: [
+        "Use this checklist while comparing proposals from different cleaning companies. It's meant to help you evaluate providers on the same criteria, rather than comparing quotes that may cover very different scopes of work."
+      ]
+    },
+    {
+      type: "table",
+      caption: "A side-by-side framework for comparing commercial cleaning proposals",
+      columns: ["What to Ask About", "Why It Matters", "What to Confirm"],
+      rows: [
+        [["Facility experience"], ["Different property types have different priorities"], ["Ask for examples of similar facilities they've serviced"]],
+        [["Scope of work"], ["'Commercial cleaning' can mean different things to different providers"], ["Get a written, itemized scope before comparing price"]],
+        [["Insurance"], ["Protects your property if something goes wrong"], ["Ask directly and expect a plain-language answer"]],
+        [["Cleaning schedule"], ["Frequency should match your traffic and usage"], ["Confirm the proposed frequency and how it was determined"]],
+        [["Staffing and access"], ["Consistency and security both depend on this"], ["Ask whether the same crew returns for every visit"]],
+        [["Quality control"], ["Problems should be fixed quickly, not repeatedly"], ["Ask how issues are reported and resolved"]],
+        [["Additional services"], ["Fewer vendors means less to manage over time"], ["Confirm what else the company can handle beyond routine cleaning"]],
+        [["Quote clarity"], ["Avoids billing surprises after service begins"], ["Make sure inclusions, exclusions, and add-ons are all documented"]]
+      ]
+    },
+    { type: "heading", level: 2, id: "looking-for-commercial-cleaning", text: "Looking for Commercial Cleaning in Seattle?" },
+    {
+      type: "paragraph",
+      text: [
+        "If you're comparing commercial cleaning companies in Seattle, Cleaning From The Heart LLC can talk through your facility, your cleaning priorities, and the schedule that actually fits how your building is used. That conversation can also cover additional needs, like carpet care or window cleaning, that may come up later."
+      ]
+    },
+    {
+      type: "callout",
+      title: "Ready to compare a written quote?",
+      text: [
+        "Get a free, no-obligation quote for ", { text: "commercial cleaning services in Seattle", href: "/services/commercial-cleaning" }, ", or call us directly at ", siteConfig.phoneDisplay, ". ", { text: "Get a Free Quote", href: quoteHref({ service: "Commercial Cleaning" }) }, "."
+      ]
+    },
+    {
+      type: "faq",
+      title: "Frequently Asked Questions",
+      items: [
+        {
+          question: "What should I ask a commercial cleaning company before hiring them?",
+          answer: ["At minimum, ask about their experience with your type of facility, their insurance coverage, exactly what's included in the cleaning scope, how they handle quality issues, and whether the same crew will service your property on each visit. A provider who answers clearly is easier to trust with a written agreement."]
+        },
+        {
+          question: "How often should a commercial office be cleaned?",
+          answer: ["It depends on employee count, visitor traffic, restroom usage, and floor type, and can range from a couple of visits a week to daily service for busier facilities. Our guide on ", { text: "how often an office should be professionally cleaned", href: "/blog/how-often-should-office-be-professionally-cleaned" }, " walks through the factors that typically determine the right frequency."]
+        },
+        {
+          question: "What should be included in a commercial cleaning quote?",
+          answer: ["A clear quote should spell out the services included, the cleaning frequency, any add-on or periodic services and how they're priced, what falls outside the scope, and who supplies cleaning products and equipment. If any of that is missing, ask for it before signing."]
+        },
+        {
+          question: "Should a commercial cleaning company be insured?",
+          answer: ["Yes. Ask any potential provider directly about their insurance coverage and get a plain-language answer before hiring them. Insurance protects your property if something is damaged or someone is injured during a cleaning visit."]
+        },
+        {
+          question: "How do I compare commercial cleaning companies?",
+          answer: ["Compare providers on the same criteria rather than price alone: facility experience, scope of work, insurance, proposed schedule, staffing consistency, quality control process, and whether they can handle additional services. The comparison checklist above walks through each of these in more detail."]
+        }
+      ]
+    }
+  ]
+};
+
+// Only approved, fact-checked articles belong here: no placeholder posts.
+export const blogPosts: readonly BlogPost[] = [
+  howOftenShouldOfficeBeProfessionallyCleaned,
+  howToChooseCommercialCleaningCompanySeattle
+];

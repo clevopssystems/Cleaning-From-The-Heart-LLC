@@ -15,15 +15,19 @@ interface RevealProps {
  */
 export function Reveal({ children, delay = 0, className }: RevealProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(
+    () =>
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+  );
 
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
 
-    // Skip animation when the user prefers reduced motion
+    // Skip animation when the user prefers reduced motion; `visible` is
+    // already true in that case from the lazy state initializer above.
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      setVisible(true);
       return;
     }
 
