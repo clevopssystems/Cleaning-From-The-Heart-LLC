@@ -458,7 +458,7 @@ const howToChooseCommercialCleaningCompanySeattle: BlogPost = {
     {
       type: "paragraph",
       text: [
-        "Ask for the scope in writing, not just a verbal summary. A documented scope protects both sides: you know exactly what to expect on each visit, and the provider has a clear reference point if a task gets missed. It's also worth asking which tasks happen on every visit versus which are periodic or add-on work, since recurring cleaning and deeper, less frequent service are usually priced and scheduled differently."
+        "Ask for the scope in writing, not just a verbal summary. A documented scope protects both sides: you know exactly what to expect on each visit, and the provider has a clear reference point if a task gets missed. It's also worth asking which tasks happen on every visit versus which are periodic or add-on work, since recurring cleaning and deeper, less frequent service are usually priced and scheduled differently. Our breakdown of ", { text: "what commercial cleaning typically includes", href: "/blog/what-does-commercial-cleaning-include" }, " shows which tasks usually fall on each side of that line."
       ]
     },
     { type: "heading", level: 2, id: "cleaning-schedule", text: "4. Can They Build a Cleaning Schedule Around Your Business?" },
@@ -709,8 +709,359 @@ const howToChooseCommercialCleaningCompanySeattle: BlogPost = {
   ]
 };
 
+const whatDoesCommercialCleaningInclude: BlogPost = {
+  slug: "what-does-commercial-cleaning-include",
+  title: "What Does Commercial Cleaning Include? A Complete Guide for Seattle Businesses",
+  seoTitle: "What Does Commercial Cleaning Include? Seattle Guide",
+  description:
+    "Learn what commercial cleaning typically includes, which services are usually scheduled separately, and how Seattle businesses can build the right cleaning plan.",
+  category: "commercial-cleaning",
+  publishedAt: "2026-10-01",
+  draft: false,
+  readingTime: "10 min read",
+  tags: ["commercial cleaning", "commercial cleaning checklist", "commercial cleaning scope of work", "janitorial services", "Seattle commercial cleaning"],
+  relatedPostSlugs: ["how-to-choose-commercial-cleaning-company-seattle", "how-often-should-office-be-professionally-cleaned"],
+  relatedServiceSlugs: ["commercial-cleaning", "commercial-deep-cleaning"],
+  relatedIndustrySlugs: ["offices-commercial-buildings"],
+  image: {
+    src: "/media/blog/commercial-lobby-cleaning-cart.webp",
+    alt: "Janitorial cart with a mop, broom, and trash liner parked against a tiled wall in a commercial building lobby",
+    width: 1039,
+    height: 584
+  },
+  content: [
+    {
+      type: "paragraph",
+      text: [
+        "Commercial cleaning typically includes the routine work that keeps a business presentable and functional between visits: trash and recycling removal, restroom cleaning, vacuuming and mopping, wiping down accessible surfaces, break room and kitchen cleaning, common-area upkeep, and attention to high-touch surfaces like door handles and light switches. The exact scope varies with the type of facility, how much traffic it sees, the flooring, the operating schedule, how often service happens, and what the business agrees on with its cleaning provider."
+      ]
+    },
+    {
+      type: "paragraph",
+      text: [
+        "Specialty work is a different matter. Deep cleaning, carpet cleaning, window cleaning, pressure washing, and floor refinishing are often scheduled and priced separately from the recurring service, depending on the agreement. Knowing which side of that line a task falls on is the easiest way to avoid surprises after service starts."
+      ]
+    },
+    {
+      type: "paragraph",
+      text: [
+        "This guide breaks down what routine commercial cleaning usually covers, what tends to be handled separately, how commercial cleaning compares with deep cleaning and janitorial service, and how to put together a scope that fits your building."
+      ]
+    },
+    { type: "heading", level: 2, id: "what-is-commercial-cleaning", text: "What Is Commercial Cleaning?" },
+    {
+      type: "paragraph",
+      text: [
+        "Commercial cleaning is the cleaning and upkeep of business and commercial environments rather than private homes. It covers the spaces where people work, shop, learn, gather, and do business: offices, retail stores, schools, restaurants, property-managed buildings, warehouses, places of worship, and other commercial facilities."
+      ]
+    },
+    {
+      type: "paragraph",
+      text: [
+        "What separates it from residential cleaning is less about the tasks themselves and more about the setting. Commercial spaces usually see more people, more restroom use, and more wear on floors and shared surfaces. Cleaning often has to happen around business hours, building access rules, and tenants or customers who expect the space to be ready when they arrive. Most commercial cleaning is recurring, with specialty work layered in when the building needs it."
+      ]
+    },
+    {
+      type: "paragraph",
+      text: [
+        "Cleaning From The Heart LLC provides ", { text: "commercial cleaning services in Seattle", href: "/services/commercial-cleaning" }, " and nearby communities for offices, schools, retail stores, restaurants, property-managed buildings, places of worship, warehouses, and other facility types, with each account built around a written scope."
+      ]
+    },
+    { type: "heading", level: 2, id: "routine-commercial-cleaning", text: "What Is Usually Included in Routine Commercial Cleaning?" },
+    {
+      type: "paragraph",
+      text: [
+        "Routine commercial cleaning is the work done on every scheduled visit, or most of them. The tasks below show up in many recurring cleaning agreements, but no two scopes are identical. Treat this as a starting point for a conversation with a provider, and confirm in the service agreement exactly which tasks are included and how often each one happens."
+      ]
+    },
+    { type: "heading", level: 3, id: "trash-and-recycling", text: "Trash and Recycling" },
+    {
+      type: "paragraph",
+      text: [
+        "Emptying trash and recycling bins throughout the facility, replacing liners, and taking bagged waste to the building's designated disposal area. Recycling is handled according to the building's own setup, so it helps to tell your provider how your bins and collection points are organized."
+      ]
+    },
+    { type: "heading", level: 3, id: "vacuuming-and-floor-cleaning", text: "Vacuuming and Floor Cleaning" },
+    {
+      type: "paragraph",
+      text: [
+        "Vacuuming carpeted areas and sweeping or dust-mopping hard floors, followed by damp mopping where the flooring allows it. High-traffic paths, entrances, and hallways usually get the most attention. Routine floor cleaning removes everyday soil; it is not the same as carpet extraction or refinishing a hard floor."
+      ]
+    },
+    { type: "heading", level: 3, id: "restroom-cleaning", text: "Restroom Cleaning" },
+    {
+      type: "paragraph",
+      text: [
+        "Cleaning toilets, urinals, sinks, faucets, and fixtures, wiping mirrors and partitions, cleaning restroom floors, and emptying waste bins. Restocking paper towels, toilet paper, and hand soap is common, but who purchases those consumables varies. Some businesses supply their own and have the cleaning team refill dispensers; others arrange for the provider to supply them. That detail belongs in the agreement."
+      ]
+    },
+    { type: "heading", level: 3, id: "break-rooms-and-kitchens", text: "Break Rooms and Kitchens" },
+    {
+      type: "paragraph",
+      text: [
+        "Wiping counters, tables, and chairs, cleaning sinks, wiping the exteriors of appliances such as microwaves and refrigerators, emptying trash, and cleaning floors. Interior appliance cleaning, like clearing out a shared refrigerator, is often treated as a periodic task or handled by staff, so it is worth clarifying."
+      ]
+    },
+    { type: "heading", level: 3, id: "accessible-surfaces", text: "Accessible Surfaces" },
+    {
+      type: "paragraph",
+      text: [
+        "Dusting and wiping surfaces that can be reached safely and are clear of items: reception counters, shared tables, ledges, shelving, and furniture. Many offices have a policy on whether cleaners should touch individual desks covered in papers or equipment. Settling that in advance protects both the business and the cleaning team."
+      ]
+    },
+    { type: "heading", level: 3, id: "high-touch-surfaces", text: "High-Touch Surfaces" },
+    {
+      type: "paragraph",
+      text: [
+        "Door handles, push plates, light switches, elevator buttons, railings, and shared equipment collect fingerprints and grime quickly. Wiping them down is a standard part of many recurring scopes, especially in busy entrances and shared areas. This is routine cleaning, not a medical-grade disinfection protocol, and should not be described as one."
+      ]
+    },
+    { type: "heading", level: 3, id: "entrances-and-common-areas", text: "Entrances and Common Areas" },
+    {
+      type: "paragraph",
+      text: [
+        "Lobbies, reception areas, hallways, and stairwells are the first things visitors see. Typical tasks include cleaning entry floors and mats, spot-cleaning glass on entry doors, removing debris, and general tidying. During rainy months, entrances can take on more tracked-in dirt and moisture than the rest of the building."
+      ]
+    },
+    { type: "heading", level: 3, id: "conference-rooms-and-shared-spaces", text: "Conference Rooms and Shared Spaces" },
+    {
+      type: "paragraph",
+      text: [
+        "Wiping tables, straightening chairs, removing trash, and cleaning floors in meeting rooms, training rooms, and lounges. Rooms booked every day often need the same attention as other high-use areas, while rarely used rooms can be cleaned less often."
+      ]
+    },
+    { type: "heading", level: 2, id: "not-included-in-recurring-cleaning", text: "What Is Usually Not Included in Standard Recurring Cleaning?" },
+    {
+      type: "paragraph",
+      text: [
+        "Some cleaning work takes different equipment, more time, or a different schedule than a routine visit allows. These tasks are often handled as periodic or specialty services, quoted separately or added to the agreement on their own schedule."
+      ]
+    },
+    {
+      type: "list",
+      items: [
+        ["Deep cleaning of buildup, detail areas, and spaces outside the normal recurring scope"],
+        [{ text: "Carpet cleaning with extraction", href: "/services/carpet-cleaning" }, ", which lifts embedded soil that regular vacuuming leaves behind"],
+        [{ text: "Window cleaning for commercial buildings", href: "/services/commercial-window-cleaning" }, ", beyond spot-cleaning entry glass"],
+        ["Hard floor refinishing, such as ", { text: "floor stripping and waxing", href: "/services/strip-and-wax" }],
+        [{ text: "Pressure washing", href: "/services/pressure-washing" }, " for sidewalks, entrances, and other exterior surfaces"],
+        ["Post-construction or renovation cleanup after a build-out or remodel"],
+        ["Junk removal for old furniture, equipment, or other unwanted items"]
+      ]
+    },
+    {
+      type: "paragraph",
+      text: [
+        "None of this means a recurring provider cannot do the work. It means the work usually has its own scope, schedule, and price, so it should be discussed explicitly rather than assumed to be part of the routine visit."
+      ]
+    },
+    { type: "heading", level: 2, id: "commercial-cleaning-vs-deep-cleaning", text: "Commercial Cleaning vs. Deep Cleaning" },
+    {
+      type: "paragraph",
+      text: [
+        "Recurring commercial cleaning is maintenance. It keeps the space in good condition through frequently scheduled tasks: trash, restrooms, floors, surfaces, and common areas, repeated on a set schedule so the building stays consistently clean."
+      ]
+    },
+    {
+      type: "paragraph",
+      text: [
+        "Deep cleaning is more detailed, periodic work. It targets buildup and areas that routine visits do not reach regularly, such as baseboards, vents, high dusting, detail work around fixtures, and corners where grime collects over time. A deep clean is often scheduled before recurring service begins, after a busy season, or when a facility has gone a while without professional cleaning."
+      ]
+    },
+    {
+      type: "paragraph",
+      text: [
+        "There is no single industry definition that draws the line in the same place for every provider. In practice, the difference is frequency and depth: recurring cleaning keeps things clean, and ",
+        { text: "commercial deep cleaning", href: "/services/commercial-deep-cleaning" },
+        " resets the space so recurring cleaning has a better baseline to maintain."
+      ]
+    },
+    { type: "heading", level: 2, id: "commercial-cleaning-vs-janitorial", text: "Commercial Cleaning vs. Janitorial Services" },
+    {
+      type: "paragraph",
+      text: [
+        "The two terms overlap heavily, and many businesses use them interchangeably. When they are separated, \"janitorial services\" usually refers to ongoing maintenance tasks: emptying trash, cleaning restrooms, vacuuming, mopping, and keeping common areas tidy. \"Commercial cleaning\" is often used more broadly, covering that recurring janitorial work plus specialty services like carpet cleaning, floor care, window cleaning, and deep cleaning."
+      ]
+    },
+    {
+      type: "paragraph",
+      text: [
+        "Terminology varies by provider, and neither term has a strict legal meaning. What matters is the written scope, not the label on it. If one proposal says \"janitorial\" and another says \"commercial cleaning,\" compare the task lists and frequencies rather than the names."
+      ]
+    },
+    { type: "heading", level: 2, id: "commercial-cleaning-checklist", text: "Commercial Cleaning Checklist" },
+    {
+      type: "paragraph",
+      text: [
+        "Use this checklist to think through what your facility needs in each area. It reflects common tasks, not a guaranteed list for every contract."
+      ]
+    },
+    {
+      type: "table",
+      caption: "Common commercial cleaning tasks by area. Confirm the exact scope and frequency in writing with your provider.",
+      columns: ["Area", "Typical tasks"],
+      rows: [
+        [["Offices and workspaces"], ["Vacuuming or floor cleaning, trash and recycling removal, dusting and wiping accessible surfaces"]],
+        [["Restrooms"], ["Toilets, urinals, sinks, fixtures, mirrors, floors, waste bins, restocking supplies if included in the agreement"]],
+        [["Break rooms and kitchens"], ["Counters, sinks, tables, appliance exteriors, trash, floors"]],
+        [["Common areas and hallways"], ["Floors, high-touch surfaces, trash, general tidying"]],
+        [["Entrances and lobbies"], ["Floors and mats, accessible entry glass, debris removal, reception surfaces"]],
+        [["Conference and meeting rooms"], ["Tables, chairs, trash, floors"]]
+      ]
+    },
+    {
+      type: "callout",
+      title: "A vague scope creates disagreements later",
+      text: [
+        "Before service starts, make sure the agreement spells out what is included, what is excluded, how often each task happens, which specialty services are separate, who supplies consumables like paper products and soap, and how extra work gets requested. A few minutes of clarity up front saves a lot of back-and-forth after the first missed task."
+      ]
+    },
+    { type: "heading", level: 2, id: "what-determines-cleaning-scope", text: "What Determines the Scope of Commercial Cleaning?" },
+    {
+      type: "paragraph",
+      text: [
+        "There is no universal scope that fits every commercial property. Two buildings of the same size can need very different plans. These are the factors that shape it most:"
+      ]
+    },
+    {
+      type: "list",
+      items: [
+        ["Facility size and layout, including the number of floors and separate areas"],
+        ["Employee count and how many shifts use the space"],
+        ["Customer, student, or visitor traffic"],
+        ["Number of restrooms and how heavily they are used"],
+        ["Flooring types, such as carpet, tile, sealed concrete, or a mix"],
+        ["Number of shared spaces like break rooms, conference rooms, and lounges"],
+        ["Operating hours and when cleaning can happen without disrupting work"],
+        ["Type of facility, since a restaurant, school, and office each have different priorities"],
+        ["Cleaning frequency and which tasks need attention every visit"],
+        ["High-use areas that wear faster than the rest of the building"],
+        ["Special hygiene expectations in areas like food preparation or restrooms with heavy public use"],
+        ["Access restrictions, keys, alarm codes, and secured areas"],
+        ["Specialty cleaning needs such as carpet, windows, or floor refinishing"]
+      ]
+    },
+    { type: "heading", level: 2, id: "how-often-commercial-cleaning-tasks", text: "How Often Should Commercial Cleaning Tasks Be Done?" },
+    {
+      type: "paragraph",
+      text: [
+        "Frequency follows use. A simple framework that works for many facilities:"
+      ]
+    },
+    {
+      type: "list",
+      items: [
+        ["Daily or on every visit: trash, restrooms, high-traffic floors, and high-touch surfaces"],
+        ["Weekly or as needed: lower-use rooms, detail dusting, and shared spaces that see lighter traffic"],
+        ["Periodic: carpet cleaning, deep cleaning, window cleaning, floor refinishing, and other specialty work"]
+      ]
+    },
+    {
+      type: "paragraph",
+      text: [
+        "For a closer look at setting a realistic schedule, including how employee count, visitors, and restrooms change the math, see our guide on ",
+        { text: "how often a commercial office should be professionally cleaned", href: "/blog/how-often-should-office-be-professionally-cleaned" },
+        "."
+      ]
+    },
+    { type: "heading", level: 2, id: "questions-before-agreeing-to-scope", text: "What Should You Ask Before Agreeing to a Cleaning Scope?" },
+    {
+      type: "paragraph",
+      text: [
+        "A clear scope comes from asking clear questions. Before signing an agreement, get answers to these:"
+      ]
+    },
+    {
+      type: "list",
+      items: [
+        ["What tasks are included on each visit?"],
+        ["What is excluded from the recurring scope?"],
+        ["How often is each task performed?"],
+        ["Who supplies consumables like paper towels, toilet paper, soap, and trash liners?"],
+        ["How are additional or one-time services requested and handled?"],
+        ["Are periodic services like carpet or window cleaning priced separately?"],
+        ["How are schedule changes handled, such as holidays or events?"],
+        ["How do you report a missed task or a service concern?"],
+        ["How will the scope be documented, and how is it updated if needs change?"]
+      ]
+    },
+    {
+      type: "paragraph",
+      text: [
+        "These questions focus on the scope itself. If you are also comparing providers on insurance, staffing, and communication, our guide to ",
+        { text: "choosing a commercial cleaning company in Seattle", href: "/blog/how-to-choose-commercial-cleaning-company-seattle" },
+        " covers what else to ask."
+      ]
+    },
+    { type: "heading", level: 2, id: "build-the-right-cleaning-plan", text: "How to Build the Right Cleaning Plan for Your Facility" },
+    {
+      type: "paragraph",
+      text: [
+        "A good cleaning plan reflects the actual building, not a generic checklist. Start with your priorities: the areas that matter most to employees, customers, or tenants, and the areas that cause complaints when they slip. Then map out where traffic concentrates, such as the main entrance, the busiest restroom, and the break room at lunch."
+      ]
+    },
+    {
+      type: "paragraph",
+      text: [
+        "From there, match the plan to how the business runs. Consider your operating schedule and when cleaning can happen without getting in the way, the type of business and any expectations that come with it, and the flooring in each area. Decide which tasks need attention on every visit and which can be weekly. Then separate recurring work from periodic work so carpet care, windows, and floor refinishing have their own schedule instead of crowding the routine visit."
+      ]
+    },
+    {
+      type: "paragraph",
+      text: [
+        "Finally, agree on communication. Know who to contact when something is missed, how quickly it will be addressed, and how the scope will be revisited as the facility changes. A plan that gets reviewed after the first few weeks almost always fits better than one that is set once and never adjusted."
+      ]
+    },
+    { type: "heading", level: 2, id: "looking-for-commercial-cleaning", text: "Looking for Commercial Cleaning in Seattle?" },
+    {
+      type: "paragraph",
+      text: [
+        "Every commercial property has different cleaning requirements. Cleaning From The Heart LLC can talk through your facility, schedule, traffic, cleaning priorities, recurring needs, and any specialty services to help work out a cleaning plan that fits. That conversation leads to a written scope, so you know what each visit includes before service begins."
+      ]
+    },
+    {
+      type: "callout",
+      title: "Ready to scope your facility?",
+      text: [
+        "Learn more about our ", { text: "commercial cleaning services", href: "/services/commercial-cleaning" }, ", call us at ", siteConfig.phoneDisplay, ", or ", { text: "Get a Free Quote", href: quoteHref({ service: "Commercial Cleaning" }) }, "."
+      ]
+    },
+    {
+      type: "faq",
+      title: "Frequently Asked Questions",
+      items: [
+        {
+          question: "What does a commercial cleaning service usually include?",
+          answer: ["Most recurring commercial cleaning includes trash and recycling removal, restroom cleaning, vacuuming and mopping, wiping accessible surfaces, break room cleaning, common-area upkeep, and high-touch surface cleaning. The exact tasks and frequency depend on the facility and should be listed in the service agreement."]
+        },
+        {
+          question: "What is the difference between commercial cleaning and janitorial cleaning?",
+          answer: ["The terms overlap. Janitorial cleaning usually means recurring maintenance tasks like trash, restrooms, and floors, while commercial cleaning is often used more broadly to include specialty services such as deep cleaning, carpet cleaning, and floor care. Terminology varies by provider, so compare written scopes rather than labels."]
+        },
+        {
+          question: "Does commercial cleaning include carpet cleaning?",
+          answer: ["Routine commercial cleaning usually includes vacuuming, but carpet cleaning with extraction is typically a periodic service scheduled and priced separately. Ask whether it can be added to your agreement and how often it is recommended for your traffic levels."]
+        },
+        {
+          question: "Does commercial cleaning include window cleaning?",
+          answer: ["Recurring service often includes spot-cleaning accessible glass such as entry doors. Full interior and exterior window cleaning is usually a separate, periodic service with its own scope and schedule."]
+        },
+        {
+          question: "How often should a commercial building be cleaned?",
+          answer: ["It depends on traffic, size, restroom use, and the type of facility. High-use areas like restrooms, trash, and busy floors often need attention on every visit, lower-use areas can be cleaned weekly, and specialty work like carpet care and deep cleaning is handled periodically."]
+        },
+        {
+          question: "What should be included in a commercial cleaning scope of work?",
+          answer: ["A good scope lists the tasks for each area, how often each task happens, what is excluded, which specialty services are separate, who supplies consumables, the cleaning schedule and access details, and how concerns or extra work requests are handled."]
+        }
+      ]
+    }
+  ]
+};
+
 // Only approved, fact-checked articles belong here: no placeholder posts.
 export const blogPosts: readonly BlogPost[] = [
   howOftenShouldOfficeBeProfessionallyCleaned,
-  howToChooseCommercialCleaningCompanySeattle
+  howToChooseCommercialCleaningCompanySeattle,
+  whatDoesCommercialCleaningInclude
 ];
