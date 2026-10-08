@@ -1,6 +1,6 @@
 import type { BlogPost } from "@/lib/blog-types";
 import { siteConfig } from "@/lib/site";
-import { quoteHref } from "@/lib/quote-form";
+import { quoteHref, quoteHrefForService } from "@/lib/quote-form";
 
 // The single content registry. Add approved articles here, or import separate
 // typed article files into this array as the library grows. See docs/blog.md.
@@ -865,7 +865,9 @@ const whatDoesCommercialCleaningInclude: BlogPost = {
     {
       type: "paragraph",
       text: [
-        "Deep cleaning is more detailed, periodic work. It targets buildup and areas that routine visits do not reach regularly, such as baseboards, vents, high dusting, detail work around fixtures, and corners where grime collects over time. A deep clean is often scheduled before recurring service begins, after a busy season, or when a facility has gone a while without professional cleaning."
+        "Deep cleaning is more detailed, periodic work. It targets buildup and areas that routine visits do not reach regularly, such as baseboards, vents, high dusting, detail work around fixtures, and corners where grime collects over time. A deep clean is often scheduled before recurring service begins, after a busy season, or when a facility has gone a while without professional cleaning. These ",
+        { text: "signs your office may need a deeper cleaning", href: "/blog/signs-office-needs-deep-cleaning" },
+        " can help you tell when routine service is no longer keeping up."
       ]
     },
     {
@@ -1059,9 +1061,345 @@ const whatDoesCommercialCleaningInclude: BlogPost = {
   ]
 };
 
+const signsOfficeNeedsDeepCleaning: BlogPost = {
+  slug: "signs-office-needs-deep-cleaning",
+  title: "7 Signs Your Office Needs a Professional Deep Cleaning",
+  seoTitle: "7 Signs Your Office Needs a Deep Cleaning",
+  description:
+    "Not sure routine cleaning is still enough? Learn 7 signs your office may need a professional deep cleaning and when Seattle businesses should schedule one.",
+  category: "deep-cleaning",
+  publishedAt: "2026-10-08",
+  draft: false,
+  readingTime: "9 min read",
+  tags: ["office deep cleaning", "commercial deep cleaning", "signs office needs deep cleaning", "Seattle office cleaning"],
+  relatedPostSlugs: ["what-does-commercial-cleaning-include", "how-often-should-office-be-professionally-cleaned"],
+  relatedServiceSlugs: ["commercial-deep-cleaning", "commercial-cleaning", "carpet-cleaning"],
+  relatedIndustrySlugs: ["offices-commercial-buildings"],
+  image: {
+    src: "/media/blog/commercial-deep-cleaning-equipment-lobby.webp",
+    alt: "Floor machine, carpet extractors, mop bucket, and supply cart staged on a polished floor in a glass-walled commercial lobby",
+    width: 1040,
+    height: 585
+  },
+  content: [
+    {
+      type: "paragraph",
+      text: [
+        "Your office probably needs a deep cleaning when routine cleaning keeps the space functional but no longer makes it look or feel fully clean. Recurring service handles everyday maintenance like trash, restrooms, vacuuming, and wiping accessible surfaces. Over time, though, buildup collects in places those visits don't regularly reach. Persistent odors, dull floors, stained carpet, dusty edges and baseboards, dirty vents, and high-traffic areas that never quite look clean are all common signals that a deeper reset may be due."
+      ]
+    },
+    {
+      type: "paragraph",
+      text: [
+        "Those signs rarely mean your cleaning team is doing a poor job. They usually mean the space has accumulated more detail work than a routine visit is designed to handle. Here are seven to watch for, plus how deep cleaning differs from routine cleaning, when to schedule it, and how to slow buildup down afterward."
+      ]
+    },
+    { type: "heading", level: 2, id: "what-is-office-deep-cleaning", text: "What Is Office Deep Cleaning?" },
+    {
+      type: "paragraph",
+      text: [
+        "Office deep cleaning is a detailed, periodic cleaning that targets buildup and the areas a recurring schedule doesn't cover in depth. Routine commercial cleaning is maintenance: the same core tasks on every visit so the office stays presentable. Deep cleaning addresses what has slowly accumulated in between."
+      ]
+    },
+    {
+      type: "paragraph",
+      text: [
+        "That usually means more time on edges, corners, and baseboards, detailed floor cleaning, buildup around restroom and break room fixtures, door frames, high-touch points, and less-accessible surfaces. Specialty work like carpet extraction or hard floor refinishing is often paired with a deep clean but scoped separately."
+      ]
+    },
+    {
+      type: "paragraph",
+      text: [
+        "Every provider draws the line a little differently. Our ", { text: "commercial deep cleaning services", href: "/services/commercial-deep-cleaning" }, " are scoped by area after a walkthrough, so the work reflects the facility's actual condition rather than a generic package."
+      ]
+    },
+    { type: "heading", level: 2, id: "persistent-odors", text: "1. Persistent Odors Keep Coming Back" },
+    {
+      type: "paragraph",
+      text: [
+        "A common sign is an odor that returns soon after the office has been cleaned. The trash is out and the surfaces look fine, yet the break room, a restroom, or a carpeted corner smells stale by midweek."
+      ]
+    },
+    {
+      type: "paragraph",
+      text: [
+        "Routine cleaning removes the obvious sources. Lingering odors often come from places a routine visit doesn't reach in depth: soil worked into high-traffic carpet, residue along floor edges, buildup around restroom fixtures, upholstered seating, or an old spill that was wiped off the surface but soaked in below it."
+      ]
+    },
+    {
+      type: "paragraph",
+      text: [
+        "An odor doesn't diagnose anything on its own, and some causes, such as plumbing or ventilation problems, need a qualified inspection rather than cleaning. But when a smell clears after cleaning and keeps coming back, it often points to buildup in areas that need more detailed attention."
+      ]
+    },
+    { type: "heading", level: 2, id: "edges-corners-baseboards", text: "2. Dirt and Dust Are Building Up Along Edges, Corners and Baseboards" },
+    {
+      type: "paragraph",
+      text: [
+        "Look at the line where the floor meets the wall. In many offices, the open middle of each room looks fine while a gray band of dust and soil slowly forms along baseboards, in corners, behind doors, and around furniture legs."
+      ]
+    },
+    {
+      type: "paragraph",
+      text: [
+        "That pattern is normal. Routine vacuuming and mopping focus on open floor and main walking paths, where most daily soil lands. Edges take longer, often need different tools, and are easy to skip on a busy visit. Periodic edge, corner, and baseboard cleaning resets those lines so routine service maintains a clean baseline instead of working around old buildup."
+      ]
+    },
+    { type: "heading", level: 2, id: "carpets-dull-or-stained", text: "3. Carpets Still Look Dull or Stained After Routine Vacuuming" },
+    {
+      type: "paragraph",
+      text: [
+        "Vacuuming is essential, but it mainly removes loose dirt from the surface. Soil that foot traffic grinds into the carpet, along with residue from spills, can stay in the fibers even when the carpet is vacuumed often. Watch for:"
+      ]
+    },
+    {
+      type: "list",
+      items: [
+        ["Darker traffic lanes along main walkways and between desks"],
+        ["Gray or matted areas just inside entrances"],
+        ["Spots that reappear after they've been cleaned"],
+        ["A dull overall color compared with carpet in low-use rooms"]
+      ]
+    },
+    {
+      type: "paragraph",
+      text: [
+        "When vacuuming no longer brings the carpet back, extraction-based ", { text: "professional carpet cleaning", href: "/services/carpet-cleaning" }, " is usually the next step, since it is designed to lift embedded soil that vacuuming leaves behind. It is often scheduled alongside a deep clean but quoted as its own service. Results depend on the carpet and the type of stain, so some older or set-in stains may lighten without disappearing completely."
+      ]
+    },
+    { type: "heading", level: 2, id: "restrooms-never-fully-clean", text: "4. Restrooms Never Quite Look or Feel Fully Clean" },
+    {
+      type: "paragraph",
+      text: [
+        "Restrooms are usually cleaned on every visit, and they should be. As some of the hardest-working rooms in an office, though, their detail areas can fall behind even when the daily routine is done well. Common signs include:"
+      ]
+    },
+    {
+      type: "list",
+      items: [
+        ["Buildup around faucets, toilet bases, and fixture edges"],
+        ["Dark grout lines or floor corners that routine mopping doesn't brighten"],
+        ["Marks and residue along partition edges, doors, and dispensers"],
+        ["An odor that returns soon after the restroom is cleaned"]
+      ]
+    },
+    {
+      type: "paragraph",
+      text: [
+        "Routine restroom cleaning covers the essentials: fixtures, sinks, mirrors, floors, trash, and restocking. A deeper pass spends more time on fixture bases and edges, partitions, dispensers, and floor corners. The goal is to bring the room back to a condition the daily routine can realistically maintain."
+      ]
+    },
+    { type: "heading", level: 2, id: "high-traffic-floors", text: "5. High-Traffic Floors Are Looking Worn, Dull or Difficult to Maintain" },
+    {
+      type: "paragraph",
+      text: [
+        "Entryways, hallways, reception areas, and common spaces carry most of an office's foot traffic, and in Seattle the wetter months add tracked-in grit and moisture. If hard floors look dull or scuffed right after mopping, or entry carpet looks worn no matter how often it's vacuumed, routine service has likely reached the limit of what it can do."
+      ]
+    },
+    {
+      type: "paragraph",
+      text: [
+        "Regular mopping removes daily soil, but it doesn't restore a floor's finish, and the right method depends on the material. Resilient hard floors such as VCT, sheet vinyl, and linoleum may benefit from ", { text: "floor stripping and waxing", href: "/services/strip-and-wax" }, ", which removes the old finish and applies fresh coats. Laminate and many luxury vinyl planks are not meant to be waxed at all, and carpet needs its own approach. A provider should identify the flooring before recommending a method."
+      ]
+    },
+    { type: "heading", level: 2, id: "vents-ledges-high-surfaces", text: "6. Dust Keeps Returning on Vents, Ledges and Less-Accessible Surfaces" },
+    {
+      type: "paragraph",
+      text: [
+        "Some surfaces get little attention during routine visits simply because they're out of the way: vent covers, window ledges, the tops of cabinets and partitions, light fixtures, and the spaces around furniture that rarely moves. Dust can build there for months before anyone notices, often when sunlight catches a ledge or a vent cover starts to look gray from across the room."
+      ]
+    },
+    {
+      type: "paragraph",
+      text: [
+        "Detailed dusting of reachable high and low surfaces is a practical part of many deep cleans. It improves how the space looks and keeps settled dust from piling up. Wiping vent covers is not the same as servicing an HVAC system or cleaning ductwork, though, so concerns about ventilation or air quality belong with a qualified HVAC professional."
+      ]
+    },
+    { type: "heading", level: 2, id: "office-looks-tired", text: "7. The Office Still Looks Tired Even After Routine Cleaning" },
+    {
+      type: "paragraph",
+      text: [
+        "Sometimes there's no single problem area. The office is cleaned on schedule and nothing is obviously dirty, but it still looks worn: dull floors, smudged glass, fingerprints and marks on door frames and light switches, buildup in corners, and an entry that never looks as sharp as it used to."
+      ]
+    },
+    {
+      type: "paragraph",
+      text: [
+        "This is often the clearest sign of all, because it reflects many small areas of buildup adding up at once. A scheduled deep cleaning can reset the space by working through those details area by area. Once that baseline is restored, routine cleaning has a much easier job keeping it there."
+      ]
+    },
+    { type: "heading", level: 2, id: "routine-vs-deep-cleaning", text: "Routine Cleaning vs. Deep Cleaning: What Is the Difference?" },
+    {
+      type: "paragraph",
+      text: [
+        "The two work best together. Routine cleaning maintains the office between visits, and deep cleaning periodically restores it so routine cleaning has a clean baseline to maintain. For more on the recurring side, see our guide to ", { text: "what routine commercial cleaning typically includes", href: "/blog/what-does-commercial-cleaning-include" }, "."
+      ]
+    },
+    {
+      type: "table",
+      caption: "A general comparison of routine and deep office cleaning. Actual scope depends on the property and the agreed service plan.",
+      columns: ["Factor", "Routine Cleaning", "Deep Cleaning"],
+      rows: [
+        [["Frequency"], ["Recurring, from a few times a week to daily"], ["Periodic, as needed or at planned intervals"]],
+        [["Purpose"], ["Ongoing maintenance"], ["A detailed reset of accumulated buildup"]],
+        [["Typical areas"], ["Trash, restrooms, break rooms, vacuuming, mopping, accessible surfaces"], ["Edges, corners, baseboards, fixture buildup, door frames, less frequently cleaned surfaces"]],
+        [["Level of detail"], ["Consistent core tasks on every visit"], ["More time per area, with attention to detail work"]],
+        [["Carpet and floor care"], ["Vacuuming and mopping"], ["Detailed floor and edge cleaning, with carpet extraction or refinishing often quoted separately"]],
+        [["When it is needed"], ["Continuously, to keep the office presentable"], ["When buildup is visible, around key dates, or before a new cleaning program"]]
+      ]
+    },
+    {
+      type: "paragraph",
+      text: [
+        "Not every deep clean includes every item in the right-hand column. The actual scope depends on the property, its condition, and what's agreed with the provider in writing."
+      ]
+    },
+    { type: "heading", level: 2, id: "when-to-schedule-deep-cleaning", text: "When Should an Office Schedule a Deep Cleaning?" },
+    {
+      type: "paragraph",
+      text: [
+        "There's no universal calendar for deep cleaning. It tends to make the biggest difference in situations like these:"
+      ]
+    },
+    {
+      type: "list",
+      items: [
+        ["After a long stretch without detailed cleaning"],
+        ["Before starting a new recurring cleaning program, or when resetting one that isn't working"],
+        ["Before or after a major event or a period of heavy seasonal use"],
+        ["Ahead of important client visits, tenant walkthroughs, or inspections"],
+        ["After renovation or construction activity, once the construction cleanup itself is finished"],
+        ["When routine cleaning no longer restores the space, or carpet and floor buildup becomes noticeable"]
+      ]
+    },
+    {
+      type: "paragraph",
+      text: [
+        "How often those moments come up depends on employee count, customer and visitor traffic, flooring, restroom use, the type of facility, and the routine cleaning schedule. A busy, customer-facing office usually needs deeper attention more often than a small office with occasional visitors. If you're still setting a recurring schedule, our guide on ", { text: "how often a commercial office should be professionally cleaned", href: "/blog/how-often-should-office-be-professionally-cleaned" }, " covers the factors that shape it."
+      ]
+    },
+    { type: "heading", level: 2, id: "what-deep-cleaning-can-include", text: "What Can Professional Office Deep Cleaning Include?" },
+    {
+      type: "paragraph",
+      text: [
+        "Scope varies by provider and facility, so confirm the details in writing. At Cleaning From The Heart LLC, depending on the facility and the agreed service plan, ", { text: "professional commercial deep cleaning", href: "/services/commercial-deep-cleaning" }, " may include:"
+      ]
+    },
+    {
+      type: "list",
+      items: [
+        ["Workspaces: desks and reachable surfaces, high-touch points, doors and door frames, baseboards, and interior glass spot cleaning where applicable"],
+        ["Lobbies and common areas: reception areas, seating-area surfaces, entry doors, corners and edges, and detailed dusting"],
+        ["Break rooms: countertops, cabinet and appliance exteriors, sinks, fixtures, and tables"],
+        ["Restrooms: toilets, urinals, sinks, fixtures, mirrors, partitions, dispensers, and floors"],
+        ["Floors: detailed vacuuming, mopping, and edge and corner cleaning"]
+      ]
+    },
+    {
+      type: "paragraph",
+      text: [
+        "Carpet extraction, floor stripping and waxing, exterior window cleaning, and pressure washing are separate services with their own quotes. Keeping them separate makes the deep-cleaning scope clear and lets each service be scheduled when it makes the most sense."
+      ]
+    },
+    { type: "heading", level: 2, id: "prevent-buildup", text: "How to Prevent Buildup Between Deep Cleanings" },
+    {
+      type: "paragraph",
+      text: [
+        "A deep clean resets the office. These habits help the results last longer:"
+      ]
+    },
+    {
+      type: "list",
+      items: [
+        ["Keep a consistent ", { text: "recurring commercial cleaning", href: "/services/commercial-cleaning" }, " schedule that matches how the office is actually used."],
+        ["Report spills quickly, especially on carpet, so they can be cleaned before they set."],
+        ["Use entrance mats at main doors to catch grit and moisture, particularly during rainy months."],
+        ["Keep baseboards, corners, and floor edges reasonably clear of boxes and clutter."],
+        ["Tell your cleaning provider about recurring trouble spots, like the busiest restroom or the entry hallway."],
+        ["Review the cleaning scope after changes in staffing, layout, or traffic."]
+      ]
+    },
+    { type: "heading", level: 2, id: "when-to-call-a-professional", text: "When Is It Time to Call a Professional?" },
+    {
+      type: "paragraph",
+      text: [
+        "Some detail work, like wiping down a ledge or blotting a fresh spill, can be handled in-house. It usually makes sense to bring in a professional when:"
+      ]
+    },
+    {
+      type: "list",
+      items: [
+        ["Routine cleaning no longer restores the way the space looks"],
+        ["Buildup is widespread rather than limited to one or two spots"],
+        ["Several areas need detailed work at the same time"],
+        ["Carpet or hard floors need specialized equipment"],
+        ["Office staff can't reasonably take on the work alongside their own jobs"],
+        ["The office needs a thorough reset without interrupting the workday"]
+      ]
+    },
+    {
+      type: "paragraph",
+      text: [
+        "A professional can assess the space as a whole, prioritize the areas that need the most attention, and separate deep-cleaning tasks from specialty carpet or floor care. That makes the work easier to plan, budget for, and schedule around the business."
+      ]
+    },
+    { type: "heading", level: 2, id: "need-commercial-deep-cleaning", text: "Need Commercial Deep Cleaning in Seattle?" },
+    {
+      type: "paragraph",
+      text: [
+        "If routine cleaning is no longer enough to restore your office, Cleaning From The Heart LLC can review your facility, the problem areas you're noticing, and your current cleaning schedule to help determine whether a deep clean makes sense. The scope is confirmed in writing after a walkthrough, and timing is coordinated around your business hours and access requirements."
+      ]
+    },
+    {
+      type: "paragraph",
+      text: [
+        "A deep clean can also be the starting point for a new recurring program, so routine service begins from a clean baseline instead of working around old buildup."
+      ]
+    },
+    {
+      type: "callout",
+      title: "Ready to reset your office?",
+      text: [
+        "Learn more about ", { text: "commercial deep cleaning in Seattle", href: "/services/commercial-deep-cleaning" }, ", call us at ", siteConfig.phoneDisplay, ", or ", { text: "Get a Free Quote", href: quoteHrefForService("commercial-deep-cleaning") }, "."
+      ]
+    },
+    {
+      type: "faq",
+      title: "Frequently Asked Questions",
+      items: [
+        {
+          question: "How do I know if my office needs a deep cleaning?",
+          answer: ["Common signs include odors that return soon after cleaning, dust along baseboards and corners, carpet that stays dull after vacuuming, buildup around restroom fixtures, worn-looking high-traffic floors, and dust on vents and ledges. If the office looks tired even right after routine cleaning, a deep clean is worth considering."]
+        },
+        {
+          question: "What is the difference between regular office cleaning and deep cleaning?",
+          answer: ["Regular office cleaning is recurring maintenance: trash, restrooms, vacuuming, mopping, and accessible surfaces on a set schedule. Deep cleaning is a periodic, more detailed service that targets buildup and areas routine visits don't cover in depth, such as edges, baseboards, and fixture buildup."]
+        },
+        {
+          question: "How often should an office be deep cleaned?",
+          answer: ["There's no single schedule that fits every office. It depends on foot traffic, employee count, flooring, restroom use, and how often routine cleaning happens. Offices often schedule one when buildup becomes noticeable, around busy periods, or when starting a new cleaning program."]
+        },
+        {
+          question: "Does deep cleaning include carpet cleaning?",
+          answer: ["Usually not. A deep clean typically includes detailed vacuuming, while carpet extraction is a separate service. At Cleaning From The Heart LLC, carpet cleaning is quoted separately and can be scheduled alongside a deep clean."]
+        },
+        {
+          question: "Can office deep cleaning be done outside business hours?",
+          answer: ["Often, yes. Many commercial cleaners can arrange work around business operations, but scheduling should be confirmed directly with the provider. At Cleaning From The Heart LLC, timing is coordinated around your business hours and access requirements and confirmed during the walkthrough."]
+        },
+        {
+          question: "What areas are usually included in commercial deep cleaning?",
+          answer: ["Workspaces, lobbies and common areas, break rooms, restrooms, and floors are commonly included, with attention to baseboards, edges, corners, fixtures, and high-touch points. The exact scope depends on the facility and should be confirmed in writing."]
+        }
+      ]
+    }
+  ]
+};
+
 // Only approved, fact-checked articles belong here: no placeholder posts.
 export const blogPosts: readonly BlogPost[] = [
   howOftenShouldOfficeBeProfessionallyCleaned,
   howToChooseCommercialCleaningCompanySeattle,
-  whatDoesCommercialCleaningInclude
+  whatDoesCommercialCleaningInclude,
+  signsOfficeNeedsDeepCleaning
 ];
