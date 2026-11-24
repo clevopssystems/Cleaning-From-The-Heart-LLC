@@ -7,6 +7,7 @@ export const blogCategories = {
   "property-management": "Property Management",
   "deep-cleaning": "Deep Cleaning",
   "carpet-cleaning": "Carpet Cleaning",
+  "floor-care": "Floor Care",
   "move-in-move-out": "Move-In & Move-Out",
   "window-cleaning": "Window Cleaning",
   "pressure-washing": "Pressure Washing",

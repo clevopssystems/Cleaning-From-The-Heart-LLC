@@ -1199,7 +1199,7 @@ const signsOfficeNeedsDeepCleaning: BlogPost = {
     {
       type: "paragraph",
       text: [
-        "Regular mopping removes daily soil, but it doesn't restore a floor's finish, and the right method depends on the material. Resilient hard floors such as VCT, sheet vinyl, and linoleum may benefit from ", { text: "floor stripping and waxing", href: "/services/strip-and-wax" }, ", which removes the old finish and applies fresh coats. Laminate and many luxury vinyl planks are not meant to be waxed at all, and carpet needs its own approach. A provider should identify the flooring before recommending a method."
+        "Regular mopping removes daily soil, but it doesn't restore a floor's finish, and the right method depends on the material. Resilient hard floors such as VCT, sheet vinyl, and linoleum may benefit from ", { text: "floor stripping and waxing", href: "/services/strip-and-wax" }, ", which removes the old finish and applies fresh coats. Laminate and many luxury vinyl planks are not meant to be waxed at all, and carpet needs its own approach. A provider should identify the flooring before recommending a method. For timing, see ", { text: "how often commercial floors should be stripped and waxed", href: "/blog/how-often-should-commercial-floors-be-stripped-and-waxed" }, "."
       ]
     },
     { type: "heading", level: 2, id: "vents-ledges-high-surfaces", text: "6. Dust Keeps Returning on Vents, Ledges and Less-Accessible Surfaces" },
@@ -2267,6 +2267,356 @@ const deepCleaningVsRegularHouseCleaning: BlogPost = {
   ]
 };
 
+const howOftenShouldCommercialFloorsBeStrippedAndWaxed: BlogPost = {
+  slug: "how-often-should-commercial-floors-be-stripped-and-waxed",
+  title: "How Often Should Commercial Floors Be Stripped and Waxed?",
+  seoTitle: "How Often to Strip and Wax Commercial Floors",
+  description:
+    "Learn how often commercial floors should be stripped and waxed, how scrub and recoat and burnishing stretch the cycle, and which signs mean a floor is due.",
+  category: "floor-care",
+  publishedAt: "2026-11-24",
+  draft: false,
+  readingTime: "10 min read",
+  tags: ["strip and wax", "commercial floor care", "floor stripping and waxing", "VCT floor maintenance", "scrub and recoat", "Seattle floor care"],
+  relatedPostSlugs: ["signs-office-needs-deep-cleaning", "what-does-commercial-cleaning-include"],
+  relatedServiceSlugs: ["strip-and-wax", "commercial-cleaning", "school-facility-cleaning"],
+  relatedIndustrySlugs: ["healthcare-facilities", "retail-stores", "offices-commercial-buildings"],
+  image: {
+    src: "/media/blog/commercial-lobby-glossy-tile-floor.webp",
+    alt: "Large commercial lobby with white columns and a glossy, freshly finished tile floor reflecting the ceiling lights",
+    width: 1040,
+    height: 585
+  },
+  content: [
+    {
+      type: "paragraph",
+      text: [
+        "A freshly stripped and waxed floor looks bright and uniform, but the finish starts wearing down from the first morning people walk on it. How long it lasts before the floor needs another full strip depends on how much traffic it takes, how much grit and water reach it, and how well it is maintained in between."
+      ]
+    },
+    {
+      type: "paragraph",
+      text: [
+        "This guide covers the usual starting point for commercial floors and the lighter services that stretch the time between full strips. It also explains the signs that a floor is due and how to plan the work so it does not disrupt your building."
+      ]
+    },
+    { type: "heading", level: 2, id: "how-often-stripped-and-waxed", text: "How Often Should Commercial Floors Be Stripped and Waxed?" },
+    {
+      type: "paragraph",
+      text: [
+        "A common starting point for most commercial floors is a full strip and wax about once a year. Floors with heavy traffic may need it more often, and a quiet office floor can often go longer. Scrub and recoat work two to four times a year and regular burnishing in between help keep the floor protected until the next full strip."
+      ]
+    },
+    {
+      type: "paragraph",
+      text: [
+        "Treat that as a starting point, not a rule. Two floors of the same size and material can need very different schedules. A school corridor that takes thousands of steps a day and a back office that sees a handful of people will not wear at the same rate, so the floor's condition should decide when the next strip happens, not the date on the calendar."
+      ]
+    },
+    { type: "heading", level: 2, id: "what-strip-and-wax-does", text: "What Strip and Wax Actually Does" },
+    {
+      type: "paragraph",
+      text: [
+        "Floor \"wax\" on a commercial floor is usually an acrylic floor finish, applied in several thin coats. It works as a sacrificial layer: the finish takes the scuffs, grit, and abrasion so the tile underneath does not."
+      ]
+    },
+    {
+      type: "paragraph",
+      text: [
+        "A strip and wax removes every layer of that old finish down to the bare floor. The crew applies a stripping solution, lets it soften the old coats, works it off with a floor machine and by hand at the edges, then picks up the slurry. The floor is rinsed, neutralized so the new finish can bond, and dried completely. Sealer goes down where the floor is porous, followed by several coats of fresh finish with drying time between each one."
+      ]
+    },
+    {
+      type: "paragraph",
+      text: [
+        "That makes it the most thorough floor service, but also the most disruptive. The goal of a good maintenance plan is not to strip as often as possible. It is to keep the finish healthy so full strips are needed less often."
+      ]
+    },
+    { type: "heading", level: 2, id: "three-levels-of-floor-care", text: "Strip and Wax vs. Scrub and Recoat vs. Burnishing" },
+    {
+      type: "paragraph",
+      text: [
+        "Commercial hard floor care usually works on three levels. Each one does a different job, and the lighter two are what keep the heavy one from coming around too soon."
+      ]
+    },
+    {
+      type: "table",
+      caption: "Typical starting points for commercial resilient floors. Traffic, floor type, and maintenance change the right schedule for each building.",
+      columns: ["Service", "What It Does", "Typical Frequency", "Downtime"],
+      rows: [
+        [["Strip and wax"], ["Removes all old finish and rebuilds the floor with sealer and fresh coats"], ["About once a year for most commercial floors, more often under heavy traffic"], ["Longest: usually overnight, a weekend, or a closure"]],
+        [["Scrub and recoat"], ["Scrubs off the worn top layers and adds fresh coats over a sound base"], ["Two to four times a year between full strips"], ["Shorter: often one evening per zone"]],
+        [["Burnishing"], ["High-speed pad work that brings gloss back on a burnishable finish"], ["Monthly to quarterly, or as part of a recurring plan"], ["Least: fits inside a normal cleaning visit"]]
+      ]
+    },
+    {
+      type: "paragraph",
+      text: [
+        "Burnishing restores shine but adds no new protection. Scrub and recoat adds protection back before wear reaches the tile. A full strip is the reset for when the finish has yellowed, built up, or worn through. A floor that only ever gets mopped and the occasional full strip will usually need that strip sooner, because nothing is rebuilding the finish in between."
+      ]
+    },
+    { type: "heading", level: 2, id: "what-changes-frequency", text: "What Changes How Often a Floor Needs Stripping" },
+    {
+      type: "paragraph",
+      text: [
+        "Several factors move the schedule forward or back."
+      ]
+    },
+    { type: "heading", level: 3, id: "foot-traffic", text: "Foot Traffic" },
+    {
+      type: "paragraph",
+      text: [
+        "Traffic is the biggest factor. Main entrances, corridors, and the path between a counter and a back room wear first. Many facilities find that traffic lanes need attention well before the rest of the floor does, which is why interim work is often scheduled for the busiest zones only."
+      ]
+    },
+    { type: "heading", level: 3, id: "grit-and-matting", text: "Tracked-In Grit and Entry Matting" },
+    {
+      type: "paragraph",
+      text: [
+        "Sand and grit act like sandpaper underfoot, grinding through the finish with every step. Good entry matting, long enough for several steps and kept clean, stops a lot of that soil at the door. Buildings with short, saturated, or missing mats tend to see their entry floors wear much faster."
+      ]
+    },
+    { type: "heading", level: 3, id: "daily-maintenance", text: "Daily Dust Mopping and Damp Mopping" },
+    {
+      type: "paragraph",
+      text: [
+        "Daily dust mopping removes grit before it is ground into the finish, and damp mopping with an appropriate cleaner removes soil without attacking the coats. Skipping these, or mopping with a dirty mop or the wrong chemical, leaves a dull film and shortens the life of the finish."
+      ]
+    },
+    { type: "heading", level: 3, id: "rolling-loads", text: "Rolling Loads and Furniture" },
+    {
+      type: "paragraph",
+      text: [
+        "Carts, chairs, dollies, and equipment cause scuffs and dragging marks. Areas with constant rolling traffic, such as clinic corridors, stockrooms, and cafeteria serving lines, usually need more frequent interim work than open office floors."
+      ]
+    },
+    { type: "heading", level: 3, id: "floor-type", text: "Floor Type and Condition" },
+    {
+      type: "paragraph",
+      text: [
+        "VCT (vinyl composition tile) is the classic strip and wax floor. Sheet vinyl, linoleum, sealed concrete, terrazzo, and some commercial tile can also carry a maintainable finish, but each reacts differently to stripping. A worn or porous floor may need sealer and more careful work, which affects how the schedule is planned."
+      ]
+    },
+    { type: "heading", level: 2, id: "by-facility-type", text: "Strip and Wax Considerations by Facility Type" },
+    {
+      type: "table",
+      caption: "General considerations, not fixed intervals. The right plan depends on the building and how it is used.",
+      columns: ["Facility", "What Wears the Floor", "Scheduling Consideration"],
+      rows: [
+        [["Schools"], ["Heavy corridor and cafeteria traffic, chairs and desks"], ["Full strips usually fit summer, winter, or mid-year breaks"]],
+        [["Medical and dental clinics"], ["Steady foot traffic and rolling equipment"], ["Often worked after hours or zone by zone"]],
+        [["Retail stores"], ["Constant entry traffic and weather off the sidewalk"], ["Entry zones usually need the closest monitoring"]],
+        [["Offices"], ["Lobby and break room traffic"], ["Low-traffic areas can often go longer between strips"]],
+        [["Churches and community buildings"], ["Heavy weekend use in halls and classrooms"], ["Quiet weekdays give a natural work window"]],
+        [["Property common areas"], ["Lobbies, laundry rooms, and corridors used by many tenants"], ["Tenants need notice before areas close"]]
+      ]
+    },
+    { type: "heading", level: 2, id: "signs-floor-is-due", text: "Signs a Commercial Floor Is Due for a Full Strip" },
+    {
+      type: "paragraph",
+      text: [
+        "Watch the floor itself rather than the calendar. These are the usual signs that interim maintenance is no longer enough:"
+      ]
+    },
+    {
+      type: "list",
+      items: [
+        ["The floor looks yellow or gray, because old finish has darkened or dirt is trapped between coats"],
+        ["Finish has built up along baseboards, in corners, and under furniture, leaving a visible ridge"],
+        ["Traffic lanes look visibly darker than the floor beside them"],
+        ["The floor goes dull again as soon as it dries after mopping"],
+        ["Bare tile is showing through in walkways or doorways"],
+        ["The finish is powdering, peeling, or streaking"]
+      ]
+    },
+    {
+      type: "image",
+      image: {
+        src: "/media/blog/vct-floor-strip-and-wax-before-after.webp",
+        alt: "Before and after photos of a large commercial tile floor: dull and flat before, glossy with strong light reflections after strip and wax",
+        width: 955,
+        height: 640,
+        caption: "Before and after a strip and wax on a large commercial tile floor."
+      }
+    },
+    {
+      type: "paragraph",
+      text: [
+        "Yellowing and buildup cannot be mopped out, because the problem is in the finish, not on top of it. Bare tile in traffic lanes matters most: once the finish has worn through, the tile itself starts taking the wear and the staining."
+      ]
+    },
+    { type: "heading", level: 2, id: "when-scrub-and-recoat-is-enough", text: "When Scrub and Recoat Is Enough" },
+    {
+      type: "paragraph",
+      text: [
+        "Not every dull floor needs a full strip. If the base coats are still sound and the problem is surface scuffing or dullness in the walkways, a scrub and recoat is usually the right choice. It costs less, takes less time, and the floor returns to service faster."
+      ]
+    },
+    {
+      type: "paragraph",
+      text: [
+        "The limit is the condition of the base. Once a floor has yellowed, built up heavily at the edges, or worn through to tile, a recoat simply seals that condition in. At that point, a full strip is the right answer."
+      ]
+    },
+    { type: "heading", level: 2, id: "waxing-over-old-finish", text: "Why Waxing Over Old Finish Backfires" },
+    {
+      type: "paragraph",
+      text: [
+        "Adding coats on top of a tired floor can look like a shortcut, but it usually creates a bigger job later. New finish over yellowed or dirty coats locks the discoloration in. New finish over a failing base peels away along with it. Each extra layer also adds to the buildup at the edges, which makes the eventual strip slower."
+      ]
+    },
+    {
+      type: "paragraph",
+      text: [
+        "How the last strip was done matters too. Powdering, peeling, or streaks that come back after every mopping often trace back to a floor that was not rinsed and neutralized properly before the finish went down. That step is invisible on the day, but it decides how long the finish holds up."
+      ]
+    },
+    { type: "heading", level: 2, id: "floors-not-to-wax", text: "Floors That Should Not Be Stripped and Waxed" },
+    {
+      type: "paragraph",
+      text: [
+        "Frequency only matters for floors that should be waxed in the first place. Several common commercial floors should not be:"
+      ]
+    },
+    {
+      type: "list",
+      items: [
+        ["Hardwood and gym floors are refinished with a screen-and-recoat process instead, which is separate work."],
+        ["Laminate and many luxury vinyl planks have a factory wear layer that manufacturers do not want coated."],
+        ["Unsealed natural stone and polished concrete are maintained by polishing rather than by applying floor finish."]
+      ]
+    },
+    {
+      type: "paragraph",
+      text: [
+        "If you are not sure what your floor is, have it identified before anyone recommends a schedule. A provider should tell you when a floor should not be waxed rather than sell you the job."
+      ]
+    },
+    { type: "heading", level: 2, id: "seattle-wet-season", text: "How Seattle's Wet Season Affects Floor Finish" },
+    {
+      type: "paragraph",
+      text: [
+        "In Seattle, the wetter months bring more water and grit into buildings on shoes, umbrellas, and carts. Wet grit is especially hard on entry floors, and standing water near doors can dull the finish and create slip concerns."
+      ]
+    },
+    {
+      type: "paragraph",
+      text: [
+        "That does not mean every floor needs extra full strips in winter. It does mean entry matting, prompt attention to wet spots, and consistent dust mopping matter more during those months, and entry zones may need interim work sooner than the rest of the floor."
+      ]
+    },
+    { type: "heading", level: 2, id: "planning-the-work", text: "Planning Strip and Wax Around Your Building" },
+    {
+      type: "paragraph",
+      text: [
+        "Because a full strip takes the floor out of service, timing is part of the plan. Common arrangements include:"
+      ]
+    },
+    {
+      type: "list",
+      items: [
+        ["Overnight work, so the floor is back in service before the first shift"],
+        ["Weekends, which give finish coats more time to dry and cure before Monday"],
+        ["School breaks, which are the natural window for classrooms and corridors and tend to book early"],
+        ["Phased zones, for buildings that cannot close, so only one area is out of use at a time"]
+      ]
+    },
+    {
+      type: "paragraph",
+      text: [
+        "Light foot traffic usually returns before mats, rolling loads, and heavy furniture do, because the finish keeps hardening after it looks dry. The exact return-to-service timing depends on the floor type, number of coats, temperature, and airflow, so it should be confirmed on site rather than assumed."
+      ]
+    },
+    { type: "heading", level: 2, id: "make-it-last-longer", text: "How to Make a Strip and Wax Last Longer" },
+    {
+      type: "paragraph",
+      text: [
+        "The habits that protect a new finish are simple, and they decide whether the next strip is due in months or much later:"
+      ]
+    },
+    {
+      type: "list",
+      items: [
+        ["Dust mop daily so grit is removed before it is ground into the finish."],
+        ["Damp mop with a clean mop and a cleaner suited to finished floors."],
+        ["Keep entry mats in place, clean, and long enough to catch soil at the door."],
+        ["Wipe up spills and wet spots promptly."],
+        ["Use felt pads or glides on chairs and furniture that move often."],
+        ["Wait for the recommended time before bringing back mats, carts, and heavy furniture after a new finish."],
+        ["Schedule scrub and recoat before wear reaches the tile, not after."],
+        ["Burnish regularly if your finish is designed for it."]
+      ]
+    },
+    { type: "heading", level: 2, id: "part-of-floor-care-plan", text: "Strip and Wax as Part of a Floor Care Plan" },
+    {
+      type: "paragraph",
+      text: [
+        "Strip and wax works best as one part of a plan rather than a one-off rescue. Daily dust mopping and damp mopping usually belong to the recurring cleaning scope, while burnishing, scrub and recoat, and full strips are periodic services. Floor refinishing is often scoped separately from routine janitorial work, so check what your agreement covers. Our guide to ", { text: "what commercial cleaning includes", href: "/blog/what-does-commercial-cleaning-include" }, " explains how recurring and periodic work are typically divided."
+      ]
+    },
+    {
+      type: "paragraph",
+      text: [
+        "When the daily cleaning and the floor program are coordinated, the routine work protects the finish and the periodic work is scheduled before the floor fails. Floor care can run alongside ", { text: "recurring commercial cleaning", href: "/services/commercial-cleaning" }, " or a ", { text: "school facility cleaning plan", href: "/services/school-facility-cleaning" }, ". For a wider facility reset, see the ", { text: "signs an office needs a deep cleaning", href: "/blog/signs-office-needs-deep-cleaning" }, ", or read about ", { text: "how often commercial carpets should be cleaned", href: "/blog/how-often-should-commercial-carpets-be-cleaned" }, "."
+      ]
+    },
+    { type: "heading", level: 2, id: "need-strip-and-wax", text: "Need Strip and Wax in Seattle?" },
+    {
+      type: "paragraph",
+      text: [
+        "Cleaning From The Heart LLC can walk your floors, identify the material, judge how much old finish is on them, and recommend whether you need a full strip, a scrub and recoat, or a maintenance schedule. You get a written scope that covers the areas, the work window, and the expected return-to-service timing."
+      ]
+    },
+    {
+      type: "paragraph",
+      text: [
+        "Work can be scheduled overnight, on weekends, during school breaks, or zone by zone, so your floors are finished without closing your operation."
+      ]
+    },
+    {
+      type: "callout",
+      title: "Ready to talk through your floors?",
+      text: [
+        "Learn more about ", { text: "strip and wax floor services in Seattle", href: "/services/strip-and-wax" }, ", call us at ", siteConfig.phoneDisplay, ", or ", { text: "Get a Free Quote", href: quoteHrefForService("strip-and-wax") }, "."
+      ]
+    },
+    {
+      type: "faq",
+      title: "Frequently Asked Questions",
+      items: [
+        {
+          question: "How often should commercial floors be stripped and waxed?",
+          answer: ["A common starting point is about once a year for most commercial floors, with scrub and recoat two to four times a year in between. High-traffic floors may need a full strip more often, and low-traffic floors can often go longer. The floor's condition should decide the timing."]
+        },
+        {
+          question: "How often should VCT floors be waxed?",
+          answer: ["VCT usually follows the same pattern: a full strip and wax as the reset, scrub and recoat to rebuild worn coats between strips, and burnishing to keep the gloss up. Traffic, matting, and daily maintenance decide how far apart those visits can be."]
+        },
+        {
+          question: "What is the difference between strip and wax and scrub and recoat?",
+          answer: ["Strip and wax removes every layer of old finish and rebuilds the floor from bare tile. Scrub and recoat removes only the worn top layers and adds fresh coats over a sound base. Scrub and recoat is faster and less disruptive, but it cannot fix yellowing, heavy buildup, or bare tile."]
+        },
+        {
+          question: "Can you wax a floor without stripping it first?",
+          answer: ["Only when the existing finish is sound, which is what a scrub and recoat does. Waxing over yellowed, dirty, or failing finish locks in the discoloration or peels along with the old coats."]
+        },
+        {
+          question: "How long after a strip and wax can people walk on the floor?",
+          answer: ["Light foot traffic can usually return once the final coat has dried, but the finish keeps hardening after that, so mats, carts, and heavy furniture wait longer. The exact timing depends on the floor, the number of coats, temperature, and airflow, and is confirmed on site."]
+        },
+        {
+          question: "Does burnishing replace stripping and waxing?",
+          answer: ["No. Burnishing brings back shine on a finish that still has enough coats left, but it adds no new protection. It stretches the time between scrub and recoat visits and full strips, but it does not replace them."]
+        },
+        {
+          question: "Is strip and wax included in regular commercial cleaning?",
+          answer: ["Usually not. Daily dust mopping and damp mopping are often part of recurring service, while strip and wax and scrub and recoat are periodic services with their own scope. The service agreement defines what is covered."]
+        }
+      ]
+    }
+  ]
+};
+
 // Only approved, fact-checked articles belong here: no placeholder posts.
 export const blogPosts: readonly BlogPost[] = [
   howOftenShouldOfficeBeProfessionallyCleaned,
@@ -2275,5 +2625,6 @@ export const blogPosts: readonly BlogPost[] = [
   signsOfficeNeedsDeepCleaning,
   howOftenShouldCommercialCarpetsBeCleaned,
   howOftenShouldCommercialWindowsBeCleaned,
-  deepCleaningVsRegularHouseCleaning
+  deepCleaningVsRegularHouseCleaning,
+  howOftenShouldCommercialFloorsBeStrippedAndWaxed
 ];
