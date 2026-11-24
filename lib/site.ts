@@ -1039,6 +1039,10 @@ export const workGalleryItems: {
 //   categories → which filter tabs the photo appears under (a photo can match more
 //                than one, e.g. a school gym floor is both Floor Care and Commercial)
 //   orientation→ controls the card aspect ratio (portrait / landscape / square)
+//   video      → optional. When set, the card is a video: `src` is the poster
+//                frame, `video.src` is the MP4 (H.264, metadata stripped, faststart)
+//                in /public/images/gallery/videos/, and `video.duration` is ISO 8601
+//                for the VideoObject schema.
 export type GalleryCategory =
   | "floor-care"
   | "window-cleaning"
@@ -1061,6 +1065,7 @@ export interface GalleryItem {
   caption: string;
   alt: string;
   categories: GalleryCategory[];
+  video?: { src: string; duration: string; uploadDate: string };
 }
 
 export const galleryItems: GalleryItem[] = [
@@ -1223,6 +1228,169 @@ export const galleryItems: GalleryItem[] = [
     caption: "Commercial floor care for an office space",
     alt: "Commercial office floor care result in the Seattle area",
     categories: ["commercial-cleaning", "floor-care"]
+  },
+  // ── Added 2026-11-24 ──────────────────────────────────────────────────────
+  {
+    src: "/images/gallery/gallery-21.jpg",
+    orientation: "portrait",
+    tag: "Floor Care",
+    caption: "Polished floors down the center aisle of a church sanctuary",
+    alt: "Polished checkered tile aisle in a Seattle-area church sanctuary after floor care",
+    categories: ["floor-care", "commercial-cleaning"]
+  },
+  {
+    src: "/images/gallery/videos/gallery-video-01-poster.jpg",
+    orientation: "portrait",
+    tag: "Floor Care",
+    caption: "Video walkthrough of a freshly polished church floor",
+    alt: "Video walking the polished checkered tile floor of a Seattle-area church",
+    categories: ["floor-care", "commercial-cleaning"],
+    video: {
+      src: "/images/gallery/videos/gallery-video-01.mp4",
+      duration: "PT12S",
+      uploadDate: "2026-11-24"
+    }
+  },
+  {
+    src: "/images/gallery/gallery-22.jpg",
+    orientation: "portrait",
+    tag: "Floor Care",
+    caption: "High-gloss finish on a gymnasium floor",
+    alt: "Gymnasium floor with a fresh high-gloss finish in the Seattle area",
+    categories: ["floor-care", "commercial-cleaning"]
+  },
+  {
+    src: "/images/gallery/gallery-23.jpg",
+    orientation: "portrait",
+    tag: "Floor Care",
+    caption: "Glossy gym floor finish across the full court",
+    alt: "Full-court view of a glossy gymnasium floor finish in the Seattle area",
+    categories: ["floor-care", "commercial-cleaning"]
+  },
+  {
+    src: "/images/gallery/gallery-24.jpg",
+    orientation: "portrait",
+    tag: "Window Cleaning",
+    caption: "Folding glass door wall cleaned at a waterfront home",
+    alt: "Folding glass door wall cleaned at a Seattle-area waterfront home",
+    categories: ["window-cleaning", "residential-cleaning"]
+  },
+  {
+    src: "/images/gallery/gallery-25.jpg",
+    orientation: "portrait",
+    tag: "Window Cleaning",
+    caption: "Exterior window cleaning on a waterfront home",
+    alt: "Clean exterior windows reflecting the sky at a Seattle-area waterfront home",
+    categories: ["window-cleaning", "residential-cleaning"]
+  },
+  {
+    src: "/images/gallery/gallery-26.jpg",
+    orientation: "portrait",
+    tag: "Window Cleaning",
+    caption: "Glass deck railing cleaned at a waterfront home",
+    alt: "Glass deck railing cleaning at a Seattle-area waterfront home",
+    categories: ["window-cleaning", "residential-cleaning"]
+  },
+  {
+    src: "/images/gallery/gallery-27.jpg",
+    orientation: "portrait",
+    tag: "Window Cleaning",
+    caption: "French door and sidelight glass cleaned on a patio",
+    alt: "French door and sidelight glass cleaning on a Seattle-area home patio",
+    categories: ["window-cleaning", "residential-cleaning"]
+  },
+  {
+    src: "/images/gallery/gallery-28.jpg",
+    orientation: "portrait",
+    tag: "Window Cleaning",
+    caption: "Clear French door glass on a waterfront home",
+    alt: "Clean French door glass on a Seattle-area waterfront home",
+    categories: ["window-cleaning", "residential-cleaning"]
+  },
+  {
+    src: "/images/gallery/gallery-29.jpg",
+    orientation: "portrait",
+    tag: "Window Cleaning",
+    caption: "Front entry glass and upper windows at a large home",
+    alt: "Front entry door glass and upper window cleaning at a large Seattle-area home",
+    categories: ["window-cleaning", "residential-cleaning"]
+  },
+  {
+    src: "/images/gallery/gallery-30.jpg",
+    orientation: "portrait",
+    tag: "Window Cleaning",
+    caption: "Lakefront glass walls cleaned along a wood deck",
+    alt: "Lakefront glass wall and door cleaning along a deck at a Seattle-area home",
+    categories: ["window-cleaning", "residential-cleaning"]
+  },
+  {
+    src: "/images/gallery/gallery-31.jpg",
+    orientation: "portrait",
+    tag: "Window Cleaning",
+    caption: "Interior window and sill cleaning in a home",
+    alt: "Interior window and sill cleaning in a Seattle-area home",
+    categories: ["window-cleaning", "residential-cleaning"]
+  },
+  {
+    src: "/images/gallery/gallery-32.jpg",
+    orientation: "portrait",
+    tag: "Window Cleaning",
+    caption: "Interior window cleaning with a clear fall view",
+    alt: "Clean interior window with a fall view at a Seattle-area home",
+    categories: ["window-cleaning", "residential-cleaning"]
+  },
+  {
+    src: "/images/gallery/gallery-33.jpg",
+    orientation: "portrait",
+    tag: "Window Cleaning",
+    caption: "Large picture window cleaned inside a hillside home",
+    alt: "Large picture window cleaning inside a Seattle-area hillside home",
+    categories: ["window-cleaning", "residential-cleaning"]
+  },
+  {
+    src: "/images/gallery/gallery-34.jpg",
+    orientation: "portrait",
+    tag: "Residential Cleaning",
+    caption: "Floor-to-ceiling mirror wall cleaned in a home studio",
+    alt: "Floor-to-ceiling mirror wall cleaning in a Seattle-area home studio",
+    categories: ["residential-cleaning"]
+  },
+  {
+    src: "/images/gallery/gallery-35.jpg",
+    orientation: "portrait",
+    tag: "Exterior Cleaning",
+    caption: "Clean concrete side walkway at a waterfront home",
+    alt: "Clean concrete side walkway at a Seattle-area waterfront home",
+    categories: ["exterior-cleaning", "residential-cleaning"]
+  },
+  {
+    src: "/images/gallery/gallery-36.jpg",
+    orientation: "portrait",
+    tag: "Exterior Cleaning",
+    caption: "Stamped concrete driveway at a waterfront estate",
+    alt: "Stamped concrete driveway exterior cleaning at a Seattle-area estate",
+    categories: ["exterior-cleaning", "residential-cleaning"]
+  },
+  {
+    src: "/images/gallery/gallery-37.jpg",
+    orientation: "portrait",
+    tag: "Exterior Cleaning",
+    caption: "Roof and gutter cleaning at a Seattle-area home",
+    alt: "Roof shingles and gutters during roof and gutter cleaning at a Seattle-area home",
+    categories: ["exterior-cleaning", "residential-cleaning"]
+  },
+  {
+    src: "/images/gallery/videos/gallery-video-02-poster.jpg",
+    orientation: "portrait",
+    tag: "Exterior Cleaning",
+    caption: "Video walkaround of a cleaned roof and gutters",
+    alt: "Video walkaround of cleaned roof shingles and gutters at a Seattle-area home",
+    categories: ["exterior-cleaning", "residential-cleaning"],
+    video: {
+      src: "/images/gallery/videos/gallery-video-02.mp4",
+      duration: "PT10S",
+      uploadDate: "2026-11-24"
+    }
   }
 ];
 

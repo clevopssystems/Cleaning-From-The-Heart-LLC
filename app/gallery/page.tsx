@@ -105,6 +105,9 @@ const galleryFaqs = [
   }
 ];
 
+const galleryPhotos = galleryItems.filter((item) => !item.video);
+const galleryVideos = galleryItems.filter((item) => item.video);
+
 const gallerySchema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -123,13 +126,25 @@ const gallerySchema = {
       "@type": "ImageGallery",
       "@id": `${SITE_URL}/gallery#imagegallery`,
       name: "Cleaning From The Heart LLC Results Gallery",
-      image: galleryItems.map((item) => ({
+      image: galleryPhotos.map((item) => ({
         "@type": "ImageObject",
         contentUrl: `${SITE_URL}${item.src}`,
         caption: item.caption,
         name: item.tag
-      }))
+      })),
+      video: galleryVideos.map((_, i) => ({ "@id": `${SITE_URL}/gallery#video-${i + 1}` }))
     },
+    ...galleryVideos.map((item, i) => ({
+      "@type": "VideoObject",
+      "@id": `${SITE_URL}/gallery#video-${i + 1}`,
+      name: item.caption,
+      description: item.alt,
+      thumbnailUrl: `${SITE_URL}${item.src}`,
+      contentUrl: `${SITE_URL}${item.video!.src}`,
+      uploadDate: item.video!.uploadDate,
+      duration: item.video!.duration,
+      publisher: { "@id": `${SITE_URL}/#business` }
+    })),
     {
       "@type": "FAQPage",
       "@id": `${SITE_URL}/gallery#faq`,
@@ -157,7 +172,7 @@ export default function GalleryPage() {
         <Container>
           <div className="flex flex-wrap items-center justify-center gap-8 py-6 sm:gap-16">
             {[
-              { value: "20+", label: "Project Photos" },
+              { value: `${galleryItems.length}`, label: "Photos & Videos" },
               { value: "100%", label: "Real Work Photos" },
               { value: "Seattle", label: "& Surrounding Areas" }
             ].map(({ value, label }) => (

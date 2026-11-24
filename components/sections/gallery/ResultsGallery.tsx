@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { createPortal } from "react-dom";
 import { useCallback, useEffect, useMemo, useState, useSyncExternalStore } from "react";
-import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import { X, ChevronLeft, ChevronRight, Play } from "lucide-react";
 import type { GalleryCategory, GalleryItem } from "@/lib/site";
 
 type FilterId = GalleryCategory | "all";
@@ -133,7 +133,7 @@ export function ResultsGallery({ items, categories }: ResultsGalleryProps) {
             type="button"
             onClick={() => openLightbox(index)}
             className="group mb-4 block w-full break-inside-avoid overflow-hidden rounded-2xl bg-stone-100 shadow-sm transition-all duration-300 hover:shadow-card-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 sm:mb-5"
-            aria-label={`Open photo: ${item.alt}`}
+            aria-label={`${item.video ? "Play video" : "Open photo"}: ${item.alt}`}
           >
             <div className={`relative w-full ${aspectByOrientation[item.orientation]}`}>
               <Image
@@ -148,6 +148,19 @@ export function ResultsGallery({ items, categories }: ResultsGalleryProps) {
                 className="absolute inset-0 bg-black/0 transition-colors duration-300 group-hover:bg-black/[0.06]"
                 aria-hidden
               />
+              {item.video ? (
+                <span
+                  className="absolute inset-0 flex items-center justify-center"
+                  aria-hidden
+                >
+                  <span className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-black/55 text-white shadow-lg backdrop-blur-sm transition-transform duration-300 group-hover:scale-110">
+                    <Play className="ml-0.5 h-6 w-6 fill-current" />
+                  </span>
+                  <span className="absolute bottom-3 left-3 rounded-full bg-black/55 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide text-white">
+                    Video
+                  </span>
+                </span>
+              ) : null}
             </div>
           </button>
         ))}
@@ -166,7 +179,7 @@ export function ResultsGallery({ items, categories }: ResultsGalleryProps) {
               <button
                 type="button"
                 onClick={closeLightbox}
-                aria-label="Close image preview"
+                aria-label="Close preview"
                 className="absolute right-4 top-4 inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
               >
                 <X className="h-5 w-5" aria-hidden />
@@ -180,7 +193,7 @@ export function ResultsGallery({ items, categories }: ResultsGalleryProps) {
                       e.stopPropagation();
                       showPrev();
                     }}
-                    aria-label="Previous image"
+                    aria-label="Previous item"
                     className="absolute left-3 top-1/2 inline-flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white sm:left-6"
                   >
                     <ChevronLeft className="h-6 w-6" aria-hidden />
@@ -191,7 +204,7 @@ export function ResultsGallery({ items, categories }: ResultsGalleryProps) {
                       e.stopPropagation();
                       showNext();
                     }}
-                    aria-label="Next image"
+                    aria-label="Next item"
                     className="absolute right-3 top-1/2 inline-flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white sm:right-6"
                   >
                     <ChevronRight className="h-6 w-6" aria-hidden />
@@ -203,12 +216,28 @@ export function ResultsGallery({ items, categories }: ResultsGalleryProps) {
                 className="flex max-h-full max-w-3xl flex-col items-center"
                 onClick={(e) => e.stopPropagation()}
               >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={activeItem.src}
-                  alt={activeItem.alt}
-                  className="max-h-[80vh] max-w-full rounded-lg object-contain"
-                />
+                {activeItem.video ? (
+                  // key forces a fresh element per item so arrowing between
+                  // videos restarts playback instead of keeping the old source.
+                  <video
+                    key={activeItem.video.src}
+                    src={activeItem.video.src}
+                    poster={activeItem.src}
+                    controls
+                    autoPlay
+                    playsInline
+                    preload="metadata"
+                    aria-label={activeItem.alt}
+                    className="max-h-[80vh] max-w-full rounded-lg bg-black object-contain"
+                  />
+                ) : (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    src={activeItem.src}
+                    alt={activeItem.alt}
+                    className="max-h-[80vh] max-w-full rounded-lg object-contain"
+                  />
+                )}
                 <figcaption className="mt-4 flex flex-col items-center gap-1.5 text-center">
                   <span className="rounded-full bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-white">
                     {activeItem.tag}
